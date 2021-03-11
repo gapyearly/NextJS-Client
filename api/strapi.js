@@ -1,6 +1,12 @@
 'use strict'
-import axios from 'axios'
+import Axios from 'axios'
 
-export default axios.defaults(){
+const api = Axios.create({
+    baseURL: process.env.BACKEND_API,
+    headers:{
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    }
+})
 
-}
+export default api

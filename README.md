@@ -30,3 +30,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Recommended VS Code Extensions
 
 - ESLint
+### Optional
+- Prettier
+- vscode-icons
+- Add jsdoc comments
+- Rainbow Brackets
+
+## Startup Guide
+- Install any VS Code Extensions mentioned above
