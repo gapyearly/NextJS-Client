@@ -13,18 +13,20 @@ export const AuthProvider = ({children})=>{
     const [user,setUser] = useState(null)
     const [loading,setLoading] = useState(true)
 
-    useEffect(() =>{
-        async function loadUserFromCookies(){
-            // Gets token from browser cookie
-            const token = Cookies.get('token')
-            if (token){
-                strapi.defaults.headers.Authorization = `Bearer ${token}`
-                const { data:user } = await strapi.get('users/me')
-                if(user) setUser(user);
-            }
-            setLoading(false)
+    async function revalidateUserFromStorage(){
+        // Gets token from browser cookie
+        const token = Cookies.get('token')
+        if (token){
+            strapi.defaults.headers.Authorization = `Bearer ${token}`
+            const { data:user } = await strapi.get('users/me')
+            if(user) setUser(user);
         }
-        loadUserFromCookies()
+        setLoading(false)
+    }
+
+    // First Load
+    useEffect(() =>{
+        revalidateUserFromStorage()
     }, [])
     
     const providerLogin = async (params) =>{
@@ -33,11 +35,9 @@ export const AuthProvider = ({children})=>{
         })
     }
     
-
-}
-
-export default function Auth({children}){
-    return <AuthContext.Provider>
+    return <AuthContext.Provider value={{isAuthenticated: !!user, user, login, loading, logout}}>
         {children}
     </AuthContext.Provider>
 }
+
+export const useAuth = () => useContext(AuthContext)
