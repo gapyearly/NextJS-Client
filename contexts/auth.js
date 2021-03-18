@@ -23,14 +23,12 @@ export const AuthProvider = ({children})=>{
         if (token){
             strapi.defaults.headers.Authorization = `Bearer ${token}`
             try{
-                const {data} = await strapi.get('users/me')
-                if(data.user) setUser(user);
+                 const {data} = await strapi.get('users/me')
+                 if(data.user) setUser(user);
             }
             catch(e){
-
+                logout()
             }
-            
-            
         }
         setLoading(false)
     }
@@ -40,6 +38,12 @@ export const AuthProvider = ({children})=>{
         revalidateUserFromStorage()
     }, [])
     
+    const logout = () => {
+        Cookies.remove('token')
+        setUser(null)
+        delete strapi.defaults.headers.Authorization
+    }    
+
     /**
      * Takes in an object of parameters with token values along with the correct provider.
      * Logs in the user.
@@ -48,10 +52,11 @@ export const AuthProvider = ({children})=>{
      */
     const providerLogin = async (params,provider) =>{
         return new Promise((resolve,reject) =>{
-            const {data} = strapi.get(`auth/${provider}/callback`,{
+            logout()
+            strapi.get(`auth/${provider}/callback`,{
                 params
             })
-            .then(()=>{
+            .then(( { data } )=>{
                 setUser(data.user)
                 Cookies.set('token',data.jwt)
                 resolve()
@@ -62,8 +67,11 @@ export const AuthProvider = ({children})=>{
         })
             
     }
+    // TODO: Logout Function
+
     
-    return <AuthContext.Provider value={{isAuthenticated: !!user, user, providerLogin, loading}}>
+
+    return <AuthContext.Provider value={{isAuthenticated: !!user, user, providerLogin, loading,logout}}>
         {children}
     </AuthContext.Provider>
 }
