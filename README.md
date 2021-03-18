@@ -35,6 +35,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 - vscode-icons
 - Add jsdoc comments
 - Rainbow Brackets
+- TODO Extension Tracker
 
 ## Startup Guide
-- Install any VS Code Extensions mentioned above
+- Install any VS Code Extensions mentioned above.
+- Create the enviromental variable file using the example `.env`. Name it `.env.local`
