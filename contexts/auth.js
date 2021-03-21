@@ -27,6 +27,7 @@ export const AuthProvider = ({children})=>{
                  if(data.user) setUser(user);
             }
             catch(e){
+                console.log(e)
                 logout()
             }
         }
@@ -67,11 +68,10 @@ export const AuthProvider = ({children})=>{
         })
             
     }
-    // TODO: Logout Function
 
     
 
-    return <AuthContext.Provider value={{isAuthenticated: !!user, user, providerLogin, loading,logout}}>
+    return <AuthContext.Provider value={{isAuthenticated: !!user, user, loading, providerLogin,logout}}>
         {children}
     </AuthContext.Provider>
 }

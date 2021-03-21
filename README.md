@@ -28,8 +28,8 @@ To learn more about Next.js, take a look at the following resources:
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Recommended VS Code Extensions
-
 - ESLint
+
 ### Optional
 - Prettier
 - vscode-icons
