@@ -1,8 +1,3 @@
-
-
-
-
-
-export function getStaticProps(){
-
+export default function Article(){
+    return <div></div>
 }

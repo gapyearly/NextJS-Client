@@ -4,7 +4,7 @@ Used to setup the context system for user authentication and user info.
 
 import { createContext, useState, useContext, useEffect } from 'react'
 import Cookies from 'js-cookie'
-import strapi from '../api/strapi'
+import strapi from '@api/strapi'
 
 Cookies.defaults = {
     secure:true,
