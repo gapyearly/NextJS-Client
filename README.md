@@ -25,6 +25,8 @@ To learn more about Next.js and helper modules, take a look at the following res
 - [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 - [Nextjs-redirect](https://www.npmjs.com/package/nextjs-redirect) - A module that allows for easy page based redirects
+- [react-hooks-helper]() - 
+
 
 
 ## Recommended VS Code Extensions
