@@ -12,7 +12,19 @@ export default function Navbar() {
                     className={styles.logo}
                 />
             </Link>
+            <NavMenu>
+                
+            </NavMenu>
             
         </div>
     )
+}
+
+const NavMenu = () => {
+    return(
+        <div></div>
+    )
+}
+const DropDownItem = () =>{
+
 }
