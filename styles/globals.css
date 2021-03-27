@@ -1,5 +1,6 @@
-/* berry: #4f002a
-seashell: #f85d48
+/* COLOR PALETTE:
+berry: #4f002a
+seashell: #fefbf6
 sunlight: #ffdf9d
 aqua: #00a998
 horizon: #0b5ee0
@@ -13,6 +14,7 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   font-family: 'Quicksand', sans-serif;
   color: #4f002a;
+  background-color: #fefbf6;
 }
 
 a {
