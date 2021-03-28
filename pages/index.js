@@ -14,7 +14,7 @@ export default function Home() {
           rel="stylesheet"
         ></link>
       </Head>
-
+      <Layout></Layout>
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="/">Gapyearly!</a>

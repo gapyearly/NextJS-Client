@@ -14,12 +14,15 @@
 
 html,
 body {
-  padding: 0 1rem;
   margin: 0;
   font-family: "Quicksand", sans-serif;
   font-size: calc(1em + 0.2vw);
   color: var(--berry);
   background-color: var(--seashell);
+}
+
+main {
+  padding: 0 1rem;
 }
 
 a {
@@ -44,15 +47,7 @@ button {
   padding: 0.5rem;
 }
 
-input,
-button {
-  background-color: var(--aqua);
-  border: none;
-  border-radius: 5px;
-  color: var(--seashell);
-  font-weight: 500;
-  padding: 0.5rem;
-}
+
 input,
 button {
   font-size: inherit;
