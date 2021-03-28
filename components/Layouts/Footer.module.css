@@ -1,4 +1,21 @@
 .footer {
   background-color: var(--berry);
-  height: 12rem;
+  height: 14rem;
+  display: flex;
+  flex-direction: row;
+  color: var(--seashell);
+  padding-top: 1em;
+  padding-left: 3em;
+}
+.footer_column {
+  margin-right: 8em;
+  list-style-type: none;
+  line-height: 2em;
+}
+.footer_column_title {
+  font-weight: bold;
+  font-size: 1em;
+}
+.footer_column_link {
+  margin: 0;
 }

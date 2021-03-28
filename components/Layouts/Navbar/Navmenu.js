@@ -1,4 +1,4 @@
-const sitemap = require("./sitemap.json");
+const sitemap = require("./sitemap.json").header;
 
 export default function NavMenu() {
   const navItems = sitemap.map((navItemInfo) => {
