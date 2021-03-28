@@ -1,27 +1,58 @@
-/* COLOR PALETTE:
-berry: #4f002a
-seashell: #fefbf6
-sunlight: #ffdf9d
-aqua: #00a998
-horizon: #0b5ee0
-clay: #f85d48 */
+
+
+:root {
+--berry: #4f002a;
+--seashell: #fefbf6;
+--sunlight: #ffdf9d;
+--aqua: #00a998;
+--horizon: #0b5ee0;
+--clay: #f85d48;
+}
 
 html,
 body {
-  padding: 0;
+  padding: 0 1rem;
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
   font-family: 'Quicksand', sans-serif;
-  color: #4f002a;
-  background-color: #fefbf6;
+  font-size: calc(1em + 0.2vw);
+  color: var(--berry);
+  background-color:var(--seashell)
 }
 
 a {
   color: inherit;
-  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+
+  position: relative;
+  z-index: 1;
+  text-decoration-skip-ink: none;
+
+}
+/* a:hover,
+a:focus,
+a:active */
+button {
+   background-color: var(--aqua);
+   border:none;
+   border-radius: 5px;
+   color: var(--seashell);
+   font-weight:500;
+   padding: 0.5rem;
+}
+input, button {
+  font-size: inherit;
+  font-family: inherit;
+}
+input{
+  border: 1px solid var(--horizon);
+  border-radius: 5px;
+  
 }
 
 * {
   box-sizing: border-box;
+}
+
+p {
+  font-size:0.9rem;
 }
