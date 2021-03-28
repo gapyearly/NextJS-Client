@@ -2,11 +2,11 @@ env:
     browser: true
     es2021: true
 extends:
-    - "plugin:react/recommended"
-    - standard
-    - "plugin:jsx-a11y/recommended"
-    - "plugin:react-hooks/recommended"
-    - "prettier"
+  - "plugin:react/recommended"
+  - standard
+  - "plugin:jsx-a11y/recommended"
+  - "plugin:react-hooks/recommended"
+  - "plugin:prettier/recommended"
 parserOptions:
     ecmaFeatures:
         jsx: true
@@ -16,11 +16,19 @@ settings:
     react:
         version: "detect"
 plugins:
-    - react
-    - react-hooks
+  - react
+  - react-hooks
 rules:
-    {
-        "react/react-in-jsx-scope": "off",
-        "react/prop-types": "off",
-        "jsx-a11y/anchor-is-valid": "off",
-    }
+  {
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "prettier/prettier": [
+        "error",
+        {
+          ..
+          "endOfLine":"auto"
+          ..,
+        },
+      ],
+  }

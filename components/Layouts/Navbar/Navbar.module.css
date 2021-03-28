@@ -1,11 +1,17 @@
 .navbar {
-    height: 80px;
+    height: var(--navbarHeight);
+    background-color: var(--seashell);
     display: flex;
-    position: sticky;
+    position: fixed;
+    position: -webkit-sticky; /* Safari */
+    top: 0;
+    width: 100vw;
+    z-index: 5;
+    padding: 0 0;
 }
 .logo {
     object-fit: contain;
-    margin: 10px 20px;
+    margin: 10px;
     max-width: 100%;
     max-height: 100%;
 }

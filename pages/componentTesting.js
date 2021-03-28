@@ -2,7 +2,7 @@
  *
  *
  */
-import Navbar from "@components/Layouts/Navbar";
+import Layout from "@components/Layouts/Layout";
 
 import redirect from "nextjs-redirect";
 export default function Home() {
@@ -11,5 +11,5 @@ export default function Home() {
         return <Redirect></Redirect>;
     }
 
-    return <Navbar />;
+    return <Layout />;
 }

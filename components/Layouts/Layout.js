@@ -1,9 +1,16 @@
+import Navbar from "./Navbar";
+
 export default function Layout({ children }) {
     return (
-        <div>
-            <p>Header</p>
-            {children}
+        <>
+            <Navbar />
+            <main>{children}</main>
             <p>Footer</p>
-        </div>
+            <style jsx>{`
+                main {
+                    margin-top: var(--navbarHeight);
+                }
+            `}</style>
+        </>
     );
 }

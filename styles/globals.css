@@ -9,6 +9,7 @@
 
 * {
   box-sizing: border-box;
+  --navbarHeight: 80px;
 }
 
 html,
@@ -45,10 +46,18 @@ button {
 
 input,
 button {
+  background-color: var(--aqua);
+  border: none;
+  border-radius: 5px;
+  color: var(--seashell);
+  font-weight: 500;
+  padding: 0.5rem;
+}
+input,
+button {
   font-size: inherit;
   font-family: inherit;
 }
-
 input {
   border: 1px solid var(--horizon);
   border-radius: 5px;
@@ -58,10 +67,6 @@ p {
   font-size: 0.9rem;
 }
 
-.cardImg {
-  width: 20px;
-  height: 20px;
-}
 
 .card {
   aspect-ratio: 1/1;
