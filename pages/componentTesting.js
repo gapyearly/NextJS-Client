@@ -15,5 +15,5 @@ export default function Home() {
     <Layout>
       <p>This is some content</p>
     </Layout>
-  )>;
+  );
 }

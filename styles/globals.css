@@ -9,7 +9,7 @@
 
 * {
   box-sizing: border-box;
-  --navbarHeight: 80px;
+  --navbarHeight: 4rem;
 }
 
 html,
@@ -47,7 +47,6 @@ button {
   padding: 0.5rem;
 }
 
-
 input,
 button {
   font-size: inherit;
@@ -61,7 +60,6 @@ input {
 p {
   font-size: 0.9rem;
 }
-
 
 .card {
   aspect-ratio: 1/1;
