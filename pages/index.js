@@ -13,42 +13,25 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to <a href="/">Gapyearly!</a>
         </h1>
+        <h2>H2 Text</h2>
+        <h3>H3 Text</h3>
+        <p>Paragraph Text</p>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <form>
+        <label>Form Label </label>
+        <input placeholder={"Search..."} type="text"></input>
+        </form>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-
-            <form>
-            <label>Form Label &rarr;</label>
-            <input placeholder={"Search..."} type="text"></input>
-            </form>
-
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <button className={styles.greenbtn}>Deploy &rarr;</button>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+        <div>
+          <img src="/images/logo.png" alt=""></img>
         </div>
+
+        <button>Button</button> 
+        {/* button variations (i.e. background color) */}
+
+
       </main>
 
       <footer className={styles.footer}>
