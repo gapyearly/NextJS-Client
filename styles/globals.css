@@ -62,14 +62,39 @@ p {
   font-size: 0.9rem;
 }
 
-
+.cardGallery {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@media (max-width: 800px) {
+  .cardGallery {
+    flex-direction: column;
+  }
+}
 .card {
-  aspect-ratio: 1/1;
-  height: 200px;
-  width: 200px;
+  width:20vw;
+  display: inline;
+  margin:0;
+  flex-direction: column;
+  margin: 0 0.7rem;
+  
 }
 
+.card h3, .card p {
+  margin: 0;
+}
+.cardImg {
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 5px 5px 0 0;
+}
 .cardDesc {
   background-color: var(--berry);
   color: var(--seashell);
+  width: 20vw;
+  padding: 0.5em 0.6em;
+  border-radius: 0 0 5px 5px;
 }
