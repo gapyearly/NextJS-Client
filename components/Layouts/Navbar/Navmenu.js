@@ -5,7 +5,7 @@ export default function NavMenu() {
   const navItems = sitemap.map((navItemInfo) => {
     return <NavFolder key={navItemInfo.label} data={navItemInfo} />;
   });
-  return <div>{navItems}</div>;
+  return <div className={styles.navItems}>{navItems}</div>;
 }
 
 const NavFolder = ({ data }) => {
