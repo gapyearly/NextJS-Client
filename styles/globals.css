@@ -5,6 +5,10 @@
   --aqua: #00a998;
   --horizon: #0b5ee0;
   --clay: #f85d48;
+}
+
+* {
+  box-sizing: border-box;
   --navbarHeight: 80px;
 }
 
@@ -28,7 +32,19 @@ a {
 }
 /* a:hover,
 a:focus,
-a:active */
+a:active 
+add animations/transitions*/
+
+button {
+  background-color: var(--aqua);
+  border: none;
+  border-radius: 5px;
+  color: var(--seashell);
+  font-weight: 500;
+  padding: 0.5rem;
+}
+
+input,
 button {
   background-color: var(--aqua);
   border: none;
@@ -47,13 +63,18 @@ input {
   border-radius: 5px;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 p {
   font-size: 0.9rem;
 }
-.cardimg {
-  width: 100%;
+
+
+.card {
+  aspect-ratio: 1/1;
+  height: 200px;
+  width: 200px;
+}
+
+.cardDesc {
+  background-color: var(--berry);
+  color: var(--seashell);
 }

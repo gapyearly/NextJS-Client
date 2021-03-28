@@ -1,11 +1,11 @@
 {
     "compilerOptions": {
         "baseUrl": ".",
-        "paths":{
-            "@components/*":["./components/*"],
-            "@api/*":["./api/*"],
-            "@contexts/*":["./contexts/*"],
-            "@styles/*":["./styles/*"]
+        "paths": {
+            "@components/*": ["./components/*"],
+            "@api/*": ["./api/*"],
+            "@contexts/*": ["./contexts/*"],
+            "@styles/*": ["./styles/*"]
         }
     }
 }
