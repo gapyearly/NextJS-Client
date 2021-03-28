@@ -1,3 +1,4 @@
+import styles from "./Navbar.module.css";
 const sitemap = require("./sitemap.json").header;
 
 export default function NavMenu() {
@@ -8,9 +9,5 @@ export default function NavMenu() {
 }
 
 const NavItem = ({ data }) => {
-  return (
-    <div>
-      <a>{data.label}</a>
-    </div>
-  );
+  return <a className={styles.navLink}>{data.label}</a>;
 };
