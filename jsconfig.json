@@ -4,7 +4,8 @@
         "paths":{
             "@components/*":["./components/*"],
             "@api/*":["./api/*"],
-            "@contexts/*":["./contexts/*"]
+            "@contexts/*":["./contexts/*"],
+            "@styles/*":["./styles/*"]
         }
     }
 }
