@@ -74,9 +74,11 @@ p {
 .card {
   width: 20vw;
   display: inline;
-  margin: 0;
   flex-direction: column;
   margin: 0 0.7rem;
+  border-radius: 7px;
+  background-color: var(--berry);
+
 }
 
 .card h3,
@@ -88,12 +90,11 @@ p {
   height: 20vw;
   object-fit: cover;
   overflow: hidden;
-  border-radius: 5px 5px 0 0;
+  border-radius: 7px 7px 0 0;
 }
 .cardDesc {
-  background-color: var(--berry);
   color: var(--seashell);
   width: 20vw;
-  padding: 0.5em 0.6em;
-  border-radius: 0 0 5px 5px;
+  padding: 0.2em 0.6em 0.5em;
+  margin:0;
 }
