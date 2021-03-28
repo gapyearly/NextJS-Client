@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 import debounce from "@util/debounce";
+import NavMenu from "./Navmenu";
 
 // How far the user has to scroll in px for nav to reappear
 const SCROLL_LENGTH = 50;
 // How often it checks for scroll
 const DEBOUNCE_DELAY = 50;
-//
 
 // TODO: Cleanup Scroll and make it look nicer and play better.
 
@@ -31,6 +31,7 @@ export default function Navbar() {
     );
     setPrevScrollPos(currentScrollPos);
   };
+
   const handleScroll = debounce(checkScroll, DEBOUNCE_DELAY);
 
   // When component is loaded, create an event listener to detect scrolls
@@ -62,13 +63,8 @@ export default function Navbar() {
             className={styles.logo}
           />
         </Link>
-        <NavMenu></NavMenu>
+        <NavMenu />
       </div>
     </nav>
   );
 }
-
-const NavMenu = () => {
-  return <div></div>;
-};
-const DropDownItem = () => {};
