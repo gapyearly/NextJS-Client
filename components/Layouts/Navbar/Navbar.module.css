@@ -1,17 +1,17 @@
 .navbar {
-    height: var(--navbarHeight);
-    background-color: var(--seashell);
-    display: flex;
-    position: fixed;
-    position: -webkit-sticky; /* Safari */
-    top: 0;
-    width: 100vw;
-    z-index: 5;
-    padding: 0 0;
+  height: var(--navbarHeight);
+  background-color: var(--seashell);
+  display: flex;
+  position: fixed;
+  position: -webkit-sticky; /* Safari */
+  top: 0;
+  width: 100vw;
+  z-index: 5;
+  padding: 0 0;
 }
 .logo {
-    object-fit: contain;
-    margin: 10px;
-    max-width: 100%;
-    max-height: 100%;
+  object-fit: contain;
+  margin: 10px;
+  max-width: 100%;
+  max-height: 100%;
 }
