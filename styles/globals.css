@@ -1,22 +1,24 @@
-
-
 :root {
---berry: #4f002a;
---seashell: #fefbf6;
---sunlight: #ffdf9d;
---aqua: #00a998;
---horizon: #0b5ee0;
---clay: #f85d48;
+  --berry: #4f002a;
+  --seashell: #fefbf6;
+  --sunlight: #ffdf9d;
+  --aqua: #00a998;
+  --horizon: #0b5ee0;
+  --clay: #f85d48;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html,
 body {
   padding: 0 1rem;
   margin: 0;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: calc(1em + 0.2vw);
   color: var(--berry);
-  background-color:var(--seashell)
+  background-color: var(--seashell);
 }
 
 a {
@@ -26,37 +28,48 @@ a {
   text-decoration: none;
   position: relative;
   z-index: 1;
-
-
 }
 /* a:hover,
 a:focus,
-a:active */
+a:active 
+add animations/transitions*/
+
 button {
-   background-color: var(--aqua);
-   border:none;
-   border-radius: 5px;
-   color: var(--seashell);
-   font-weight:500;
-   padding: 0.5rem;
+  background-color: var(--aqua);
+  border: none;
+  border-radius: 5px;
+  color: var(--seashell);
+  font-weight: 500;
+  padding: 0.5rem;
 }
-input, button {
+
+input,
+button {
   font-size: inherit;
   font-family: inherit;
 }
-input{
+
+input {
   border: 1px solid var(--horizon);
   border-radius: 5px;
-  
-}
-
-* {
-  box-sizing: border-box;
 }
 
 p {
-  font-size:0.9rem;
+  font-size: 0.9rem;
 }
-.cardimg {
-  width: 100%;
+
+.cardImg {
+  width: 20px;
+  height: 20px;
+}
+
+.card {
+  aspect-ratio: 1/1;
+  height: 200px;
+  width: 200px;
+}
+
+.cardDesc {
+  background-color: var(--berry);
+  color: var(--seashell);
 }
