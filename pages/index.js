@@ -14,7 +14,7 @@ export default function Home() {
           rel="stylesheet"
         ></link>
       </Head>
-      <Layout></Layout>
+      <Layout>
       <main className={styles.main}>
         <h1 className={styles.title}>
           Welcome to <a href="/">Gapyearly!</a>
@@ -27,24 +27,50 @@ export default function Home() {
           <label>Form Label </label>
           <input placeholder={"Search..."} type="text"></input>
         </form>
+        <button>Button</button>
+        {/* button variations (i.e. background color) */}
 
-        <div className={styles.card}>
-          <img
-            className={styles.cardImg}
-            src="/images/placeholder.jpg"
-            alt=""
-          ></img>
-          <div className={styles.cardDesc}>
-            <h3>Blog Title</h3>
-            <h4>Author Name</h4>
+        <div className="cardGallery">
+          <div className={"card"}>
+            <img
+              className={"cardImg"}
+              src="/images/placeholder.jpg"
+              alt=""
+            ></img>
+            <div className={"cardDesc"}>
+              <h3>Blog Title</h3>
+              <p>Author Name</p>
+            </div>
+          </div>
+
+          <div className={"card"}>
+            <img
+              className={"cardImg"}
+              src="/images/placeholder.jpg"
+              alt=""
+            ></img>
+            <div className={"cardDesc"}>
+              <h3>Blog Title</h3>
+              <p>Author Name</p>
+            </div>
+          </div>
+
+          <div className={"card"}>
+            <img
+              className={"cardImg"}
+              src="/images/placeholder.jpg"
+              alt=""
+            ></img>
+            <div className={"cardDesc"}>
+              <h3>Blog Title</h3>
+              <p>Author Name</p>
+            </div>
           </div>
         </div>
 
-        <button>Button</button>
-        {/* button variations (i.e. background color) */}
-      </main>
 
-      <footer className={styles.footer}></footer>
+      </main>
+      </Layout>
     </div>
   );
 }
