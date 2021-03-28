@@ -10,7 +10,6 @@
   position: fixed;
   z-index: 1000;
   transition: top 0.3s;
-  margin: 1rem 0rem 0rem -1.5rem;
 }
 .logo {
   object-fit: contain;
@@ -26,7 +25,9 @@
   transition: top 0.3s;
 
 }
-
+.navItems {
+  margin: 1.8rem 3rem 0 0;
+}
 .navLink {
   margin: 0 10px;
   font-weight: 500;
