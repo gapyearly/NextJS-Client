@@ -53,8 +53,6 @@ export default function Navbar() {
       <style jsx>{`
         top: ${visible ? "0" : `-${navbarHeight}`};
       `}</style>
-
-      <div id="navbar" className={styles.navbar}>
         <Link href="/">
           <img
             src="/images/logo.png"
@@ -63,7 +61,8 @@ export default function Navbar() {
             className={styles.logo}
           />
         </Link>
-        <NavMenu />
+      <div id="navbar" className={styles.navbar}>
+        <NavMenu className={styles.navMenu}/>
       </div>
     </nav>
   );
