@@ -16,8 +16,10 @@ export default function Navbar() {
   const [visible, setVisible] = useState(true);
   const [navbarHeight, setNavbarHeight] = useState(0);
 
-  // Changes the visiblitiy state based off if the user scrolled up.
-
+  /**
+   * Changes the visiblitiy state based off if the user scrolled up.
+   * @see{https://www.prwhite.io/blog/sticky-navbar-hides-scroll}
+   *  */
   const checkScroll = () => {
     const currentScrollPos = window.pageYOffset;
     console.log(prevScrollPos);

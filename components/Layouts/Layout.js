@@ -10,6 +10,7 @@ export default function Layout({ children }) {
       <style jsx>{`
         main {
           margin-top: var(--navbarHeight);
+          margin-bottom: 20px;
         }
       `}</style>
     </>
