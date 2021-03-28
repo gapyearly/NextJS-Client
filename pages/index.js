@@ -24,7 +24,9 @@ export default function Home() {
         <input placeholder={"Search..."} type="text"></input>
         </form>
 
-
+        <div>
+          <img src="/images/logo.png" alt=""></img>
+        </div>
 
         <button>Button</button> 
         {/* button variations (i.e. background color) */}
