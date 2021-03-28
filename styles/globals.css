@@ -9,8 +9,7 @@
 
 * {
   box-sizing: border-box;
-  --navbarHeight: 80px;
-
+  --navbarHeight: 3.9rem;
 }
 
 html,
@@ -48,7 +47,6 @@ button {
   padding: 0.5rem;
 }
 
-
 input,
 button {
   font-size: inherit;
@@ -64,7 +62,7 @@ p {
 }
 
 .cardGallery {
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: center;
 }
@@ -74,7 +72,7 @@ p {
   }
 }
 .card {
-  width:20vw;
+  width: 20vw;
   display: inline;
   flex-direction: column;
   margin: 0 0.7rem;
@@ -83,7 +81,8 @@ p {
 
 }
 
-.card h3, .card p {
+.card h3,
+.card p {
   margin: 0;
 }
 .cardImg {
