@@ -22,35 +22,35 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 To learn more about Next.js and helper modules, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-- [Nextjs-redirect](https://www.npmjs.com/package/nextjs-redirect) - A module that allows for easy page based redirects
-- [react-hooks-helper](https://github.com/revelcw/react-hooks-helper) - Custom react hooks
-- [react-icons](https://react-icons.github.io/react-icons) - React icons library
+-   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+-   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   [Nextjs-redirect](https://www.npmjs.com/package/nextjs-redirect) - A module that allows for easy page based redirects
+-   [react-hooks-helper](https://github.com/revelcw/react-hooks-helper) - Custom react hooks
+-   [react-icons](https://react-icons.github.io/react-icons) - React icons library
 
 ## Recommended VS Code Extensions
 
-- ESLint
+-   ESLint
 
 ### Optional
 
-- Prettier
-  - Set Auto Format on
-- vscode-icons
-- Add jsdoc comments
-- Rainbow Brackets
-- TODO Extension Tracker
+-   Prettier
+    -   Set Auto Format on
+-   vscode-icons
+-   Add jsdoc comments
+-   Rainbow Brackets
+-   TODO Extension Tracker
 
 ## Startup Guide
 
-- Install any VS Code Extensions mentioned above.
-- Create the enviromental variable file using the example `.env`. Name it `.env.local`
+-   Install any VS Code Extensions mentioned above.
+-   Create the enviromental variable file using the example `.env`. Name it `.env.local`
 
 ## Things to know
 
-- jsconfig.json file allows you have module aliases. Ex. When importing a component, instead of typing `import Button from '../../component/button'` you can use `'@component/button'` instead.
-  - Current Aliases available:
-    - @component
-    - @contexts
-    - @api
-    - Feel free to add your own.
+-   jsconfig.json file allows you have module aliases. Ex. When importing a component, instead of typing `import Button from '../../component/button'` you can use `'@component/button'` instead.
+    -   Current Aliases available:
+        -   @component
+        -   @contexts
+        -   @api
+        -   Feel free to add your own.

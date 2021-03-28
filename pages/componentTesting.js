@@ -11,5 +11,9 @@ export default function Home() {
     return <Redirect></Redirect>;
   }
 
-  return <Layout />;
+  return (
+    <Layout>
+      <p>This is some content</p>
+    </Layout>
+  )>;
 }
