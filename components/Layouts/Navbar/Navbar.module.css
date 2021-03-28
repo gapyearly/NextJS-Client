@@ -1,7 +1,6 @@
 .navbar {
     height: 80px;
     display: flex;
-    background-color: chartreuse;
     position: sticky;
 }
 .logo {
