@@ -6,7 +6,7 @@ extends:
   - standard
   - "plugin:jsx-a11y/recommended"
   - "plugin:react-hooks/recommended"
-  - "plugin:prettier/recommended"
+  - "prettier"
 parserOptions:
   ecmaFeatures:
     jsx: true
@@ -23,12 +23,4 @@ rules:
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "jsx-a11y/anchor-is-valid": "off",
-    "prettier/prettier": [
-        "error",
-        {
-          ..
-          "endOfLine":"auto"
-          ..,
-        },
-      ],
   }

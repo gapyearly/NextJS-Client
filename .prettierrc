@@ -1,18 +1,4 @@
 {
-    "tabWidth": 4,
-    "endOfLine": "auto",
-    "overrides": [
-        {
-            "files": [
-                "pages/index.js",
-                "_app.js",
-                "_document.js",
-                "*.yml",
-                "styles/*.css"
-            ],
-            "options": {
-                "tabWidth": 2
-            }
-        }
-    ]
+    "tabWidth": 2,
+    "endOfLine": "auto"
 }
