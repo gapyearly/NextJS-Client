@@ -51,21 +51,19 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav>
+    <nav className={styles.navbar} id="navbar">
       <style jsx>{`
         top: ${visible ? "0" : `-${navbarHeight}`};
       `}</style>
-        <Link href="/">
-          <img
-            src="/images/logo.png"
-            layout="fill"
-            alt="Gapyearly Logo"
-            className={styles.logo}
-          />
-        </Link>
-      <div id="navbar" className={styles.navbar}>
-        <NavMenu className={styles.navMenu}/>
-      </div>
+      <Link href="/">
+        <img
+          src="/images/logo.png"
+          layout="fill"
+          alt="Gapyearly Logo"
+          className={styles.logo}
+        />
+      </Link>
+      <NavMenu />
     </nav>
   );
 }

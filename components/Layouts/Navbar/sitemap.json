@@ -17,7 +17,7 @@
       "label": "Opportunities",
       "dropdownItems": [
         {
-          "name": "About Gapyearly",
+          "linkLabel": "About Gapyearly",
           "href": "/"
         }
       ]
@@ -26,7 +26,7 @@
       "label": "Community",
       "dropdownItems": [
         {
-          "name": "About Gapyearly",
+          "linkLabel": "About Gapyearly",
           "href": "/"
         }
       ]
@@ -35,7 +35,7 @@
       "label": "Prospective",
       "dropdownItems": [
         {
-          "name": "About Gapyearly",
+          "linkLabel": "About Gapyearly",
           "href": "/"
         }
       ]
