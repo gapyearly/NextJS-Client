@@ -51,7 +51,7 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav>
+    <nav className={styles.navbar} id="navbar">
       <style jsx>{`
         top: ${visible ? "0" : `-${navbarHeight}`};
       `}</style>
