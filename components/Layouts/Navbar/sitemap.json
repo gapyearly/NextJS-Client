@@ -1,0 +1,72 @@
+{
+  "header": [
+    {
+      "label": "About",
+      "dropdownItems": [
+        {
+          "linkLabel": "About Gapyearly",
+          "href": "/"
+        },
+        {
+          "linkLabel": "Our Team",
+          "href": "/"
+        }
+      ]
+    },
+    {
+      "label": "Opportunities",
+      "dropdownItems": [
+        {
+          "linkLabel": "About Gapyearly",
+          "href": "/"
+        }
+      ]
+    },
+    {
+      "label": "Community",
+      "dropdownItems": [
+        {
+          "linkLabel": "About Gapyearly",
+          "href": "/"
+        }
+      ]
+    },
+    {
+      "label": "Prospective",
+      "dropdownItems": [
+        {
+          "linkLabel": "About Gapyearly",
+          "href": "/"
+        }
+      ]
+    }
+  ],
+  "footer": [
+    {
+      "label": "Test1",
+      "items": [
+        {
+          "linkLabel": "About Gapyearly",
+          "href": "/"
+        },
+        {
+          "linkLabel": "Our Team",
+          "href": "/"
+        }
+      ]
+    },
+    {
+      "label": "Test2",
+      "items": [
+        {
+          "linkLabel": "About Gapyearly",
+          "href": "/"
+        },
+        {
+          "linkLabel": "Our Team",
+          "href": "/"
+        }
+      ]
+    }
+  ]
+}
