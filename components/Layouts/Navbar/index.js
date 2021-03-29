@@ -65,6 +65,7 @@ export default function Navbar() {
         </Link>
       <div id="navbar" className={styles.navbar}>
         <NavMenu className={styles.navMenu}/>
+        
       </div>
     </nav>
   );
