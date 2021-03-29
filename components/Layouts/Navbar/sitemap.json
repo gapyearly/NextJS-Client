@@ -1,6 +1,9 @@
 {
   "header": [
     {
+      "label": "Home"
+    },
+    {
       "label": "About",
       "dropdownItems": [
         {
@@ -39,11 +42,14 @@
           "href": "/"
         }
       ]
+    },
+    {
+      "label": "Blog"
     }
   ],
   "footer": [
     {
-      "label": "Test1",
+      "label": "About",
       "items": [
         {
           "linkLabel": "About Gapyearly",
@@ -51,22 +57,70 @@
         },
         {
           "linkLabel": "Our Team",
+          "href": "/"
+        },
+        {
+          "linkLabel":"Our Sponsors",
+          "href":"/"
+        }
+        ,
+        {
+          "linkLabel":"Contact",
+          "href":"/"
+        }
+      ]
+    },
+    {
+      "label": "Opportunities",
+      "items": [
+        {
+          "linkLabel": "COVID-19 Experiences",
+          "href": "/"
+        },
+        {
+          "linkLabel": "Past Exoeriences",
           "href": "/"
         }
       ]
     },
     {
-      "label": "Test2",
+      "label": "Community",
       "items": [
         {
-          "linkLabel": "About Gapyearly",
+          "linkLabel": "Mentorship",
           "href": "/"
         },
         {
-          "linkLabel": "Our Team",
+          "linkLabel": "Gapyearly Connect",
           "href": "/"
         }
       ]
+    },
+    {
+      "label": "Prospective",
+      "items": [
+        {
+          "linkLabel": "Facts & Figures",
+          "href": "/"
+        },
+        {
+          "linkLabel": "Parent References",
+          "href": "/"
+        },
+        {
+          "linkLabel":"Girls Who Gap",
+          "href":"/"
+        }
+        ,
+        {
+          "linkLabel":"FAQs",
+          "href":"/"
+        }
+      ]
+    },
+    {
+      "label": "Blog",
+      "items": []
     }
   ]
 }

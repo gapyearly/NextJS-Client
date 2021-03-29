@@ -29,7 +29,7 @@ export default function Home() {
         </form>
         <button>Button</button>
         {/* button variations (i.e. background color) */}
-
+        <div className={"pill"}>Pill style</div>
         <div className="cardGallery">
           <div className={"card"}>
             <img

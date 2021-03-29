@@ -1,3 +1,4 @@
+/* TODO: add shadows */
 :root {
   --berry: #4f002a;
   --seashell: #fefbf6;
@@ -20,9 +21,14 @@ body {
   color: var(--berry);
   background-color: var(--seashell);
 }
-
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 main {
   padding: 0 1rem;
+  flex: 1;
 }
 
 a {
@@ -43,7 +49,7 @@ button {
   border: none;
   border-radius: 5px;
   color: var(--seashell);
-  font-weight: 500;
+  font-weight: 600;
   padding: 0.5rem;
 }
 
@@ -56,7 +62,15 @@ input {
   border: 1px solid var(--horizon);
   border-radius: 5px;
 }
-
+.pill {
+  border-radius: 100px;
+  background-color: #f85d48;
+/* ability to pass in bg colors, same w buttons */
+  width: fit-content;
+  padding: 8px 15px;
+  color: var(--seashell);
+  font-weight: 600;
+}
 p {
   font-size: 0.9rem;
 }

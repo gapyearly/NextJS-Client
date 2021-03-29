@@ -15,7 +15,8 @@ export default function NavMenu() {
   const navFolders = sitemap.map((navFolderInfo) => {
     return <NavFolder key={navFolderInfo.label} data={navFolderInfo} />;
   });
-  return <div className={styles.navItems}>{navFolders}</div>;
+  return <div className={styles.navItems}>{navFolders} <button className={styles.signup}>Log in</button></div>;
+  //TODO: add a link to this button
 }
 
 const NavFolder = ({ data }) => {
