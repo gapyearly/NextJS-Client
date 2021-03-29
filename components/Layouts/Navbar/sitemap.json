@@ -1,9 +1,6 @@
 {
   "header": [
     {
-      "label": "Home"
-    },
-    {
       "label": "About",
       "dropdownItems": [
         {
@@ -42,9 +39,6 @@
           "href": "/"
         }
       ]
-    },
-    {
-      "label": "Blog"
     }
   ],
   "footer": [
