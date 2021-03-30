@@ -43,9 +43,11 @@ a {
 a:focus,
 a:active 
 add animations/transitions*/
-
+.noUnderline {
+  box-shadow: none;
+}
+/*for buttons/pills to take away default <a> underline*/
 button {
-  background-color: var(--aqua);
   border: none;
   border-radius: 5px;
   color: var(--seashell);
@@ -70,6 +72,12 @@ input {
   padding: 8px 15px;
   color: var(--seashell);
   font-weight: 600;
+}
+.blueBg {
+  background-color: var(--horizon);
+}
+.greeneBg {
+  background-color: var(--aqua);
 }
 p {
   font-size: 0.9rem;
