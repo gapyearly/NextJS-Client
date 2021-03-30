@@ -1,19 +1,19 @@
 .blueBg {
-    background-color: var(--horizon);
-  }
+  background-color: var(--horizon);
+}
 .greenBg {
-    background-color: var(--aqua);
-  }
+  background-color: var(--aqua);
+}
 .darkBg {
-    background-color: var(--berry);
-  }
-.redBg{
-    background-color: var(--clay);
+  background-color: var(--berry);
+}
+.redBg {
+  background-color: var(--clay);
 }
 .pill {
-    border-radius: 100px;
-    width: fit-content;
-    padding: 8px 15px;
-    color: var(--seashell);
-    font-weight: 600;
-  }
+  border-radius: 100px;
+  width: fit-content;
+  padding: 8px 15px;
+  color: var(--seashell);
+  font-weight: 600;
+}

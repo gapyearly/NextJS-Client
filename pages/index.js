@@ -4,7 +4,6 @@ import Layout from "@components/Layouts/Layout";
 import Button from "@components/Buttons/Button.js";
 import Pill from "@components/Buttons/Pill.js";
 
-
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -18,61 +17,84 @@ export default function Home() {
         ></link>
       </Head>
       <Layout>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="/">Gapyearly!</a>
-        </h1>
-        <h2>H2 Text</h2>
-        <h3>H3 Text</h3>
-        <p>Paragraph Text</p>
-        
-        <form>
-          <label>Form Label </label>
-          <input placeholder={"Search..."} type="text"></input>
-        </form>
-        <Button buttonColor="blueBg" buttonLink="gapyearly.com">Button</Button>
-        
-        <Pill pillColor="redBg" pillLink="">Pill style</Pill>
-        <div className="cardGallery">
-          <div className={"card"}>
-            <img
-              className={"cardImg"}
-              src="/images/placeholder.jpg"
-              alt=""
-            ></img>
-            <div className={"cardDesc"}>
-              <h3>Blog Title</h3>
-              <p>Author Name</p>
+        <main className={styles.main}>
+          <h1 className={styles.title}>
+            Welcome to <a href="/">Gapyearly!</a>
+          </h1>
+          <h2>H2 Text</h2>
+          <h3>H3 Text</h3>
+          <p>Paragraph Text</p>
+
+          <form>
+            <label>
+              Form Label
+              <input placeholder={"Search..."} type="text"></input>
+            </label>
+
+            <label>
+              <input type="radio" name="subscribe" value="yes"></input>Yes
+            </label>
+            <label>
+              <input type="radio" name="subscribe" value="no"></input>No
+            </label>
+
+            <label>
+              <input type="checkbox" name="permission"></input>Yes, I agree!!!
+            </label>
+
+            <Button buttonColor="blueBg" buttonLink="gapyearly.com">
+              Submit
+            </Button>
+            <br></br>
+            <Pill pillColor="blueBg" pillLink="">
+              Pill style
+            </Pill>
+            <Pill pillColor="redBg" pillLink="">
+              Pill style
+            </Pill>
+            <Pill pillColor="greenBg" pillLink="">
+              Pill style
+            </Pill>
+          </form>
+
+          <div className="cardGallery">
+            <div className={"card"}>
+              <img
+                className={"cardImg"}
+                src="/images/placeholder.jpg"
+                alt=""
+              ></img>
+              <div className={"cardDesc"}>
+                <h3>Blog Title</h3>
+                <p>Author Name</p>
+              </div>
+            </div>
+
+            <div className={"card"}>
+              <img
+                className={"cardImg"}
+                src="/images/placeholder.jpg"
+                alt=""
+              ></img>
+              <div className={"cardDesc"}>
+                <h3>Blog Title</h3>
+                <p>Author Name</p>
+              </div>
+            </div>
+
+            <div className={"card"}>
+              <img
+                className={"cardImg"}
+                src="/images/placeholder.jpg"
+                alt=""
+              ></img>
+              <div className={"cardDesc"}>
+                <h3>Blog Title</h3>
+                <p>Author Name</p>
+              </div>
             </div>
           </div>
-
-          <div className={"card"}>
-            <img
-              className={"cardImg"}
-              src="/images/placeholder.jpg"
-              alt=""
-            ></img>
-            <div className={"cardDesc"}>
-              <h3>Blog Title</h3>
-              <p>Author Name</p>
-            </div>
-          </div>
-
-          <div className={"card"}>
-            <img
-              className={"cardImg"}
-              src="/images/placeholder.jpg"
-              alt=""
-            ></img>
-            <div className={"cardDesc"}>
-              <h3>Blog Title</h3>
-              <p>Author Name</p>
-            </div>
-          </div>
-        </div>
-
-
-      </main>
+        </main>
       </Layout>
     </div>
   );
