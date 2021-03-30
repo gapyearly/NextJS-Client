@@ -2,6 +2,8 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Layout from "@components/Layouts/Layout";
 import Button from "@components/Buttons/Button.js";
+import Pill from "@components/Buttons/Pill.js";
+
 
 export default function Home() {
   return (
@@ -30,7 +32,7 @@ export default function Home() {
         </form>
         <Button buttonColor="blueBg" buttonLink="gapyearly.com">Button</Button>
         
-        <div className={"pill"}>Pill style</div>
+        <Pill pillColor="redBg" pillLink="">Pill style</Pill>
         <div className="cardGallery">
           <div className={"card"}>
             <img
