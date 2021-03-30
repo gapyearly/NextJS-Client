@@ -54,13 +54,12 @@
           "href": "/"
         },
         {
-          "linkLabel":"Our Sponsors",
-          "href":"/"
-        }
-        ,
+          "linkLabel": "Our Sponsors",
+          "href": "/"
+        },
         {
-          "linkLabel":"Contact",
-          "href":"/"
+          "linkLabel": "Contact",
+          "href": "/"
         }
       ]
     },
@@ -102,13 +101,12 @@
           "href": "/"
         },
         {
-          "linkLabel":"Girls Who Gap",
-          "href":"/"
-        }
-        ,
+          "linkLabel": "Girls Who Gap",
+          "href": "/"
+        },
         {
-          "linkLabel":"FAQs",
-          "href":"/"
+          "linkLabel": "FAQs",
+          "href": "/"
         }
       ]
     },

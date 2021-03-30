@@ -25,7 +25,8 @@ const FooterColumn = ({ title, values }) => {
   // Subcontent under the label
   const content = values.map((value) => {
     return (
-      <li key={value.linkLabel} className={styles.footer_column_link}>{value.linkLabel}
+      <li key={value.linkLabel} className={styles.footer_column_link}>
+        {value.linkLabel}
       </li>
     );
   });

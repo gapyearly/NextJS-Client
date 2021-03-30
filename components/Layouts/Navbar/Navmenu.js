@@ -1,6 +1,6 @@
 import styles from "./Navbar.module.css";
 import Link from "next/link";
-import Button from "@components/Buttons/Button.js"
+import Button from "@components/Buttons/Button.js";
 
 const sitemap = require("./sitemap.json").header;
 /**
@@ -17,7 +17,10 @@ export default function NavMenu() {
   });
   return (
     <div className={styles.navItems}>
-      {navFolders} <Button buttonColor="greenBg" buttonLink="/">Log in</Button>
+      {navFolders}{" "}
+      <Button buttonColor="greenBg" buttonLink="/">
+        Log in
+      </Button>
     </div>
   );
   // TODO: add a link to this button
