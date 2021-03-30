@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Layout from "@components/Layouts/Layout";
+import Button from "@components/Buttons/Button.js";
 
 export default function Home() {
   return (
@@ -22,13 +23,13 @@ export default function Home() {
         <h2>H2 Text</h2>
         <h3>H3 Text</h3>
         <p>Paragraph Text</p>
-
+        
         <form>
           <label>Form Label </label>
           <input placeholder={"Search..."} type="text"></input>
         </form>
-        <button>Button</button>
-        {/* button variations (i.e. background color) */}
+        <Button buttonColor="blueBg" buttonLink="gapyearly.com">Button</Button>
+        
         <div className={"pill"}>Pill style</div>
         <div className="cardGallery">
           <div className={"card"}>
