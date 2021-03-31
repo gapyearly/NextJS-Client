@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import debounce from "@util/debounce";
 import Navfolder from "./Navfolder";
-import Link from "@components/Link";
+import NavLink from "./NavLink";
 
 // How far the user has to scroll in px for nav to reappear
 const SCROLL_LENGTH = 50;
@@ -54,21 +54,21 @@ export default function Navbar() {
       <style jsx>{`
         top: ${visible ? "0" : `-${navbarHeight}`};
       `}</style>
-      <Link href="/">
+      <NavLink href="/">
         <img
           src="/images/logo.png"
           layout="fill"
           alt="Gapyearly Logo"
           className={styles.logo}
         />
-      </Link>
+      </NavLink>
       <div className={styles.navItems}>
         <Navfolder title="About" href="">
-          <Link href="/">About Gapyearly</Link>
-          <Link href="/">Our Team</Link>
-          <Link href="/">Join the Team</Link>
-          <Link href="/">Our Sponsors</Link>
-          <Link href="/">Contact</Link>
+          <NavLink href="/">About Gapyearly</NavLink>
+          <NavLink href="/">Our Team</NavLink>
+          <NavLink href="/">Join the Team</NavLink>
+          <NavLink href="/">Our Sponsors</NavLink>
+          <NavLink href="/">Contact</NavLink>
         </Navfolder>
         <Navfolder title="Opportunities" href="">
           e
@@ -77,7 +77,7 @@ export default function Navbar() {
           e
         </Navfolder>
         <Navfolder title="Prospective" href="">
-          <Link href="/facts-and-figures">Facts & Figures</Link>
+          <NavLink href="/facts-and-figures">Facts & Figures</NavLink>
         </Navfolder>
       </div>
     </nav>
