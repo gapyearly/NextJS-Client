@@ -6,7 +6,7 @@ import LinkCard from "./LinkCard";
 class LinkGallery extends React.Component {
   render() {
     return (
-      <ResponsiveMasonry columnsCountBreakPoints={{ 250: 1, 600: 2, 750: 3 }}>
+      <ResponsiveMasonry columnsCountBreakPoints={{ 400: 1, 800: 2, 1000: 3 }}>
         <Masonry>{this.props.children}</Masonry>
       </ResponsiveMasonry>
     );

@@ -17,7 +17,7 @@ export default function LinkCard({ source, title, desc, href }) {
       <h2>{title}</h2>
       <p>{desc}</p>
       <Link href={href}>
-        <a className="blueUnderline"><FaExternalLinkAlt></FaExternalLinkAlt> Read more...</a>
+        <a className="blueUnderline"><FaExternalLinkAlt size="0.8em"></FaExternalLinkAlt> Read more...</a>
       </Link>
     </div>
   );

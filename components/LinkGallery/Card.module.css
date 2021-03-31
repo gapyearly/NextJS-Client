@@ -1,7 +1,7 @@
 .linkCard {
     background-color: var(--berry);
     color: var(--seashell);
-    padding: 0.7em;
+    padding: 0.9em;
     border-radius: 7px;
     margin: 0 10px 20px;
 }
@@ -15,4 +15,7 @@
 .source {
     color: var(--sunlight);
     font-weight: 500;
+}
+.linkIcon {
+    font-size: 20px;
 }

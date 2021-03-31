@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Layout from "@components/Layouts/Layout";
+import PageTitle from "@components/Header";
 import Button from "@components/Buttons/Button.js";
 import Pill from "@components/Buttons/Pill.js";
 import LinkGallery from "@components/LinkGallery";
@@ -12,11 +13,14 @@ export default function Home() {
       <Head>
         <title>Gapyearly</title>
       </Head>
+
+      <header>  
+        <PageTitle>
+            Welcome to Gapyearly!!!!
+        </PageTitle>
+      </header>
+
       <Layout>
-        <main className={styles.main}>
-          <h1 className={styles.title}>
-            Welcome to <a href="/">Gapyearly!</a>
-          </h1>
           <h2>H2 Text</h2>
           <h3>H3 Text</h3>
           <p>Paragraph Text</p>
@@ -91,7 +95,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </main>
       </Layout>
     </div>
   );
