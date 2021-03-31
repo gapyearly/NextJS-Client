@@ -42,7 +42,7 @@ main {
   display: block;
   padding: 0.7rem;
   width: 100vw;
-  margin: var(--navbarHeight) 0 0;
+  margin: var(--navbarHeight) 0 1.5rem;
 }
 a {
   color: inherit;

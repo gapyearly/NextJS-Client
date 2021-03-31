@@ -35,7 +35,7 @@ export default function Footer() {
 
 const FooterColumn = ({ title, values, href }) => {
   // Subcontent under the label
-
+  
   if (href) {
     title = <Link href={href}><a className="noUnderline">{title}</a></Link>
   } 

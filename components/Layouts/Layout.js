@@ -7,13 +7,7 @@ export default function Layout({ children }) {
       <Navbar />
       <main>{children}</main>
       <Footer />
-      <style jsx>{`
-        main {
-          margin-top: var(--navbarHeight);
-          margin-bottom: 20px;
-          height: 1000px;
-        }
-      `}</style>
+     
     </>
   );
 }

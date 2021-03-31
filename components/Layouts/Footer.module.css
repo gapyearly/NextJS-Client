@@ -5,6 +5,7 @@
   flex-direction: column;
   color: var(--seashell);
   padding: 1em 3em 0;
+  margin-top: 2em;
 }
 .footer_column {
   list-style-type: none;
