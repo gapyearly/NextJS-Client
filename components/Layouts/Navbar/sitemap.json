@@ -1,65 +1,27 @@
 {
-  "header": [
-    {
-      "label": "About",
-      "dropdownItems": [
-        {
-          "linkLabel": "About Gapyearly",
-          "href": "/"
-        },
-        {
-          "linkLabel": "Our Team",
-          "href": "/"
-        }
-      ]
-    },
-    {
-      "label": "Opportunities",
-      "dropdownItems": [
-        {
-          "linkLabel": "About Gapyearly",
-          "href": "/"
-        }
-      ]
-    },
-    {
-      "label": "Community",
-      "dropdownItems": [
-        {
-          "linkLabel": "About Gapyearly",
-          "href": "/"
-        }
-      ]
-    },
-    {
-      "label": "Prospective",
-      "dropdownItems": [
-        {
-          "linkLabel": "About Gapyearly",
-          "href": "/"
-        }
-      ]
-    }
-  ],
   "footer": [
     {
       "label": "About",
       "items": [
         {
           "linkLabel": "About Gapyearly",
-          "href": "/"
+          "href": "/about-gapyearly"
         },
         {
           "linkLabel": "Our Team",
-          "href": "/"
+          "href": "/our-team"
+        },
+        {
+          "linkLabel": "Join the Team",
+          "href": "/join-the-team"
         },
         {
           "linkLabel": "Our Sponsors",
-          "href": "/"
+          "href": "/our-sponsors"
         },
         {
           "linkLabel": "Contact",
-          "href": "/"
+          "href": "/contact"
         }
       ]
     },
@@ -68,11 +30,11 @@
       "items": [
         {
           "linkLabel": "COVID-19 Experiences",
-          "href": "/"
+          "href": "/covid-experiences"
         },
         {
-          "linkLabel": "Past Exoeriences",
-          "href": "/"
+          "linkLabel": "Past Experiences",
+          "href": "/past-experiences"
         }
       ]
     },
@@ -81,11 +43,11 @@
       "items": [
         {
           "linkLabel": "Mentorship",
-          "href": "/"
+          "href": "/mentorship"
         },
         {
           "linkLabel": "Gapyearly Connect",
-          "href": "/"
+          "href": "/gapyearly-connect"
         }
       ]
     },
@@ -98,20 +60,21 @@
         },
         {
           "linkLabel": "Parent References",
-          "href": "/"
+          "href": "/parent-references"
         },
         {
           "linkLabel": "Girls Who Gap",
-          "href": "/"
+          "href": "/girls-who-gap"
         },
         {
-          "linkLabel": "FAQs",
-          "href": "/"
+          "linkLabel": "FAQ",
+          "href": "/faq"
         }
       ]
     },
     {
       "label": "Blog",
+      "href": "/blog",
       "items": []
     }
   ]

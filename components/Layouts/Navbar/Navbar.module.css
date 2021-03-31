@@ -15,9 +15,13 @@
 .navItems {
   margin: 1rem 3rem 0 0;
 }
-.navLink {
-  margin: 0 20px;
+.navItems > a, .dropdown, .navItems Button {
+  /* navTab is a workaround for giving the dropdown-free tabs styling */
+  margin: 0 0 0 1.5rem ;
   font-weight: 500;
+}
+.logInBtn{
+  margin-left: 1.5rem;
 }
 .dropdown {
   position: relative;
@@ -49,6 +53,7 @@
   /* margin-top: 0.7rem;
   TODO: add triangle notch */
 }
+
 /* .dropdownContent a:hover {
   box-shadow: 0 -0.4em 0 inset var(--horizon);
   FIXME: this is ugly lol
@@ -62,8 +67,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: calc(var(--navbarHeight) * 0.65);
   z-index: 1001;
+  height: calc(var(--navbarHeight)*0.6);
   /*TODO: Gapyearly Logo Animation is delayed*/
   transition: top 0.3s;
 }

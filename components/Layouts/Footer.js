@@ -4,6 +4,7 @@ import {FaInstagram} from "react-icons/fa";
 import {FaFacebookF} from "react-icons/fa";
 
 
+
 // Footer sitemap and neccesary links
 const sitemap = require("./Navbar/sitemap.json").footer;
 
@@ -13,6 +14,7 @@ export default function Footer() {
     return (
       <FooterColumn
         title={subject.label}
+        href={subject.href}
         values={subject.items}
         key={subject.label}
       />
@@ -31,12 +33,16 @@ export default function Footer() {
   );
 }
 
-const FooterColumn = ({ title, values }) => {
+const FooterColumn = ({ title, values, href }) => {
   // Subcontent under the label
+
+  if (href) {
+    title = <Link href={href}><a className="noUnderline">{title}</a></Link>
+  } 
   const content = values.map((value) => {
     return (
       <li key={value.linkLabel} className={styles.footer_column_link}>
-        {value.linkLabel}
+        <Link href={value.href}><a className="noUnderline">{value.linkLabel}</a></Link>
       </li>
     );
   });

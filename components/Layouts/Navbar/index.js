@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
+import Button from "@components/Buttons/Button"
 import debounce from "@util/debounce";
 import Navfolder from "./Navfolder";
 import NavLink from "./NavLink";
+import Link from "next/link";
 
 // How far the user has to scroll in px for nav to reappear
 const SCROLL_LENGTH = 50;
@@ -54,31 +56,40 @@ export default function Navbar() {
       <style jsx>{`
         top: ${visible ? "0" : `-${navbarHeight}`};
       `}</style>
-      <NavLink href="/">
+      <Link href="/">
         <img
           src="/images/logo.png"
           layout="fill"
           alt="Gapyearly Logo"
           className={styles.logo}
         />
-      </NavLink>
+      </Link>
       <div className={styles.navItems}>
+        <NavLink href="/">Home</NavLink>
         <Navfolder title="About" href="">
-          <NavLink href="/">About Gapyearly</NavLink>
-          <NavLink href="/">Our Team</NavLink>
-          <NavLink href="/">Join the Team</NavLink>
-          <NavLink href="/">Our Sponsors</NavLink>
-          <NavLink href="/">Contact</NavLink>
+          <NavLink href="/about-gapyearly">About Gapyearly</NavLink>
+          <NavLink href="/our-team">Our Team</NavLink>
+          <NavLink href="/join-the-team">Join the Team</NavLink>
+          <NavLink href="/our-sponsors">Our Sponsors</NavLink>
+          <NavLink href="/contact">Contact</NavLink>
         </Navfolder>
         <Navfolder title="Opportunities" href="">
-          e
+          <NavLink href="/covid-experiences">COVID-19 Experiences</NavLink>
+          <NavLink href="/past-experiences">Past Experiences</NavLink>
         </Navfolder>
         <Navfolder title="Community" href="">
-          e
+          <NavLink href="/mentorship">Mentorship</NavLink>
+          <NavLink href="/gapyearly-connect">Gapyearly Connect</NavLink>
         </Navfolder>
         <Navfolder title="Prospective" href="">
           <NavLink href="/facts-and-figures">Facts & Figures</NavLink>
+          <NavLink href="/parent-references">Parent References</NavLink>
+          <NavLink href="/girls-who-gap">Girls Who Gap</NavLink>
+          <NavLink href="/faq">FAQ</NavLink>
         </Navfolder>
+        <NavLink href="/blog">Blog</NavLink>
+        <Button color="greenBg" href="/log-in">Log in</Button>
+
       </div>
     </nav>
   );
