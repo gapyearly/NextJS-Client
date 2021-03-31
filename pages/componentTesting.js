@@ -3,6 +3,7 @@
  *
  */
 import SignupForm from "@components/Forms/SignupForm";
+import Modal from "@components/Modal";
 
 import redirect from "nextjs-redirect";
 export default function Home() {
@@ -11,5 +12,5 @@ export default function Home() {
     return <Redirect></Redirect>;
   }
 
-  return <SignupForm></SignupForm>;
+  return <Modal />;
 }
