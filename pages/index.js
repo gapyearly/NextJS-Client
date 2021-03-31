@@ -10,12 +10,6 @@ export default function Home() {
     <div className={styles.container}>
       <Head>
         <title>Gapyearly</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        ></link>
       </Head>
       <Layout>
         <main className={styles.main}>
@@ -42,18 +36,18 @@ export default function Home() {
             <label>
               <input type="checkbox" name="permission"></input>Yes, I agree!!!
             </label>
-    
-            <Button color="blueBg" link="gapyearly.com">
+
+            <Button color="blueBg" href="gapyearly.com">
               Submit
             </Button>
             <br></br>
-            <Pill color="blueBg" link="">
+            <Pill color="blueBg" href="">
               Pill style
             </Pill>
-            <Pill color="redBg" link="">
+            <Pill color="redBg" href="">
               Pill style
             </Pill>
-            <Pill color="greenBg" link="">
+            <Pill color="greenBg" href="">
               Pill style
             </Pill>
           </form>
