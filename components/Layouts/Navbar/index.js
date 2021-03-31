@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import styles from "./Navbar.module.css";
 import debounce from "@util/debounce";
 import Navfolder from "./Navfolder";
-import Navlink from "./Navlink";
+import Link from "@components/Link";
 
 // How far the user has to scroll in px for nav to reappear
 const SCROLL_LENGTH = 50;
@@ -66,11 +65,11 @@ export default function Navbar() {
       </Link>
       <div className={styles.navItems}>
         <Navfolder title="About" href="">
-          <Navlink href="/">About Gapyearly</Navlink>
-          <Navlink href="/">Our Team</Navlink>
-          <Navlink href="/">Join the Team</Navlink>
-          <Navlink href="/">Our Sponsors</Navlink>
-          <Navlink href="/">Contact</Navlink>
+          <Link href="/">About Gapyearly</Link>
+          <Link href="/">Our Team</Link>
+          <Link href="/">Join the Team</Link>
+          <Link href="/">Our Sponsors</Link>
+          <Link href="/">Contact</Link>
         </Navfolder>
         <Navfolder title="Opportunities" href="">
           e
