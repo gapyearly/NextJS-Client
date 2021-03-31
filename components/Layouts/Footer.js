@@ -1,5 +1,9 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import {FaInstagram} from "react-icons/fa";
+import {FaFacebookF} from "react-icons/fa";
+
+
 // Footer sitemap and neccesary links
 const sitemap = require("./Navbar/sitemap.json").footer;
 
@@ -16,7 +20,13 @@ export default function Footer() {
   });
   return (
     <footer id="footer" className={styles.footer}>
-      {footercolumns}
+      <div className={styles.sitemap}>
+        {footercolumns}
+      </div>
+      <div className={styles.socialMediaIconWrapper}>
+        <FaInstagram className="socialMediaIcon"></FaInstagram>
+        <FaFacebookF className="socialMediaIcon"></FaFacebookF>
+      </div>
     </footer>
   );
 }

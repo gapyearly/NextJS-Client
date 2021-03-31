@@ -3,7 +3,8 @@ import styles from "../styles/Home.module.css";
 import Layout from "@components/Layouts/Layout";
 import Button from "@components/Buttons/Button.js";
 import Pill from "@components/Buttons/Pill.js";
-import LinkGallery from "@components/LinkGallery/index.js";
+import LinkGallery from "@components/LinkGallery";
+import {FaInstagram} from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
           <h2>H2 Text</h2>
           <h3>H3 Text</h3>
           <p>Paragraph Text</p>
+          <FaInstagram></FaInstagram>
           <LinkGallery />
           <form>
             <label>
