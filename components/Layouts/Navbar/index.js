@@ -67,25 +67,25 @@ export default function Navbar() {
       <div className={styles.navItems}>
         <NavLink href="/">Home</NavLink>
         <Navfolder title="About" href="">
-          <NavLink href="/about-gapyearly">About Gapyearly</NavLink>
-          <NavLink href="/our-team">Our Team</NavLink>
-          <NavLink href="/join-the-team">Join the Team</NavLink>
-          <NavLink href="/our-sponsors">Our Sponsors</NavLink>
+          <NavLink href="/about">About Gapyearly</NavLink>
+          <NavLink href="/about/our-team">Our Team</NavLink>
+          <NavLink href="/about/join-the-team">Join the Team</NavLink>
+          <NavLink href="/about/our-sponsors">Our Sponsors</NavLink>
           <NavLink href="/contact">Contact</NavLink>
         </Navfolder>
         <Navfolder title="Opportunities" href="">
-          <NavLink href="/covid-experiences">COVID-19 Experiences</NavLink>
-          <NavLink href="/past-experiences">Past Experiences</NavLink>
+          <NavLink href="/opportunities/covid-experiences">COVID-19 Experiences</NavLink>
+          <NavLink href="/opportunities/past-experiences">Past Experiences</NavLink>
         </Navfolder>
         <Navfolder title="Community" href="">
-          <NavLink href="/mentorship">Mentorship</NavLink>
-          <NavLink href="/gapyearly-connect">Gapyearly Connect</NavLink>
+          <NavLink href="/community/mentorship">Mentorship</NavLink>
+          <NavLink href="/community/connect">Gapyearly Connect</NavLink>
         </Navfolder>
         <Navfolder title="Prospective" href="">
-          <NavLink href="/facts-and-figures">Facts & Figures</NavLink>
-          <NavLink href="/parent-references">Parent References</NavLink>
-          <NavLink href="/girls-who-gap">Girls Who Gap</NavLink>
-          <NavLink href="/faq">FAQ</NavLink>
+          <NavLink href="/prospective/facts-and-figures">Facts & Figures</NavLink>
+          <NavLink href="/prospective/parent-references">Parent References</NavLink>
+          <NavLink href="/prospective/girls-who-gap">Girls Who Gap</NavLink>
+          <NavLink href="/prospective/faq">FAQ</NavLink>
         </Navfolder>
         <NavLink href="/blog">Blog</NavLink>
         <Button color="greenBg" href="/log-in">Log in</Button>

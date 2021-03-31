@@ -17,7 +17,7 @@ html,
 body {
   margin: 0;
   font-family: "Quicksand", sans-serif;
-  font-size: calc(1em + 0.2vw);
+  font-size: calc(0.9em + 0.2vw);
   color: var(--berry);
   background-color: var(--seashell);
 }
