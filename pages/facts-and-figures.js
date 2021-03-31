@@ -2,7 +2,6 @@ import Layout from "@components/Layouts/Layout";
 import strapi from "@api/strapi";
 import LinkGallery from "@components/LinkGallery";
 import LinkCard from "@components/LinkGallery/LinkCard";
-import Link from "next/link";
 import PageTitle from "@components/Header";
 export default function FactsAndFigures({ data }) {
   const cards = data.factCard.map(
@@ -18,11 +17,12 @@ export default function FactsAndFigures({ data }) {
       );
     }
   );
-  return (<>
-    <PageTitle>Facts and Figures</PageTitle>
-    <Layout>
-      <LinkGallery>{cards}</LinkGallery>
-    </Layout>
+  return (
+    <>
+      <PageTitle>Facts and Figures</PageTitle>
+      <Layout>
+        <LinkGallery>{cards}</LinkGallery>
+      </Layout>
     </>
   );
 }

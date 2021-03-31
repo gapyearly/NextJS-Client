@@ -17,6 +17,7 @@ const Modal = ({ show = true, onClose, children, title }) => {
 
   const handleCloseClick = (e) => {
     e.preventDefault();
+    // If the mouse click contains the modal, don't close the modal. Except when the anchor is clicked.
     if (ref.current.contains(e.target) && e.target.localName !== "a") return;
     onClose();
   };

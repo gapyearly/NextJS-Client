@@ -2,6 +2,7 @@
  *
  *
  */
+import Layout from "@components/Layouts/Layout";
 import SignupForm from "@components/Forms/SignupForm";
 import Modal from "@components/Modal";
 
@@ -12,5 +13,9 @@ export default function Home() {
     return <Redirect></Redirect>;
   }
 
-  return <Modal />;
+  return (
+    <Layout>
+      <Modal></Modal>
+    </Layout>
+  );
 }
