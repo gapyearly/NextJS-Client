@@ -3,6 +3,7 @@ import styles from "../styles/Home.module.css";
 import Layout from "@components/Layouts/Layout";
 import Button from "@components/Buttons/Button.js";
 import Pill from "@components/Buttons/Pill.js";
+import LinkGallery from "@components/LinkGallery.js";
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
           <h2>H2 Text</h2>
           <h3>H3 Text</h3>
           <p>Paragraph Text</p>
-
+          <LinkGallery />
           <form>
             <label>
               Form Label
@@ -41,18 +42,18 @@ export default function Home() {
             <label>
               <input type="checkbox" name="permission"></input>Yes, I agree!!!
             </label>
-
-            <Button buttonColor="blueBg" buttonLink="gapyearly.com">
+    
+            <Button color="blueBg" link="gapyearly.com">
               Submit
             </Button>
             <br></br>
-            <Pill pillColor="blueBg" pillLink="">
+            <Pill color="blueBg" link="">
               Pill style
             </Pill>
-            <Pill pillColor="redBg" pillLink="">
+            <Pill color="redBg" link="">
               Pill style
             </Pill>
-            <Pill pillColor="greenBg" pillLink="">
+            <Pill color="greenBg" link="">
               Pill style
             </Pill>
           </form>

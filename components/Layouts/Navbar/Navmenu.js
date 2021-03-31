@@ -18,7 +18,7 @@ export default function NavMenu() {
   return (
     <div className={styles.navItems}>
       {navFolders}{" "}
-      <Button buttonColor="greenBg" buttonLink="/">
+      <Button color="greenBg" link="/">
         Log in
       </Button>
     </div>
