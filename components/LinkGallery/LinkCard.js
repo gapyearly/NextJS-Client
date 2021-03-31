@@ -1,6 +1,6 @@
 import styles from "./Card.module.css";
 
-import {FaExternalLinkAlt} from "react-icons/fa";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 import Link from "next/link";
 /**
@@ -17,7 +17,9 @@ export default function LinkCard({ source, title, desc, href }) {
       <h2>{title}</h2>
       <p>{desc}</p>
       <Link href={href}>
-        <a className="blueUnderline"><FaExternalLinkAlt size="0.8em"></FaExternalLinkAlt> Read more...</a>
+        <a className="blueUnderline">
+          <FaExternalLinkAlt size="15"></FaExternalLinkAlt> Read more...
+        </a>
       </Link>
     </div>
   );

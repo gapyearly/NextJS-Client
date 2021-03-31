@@ -22,7 +22,6 @@ export default function Navbar() {
    *  */
   const checkScroll = () => {
     const currentScrollPos = window.pageYOffset;
-    console.log(prevScrollPos);
     // Checks if the previous scroll pos is greater than the current pos, which signifys a scroll up.
     // The second line checks if they scrolled a significant ammount
     // Third line makes sure visibility is constant at the top of page.

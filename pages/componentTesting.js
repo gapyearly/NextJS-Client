@@ -2,7 +2,7 @@
  *
  *
  */
-import Layout from "@components/Layouts/Layout";
+import SignupForm from "@components/Forms/SignupForm";
 
 import redirect from "nextjs-redirect";
 export default function Home() {
@@ -11,9 +11,5 @@ export default function Home() {
     return <Redirect></Redirect>;
   }
 
-  return (
-    <Layout>
-      <p>This is some content</p>
-    </Layout>
-  );
+  return <SignupForm></SignupForm>;
 }

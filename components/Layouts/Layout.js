@@ -11,6 +11,7 @@ export default function Layout({ children }) {
         main {
           margin-top: var(--navbarHeight);
           margin-bottom: 20px;
+          height: 1000px;
         }
       `}</style>
     </>
