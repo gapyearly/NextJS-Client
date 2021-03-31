@@ -40,9 +40,9 @@ main {
   text-align: center;
   color: var(--seashell);
   display: block;
-  padding: 5px;
+  padding: 0.7rem;
   width: 100vw;
-  margin:0;
+  margin: var(--navbarHeight) 0 0;
 }
 a {
   color: inherit;
