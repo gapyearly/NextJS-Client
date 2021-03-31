@@ -40,6 +40,7 @@ To learn more about Next.js and helper modules, take a look at the following res
 -   Add jsdoc comments
 -   Rainbow Brackets
 -   TODO Extension Tracker
+-   SVG Viewer
 
 ## Startup Guide
 

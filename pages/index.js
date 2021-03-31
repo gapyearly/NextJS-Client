@@ -3,7 +3,7 @@ import styles from "../styles/Home.module.css";
 import Layout from "@components/Layouts/Layout";
 import Button from "@components/Buttons/Button.js";
 import Pill from "@components/Buttons/Pill.js";
-import LinkGallery from "@components/LinkGallery.js";
+import LinkGallery from "@components/LinkGallery/index.js";
 
 export default function Home() {
   return (
