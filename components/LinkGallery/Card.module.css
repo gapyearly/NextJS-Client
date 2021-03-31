@@ -1,0 +1,18 @@
+.linkCard {
+    background-color: var(--berry);
+    color: var(--seashell);
+    padding: 0.7em;
+    border-radius: 7px;
+    margin: 0 10px 20px;
+}
+.linkCard p {
+    margin:0;
+}
+.linkCard h2 {
+    margin:3px 0 10px;
+    font-size: 1.3rem;
+}
+.source {
+    color: var(--sunlight);
+    font-weight: 500;
+}

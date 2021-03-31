@@ -78,7 +78,7 @@ export default function Navbar() {
           e
         </Navfolder>
         <Navfolder title="Prospective" href="">
-          e
+          <Link href="/facts-and-figures">Facts & Figures</Link>
         </Navfolder>
       </div>
     </nav>
