@@ -46,14 +46,4 @@ const Modal = ({ show = true, onClose, children, title }) => {
   }
 };
 
-// const StyledModalBody = styled.div`
-//   padding-top: 10px;
-// `;
-
-// const StyledModalHeader = styled.div`
-//   display: flex;
-//   justify-content: flex-end;
-//   font-size: 25px;
-// `;
-
 export default Modal;

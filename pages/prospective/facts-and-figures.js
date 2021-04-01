@@ -1,7 +1,7 @@
 import Layout from "@components/Layouts/Layout";
 import strapi from "@api/strapi";
-import LinkGallery from "@components/LinkGallery";
-import LinkCard from "@components/LinkGallery/LinkCard";
+import LinkGallery from "@components/MasonryGallery";
+import LinkCard from "@components/MasonryGallery/LinkCard";
 import PageTitle from "@components/Header";
 export default function FactsAndFigures({ data }) {
   const cards = data.factCard.map(

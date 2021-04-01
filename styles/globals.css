@@ -21,16 +21,18 @@ body {
   color: var(--berry);
   background-color: var(--seashell);
 }
+
 body {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--navbarHeight));
   display: flex;
   flex-direction: column;
 }
 main {
+  min-height: 100vh;
   margin: 0 7rem;
   flex: 1;
 }
-@media (max-width:800px) {
+@media (max-width: 800px) {
   main {
     margin: 0 4rem;
   }
@@ -54,7 +56,6 @@ a {
 }
 .blueUnderline {
   box-shadow: 0 -0.4em 0 inset var(--horizon);
-
 }
 /* a:hover,
 a:focus,
@@ -88,10 +89,9 @@ label {
   display: block;
   /* all form elements are inline otherwise */
   font-size: 0.9rem;
-  
 }
 
-h1{
+h1 {
   text-align: center;
 }
 p {

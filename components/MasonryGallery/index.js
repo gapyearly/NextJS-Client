@@ -1,6 +1,5 @@
 import React from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import LinkCard from "./LinkCard";
 
 // The number of columns change by resizing the window
 class LinkGallery extends React.Component {
