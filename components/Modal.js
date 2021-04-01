@@ -30,6 +30,7 @@ const Modal = ({ show = true, onClose, children, title }) => {
           <a href="#" onClick={handleCloseClick}>
             x
           </a>
+          <h2>{title}</h2>
           {children}
         </div>
       </div>
