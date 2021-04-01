@@ -13,14 +13,17 @@ import Link from "next/link";
  * @param  {string} desc
  * @param  {string} href
  */
-export default function LinkCard(props) {
-  const { image, title, desc, author } = props;
+export default function LinkCard({ data }) {
+  const { title, description, slug, image, author } = data;
+  const fullName = `${author.personalInfo.firstName} ${author.personalInfo.lastName}`;
+
   return (
     <div className={styles.linkCard}>
-      <p className={styles.source}>{source.toUpperCase()}</p>
+      <img src={image.url} alt={image.alt} />
       <h2>{title}</h2>
-      <p>{desc}</p>
-      <Link href={href}>
+      <p>By: {fullName}</p>
+      <p>{description}</p>
+      <Link href={`/blog/${slug}`}>
         <a className="blueUnderline">
           <FaExternalLinkAlt size="15"></FaExternalLinkAlt> Read more...
         </a>
