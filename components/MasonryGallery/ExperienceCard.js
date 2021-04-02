@@ -26,6 +26,7 @@ export default function ExperienceCard({ data, onClick }) {
       onClick={handleClick}
       role="button"
       tabIndex={0}
+      onKeyDown
     >
       <img src={cover.url} alt={cover.alt} />
       <h2>{title}</h2>
