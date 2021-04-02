@@ -14,7 +14,7 @@ import Link from "next/link";
  * @param  {string} href
  */
 export default function BlogCard({ data, align }) {
-  const { title, description, slug, image, author } = data;
+  const { title, description, slug, image, author, profile } = data;
   const fullName = `${author.personalInfo.firstName} ${author.personalInfo.lastName}`;
   // TODO Fix up structure and styling
   const BlogCardInfo = ({ className }) => {
@@ -23,7 +23,9 @@ export default function BlogCard({ data, align }) {
         <Link href={`/blog/${slug}`}>
           <h2 className={className}>{title}</h2>
         </Link>
-        <p className={className}>By: {fullName}</p>
+        <Link href={`/${profile}`}>
+          <a className={className}>By: {fullName}</a>
+        </Link>
         <p className={className}>{description}</p>
       </div>
     );

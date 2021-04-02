@@ -23,3 +23,6 @@
 .margin main {
   margin: 0 auto;
 }
+.blogText a {
+  display: block;
+}
