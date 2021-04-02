@@ -7,13 +7,30 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   z-index: 2000;
+  backdrop-filter: blur(3px);
 }
 .modal {
   background: seashell;
-  width: 500px;
-  height: 600px;
-  border-radius: 15px;
-  padding: 15px;
+  width:fit-content;
+  max-width:65vw;
+  height:max-content;
+  border-radius: 7px;
+  padding: 2em;
+}
+.modal h2 {
+  margin-top: 0;
+}
+.close {
+  color: var(--clay);
+  font-size: 1.3rem;
+  font-weight: 800;
+  box-shadow: none;
+  display: inline;
+  margin: 0 0 0 1em;
+}
+.header {
+   display: flex;
+  justify-content: space-between;
 }

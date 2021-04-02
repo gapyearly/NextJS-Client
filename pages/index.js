@@ -4,6 +4,7 @@ import Layout from "@components/Layouts/Layout";
 import PageTitle from "@components/Header";
 import Button from "@components/Buttons/Button.js";
 import Pill from "@components/Buttons/Pill.js";
+import Modal from "@components/Modal.js";
 import LinkGallery from "@components/MasonryGallery";
 import { FaInstagram } from "react-icons/fa";
 

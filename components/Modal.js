@@ -27,12 +27,12 @@ const Modal = ({ show = true, onClose, children, title }) => {
     <div className={styles.modalOverlay}>
       <div className={styles.modal} ref={ref}>
         <div className={styles.header}>
-          <a href="#" onClick={handleCloseClick}>
-            x
-          </a>
           <h2>{title}</h2>
-          {children}
+          <a className={styles.close} href="#" onClick={handleCloseClick}>
+          &#10005;
+          </a>
         </div>
+        {children}
       </div>
     </div>
   ) : null;
