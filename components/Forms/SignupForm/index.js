@@ -1,6 +1,5 @@
 import { useForm, useStep } from "react-hooks-helper";
 import styles from "./SignupForm.module.css";
-import Image from "next/image";
 
 export default function SignupForm() {
   const [formData, setForm] = useForm(defaultData);
@@ -8,11 +7,9 @@ export default function SignupForm() {
   const { id } = step;
   return (
     <main className={styles.background}>
-      <Image
+      <img
         src="/images/greenblue-valleys.svg"
-        layout="fill"
-        objectFit="contain"
-        objectPosition="bottom center"
+        alt="Background"
         className={styles.backgroundImage}
       />
     </main>
