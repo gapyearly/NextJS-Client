@@ -10,7 +10,6 @@
 .footer_column {
   list-style-type: none;
   line-height: 2em;
-
 }
 .footer_column_title {
   font-weight: 500;
@@ -22,11 +21,10 @@
   line-height: 1.5;
 }
 .sitemap {
-  display:flex;
+  display: flex;
   flex-flow: row wrap;
-
 }
 .socialMediaIconWrapper {
-  display:flex;
+  display: flex;
   justify-content: flex-end;
 }

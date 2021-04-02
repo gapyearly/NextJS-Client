@@ -15,12 +15,14 @@
 .navItems {
   margin: 1rem 3rem 0 0;
 }
-.navItems > a, .dropdown, .navItems Button {
+.navItems > a,
+.dropdown,
+.navItems Button {
   /* navTab is a workaround for giving the dropdown-free tabs styling */
-  margin: 0 0 0 1.5rem ;
+  margin: 0 0 0 1.5rem;
   font-weight: 500;
 }
-.logInBtn{
+.logInBtn {
   margin-left: 1.5rem;
 }
 .dropdown {
@@ -39,9 +41,8 @@
   border-radius: 5px;
 }
 
-.dropdownContent a:not(:last-child)  {
+.dropdownContent a:not(:last-child) {
   margin-bottom: 0.5rem;
-
 }
 .dropdownContent a {
   box-shadow: none;
@@ -68,7 +69,7 @@
   top: 0;
   left: 0;
   z-index: 1001;
-  height: calc(var(--navbarHeight)*0.6);
+  height: calc(var(--navbarHeight) * 0.6);
   /*TODO: Gapyearly Logo Animation is delayed*/
   transition: top 0.3s;
 }
