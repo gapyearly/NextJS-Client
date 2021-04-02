@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
-import Button from "@components/Buttons/Button"
+import Button from "@components/Buttons/Button";
 import debounce from "@util/debounce";
 import Navfolder from "./Navfolder";
 import NavLink from "./NavLink";
@@ -74,22 +74,31 @@ export default function Navbar() {
           <NavLink href="/contact">Contact</NavLink>
         </Navfolder>
         <Navfolder title="Opportunities" href="">
-          <NavLink href="/opportunities/covid-experiences">COVID-19 Experiences</NavLink>
-          <NavLink href="/opportunities/past-experiences">Past Experiences</NavLink>
+          <NavLink href="/opportunities/covid-experiences">
+            COVID-19 Experiences
+          </NavLink>
+          <NavLink href="/opportunities/past-experiences">
+            Past Experiences
+          </NavLink>
         </Navfolder>
         <Navfolder title="Community" href="">
           <NavLink href="/community/mentorship">Mentorship</NavLink>
           <NavLink href="/community/connect">Gapyearly Connect</NavLink>
         </Navfolder>
         <Navfolder title="Prospective" href="">
-          <NavLink href="/prospective/facts-and-figures">Facts & Figures</NavLink>
-          <NavLink href="/prospective/parent-references">Parent References</NavLink>
+          <NavLink href="/prospective/facts-and-figures">
+            Facts & Figures
+          </NavLink>
+          <NavLink href="/prospective/parent-references">
+            Parent References
+          </NavLink>
           <NavLink href="/prospective/girls-who-gap">Girls Who Gap</NavLink>
           <NavLink href="/prospective/faq">FAQ</NavLink>
         </Navfolder>
         <NavLink href="/blog">Blog</NavLink>
-        <Button color="greenBg" href="/log-in">Log in</Button>
-
+        <Button color="greenBg" href="/log-in">
+          Log in
+        </Button>
       </div>
     </nav>
   );

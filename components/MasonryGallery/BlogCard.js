@@ -1,7 +1,7 @@
 /**
  * Used in /blog gallery page.
  */
-import styles from "./Card.module.css";
+import styles from "./BlogCard.module.css";
 
 import { FaExternalLinkAlt } from "react-icons/fa";
 
@@ -13,21 +13,38 @@ import Link from "next/link";
  * @param  {string} desc
  * @param  {string} href
  */
-export default function LinkCard({ data }) {
+export default function BlogCard({ data, align }) {
   const { title, description, slug, image, author } = data;
   const fullName = `${author.personalInfo.firstName} ${author.personalInfo.lastName}`;
   // TODO Fix up structure and styling
-  return (
-    <div className={styles.linkCard}>
-      <img src={image.url} alt={image.alt} />
-      <h2>{title}</h2>
-      <p>By: {fullName}</p>
-      <p>{description}</p>
-      <Link href={`/blog/${slug}`}>
-        <a className="blueUnderline">
-          <FaExternalLinkAlt size="15"></FaExternalLinkAlt> Read more...
-        </a>
-      </Link>
-    </div>
-  );
+  const BlogCardInfo = ({ className }) => {
+    return (
+      <div className={styles.blogText}>
+        <Link href={`/blog/${slug}`}>
+          <h2 className={className}>{title}</h2>
+        </Link>
+        <p className={className}>By: {fullName}</p>
+        <p className={className}>{description}</p>
+      </div>
+    );
+  };
+
+  const Image = () => {
+    return <img src={image.url} alt={image.alt} />;
+  };
+
+  const content =
+    align === "left" ? (
+      <>
+        <Image />
+        <BlogCardInfo />
+      </>
+    ) : (
+      <>
+        <BlogCardInfo className={styles.blogTextRight} />
+        <Image />
+      </>
+    );
+
+  return <div className={styles.blogContainer}>{content}</div>;
 }

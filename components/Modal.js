@@ -29,7 +29,7 @@ const Modal = ({ show = true, onClose, children, title }) => {
         <div className={styles.header}>
           <h2>{title}</h2>
           <a className={styles.close} href="#" onClick={handleCloseClick}>
-          &#10005;
+            &#10005;
           </a>
         </div>
         {children}
