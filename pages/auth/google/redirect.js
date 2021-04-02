@@ -17,7 +17,7 @@ export default function Redirect() {
           console.log("Success");
         })
         .catch((err) => {
-          // TODO Eventually push to an error page
+          // TODO: Eventually push to an error page
           router.push("/");
           console.log(err);
         });

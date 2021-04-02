@@ -16,7 +16,7 @@ import Link from "next/link";
 export default function LinkCard({ data }) {
   const { title, description, slug, image, author } = data;
   const fullName = `${author.personalInfo.firstName} ${author.personalInfo.lastName}`;
-  // TODO Fix up structure and styling
+  // TODO: Fix up structure and styling
   return (
     <div className={styles.linkCard}>
       <img src={image.url} alt={image.alt} />

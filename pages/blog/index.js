@@ -7,7 +7,7 @@ export default function Blog({ data }) {
   const cards = data.map((blogData) => {
     return <BlogCard key={blogData.slug} data={blogData} />;
   });
-  // TODO Add Search Bar
+  // TODO: Add Search Bar
   return (
     <>
       <PageTitle>Blog</PageTitle>

@@ -27,6 +27,7 @@ To learn more about Next.js and helper modules, take a look at the following res
 -   [Nextjs-redirect](https://www.npmjs.com/package/nextjs-redirect) - A module that allows for easy page based redirects
 -   [react-hooks-helper](https://github.com/revelcw/react-hooks-helper) - Custom react hooks
 -   [react-icons](https://react-icons.github.io/react-icons) - React icons library
+-   [NProgress](https://ricostacruz.com/nprogress/) - Loading progress bar library.
 
 ## Recommended VS Code Extensions
 

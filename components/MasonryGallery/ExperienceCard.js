@@ -13,13 +13,21 @@ import Link from "next/link";
  * @param  {string} desc
  * @param  {string} href
  */
-export default function ExperienceCard({
-  data: { title, locations, funRating, slug, image, category, cost },
-}) {
+export default function ExperienceCard({ data, onClick }) {
   // TODO Fix up structure and styling
+  const { title, locations, funRating, slug, cover, category, cost } = data;
+  const handleClick = () => {
+    onClick(data);
+  };
+
   return (
-    <div className={styles.linkCard}>
-      <img src={image.url} alt={image.alt} />
+    <div
+      className={styles.linkCard}
+      onClick={handleClick}
+      role="button"
+      tabIndex={0}
+    >
+      <img src={cover.url} alt={cover.alt} />
       <h2>{title}</h2>
 
       <Link href={`/blog/${slug}`}>
