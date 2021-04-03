@@ -3,8 +3,6 @@
  */
 import styles from "./BlogCard.module.css";
 
-import { FaExternalLinkAlt } from "react-icons/fa";
-
 import Link from "next/link";
 /**
  * Paremters for a blogcard
