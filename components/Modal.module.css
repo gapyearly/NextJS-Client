@@ -15,9 +15,11 @@
   background: seashell;
   width: fit-content;
   max-width: 65vw;
-  height: max-content;
+  height: 70vh;
   border-radius: 7px;
-  padding: 2em;
+  padding: 1.5em 0.7em 1.5em 1.7em;
+  overflow: auto;
+  /* TODO: Change Max-width vw*/
 }
 .modal h2 {
   margin-top: 0;

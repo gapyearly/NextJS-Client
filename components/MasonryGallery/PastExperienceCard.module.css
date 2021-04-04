@@ -2,6 +2,10 @@
   padding: 0.9em;
   transition: 0.15s ease-in;
   margin: 0 0.8rem 1.6rem;
+  background-color: white;
+  /* border: solid 1px var(--berry); */
+  border-radius: 5px;
+  box-shadow: 0 3px 5px var(--gray);
 }
 .card:active,
 .card:focus,
@@ -13,38 +17,57 @@
   margin: 0;
 }
 .card h2 {
-  margin: 3px 0 10px;
+  margin: 0.1rem 0 0;
   font-size: 1.3rem;
 }
 .source {
   color: var(--sunlight);
   font-weight: 500;
 }
-.card img {
+.card img,
+.modal img {
   overflow: hidden;
   object-fit: cover;
   width: 100%;
   height: 13em;
   border-radius: 5px;
 }
+
 .cardSummary p {
-  font-size: 18px;
+  font-size: 0.9rem;
+  display: inline;
 }
 .pin {
   color: var(--clay);
   position: relative;
   top: 2px;
 }
-.location {
-}
+
 /* max-width for media query dependent on ResponsiveGallery breakpoint for 2 columns */
 @media (max-width: 800px) {
   .card img {
     height: 40vw;
   }
 }
+.starRating {
+  display: inline;
+}
 
 /* costIcon Styles */
+.modal .cost p {
+  display: inline;
+  font-size: 0.9rem;
+}
+.card .costIcon {
+  display: inline;
+  font-weight: 700;
+}
+.costIcon {
+  margin: 0 0.5rem;
+}
+.costIcon p {
+  font-size: 1.1rem;
+}
 .costMoney {
   color: var(--clay);
 }
@@ -52,13 +75,35 @@
   color: var(--aqua);
 }
 .brokeEven {
-  color: gray;
-  text-decoration: line-through;
+  color: var(--gray);
+  /* text-decoration: line-through; */
 }
 .free {
   color: var(--aqua);
-  font-weight: 700;
 }
-.icons {
-  font-weight: 700;
+
+.category {
+  display: inline;
+  font-size: 14px;
+}
+.blueStar {
+  color: var(--horizon);
+}
+.grayStar {
+  color: var(--gray);
+}
+.imgParent {
+  display: flex;
+  justify-content: center;
+}
+.modal img {
+  width: 60%;
+  margin-bottom: 0.5rem;
+}
+.modal h2 {
+  text-align: center;
+}
+
+.modal .costIcon {
+  margin: 0;
 }

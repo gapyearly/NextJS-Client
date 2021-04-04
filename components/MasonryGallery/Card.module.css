@@ -4,7 +4,7 @@
   padding: 0.9em;
   border-radius: 7px;
   margin: 0 0.8rem 1.6rem;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 5px var(--gray);
 }
 .linkCard p {
   margin: 0;

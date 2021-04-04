@@ -6,6 +6,7 @@
   --aqua: #00a998;
   --horizon: #0b5ee0;
   --clay: #f85d48;
+  --gray: rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -97,8 +98,11 @@ h1 {
 }
 
 h2 {
-  margin: 0;
   margin: 0 0 0.3em 0;
+}
+h3 {
+  font-size: 1rem;
+  margin: 0.5em 0 0.3em 0;
 }
 p {
   font-size: 0.9rem;
@@ -141,3 +145,33 @@ p {
   padding: 0.2em 0.6em 0.5em;
   margin: 0;
 }
+
+#modal-root ::-webkit-scrollbar {
+  width: 25px;
+  margin: 3px;
+  padding: 4px;
+}
+#modal-root ::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  background-image: linear-gradient(var(--horizon), var(--horizon));
+  /*border-right: 4px var(--seashell) solid*/
+  /*background-clip: padding-box;*/
+  border: 7px solid rgba(255, 255, 255, 0);
+  background-clip: padding-box;
+  padding: 4px;
+}
+
+#modal-root ::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.3);
+}
+#modal-root ::-webkit-scrollbar-track {
+  padding: 4px;
+}
+/* ::-webkit-scrollbar the scrollbar.
+::-webkit-scrollbar-button the buttons on the scrollbar (arrows pointing upwards and downwards).
+::-webkit-scrollbar-thumb the draggable scrolling handle.
+::-webkit-scrollbar-track the track (progress bar) of the scrollbar.
+::-webkit-scrollbar-track-piece the track (progress bar) NOT covered by the handle.
+::-webkit-scrollbar-corner the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
+::-webkit-resizer the draggable resizing handle that appears at the bottom corner of some elements. */

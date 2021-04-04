@@ -1,5 +1,6 @@
 import styles from "./Modal.module.css";
 import React, { useState, useEffect, useRef } from "react";
+import { IoMdCloseCircle } from "react-icons/io";
 import ReactDOM from "react-dom";
 /**
  * @param  {Boolean} show
@@ -20,24 +21,21 @@ const Modal = ({ show, onClose, children, title }) => {
       document.removeEventListener("mousedown", handleCloseClick, false);
     };
   }, [show]);
-  console.log(onClose);
+
   const handleCloseClick = (e) => {
     e.preventDefault();
     // If the mouse click contains the modal, don't close the modal. Except when the anchor is clicked.
-    if (ref.current.contains(e.target) && e.target.localName !== "a") return;
-    console.log("hey");
-
+    if (ref.current.contains(e.target) && e.target.localName !== "path") return;
     onClose();
   };
 
-  console.log(show);
   const modalContent = show ? (
     <div className={styles.modalOverlay}>
       <div className={styles.modal} ref={ref}>
         <div className={styles.header}>
           <h2>{title}</h2>
           <a className={styles.close} href="#" onClick={handleCloseClick}>
-            &#10005;
+            <IoMdCloseCircle />
           </a>
         </div>
         {children}

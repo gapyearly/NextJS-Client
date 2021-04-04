@@ -13,8 +13,9 @@
 .pill {
   border-radius: 100px;
   width: fit-content;
-  padding: 8px 15px;
+  padding: 0.25rem 0.5rem;
   color: var(--seashell);
   font-weight: 600;
   margin: 5px;
+  font-size: 0.9rem;
 }

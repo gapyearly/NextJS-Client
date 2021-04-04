@@ -2,8 +2,15 @@ import React, { useState } from "react";
 import Layout from "@components/Layouts/Layout";
 import strapi from "@api/strapi";
 
+import styles from "@components/MasonryGallery/PastExperienceCard.module.css";
+
+import Pill from "@components/Buttons/Pill.js";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
+
 import ExperienceGallery from "@components/MasonryGallery";
 import ExperienceCard from "@components/MasonryGallery/ExperienceCard";
+import ExperienceModalContent from "@components/MasonryGallery/ExperienceModalContent";
 import PageTitle from "@components/Header";
 import Modal from "@components/Modal";
 
@@ -25,7 +32,6 @@ export default function PastExperiences({ data }) {
       />
     );
   });
-  console.log(data);
   // TODO: Add Search Bar
   return (
     <>
@@ -38,15 +44,13 @@ export default function PastExperiences({ data }) {
             setModalVisibility(false);
             setModalData(null);
           }}
-        ></Modal>
+        >
+          <ExperienceModalContent data={modalData} />
+        </Modal>
       </Layout>
     </>
   );
 }
-
-const ModalContent = (data) => {
-  return hey;
-};
 
 export async function getStaticProps(ctx) {
   const { data } = await strapi.get("experiences");
