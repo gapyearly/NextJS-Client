@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import "../styles/NProgress.css";
+import "../styles/ckeditor.css";
 // Used for authentication handling, and user info
 import { AuthProvider } from "@contexts/auth";
 import NProgress from "nprogress";
