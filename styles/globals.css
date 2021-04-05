@@ -29,7 +29,8 @@ body {
   flex-direction: column;
 }
 main {
-  min-height: 100vh;
+  min-height: 60vh;
+  /* TODO: sticky footer not working */
   margin: 0 7rem;
   flex: 1;
 }
@@ -68,7 +69,6 @@ TODO:add animations/transitions*/
 }
 button {
   border: none;
-  border-radius: 5px;
   color: var(--seashell);
   font-weight: 600;
   padding: 0.5rem;
@@ -76,18 +76,26 @@ button {
 }
 
 input,
-button {
+button,
+textarea {
   font-size: inherit;
   font-family: inherit;
+  border-radius: 5px;
 }
 input,
 textarea {
   font-size: 0.9rem;
   border: 1px solid var(--horizon);
-  border-radius: 5px;
+  width: 13rem;
   padding: 2px 5px;
   display: block;
+  margin-bottom: 0.7rem;
   /* all form elements are inline otherwise */
+}
+textarea {
+  border-radius: 5px;
+
+  height: 5rem;
 }
 label {
   font-size: 0.9rem;
