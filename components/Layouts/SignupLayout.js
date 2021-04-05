@@ -5,7 +5,7 @@ import styles from "./SignupLayout.module.css";
 export default function Layout({ children, src }) {
   return (
     <>
-      <BackgroundImage className="valley" src={src} />
+      <BackgroundImage src="greenBlue" />
       <Link href="/">
         <img
           src="/images/logo.png"
