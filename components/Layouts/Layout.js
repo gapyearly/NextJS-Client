@@ -5,7 +5,9 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <main>{children}</main>
+      <main style={{ minHeight: "70vh", marginTop: "var(--navbarHeight)" }}>
+        {children}
+      </main>
       <Footer />
     </>
   );
