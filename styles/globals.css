@@ -80,15 +80,16 @@ button {
   font-size: inherit;
   font-family: inherit;
 }
-input {
+input,
+textarea {
   font-size: 0.9rem;
   border: 1px solid var(--horizon);
   border-radius: 5px;
   padding: 2px 5px;
-}
-label {
   display: block;
   /* all form elements are inline otherwise */
+}
+label {
   font-size: 0.9rem;
 }
 

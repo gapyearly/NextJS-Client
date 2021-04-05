@@ -11,7 +11,7 @@ import { FaStar } from "react-icons/fa";
 import ExperienceGallery from "@components/MasonryGallery";
 import ExperienceCard from "@components/MasonryGallery/ExperienceCard";
 import ExperienceModalContent from "@components/MasonryGallery/ExperienceModalContent";
-import PageTitle from "@components/Header";
+import PageTitle from "@components/PageTitle";
 import Modal from "@components/Modal";
 
 export default function PastExperiences({ data }) {

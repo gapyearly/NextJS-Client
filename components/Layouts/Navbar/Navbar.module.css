@@ -15,6 +15,7 @@
 .navItems {
   margin: 1rem 3rem 0 0;
 }
+
 .navItems > a,
 .dropdown,
 .navItems Button {
@@ -45,6 +46,7 @@
   margin-bottom: 0.5rem;
 }
 .dropdownContent a {
+  font-size: 0.9rem;
   box-shadow: none;
 }
 /* Show the dropdown menu on hover */

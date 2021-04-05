@@ -1,7 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Layout from "@components/Layouts/Layout";
-import PageTitle from "@components/Header";
+import PageTitle from "@components/PageTitle";
+import Title from "@components/Title";
 import Button from "@components/Buttons/Button.js";
 import Pill from "@components/Buttons/Pill.js";
 import Modal from "@components/Modal.js";
@@ -12,12 +13,10 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Gapyearly</title>
+        <Title>Home</Title>
       </Head>
 
-      <header>
-        <PageTitle>Welcome to Gapyearly!!!!</PageTitle>
-      </header>
+      <PageTitle>Welcome to Gapyearly!!!!</PageTitle>
 
       <Layout>
         <h2>H2 Text</h2>
