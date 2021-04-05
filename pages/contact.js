@@ -52,7 +52,9 @@ export default function Contact() {
               required
             ></textarea>
           </label>
-          <button color="green">Submit</button>
+          <Button color="greenBg" href="#">
+            Submit
+          </Button>
         </form>
       </Layout>
     </>
