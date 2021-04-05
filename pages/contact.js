@@ -1,6 +1,7 @@
 import Layout from "@components/Layouts/Layout";
 import Button from "@components/Buttons/Button";
-import styles from "@components/Buttons/Button.module.css";
+import btnstyles from "@components/Buttons/Button.module.css";
+import styles from "@components/Forms/form.module.css";
 import PageTitle from "@components/PageTitle";
 
 export default function Contact() {
@@ -8,10 +9,14 @@ export default function Contact() {
     <>
       <PageTitle>Contact</PageTitle>
       <Layout>
-        <p>Questions? Suggestions? Feedback? Any ways we can help you?</p>
-        <p>Please fill out this form and we'll get back to you ASAP!</p>
+        <p className={styles.contactDescription}>
+          Questions? Suggestions? Feedback? Any ways we can help you?
+        </p>
+        <p className={styles.contactDescription}>
+          Please fill out this form and we'll get back to you ASAP!
+        </p>
         {/* TODO: alex fill in action pls */}
-        <form method="POST" action="#">
+        <form method="POST" action="#" className={styles.contact}>
           <label htmlFor="fullName">
             Full name
             <input
