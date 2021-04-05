@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
-import Button from "@components/Buttons/Button";
+import LoginButton from "@components/Buttons/LoginButton";
 import debounce from "@util/debounce";
 import Navfolder from "./Navfolder";
 import NavLink from "./NavLink";
@@ -96,9 +96,9 @@ export default function Navbar() {
           <NavLink href="/prospective/faq">FAQ</NavLink>
         </Navfolder>
         <NavLink href="/blog">Blog</NavLink>
-        <Button color="greenBg" href="/log-in">
+        <LoginButton color="greenBg" href="/login">
           Log in
-        </Button>
+        </LoginButton>
       </div>
     </nav>
   );

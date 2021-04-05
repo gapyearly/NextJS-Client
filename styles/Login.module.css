@@ -1,0 +1,11 @@
+.backgroundImage {
+  z-index: 0;
+  position: fixed;
+}
+.logo {
+  cursor: pointer;
+  position: fixed;
+  max-height: calc(var(--navbarHeight) * 0.7);
+  z-index: 1001;
+  /*TODO: Gapyearly Logo Animation is delayed*/
+}

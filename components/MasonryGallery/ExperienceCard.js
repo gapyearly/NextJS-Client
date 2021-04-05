@@ -4,8 +4,8 @@
 import styles from "./PastExperienceCard.module.css";
 import pillstyles from "components/Buttons/Button.module.css";
 import Pill from "components/Buttons/Pill.js";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
+import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
+
 import Link from "next/link";
 
 /**
@@ -28,7 +28,6 @@ export default function ExperienceCard({ data, onClick }) {
       onClick={handleClick}
       role="button"
       tabIndex={0}
-      onKeyDown
     >
       <img src={image.url} alt={image.alt} />
       <h2>{title}</h2>

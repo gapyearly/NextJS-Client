@@ -6,8 +6,8 @@ import {
 import styles from "@components/MasonryGallery/PastExperienceCard.module.css";
 import Link from "next/link";
 import Pill from "@components/Buttons/Pill.js";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
+import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
+
 export default function ModalContent({ data }) {
   if (!data) return;
   console.log(data);
@@ -31,9 +31,9 @@ export default function ModalContent({ data }) {
 
   const linkArray = links.map(({ href }) => {
     return (
-      <Link href={href}>
+      <Link href={href} key={href}>
         <li>
-          <a>{href}</a>
+          <a href={href}>{href}</a>
         </li>
       </Link>
     );

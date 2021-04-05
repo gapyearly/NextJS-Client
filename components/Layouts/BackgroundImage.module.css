@@ -1,0 +1,20 @@
+.background {
+  background-image: url("/images/greenblue-valleys.svg");
+  height: 100vh;
+  width: 100vw;
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: 0;
+  position: fixed;
+}
+.backgroundContent {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.valley {
+  bottom: 0;
+  height: 66vh;
+}
