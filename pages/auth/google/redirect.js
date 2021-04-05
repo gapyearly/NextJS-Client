@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import { useAuth } from "@contexts/auth";
 import { useEffect } from "react";
+import { route } from "next/dist/next-server/server/router";
 
 const provider = "google";
 export default function Redirect() {
@@ -14,10 +15,13 @@ export default function Redirect() {
         .then(() => {
           // TODO: Redirect them somewhere lmao
           // Make sure to check if full account setup has been completed
-          console.log("Success");
+          const redirect = window.sessionStorage.getItem("redirect");
+          if (!redirect) return router.push("/");
+          const sanatized = redirect.replaceAll(":", " ");
+          router.push(sanatized);
         })
         .catch((err) => {
-          // TODO Eventually push to an error page
+          // TODO: Eventually push to an error page
           router.push("/");
           console.log(err);
         });

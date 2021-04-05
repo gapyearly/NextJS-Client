@@ -1,3 +1,4 @@
+/* TODO: add shadows */
 :root {
   --berry: #4f002a;
   --seashell: #fefbf6;
@@ -5,6 +6,7 @@
   --aqua: #00a998;
   --horizon: #0b5ee0;
   --clay: #f85d48;
+  --gray: rgba(0, 0, 0, 0.35);
 }
 
 * {
@@ -16,15 +18,35 @@ html,
 body {
   margin: 0;
   font-family: "Quicksand", sans-serif;
-  font-size: calc(1em + 0.2vw);
+  font-size: calc(0.9em + 0.2vw);
   color: var(--berry);
   background-color: var(--seashell);
 }
 
-main {
-  padding: 0 1rem;
+body {
+  min-height: calc(100vh - var(--navbarHeight));
+  display: flex;
+  flex-direction: column;
 }
-
+main {
+  min-height: 100vh;
+  margin: 0 7rem;
+  flex: 1;
+}
+@media (max-width: 800px) {
+  main {
+    margin: 0 4rem;
+  }
+}
+.header {
+  background-color: var(--horizon);
+  text-align: center;
+  color: var(--seashell);
+  display: block;
+  padding: 0.7rem;
+  width: 100vw;
+  margin: var(--navbarHeight) 0 1.5rem;
+}
 a {
   color: inherit;
   transition: color 0.15s ease, border-color 0.15s ease;
@@ -33,18 +55,24 @@ a {
   position: relative;
   z-index: 1;
 }
+.blueUnderline {
+  box-shadow: 0 -0.4em 0 inset var(--horizon);
+}
 /* a:hover,
 a:focus,
 a:active 
-add animations/transitions*/
-
+TODO:add animations/transitions*/
+.noUnderline {
+  box-shadow: none;
+  /*for buttons/pills/other links to take away default <a> underline*/
+}
 button {
-  background-color: var(--aqua);
   border: none;
   border-radius: 5px;
   color: var(--seashell);
-  font-weight: 500;
+  font-weight: 600;
   padding: 0.5rem;
+  margin: 4px 0;
 }
 
 input,
@@ -52,13 +80,34 @@ button {
   font-size: inherit;
   font-family: inherit;
 }
-input {
+input,
+textarea {
+  font-size: 0.9rem;
   border: 1px solid var(--horizon);
   border-radius: 5px;
+  padding: 2px 5px;
+  display: block;
+  /* all form elements are inline otherwise */
+}
+label {
+  font-size: 0.9rem;
 }
 
+h1 {
+  text-align: center;
+  margin: 0 0 0.6em 0;
+}
+
+h2 {
+  margin: 0 0 0.3em 0;
+}
+h3 {
+  font-size: 1rem;
+  margin: 0.5em 0 0.3em 0;
+}
 p {
   font-size: 0.9rem;
+  margin: 0;
 }
 
 .cardGallery {
@@ -78,7 +127,6 @@ p {
   margin: 0 0.7rem;
   border-radius: 7px;
   background-color: var(--berry);
-
 }
 
 .card h3,
@@ -96,5 +144,35 @@ p {
   color: var(--seashell);
   width: 20vw;
   padding: 0.2em 0.6em 0.5em;
-  margin:0;
+  margin: 0;
 }
+
+#modal-root ::-webkit-scrollbar {
+  width: 25px;
+  margin: 3px;
+  padding: 4px;
+}
+#modal-root ::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  background-image: linear-gradient(var(--horizon), var(--horizon));
+  /*border-right: 4px var(--seashell) solid*/
+  /*background-clip: padding-box;*/
+  border: 7px solid rgba(255, 255, 255, 0);
+  background-clip: padding-box;
+  padding: 4px;
+}
+
+#modal-root ::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.3);
+}
+#modal-root ::-webkit-scrollbar-track {
+  padding: 4px;
+}
+/* ::-webkit-scrollbar the scrollbar.
+::-webkit-scrollbar-button the buttons on the scrollbar (arrows pointing upwards and downwards).
+::-webkit-scrollbar-thumb the draggable scrolling handle.
+::-webkit-scrollbar-track the track (progress bar) of the scrollbar.
+::-webkit-scrollbar-track-piece the track (progress bar) NOT covered by the handle.
+::-webkit-scrollbar-corner the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
+::-webkit-resizer the draggable resizing handle that appears at the bottom corner of some elements. */

@@ -1,72 +1,81 @@
 {
-  "header": [
+  "footer": [
     {
       "label": "About",
-      "dropdownItems": [
+      "items": [
         {
           "linkLabel": "About Gapyearly",
-          "href": "/"
+          "href": "/about"
         },
         {
           "linkLabel": "Our Team",
-          "href": "/"
+          "href": "/about/our-team"
+        },
+        {
+          "linkLabel": "Join the Team",
+          "href": "/about/join-the-team"
+        },
+        {
+          "linkLabel": "Our Sponsors",
+          "href": "/about/our-sponsors"
+        },
+        {
+          "linkLabel": "Contact",
+          "href": "/contact"
         }
       ]
     },
     {
       "label": "Opportunities",
-      "dropdownItems": [
+      "items": [
         {
-          "linkLabel": "About Gapyearly",
-          "href": "/"
+          "linkLabel": "COVID-19 Experiences",
+          "href": "/opportunities/covid-experiences"
+        },
+        {
+          "linkLabel": "Past Experiences",
+          "href": "/opportunities/past-experiences"
         }
       ]
     },
     {
       "label": "Community",
-      "dropdownItems": [
+      "items": [
         {
-          "linkLabel": "About Gapyearly",
-          "href": "/"
+          "linkLabel": "Mentorship",
+          "href": "/community/mentorship"
+        },
+        {
+          "linkLabel": "Gapyearly Connect",
+          "href": "/connect"
         }
       ]
     },
     {
       "label": "Prospective",
-      "dropdownItems": [
-        {
-          "linkLabel": "About Gapyearly",
-          "href": "/"
-        }
-      ]
-    }
-  ],
-  "footer": [
-    {
-      "label": "Test1",
       "items": [
         {
-          "linkLabel": "About Gapyearly",
-          "href": "/"
+          "linkLabel": "Facts & Figures",
+          "href": "/prospective/facts-and-figures"
         },
         {
-          "linkLabel": "Our Team",
-          "href": "/"
+          "linkLabel": "Parent References",
+          "href": "/prospective/parent-references"
+        },
+        {
+          "linkLabel": "Girls Who Gap",
+          "href": "/prospective/girls-who-gap"
+        },
+        {
+          "linkLabel": "FAQ",
+          "href": "/prospective/faq"
         }
       ]
     },
     {
-      "label": "Test2",
-      "items": [
-        {
-          "linkLabel": "About Gapyearly",
-          "href": "/"
-        },
-        {
-          "linkLabel": "Our Team",
-          "href": "/"
-        }
-      ]
+      "label": "Blog",
+      "href": "/blog",
+      "items": []
     }
   ]
 }

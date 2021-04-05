@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import styles from "./Navbar.module.css";
+import LoginButton from "@components/Buttons/LoginButton";
 import debounce from "@util/debounce";
-import NavMenu from "./Navmenu";
+import Navfolder from "./Navfolder";
+import NavLink from "./NavLink";
+import Link from "next/link";
 
 // How far the user has to scroll in px for nav to reappear
 const SCROLL_LENGTH = 50;
@@ -22,7 +24,6 @@ export default function Navbar() {
    *  */
   const checkScroll = () => {
     const currentScrollPos = window.pageYOffset;
-    console.log(prevScrollPos);
     // Checks if the previous scroll pos is greater than the current pos, which signifys a scroll up.
     // The second line checks if they scrolled a significant ammount
     // Third line makes sure visibility is constant at the top of page.
@@ -63,7 +64,42 @@ export default function Navbar() {
           className={styles.logo}
         />
       </Link>
-      <NavMenu />
+      <div className={styles.navItems}>
+        <NavLink href="/">Home</NavLink>
+        <Navfolder title="About" href="">
+          <NavLink href="/about">About Gapyearly</NavLink>
+          <NavLink href="/about/our-team">Our Team</NavLink>
+          <NavLink href="/about/join-the-team">Join the Team</NavLink>
+          <NavLink href="/about/our-sponsors">Our Sponsors</NavLink>
+          <NavLink href="/contact">Contact</NavLink>
+        </Navfolder>
+        <Navfolder title="Opportunities" href="">
+          <NavLink href="/opportunities/covid-experiences">
+            COVID-19 Experiences
+          </NavLink>
+          <NavLink href="/opportunities/past-experiences">
+            Past Experiences
+          </NavLink>
+        </Navfolder>
+        <Navfolder title="Community" href="">
+          <NavLink href="/community/mentorship">Mentorship</NavLink>
+          <NavLink href="/community/connect">Gapyearly Connect</NavLink>
+        </Navfolder>
+        <Navfolder title="Prospective" href="">
+          <NavLink href="/prospective/facts-and-figures">
+            Facts & Figures
+          </NavLink>
+          <NavLink href="/prospective/parent-references">
+            Parent References
+          </NavLink>
+          <NavLink href="/prospective/girls-who-gap">Girls Who Gap</NavLink>
+          <NavLink href="/prospective/faq">FAQ</NavLink>
+        </Navfolder>
+        <NavLink href="/blog">Blog</NavLink>
+        <LoginButton color="greenBg" href="/login">
+          Log in
+        </LoginButton>
+      </div>
     </nav>
   );
 }

@@ -1,0 +1,24 @@
+.blueBg {
+  background-color: var(--horizon);
+}
+.greenBg {
+  background-color: var(--aqua);
+}
+.darkBg {
+  background-color: var(--berry);
+}
+.redBg {
+  background-color: var(--clay);
+}
+.pill {
+  border-radius: 100px;
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  color: var(--seashell);
+  font-weight: 600;
+  margin: 5px;
+  font-size: 0.9rem;
+}
+.clickable {
+  cursor: pointer;
+}

@@ -1,34 +1,60 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Layout from "@components/Layouts/Layout";
+import PageTitle from "@components/PageTitle";
+import Title from "@components/Title";
+import Button from "@components/Buttons/Button.js";
+import Pill from "@components/Buttons/Pill.js";
+import Modal from "@components/Modal.js";
+import LinkGallery from "@components/MasonryGallery";
+import { FaInstagram } from "react-icons/fa";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Gapyearly</title>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        ></link>
+        <Title>Home</Title>
       </Head>
+
+      <PageTitle>Welcome to Gapyearly!!!!</PageTitle>
+
       <Layout>
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="/">Gapyearly!</a>
-        </h1>
         <h2>H2 Text</h2>
         <h3>H3 Text</h3>
         <p>Paragraph Text</p>
-
+        <FaInstagram></FaInstagram>
+        <LinkGallery />
         <form>
-          <label>Form Label </label>
-          <input placeholder={"Search..."} type="text"></input>
+          <label>
+            Form Label
+            <input placeholder={"Search..."} type="text"></input>
+          </label>
+
+          <label>
+            <input type="radio" name="subscribe" value="yes"></input>Yes
+          </label>
+          <label>
+            <input type="radio" name="subscribe" value="no"></input>No
+          </label>
+
+          <label>
+            <input type="checkbox" name="permission"></input>Yes, I agree!!!
+          </label>
+
+          <Button color="blueBg" href="gapyearly.com">
+            Submit
+          </Button>
+          <br></br>
+          <Pill color="blueBg" href="">
+            Pill style
+          </Pill>
+          <Pill color="redBg" href="">
+            Pill style
+          </Pill>
+          <Pill color="greenBg" href="">
+            Pill style
+          </Pill>
         </form>
-        <button>Button</button>
-        {/* button variations (i.e. background color) */}
 
         <div className="cardGallery">
           <div className={"card"}>
@@ -67,9 +93,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-
-
-      </main>
       </Layout>
     </div>
   );
