@@ -1,6 +1,7 @@
 import BackgroundImage from "@components/Layouts/BackgroundImage";
 import styles from "@styles/Login.module.css";
+import SignUpLayout from "@components/Layouts/SignupLayout";
 
 export default function Login() {
-  return <BackgroundImage className="valley" />;
+  return <SignUpLayout />;
 }

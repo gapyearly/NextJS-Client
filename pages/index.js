@@ -24,6 +24,7 @@ export default function Home() {
         <p>Paragraph Text</p>
         <FaInstagram></FaInstagram>
         <LinkGallery />
+        <Button color="blueBg">Submit</Button>
         <form>
           <label>
             Form Label
@@ -41,9 +42,6 @@ export default function Home() {
             <input type="checkbox" name="permission"></input>Yes, I agree!!!
           </label>
 
-          <Button color="blueBg" href="gapyearly.com">
-            Submit
-          </Button>
           <br></br>
           <Pill color="blueBg" href="">
             Pill style
