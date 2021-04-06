@@ -88,10 +88,11 @@ input,
 textarea {
   font-size: 0.9rem;
   border: 1px solid var(--horizon);
-  width: 15rem;
-  padding: 2px 5px;
+
+  padding: 4px 7px;
   display: block;
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.8rem;
+  margin-top: 0.35rem;
   /* all form elements are inline otherwise */
 }
 textarea {
@@ -99,8 +100,14 @@ textarea {
 
   height: 5rem;
 }
+input,
+textarea,
+form {
+  width: 25rem;
+}
 label {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 form {
   margin-top: 2rem;

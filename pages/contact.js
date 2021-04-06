@@ -53,7 +53,7 @@ export default function Contact() {
             <textarea
               id="contactMessage"
               type="textarea"
-              name="name"
+              name="message"
               required
             ></textarea>
           </label>

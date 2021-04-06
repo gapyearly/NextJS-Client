@@ -4,7 +4,7 @@ import btnstyles from "@components/Buttons/Button.module.css";
 import styles from "@components/Forms/form.module.css";
 import PageTitle from "@components/PageTitle";
 
-export default function Contact() {
+export default function JoinTeam() {
   return (
     <>
       <PageTitle>Join the Team</PageTitle>
@@ -55,11 +55,11 @@ export default function Contact() {
         </p>
 
         {/* TODO: alex fill in action pls */}
-        <form method="POST" action="#" className={styles.contact}>
+        <form method="POST" action="#" className={styles.joinTeam}>
           <label htmlFor="fullName">
             Full name
             <input
-              id="contactFullName"
+              id="joinTeamFullName"
               type="text"
               name="fullName"
               required
@@ -69,10 +69,22 @@ export default function Contact() {
           <label htmlFor="email">
             Email
             <input
-              id="contactEmail"
+              id="joinTeamEmail"
               type="email"
               name="email"
               placeholder="example@email.com"
+              required
+            ></input>
+          </label>
+          <label htmlFor="currentLocation">
+            Current Location
+            <p>On a gap year? In university? Other?</p>
+            <input
+              id="joinTeamCurrentLocation"
+              type="text"
+              name="currentLocation"
+              placeholder="
+              "
               required
             ></input>
           </label>
@@ -82,17 +94,23 @@ export default function Contact() {
             <input
               id="joinTeamPosition"
               type="text"
-              name="instagram"
-              placeholder="@"
+              name="position"
+              placeholder="e.g. Content - Team Lead"
+              required
             ></input>
           </label>
 
-          <label htmlFor="">
-            Message
+          <label htmlFor="statementOfInterest">
+            Statement of Interest
+            <p>
+              Please write a paragraph or so on why you would like to join our
+              team. Include any relevant skills or experience and how you spent,
+              or are spending, your gap year (if applicable).
+            </p>
             <textarea
-              id="contactMessage"
+              id="joinTeamStatementOfInterest"
               type="textarea"
-              name="name"
+              name="statementOfInterest"
               required
             ></textarea>
           </label>
