@@ -85,7 +85,7 @@
 /* ckeditor5-image/theme/imagestyle.css */
 .ck-content .image-style-align-left {
   float: left;
-  margin-right: var(--ck-image-style-spacing);
+  margin-right: var(--ck-image-style-spacing) !important;
 }
 /* ckeditor5-image/theme/imagestyle.css */
 .ck-content .image-style-align-center {
@@ -95,7 +95,7 @@
 /* ckeditor5-image/theme/imagestyle.css */
 .ck-content .image-style-align-right {
   float: right;
-  margin-left: var(--ck-image-style-spacing);
+  margin-left: var(--ck-image-style-spacing) !important;
 }
 /* ckeditor5-image/theme/imagecaption.css */
 .ck-content .image > figcaption {
