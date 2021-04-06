@@ -57,7 +57,7 @@
   border-radius: 100px;
 }
 /* ckeditor5-highlight/theme/highlight.css */
-.ck-content .marker-yellow {
+/* .ck-content .marker-yellow {
   background-color: var(--ck-highlight-marker-yellow);
 }
 .ck-content .marker-green {
@@ -81,7 +81,7 @@
   float: right;
   margin-left: var(--ck-image-style-spacing);
   max-width: 50%;
-}
+} */
 /* ckeditor5-image/theme/imagestyle.css */
 .ck-content .image-style-align-left {
   float: left;
