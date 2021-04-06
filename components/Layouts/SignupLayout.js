@@ -5,7 +5,7 @@ import styles from "./SignupLayout.module.css";
 export default function Layout({ children, src }) {
   return (
     <>
-      <BackgroundImage src="greenBlue" />
+      <BackgroundImage src="greenBlue">{children}</BackgroundImage>
       <Link href="/">
         <img
           src="/images/logo.png"
@@ -14,7 +14,6 @@ export default function Layout({ children, src }) {
           className={styles.logo}
         />
       </Link>
-      {children}
     </>
   );
 }
