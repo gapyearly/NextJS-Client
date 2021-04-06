@@ -5,14 +5,14 @@
  */
 
 :root {
-  --ck-color-mention-background: hsla(341, 100%, 30%, 0.1);
+  /* --ck-color-mention-background: hsla(341, 100%, 30%, 0.1);
   --ck-color-mention-text: hsl(341, 100%, 30%);
   --ck-highlight-marker-blue: hsl(201, 97%, 72%);
   --ck-highlight-marker-green: hsl(120, 93%, 68%);
   --ck-highlight-marker-pink: hsl(345, 96%, 73%);
   --ck-highlight-marker-yellow: hsl(60, 97%, 73%);
   --ck-highlight-pen-green: hsl(112, 100%, 27%);
-  --ck-highlight-pen-red: hsl(0, 85%, 49%);
+  --ck-highlight-pen-red: hsl(0, 85%, 49%); */
   --ck-image-style-spacing: 1.5em;
   --ck-todo-list-checkmark-size: 16px;
 }
@@ -21,20 +21,17 @@
 .ck-content .text-tiny {
   font-size: 0.7em;
 }
-/* ckeditor5-font/theme/fontsize.css */
 .ck-content .text-small {
   font-size: 0.85em;
 }
-/* ckeditor5-font/theme/fontsize.css */
 .ck-content .text-big {
   font-size: 1.4em;
 }
-/* ckeditor5-font/theme/fontsize.css */
 .ck-content .text-huge {
   font-size: 1.8em;
 }
 /* ckeditor5-code-block/theme/codeblock.css */
-.ck-content pre {
+/* .ck-content pre {
   padding: 1em;
   color: hsl(0, 0%, 20.8%);
   background: hsla(0, 0%, 78%, 0.3);
@@ -46,47 +43,41 @@
   white-space: pre-wrap;
   font-style: normal;
   min-width: 200px;
-}
+} */
 /* ckeditor5-code-block/theme/codeblock.css */
-.ck-content pre code {
+/* .ck-content pre code {
   background: unset;
   padding: 0;
   border-radius: 0;
-}
+} */
 /* ckeditor5-horizontal-line/theme/horizontalline.css */
 .ck-content hr {
   margin: 15px 0;
   height: 4px;
-  background: hsl(0, 0%, 87%);
+  background: var(--berry);
   border: 0;
 }
 /* ckeditor5-highlight/theme/highlight.css */
 .ck-content .marker-yellow {
   background-color: var(--ck-highlight-marker-yellow);
 }
-/* ckeditor5-highlight/theme/highlight.css */
 .ck-content .marker-green {
   background-color: var(--ck-highlight-marker-green);
 }
-/* ckeditor5-highlight/theme/highlight.css */
 .ck-content .marker-pink {
   background-color: var(--ck-highlight-marker-pink);
 }
-/* ckeditor5-highlight/theme/highlight.css */
 .ck-content .marker-blue {
   background-color: var(--ck-highlight-marker-blue);
 }
-/* ckeditor5-highlight/theme/highlight.css */
 .ck-content .pen-red {
   color: var(--ck-highlight-pen-red);
   background-color: transparent;
 }
-/* ckeditor5-highlight/theme/highlight.css */
 .ck-content .pen-green {
   color: var(--ck-highlight-pen-green);
   background-color: transparent;
 }
-/* ckeditor5-image/theme/imagestyle.css */
 .ck-content .image-style-side {
   float: right;
   margin-left: var(--ck-image-style-spacing);
