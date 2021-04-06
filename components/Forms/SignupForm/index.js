@@ -18,13 +18,16 @@ const steps = [
 const defaultData = {
   firstName: "",
   lastName: "",
+
   gapYear: "",
   university: "",
+  graduatingYear: "",
   location: "",
+
   profilePicture: "",
   bio: "",
-  graduatingYear: "",
   interests: [],
+
   signupCompletion: true,
 };
 

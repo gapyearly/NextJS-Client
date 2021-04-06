@@ -8,7 +8,7 @@ export default function Name({ next, previous, formData, setForm }) {
       <h1>Hi There!</h1>
       <br />
       <h1>Hi There!</h1>
-      <form>
+      <form onSubmit={next} action="javascript:void(0);">
         <input
           label="First Name"
           name="firstName"
@@ -16,11 +16,10 @@ export default function Name({ next, previous, formData, setForm }) {
           onChange={setForm}
           required
         />
+        <Button color="blueBg" type="submit">
+          Next
+        </Button>
       </form>
-
-      <Button color="blueBg" onClick={next}>
-        Next
-      </Button>
     </>
   );
 }
