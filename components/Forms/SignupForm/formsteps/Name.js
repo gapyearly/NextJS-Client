@@ -1,4 +1,6 @@
-export default function Name({ navigation, formData, setForm }) {
+import Button from "@components/Buttons/Button";
+
+export default function Name({ next, previous, formData, setForm }) {
   const { firstName, lastName } = formData;
   console.log(firstName);
   return (
@@ -6,12 +8,19 @@ export default function Name({ navigation, formData, setForm }) {
       <h1>Hi There!</h1>
       <br />
       <h1>Hi There!</h1>
-      <input
-        label="First Name"
-        name="firstName"
-        value={firstName}
-        onChange={setForm}
-      ></input>
+      <form>
+        <input
+          label="First Name"
+          name="firstName"
+          value={firstName}
+          onChange={setForm}
+          required
+        />
+      </form>
+
+      <Button color="blueBg" onClick={next}>
+        Next
+      </Button>
     </>
   );
 }

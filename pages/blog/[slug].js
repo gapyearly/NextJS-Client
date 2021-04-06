@@ -19,9 +19,12 @@ export default function BlogPost({ blogData }) {
           <FaArrowLeft size="13" /> <a>Back to all posts</a>
         </div>
       </Link>
-      <h1 className={styles.title}>{title}</h1>
-      <h2 className={styles.author}>By {fullName}</h2>
-      <RichText data={content}></RichText>
+      <article>
+        <h1 className={styles.title}>{title}</h1>
+        <h2 className={styles.author}>By {fullName}</h2>
+        <RichText data={content}></RichText>
+      </article>
+
       <Link href="/blog" passHref>
         <div className={styles.clickable}>
           <FaArrowLeft size="13" /> <a>Back to all posts</a>

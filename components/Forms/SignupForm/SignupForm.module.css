@@ -13,4 +13,5 @@
   display: flex;
   justify-content: center;
   padding-top: 10rem;
+  transition: transform 0.7s ease, opacity 0.7s ease;
 }
