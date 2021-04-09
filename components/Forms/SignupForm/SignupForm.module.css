@@ -12,6 +12,7 @@
 .formContainer {
   padding-top: 10rem;
   transition: transform 0.7s ease, opacity 0.7s ease;
+  overflow: hidden;
 }
 .formContainer h1,
 .formContainer h2,

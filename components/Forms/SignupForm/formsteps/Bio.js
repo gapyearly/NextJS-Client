@@ -42,7 +42,12 @@ export default function Bio({ next, previous, formData, setForm }) {
         />
 
         <div className={styles.btns}>
-          <Button className={styles.nextBtn} color="greenBg" onClick={previous}>
+          <Button
+            className={styles.nextBtn}
+            color="greenBg"
+            onClick={previous}
+            type="button"
+          >
             Previous
           </Button>
           <Button className={styles.previousBtn} color="blueBg" type="submit">
