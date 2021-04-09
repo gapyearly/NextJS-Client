@@ -8,7 +8,7 @@ import { FaStar } from "react-icons/fa";
 
 import PageTitle from "@components/PageTitle";
 
-export default function FAQ() {
+export default function FAQes() {
   return (
     <>
       <PageTitle>FAQs</PageTitle>
