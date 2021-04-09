@@ -10,7 +10,7 @@ import sleep from "@util/sleep";
 
 const steps = [
   { id: "name" },
-  { id: "university" },
+  { id: "year" },
   { id: "contact" },
   { id: "review" },
   { id: "submit" },
@@ -19,9 +19,10 @@ const defaultData = {
   firstName: "",
   lastName: "",
 
-  gapYear: "",
-  university: "",
-  graduatingYear: "",
+  gapYearStart: "",
+  gapYearEnd: "",
+  universityName: "",
+  universityYear: "",
   location: "",
 
   profilePicture: "",

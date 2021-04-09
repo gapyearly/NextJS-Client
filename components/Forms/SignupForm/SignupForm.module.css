@@ -10,8 +10,39 @@
   /*TODO: Gapyearly Logo Animation is delayed*/
 }
 .formContainer {
-  display: flex;
-  justify-content: center;
   padding-top: 10rem;
   transition: transform 0.7s ease, opacity 0.7s ease;
+}
+.formContainer h1,
+.formContainer h2,
+.formContainer p {
+  text-align: center;
+}
+.formContainer h1 {
+  margin-bottom: 0;
+}
+.formContainer h2 {
+  margin-bottom: 1rem;
+}
+.formContainer form {
+  margin: 0 auto;
+}
+.formContainer label {
+  display: block;
+}
+input#gapYearStart,
+input#gapYearMax,
+input#universityYear,
+input#universityName {
+  display: inline;
+}
+input#gapYearStart,
+input#gapYearEnd {
+  width: 5rem;
+}
+input#universityYear {
+  width: 10rem;
+}
+input#universityYear {
+  width: 5rem;
 }

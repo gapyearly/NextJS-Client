@@ -1,5 +1,5 @@
 import Name from "./Name";
-import university from "./University";
+import Year from "./Year";
 
-const formSteps = { name: Name, university: university };
+const formSteps = { name: Name, year: Year };
 export default formSteps;
