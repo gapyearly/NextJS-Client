@@ -2,58 +2,82 @@ import Button from "@components/Buttons/Button";
 import styles from "components/Forms/SignupForm/SignupForm.module.css";
 
 export default function Year({ next, previous, formData, setForm }) {
-  const { gapYearStart, gapYearEnd, universityName, universityYear } = formData;
+  const {
+    gapYearStart,
+    gapYearEnd,
+    universityName,
+    universityYear,
+    location,
+  } = formData;
   return (
     <>
-      {/* <h1>Hi There!</h1> <input type="file" /> */}
       <form onSubmit={next} action="javascript:void(0);">
-        <fieldset>
+        <fieldset className="gapYear">
           <legend>When is/was your gap year?</legend>
-          <label htmlFor="gapYearStart">Start Year</label>
+
+          {/* <label htmlFor="gapYearStart">Start Year</label> */}
           <input
             type="number"
             id={styles.gapYearStart}
-            Start="1900"
+            min="1900"
             max="2100"
             name="gapYearStart"
             value={gapYearStart}
             onChange={setForm}
             placeholder="e.g. 2020"
           />
-          {" to "}
-          <label htmlFor="gapYearEnd">End Year</label>
+
+          {"  to  "}
+
+          {/* <label htmlFor="gapYearEnd">End Year</label> */}
           <input
             type="number"
             id={styles.gapYearEnd}
+            min="1900"
+            max="2100"
             name="gapYearEnd"
             value={gapYearEnd}
             onChange={setForm}
             placeholder="e.g. 2021"
           />
         </fieldset>
-        <label>University & intended graduation year (if applicable)</label>
+        <fieldset>
+          <legend>University & intended graduation year (if applicable)</legend>
+          <input
+            id={styles.universityName}
+            name="universityName"
+            value={universityName}
+            onChange={setForm}
+            placeholder="University Name"
+          />
+          <input
+            type="number"
+            id={styles.universityYear}
+            name="universityYear"
+            value={universityYear}
+            onChange={setForm}
+            placeholder="e.g. 2025"
+          />
+        </fieldset>
+        <label htmlFor="location">Location (State/Province, Country)</label>
         <input
-          id="universityName"
-          name="universityName"
-          value={universityName}
+          type="text"
+          id={styles.location}
+          name="location"
+          value={location}
           onChange={setForm}
-          placeholder="University Name"
-        />
-        <input
-          type="number"
-          id="universityYear"
-          name="universityYear"
-          value={universityYear}
-          onChange={setForm}
-          placeholder="e.g. 2025"
-        />
+          placeholder="e.g. New York, USA"
+        ></input>
+
+        <div className={styles.btns}>
+          <Button className={styles.nextBtn} color="greenBg" onClick={previous}>
+            Previous
+          </Button>
+          <Button className={styles.previousBtn} color="blueBg" type="submit">
+            Next
+          </Button>
+        </div>
       </form>
-      <Button color="greenBg" onClick={previous}>
-        Previous
-      </Button>
-      <Button color="blueBg" type="submit">
-        Next
-      </Button>
     </>
   );
 }

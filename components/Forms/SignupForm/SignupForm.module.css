@@ -31,7 +31,7 @@
   display: block;
 }
 input#gapYearStart,
-input#gapYearMax,
+input#gapYearEnd,
 input#universityYear,
 input#universityName {
   display: inline;
@@ -40,9 +40,18 @@ input#gapYearStart,
 input#gapYearEnd {
   width: 5rem;
 }
-input#universityYear {
-  width: 10rem;
+
+input#universityName {
+  width: 13rem;
+  margin-right: 0.5rem;
 }
 input#universityYear {
   width: 5rem;
+}
+fieldset .gapYear {
+  display: flex;
+}
+.btns {
+  display: flex;
+  justify-content: space-between;
 }

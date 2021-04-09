@@ -11,7 +11,7 @@ import sleep from "@util/sleep";
 const steps = [
   { id: "name" },
   { id: "year" },
-  { id: "contact" },
+  { id: "bio" },
   { id: "review" },
   { id: "submit" },
 ];
@@ -25,9 +25,10 @@ const defaultData = {
   universityYear: "",
   location: "",
 
-  profilePicture: "",
-  bio: "",
+  instagram: "",
   interests: [],
+  bio: "",
+  profilePicture: "",
 
   signupCompletion: true,
 };

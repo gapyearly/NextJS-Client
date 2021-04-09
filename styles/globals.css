@@ -77,6 +77,22 @@ button {
   margin: 4px 0;
 }
 
+input[type="file"]::file-selector-button,
+input[type="file"]::-webkit-file-upload-button {
+  font-style: "Quicksand";
+  border: none;
+  color: var(--seashell);
+  font-weight: 600;
+  padding: 0.5rem;
+  margin: 4px 0.5rem 4px 0;
+  background-color: var(--berry);
+  border-radius: 5px;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* input[type=file]::-webkit-file-upload-button:hover, input[type=file]::file-selector-button:hover {
+} */
+
 input,
 button,
 textarea {
@@ -105,6 +121,14 @@ textarea,
 form {
   width: 25rem;
 }
+fieldset {
+  margin-bottom: 1rem;
+  border: 1.5px solid var(--berry);
+}
+fieldset:last-child {
+  margin-bottom: 0.5rem;
+}
+/* needs parent element */
 /* for input type=number arrows */
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
