@@ -6,19 +6,21 @@ import Head from "next/head";
 import MentorCard from "@components/MasonryGallery/MentorCard";
 
 export default function Mentorship({ data }) {
-  const cards = data.mentorCard.map(
-    ({ fullName, school, summary, struggles }) => {
-      return (
-        <MentorCard
-          key={fullName}
-          fullName={fullName}
-          school={school}
-          summary={summary}
-          struggles={struggles}
-        ></MentorCard>
-      );
-    }
-  );
+  console.log(data);
+  const cards = data.map(({ personalInfo, mentorInfo, id }) => {
+    return (
+      <MentorCard
+        key={id}
+        firstName={personalInfo.firstName}
+        lastName={personalInfo.lastName}
+        universityName={personalInfo.universityName}
+        universityYear={personalInfo.universityYear}
+        selfFunded={mentorInfo.selfFunded}
+        summary={mentorInfo.summary}
+        struggles={mentorInfo.struggles}
+      ></MentorCard>
+    );
+  });
 
   return (
     <>
@@ -34,7 +36,7 @@ export default function Mentorship({ data }) {
 }
 
 export async function getStaticProps(ctx) {
-  const { data } = await strapi.get("mentor-profile");
+  const { data } = await strapi.get("users");
   return {
     props: {
       data,

@@ -20,3 +20,26 @@
 .linkIcon {
   font-size: 20px;
 }
+
+.mentorCard {
+  background-color: rgba(11, 94, 224, 0.12);
+  padding: 0.9em;
+  border-radius: 7px;
+  margin: 0 0.8rem 1.6rem;
+  box-shadow: 0 3px 5px var(--gray);
+}
+.mentorCard h2 {
+  display: inline;
+}
+.mentorCard ul {
+  margin: 0;
+}
+.mentorCard h3 {
+  margin-top: 0.1rem;
+  font-weight: 600;
+}
+.mentorCard h4 {
+  margin-bottom: 0.3rem;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
