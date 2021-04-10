@@ -5,6 +5,7 @@ import styles from "./SignupForm.module.css";
 import Layout from "@components/Layouts/SignupLayout";
 import Button from "@components/Buttons/Button";
 import formSteps from "./formsteps";
+import { useAuth } from "@contexts/auth";
 
 import sleep from "@util/sleep";
 
@@ -34,6 +35,8 @@ const defaultData = {
 };
 
 export default function SignupForm() {
+  const { user } = useAuth();
+  console.log(user);
   // Form data hook. formData represents form state, setForm changes the form state
   const [formData, setForm] = useForm(defaultData);
   // Slideshow hook. Step represents which step on slideshow we are on. Navigation allows you to traverse slideshow
@@ -82,7 +85,7 @@ export default function SignupForm() {
 
   const FormComponent = formSteps[step.id];
   return (
-    <Layout src="/images/greenblue-valleys.svg">
+    <Layout src="greenBlue">
       <div style={style} className={styles.formContainer}>
         <FormComponent {...props}></FormComponent>
       </div>

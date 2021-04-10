@@ -6,7 +6,9 @@ import React, { useRef } from "react";
 export default function Bio({ next, previous, formData, setForm }) {
   const { profilePicture } = formData;
   const ref = useRef();
-
+  if (ref.current && ref.current.files) {
+    formData.profilePicture = ref.current.files[0];
+  }
   return (
     <>
       <form onSubmit={next} action="javascript:void(0);">
@@ -15,8 +17,6 @@ export default function Bio({ next, previous, formData, setForm }) {
           type="file"
           id={styles.profilePicture}
           name="profilePicture"
-          value={profilePicture}
-          onChange={setForm}
           ref={ref}
         />
         {ref.current && ref.current.files && (
@@ -39,17 +39,34 @@ export default function Bio({ next, previous, formData, setForm }) {
     </>
   );
 }
-const MyEditor = ({ profilePicture }) => {
-  return (
-    <AvatarEditor
-      image={profilePicture}
-      width={250}
-      height={250}
-      border={30}
-      borderRadius={150}
-      color={[255, 255, 255, 0.6]} // RGBA
-      scale={1.2}
-      rotate={0}
-    />
-  );
-};
+
+class MyEditor extends React.Component {
+  onClickSave = () => {
+    if (this.editor) {
+      // This returns a HTMLCanvasElement, it can be made into a data URL or a blob,
+      // drawn on another canvas, or added to the DOM.
+      const canvas = this.editor.getImage();
+
+      // If you want the image resized to the canvas size (also a HTMLCanvasElement)
+      const canvasScaled = this.editor.getImageScaledToCanvas();
+    }
+  };
+
+  setEditorRef = (editor) => (this.editor = editor);
+
+  render() {
+    return (
+      <AvatarEditor
+        image={this.props.profilePicture}
+        width={250}
+        height={250}
+        border={30}
+        borderRadius={150}
+        color={[255, 255, 255, 0.6]} // RGBA
+        scale={1.2}
+        rotate={0}
+        className={styles.avatar}
+      />
+    );
+  }
+}

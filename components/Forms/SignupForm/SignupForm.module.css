@@ -56,3 +56,7 @@ fieldset .gapYear {
   display: flex;
   justify-content: space-between;
 }
+
+.avatar {
+  margin: 0 auto;
+}

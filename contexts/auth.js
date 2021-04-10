@@ -20,6 +20,7 @@ export const AuthProvider = ({ children }) => {
     // Gets token from browser cookie
     const token = Cookies.get("token");
     // TODO: Setup Error handling and handle cookie
+    console.log(token);
     if (token) {
       strapi.defaults.headers.Authorization = `Bearer ${token}`;
       try {
@@ -60,7 +61,7 @@ export const AuthProvider = ({ children }) => {
         .then(({ data }) => {
           setUser(data.user);
           Cookies.set("token", data.jwt);
-          resolve();
+          resolve(data.user);
         })
         .catch((err) => {
           reject(err);

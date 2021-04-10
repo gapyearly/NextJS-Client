@@ -10,11 +10,10 @@ export default function Redirect() {
   // When the router is ready, it'll attempt to login with parameters
   useEffect(() => {
     if (router.isReady) {
-      await providerLogin(router.query, provider)
-        .then(() => {
-          console.log(user);
-          if (!user.signupCompletion) {
-            router.push("/signup/additional-info");
+      providerLogin(router.query, provider)
+        .then((newuser) => {
+          if (!newuser.signupCompletion) {
+            return router.push("/signup/additional-info");
           }
 
           // TODO: Redirect them somewhere lmao
@@ -31,5 +30,5 @@ export default function Redirect() {
         });
     }
   }, [router]);
-  return <p>Loading</p>;
+  return <p>Loading {user}</p>;
 }
