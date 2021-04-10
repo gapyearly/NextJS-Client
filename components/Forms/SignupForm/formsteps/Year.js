@@ -57,6 +57,8 @@ export default function Year({ next, previous, formData, setForm }) {
             value={universityYear}
             onChange={setForm}
             placeholder="e.g. 2025"
+            min="1900"
+            max="2100"
           />
         </fieldset>
         <label htmlFor="location">Location (State/Province, Country)</label>

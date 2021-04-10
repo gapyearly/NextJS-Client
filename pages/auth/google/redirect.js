@@ -30,5 +30,5 @@ export default function Redirect() {
         });
     }
   }, [router]);
-  return <p>Loading {user}</p>;
+  return <p>Loading</p>;
 }
