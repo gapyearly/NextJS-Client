@@ -12,7 +12,7 @@ const steps = [
   { id: "name" },
   { id: "year" },
   { id: "bio" },
-  { id: "review" },
+  { id: "picture" },
   { id: "submit" },
 ];
 const defaultData = {
@@ -28,7 +28,7 @@ const defaultData = {
   instagram: "",
   interests: [],
   bio: "",
-  profilePicture: "",
+  profilePicture: null,
 
   signupCompletion: true,
 };

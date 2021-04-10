@@ -1,5 +1,7 @@
 import Button from "@components/Buttons/Button";
 import styles from "components/Forms/SignupForm/SignupForm.module.css";
+import AvatarEditor from "react-avatar-editor";
+import React from "react";
 
 export default function Bio({ next, previous, formData, setForm }) {
   const { instagram, interests, bio, profilePicture } = formData;
@@ -32,15 +34,6 @@ export default function Bio({ next, previous, formData, setForm }) {
           placeholder="Max. character length: 500"
           maxLength="500"
         />
-        <label htmlFor="profilePicture">Upload a profile picture</label>
-        <input
-          type="file"
-          id={styles.profilePicture}
-          name="profilePicture"
-          value={profilePicture}
-          onChange={setForm}
-        />
-
         <div className={styles.btns}>
           <Button
             className={styles.nextBtn}
