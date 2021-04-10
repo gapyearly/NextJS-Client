@@ -11,6 +11,7 @@ export default function Mentorship({ data }) {
       return (
         <MentorCard
           key={fullName}
+          fullName={fullName}
           school={school}
           summary={summary}
           struggles={struggles}
