@@ -56,7 +56,7 @@ a {
   text-decoration: none;
   position: relative;
   z-index: 1;
-  font-weight: 600;
+  font-weight: 500;
 }
 .blueUnderline {
   box-shadow: 0 -0.4em 0 inset var(--horizon);
@@ -141,7 +141,8 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
-label {
+label,
+legend {
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -160,7 +161,11 @@ h3 {
   font-size: 1rem;
   margin: 0.5em 0 0.3em 0;
 }
-p {
+h4 {
+  font-size: 0.95rem;
+}
+p,
+li {
   font-size: 0.9rem;
   margin: 0;
 }
