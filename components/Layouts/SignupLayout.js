@@ -2,10 +2,10 @@ import BackgroundImage from "./BackgroundImage";
 import Link from "next/link";
 import styles from "./SignupLayout.module.css";
 
-export default function Layout({ children }) {
+export default function Layout({ children, src }) {
   return (
     <>
-      <BackgroundImage src="greenBlue">{children}</BackgroundImage>
+      <BackgroundImage src={src}>{children}</BackgroundImage>
       <Link href="/">
         <img
           src="/images/logo.png"
