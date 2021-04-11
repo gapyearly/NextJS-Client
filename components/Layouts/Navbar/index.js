@@ -70,7 +70,7 @@ export default function Navbar() {
           <NavLink href="/about">About Gapyearly</NavLink>
           <NavLink href="/about/our-team">Our Team</NavLink>
           <NavLink href="/about/join-the-team">Join the Team</NavLink>
-          <NavLink href="/about/our-sponsors">Our Sponsors</NavLink>
+          {/* <NavLink href="/about/our-sponsors">Our Sponsors</NavLink> */}
           <NavLink href="/contact">Contact</NavLink>
         </Navfolder>
         <Navfolder title="Opportunities" href="">
