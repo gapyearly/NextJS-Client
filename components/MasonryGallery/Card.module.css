@@ -25,8 +25,15 @@
   background-color: rgba(11, 94, 224, 0.12);
   padding: 0.9em;
   border-radius: 7px;
-  margin: 0 0.8rem 1.6rem;
   box-shadow: 0 3px 5px var(--gray);
+  transition: 0.3s ease;
+}
+.mentorCardOverlay {
+  background-color: rgba(11, 94, 224, 0.12);
+  padding: 0;
+  border-radius: 7px;
+  margin: 0 0.8rem 1.6rem;
+  transition: 0.3s ease;
 }
 .mentorCard h2 {
   display: inline;
@@ -42,4 +49,24 @@
   margin-bottom: 0.3rem;
   margin-top: 0.8rem;
   font-weight: 600;
+}
+.mentorCardOverlay {
+  position: relative;
+}
+.messageBtn {
+  display: none;
+}
+.messageBtn Button {
+  transition: 1s ease;
+}
+.mentorCard:hover + .messageBtn,
+.messageBtn:hover {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mentorCardOverlay:hover {
+  background-color: rgba(87, 5, 23, 0.5);
 }
