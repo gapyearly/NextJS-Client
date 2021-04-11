@@ -14,12 +14,21 @@ export default function Submit({ formData, setForm }) {
   // TODO ERROR Message
   const submitForm = async () => {
     NProgress.start();
+    let data = null;
+    try {
+      if (formData.profilePicture) {
+        const imageData = new FormData();
+        imageData.append("files", formData.profilePicture);
+        const ctx = await strapi.post("upload", imageData);
+        data = ctx.data;
+      }
+    } catch (e) {
+      console.log(e);
+    }
 
-    const imageData = new FormData();
-    imageData.append("files", formData.profilePicture);
-    const { data } = await strapi.post("upload", imageData);
     await strapi.put(`users/${user.id}`, {
-      personalInfo: { ...formData, profilePicture: data[0].id },
+      personalInfo: { ...formData, profilePicture: data[0].id || null },
+      signupCompletion: true,
     });
 
     NProgress.done();
