@@ -1,11 +1,27 @@
-.backgroundImage {
-  z-index: 0;
-  position: fixed;
+.container {
+  padding-top: 10rem;
+  overflow: hidden;
 }
-.logo {
-  cursor: pointer;
-  position: fixed;
-  max-height: calc(var(--navbarHeight) * 0.7);
-  z-index: 1001;
-  /*TODO: Gapyearly Logo Animation is delayed*/
+
+.container h1,
+.container h2,
+.container p {
+  text-align: center;
+}
+.container h1 {
+  margin-bottom: 0;
+}
+.container h2 {
+  margin-bottom: 1rem;
+}
+.container form {
+  margin: 0 auto;
+}
+.container label {
+  display: block;
+}
+.btns {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
 }

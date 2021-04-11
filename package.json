@@ -20,6 +20,8 @@
     "nextjs-redirect": "^5.0.2",
     "nprogress": "^0.2.0",
     "react": "^17.0.1",
+    "react-accessible-accordion": "^3.3.4",
+    "react-avatar-editor": "^11.1.0",
     "react-dom": "17.0.1",
     "react-hooks-helper": "^1.6.0",
     "react-html-parser": "^2.0.2",

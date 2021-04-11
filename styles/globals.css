@@ -29,7 +29,8 @@ body {
   flex-direction: column;
 }
 main {
-  min-height: 100vh;
+  min-height: 60vh;
+  /* TODO: sticky footer not working */
   margin: 0 7rem;
   flex: 1;
 }
@@ -44,16 +45,19 @@ main {
   color: var(--seashell);
   display: block;
   padding: 0.7rem;
-  width: 100vw;
+  max-width: 100vw;
   margin: var(--navbarHeight) 0 1.5rem;
 }
 a {
   color: inherit;
-  transition: color 0.15s ease, border-color 0.15s ease;
+
+  transition: color 0.15s ease;
+  /* border-color: 0.15s ease; */
   box-shadow: 0 -0.4em 0 inset var(--sunlight);
   text-decoration: none;
   position: relative;
   z-index: 1;
+  font-weight: 500;
 }
 .blueUnderline {
   box-shadow: 0 -0.4em 0 inset var(--horizon);
@@ -68,31 +72,84 @@ TODO:add animations/transitions*/
 }
 button {
   border: none;
-  border-radius: 5px;
   color: var(--seashell);
   font-weight: 600;
   padding: 0.5rem;
   margin: 4px 0;
 }
 
+input[type="file"]::file-selector-button,
+input[type="file"]::-webkit-file-upload-button {
+  font-style: "Quicksand";
+  border: none;
+  color: var(--seashell);
+  font-weight: 600;
+  padding: 0.5rem;
+  margin: 4px 0.5rem 4px 0;
+  background-color: var(--berry);
+  border-radius: 5px;
+  font-family: "Quicksand", sans-serif;
+}
+
+/* input[type=file]::-webkit-file-upload-button:hover, input[type=file]::file-selector-button:hover {
+} */
+
 input,
-button {
+button,
+textarea {
   font-size: inherit;
   font-family: inherit;
+  border-radius: 5px;
 }
 input,
 textarea {
   font-size: 0.9rem;
   border: 1px solid var(--horizon);
-  border-radius: 5px;
-  padding: 2px 5px;
+
+  padding: 4px 7px;
   display: block;
+  margin-bottom: 0.8rem;
+  margin-top: 0.35rem;
   /* all form elements are inline otherwise */
 }
-label {
-  font-size: 0.9rem;
+textarea {
+  border-radius: 5px;
+
+  height: 5rem;
+}
+input,
+textarea,
+form {
+  width: 25rem;
+}
+fieldset {
+  margin-bottom: 1rem;
+  border: 1.5px solid var(--berry);
+}
+fieldset:last-child {
+  margin-bottom: 0.5rem;
+}
+/* needs parent element */
+/* for input type=number arrows */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+label,
+legend {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+form {
+  margin-top: 2rem;
+}
 h1 {
   text-align: center;
   margin: 0 0 0.6em 0;
@@ -105,7 +162,11 @@ h3 {
   font-size: 1rem;
   margin: 0.5em 0 0.3em 0;
 }
-p {
+h4 {
+  font-size: 0.95rem;
+}
+p,
+li {
   font-size: 0.9rem;
   margin: 0;
 }
@@ -169,10 +230,14 @@ p {
 #modal-root ::-webkit-scrollbar-track {
   padding: 4px;
 }
-/* ::-webkit-scrollbar the scrollbar.
-::-webkit-scrollbar-button the buttons on the scrollbar (arrows pointing upwards and downwards).
-::-webkit-scrollbar-thumb the draggable scrolling handle.
-::-webkit-scrollbar-track the track (progress bar) of the scrollbar.
-::-webkit-scrollbar-track-piece the track (progress bar) NOT covered by the handle.
-::-webkit-scrollbar-corner the bottom corner of the scrollbar, where both horizontal and vertical scrollbars meet.
-::-webkit-resizer the draggable resizing handle that appears at the bottom corner of some elements. */
+
+.error404 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
+}
+.error404 h1 {
+  margin: 2rem 0 0.5rem 0;
+  font-size: 3rem;
+}

@@ -1,20 +1,21 @@
 .background {
-  background-image: url("/images/greenblue-valleys.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center 15vh;
   height: 100vh;
   width: 100vw;
 
+  /* width: 100vw;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top center;
-  z-index: 0;
-  position: fixed;
-}
-.backgroundContent {
-  height: 100%;
-  display: flex;
-  align-items: center;
-}
-.valley {
   bottom: 0;
-  height: 66vh;
+  height: 40vh;
+  position: fixed; */
+}
+.greenBlue {
+  background-image: url("/images/greenblue-valleys.svg");
+}
+.redYellow {
+  background-image: url("/images/redYellow-valleys.svg");
 }

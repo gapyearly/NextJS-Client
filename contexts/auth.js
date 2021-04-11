@@ -15,7 +15,7 @@ const AuthContext = createContext({});
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-
+  console.log(user);
   async function revalidateUserFromStorage() {
     // Gets token from browser cookie
     const token = Cookies.get("token");
@@ -24,7 +24,8 @@ export const AuthProvider = ({ children }) => {
       strapi.defaults.headers.Authorization = `Bearer ${token}`;
       try {
         const { data } = await strapi.get("users/me");
-        if (data.user) setUser(user);
+        console.log(data);
+        if (data) setUser(data);
       } catch (e) {
         console.log(e);
         logout();
@@ -58,9 +59,10 @@ export const AuthProvider = ({ children }) => {
           params,
         })
         .then(({ data }) => {
+          strapi.defaults.headers.Authorization = `Bearer ${data.jwt}`;
           setUser(data.user);
           Cookies.set("token", data.jwt);
-          resolve();
+          resolve(data.user);
         })
         .catch((err) => {
           reject(err);

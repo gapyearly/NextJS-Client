@@ -1,0 +1,11 @@
+.contactDescription {
+  font-size: 1.1rem;
+}
+/* .contact {
+} */
+.joinTeam p {
+  font-weight: 400;
+}
+.joinTeam textarea {
+  height: 10rem;
+}

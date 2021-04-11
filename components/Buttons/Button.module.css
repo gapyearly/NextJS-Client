@@ -10,6 +10,9 @@
 .redBg {
   background-color: var(--clay);
 }
+.greyBg {
+  background-color: var(--gray);
+}
 .pill {
   border-radius: 100px;
   width: fit-content;

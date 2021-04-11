@@ -72,34 +72,14 @@ export const CostComponent = (cost) => {
 
 export const CategoryComponent = (category) => {
   return {
-    travel: (
-      <Pill color="blueBg" href="/">
-        Travel
-      </Pill>
-    ),
-    paidWork: (
-      <Pill color="darkBg" href="/">
-        Paid Work
-      </Pill>
-    ),
+    travel: <Pill color="blueBg">Travel</Pill>,
+    paidWork: <Pill color="darkBg">Paid Work</Pill>,
 
-    programs: (
-      <Pill color="redBg" href="/">
-        Program
-      </Pill>
-    ),
+    programs: <Pill color="redBg">Program</Pill>,
 
-    volunteer: (
-      <Pill color="greenBg" href="/">
-        Volunteer
-      </Pill>
-    ),
+    volunteer: <Pill color="greenBg">Volunteer</Pill>,
 
-    entrepreneurship: (
-      <Pill color="darkBg" href="/">
-        Entrepreneurship
-      </Pill>
-    ),
+    entrepreneurship: <Pill color="darkBg">Entrepreneurship</Pill>,
   }[category];
 };
 

@@ -7,12 +7,16 @@ const provider = "google";
 export default function Redirect() {
   const router = useRouter();
   const { providerLogin, user } = useAuth();
-  console.log(user);
   // When the router is ready, it'll attempt to login with parameters
   useEffect(() => {
     if (router.isReady) {
       providerLogin(router.query, provider)
-        .then(() => {
+        .then((newuser) => {
+          console.log(newuser);
+          if (!newuser.signupCompletion) {
+            return router.push("/signup/additional-info");
+          }
+
           // TODO: Redirect them somewhere lmao
           // Make sure to check if full account setup has been completed
           const redirect = window.sessionStorage.getItem("redirect");
@@ -27,5 +31,5 @@ export default function Redirect() {
         });
     }
   }, [router]);
-  return <p>Hey {user ? user.email : ""}</p>;
+  return <p>Loading</p>;
 }

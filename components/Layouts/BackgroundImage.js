@@ -1,9 +1,7 @@
 import styles from "./BackgroundImage.module.css";
 
-export default function BackgroundImage({ className, children }) {
+export default function BackgroundImage({ src, children }) {
   return (
-    <div className={`${styles.background} ${styles[className]}`}>
-      {children}
-    </div>
+    <div className={`${styles.background} ${styles[src]}`}>{children}</div>
   );
 }

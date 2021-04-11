@@ -16,46 +16,9 @@ export default function Home() {
         <Title>Home</Title>
       </Head>
 
-      <PageTitle>Welcome to Gapyearly!!!!</PageTitle>
+      <PageTitle>Welcome to Gapyearly!</PageTitle>
 
       <Layout>
-        <h2>H2 Text</h2>
-        <h3>H3 Text</h3>
-        <p>Paragraph Text</p>
-        <FaInstagram></FaInstagram>
-        <LinkGallery />
-        <form>
-          <label>
-            Form Label
-            <input placeholder={"Search..."} type="text"></input>
-          </label>
-
-          <label>
-            <input type="radio" name="subscribe" value="yes"></input>Yes
-          </label>
-          <label>
-            <input type="radio" name="subscribe" value="no"></input>No
-          </label>
-
-          <label>
-            <input type="checkbox" name="permission"></input>Yes, I agree!!!
-          </label>
-
-          <Button color="blueBg" href="gapyearly.com">
-            Submit
-          </Button>
-          <br></br>
-          <Pill color="blueBg" href="">
-            Pill style
-          </Pill>
-          <Pill color="redBg" href="">
-            Pill style
-          </Pill>
-          <Pill color="greenBg" href="">
-            Pill style
-          </Pill>
-        </form>
-
         <div className="cardGallery">
           <div className={"card"}>
             <img
