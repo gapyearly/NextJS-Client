@@ -13,10 +13,10 @@ export default function MentorCard({
   struggles,
   bgColor,
 }) {
-  const MentorCardContent = () => {
+  const MentorCardContent = ({ bgColor }) => {
     return (
       <>
-        <div className={styles.mentorCard}>
+        <div className={`${styles.mentorCard}``${bgColor}`}>
           <h2>{firstName} </h2>
           <h2>{lastName}</h2>
           <h3>
@@ -35,7 +35,7 @@ export default function MentorCard({
       </>
     );
   };
-  const bgColorComponent = (bgColor) => {
+  const bgColorComponent = ({ bgColor }) => {
     return {
       red: <MentorCardContent className={styles.redBg} />,
       yellow: <MentorCardContent className={styles.yellowBg} />,
