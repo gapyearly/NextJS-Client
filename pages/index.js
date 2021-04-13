@@ -5,9 +5,6 @@ import PageTitle from "@components/PageTitle";
 import Title from "@components/Title";
 import Button from "@components/Buttons/Button.js";
 import Pill from "@components/Buttons/Pill.js";
-import Modal from "@components/Modal.js";
-import LinkGallery from "@components/MasonryGallery";
-import { FaInstagram } from "react-icons/fa";
 
 export default function Home() {
   return (
