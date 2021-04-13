@@ -2,10 +2,10 @@ import Link from "next/link";
 import styles from "./Button.module.css";
 import PropTypes from "prop-types";
 
-function Button({ color, href, type, children, onClick }) {
+function Button({ color, href, type, children, onClick, className }) {
   const Button = (
     <button
-      className={`${styles[color]} ${styles.clickable}`}
+      className={`${styles[color]} ${styles.clickable} ${className}`}
       type={type}
       onClick={onClick}
     >

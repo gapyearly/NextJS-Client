@@ -1,6 +1,20 @@
 import Link from "next/link";
 import styles from "./Dashboard.module.css";
+import { useAuth } from "@contexts/auth";
+import redirect from "nextjs-redirect";
+const Redirect = redirect("/login");
+
 export default function DashboardLayout({ children }) {
+  const { isAuthenticated, loading } = useAuth();
+  if (loading) return <div></div>;
+  if (!isAuthenticated)
+    return (
+      <Redirect>
+        <div style={{ display: "grid", placeItems: "center" }}>
+          <h1>Please sign in . . .</h1>
+        </div>
+      </Redirect>
+    );
   return <Navbar></Navbar>;
 }
 
