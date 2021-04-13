@@ -7,8 +7,8 @@ import MentorCard from "@components/MasonryGallery/MentorCard";
 
 export default function Mentorship({ data }) {
   console.log(data);
+  let index = 0;
   const cards = data.map(({ personalInfo, mentorInfo, id }) => {
-    let index = 0;
     index += 1;
     const bgColor =
       index % 4 === 0
@@ -18,7 +18,7 @@ export default function Mentorship({ data }) {
         : index % 4 === 2
         ? "green"
         : "blue";
-
+    console.log(bgColor);
     return (
       <MentorCard
         key={id}

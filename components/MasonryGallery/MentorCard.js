@@ -13,38 +13,24 @@ export default function MentorCard({
   struggles,
   bgColor,
 }) {
-  const MentorCardContent = ({ bgColor }) => {
-    return (
-      <>
-        <div className={`${styles.mentorCard}``${bgColor}`}>
-          <h2>{firstName} </h2>
-          <h2>{lastName}</h2>
-          <h3>
-            {universityName} {universityYear}
-          </h3>
-          <h4>WHAT I DID:</h4>
-          {ReactHtmlParser(summary)}
-          <h4>WHAT I STRUGGLED WITH:</h4>
-          {ReactHtmlParser(struggles)}
-        </div>
-        <div className={styles.messageBtn}>
-          <Button href="/" color="darkBg">
-            <HiMail></HiMail> Message
-          </Button>
-        </div>
-      </>
-    );
-  };
-  const bgColorComponent = ({ bgColor }) => {
-    return {
-      red: <MentorCardContent className={styles.redBg} />,
-      yellow: <MentorCardContent className={styles.yellowBg} />,
-      green: <MentorCardContent className={styles.greenBg} />,
-      blue: <MentorCardContent className={styles.blueBg} />,
-    }[bgColor];
-  };
-
   return (
-    <div className={styles.mentorCardOverlay}>{bgColorComponent(bgColor)}</div>
+    <div className={styles.mentorCardOverlay}>
+      <div className={`${styles.mentorCard} ${styles[`${bgColor}Bg`]}`}>
+        <h2>{firstName} </h2>
+        <h2>{lastName}</h2>
+        <h3>
+          {universityName} {universityYear}
+        </h3>
+        <h4>WHAT I DID:</h4>
+        {ReactHtmlParser(summary)}
+        <h4>WHAT I STRUGGLED WITH:</h4>
+        {ReactHtmlParser(struggles)}
+      </div>
+      <div className={styles.messageBtn}>
+        <Button href="/" color="darkBg">
+          <HiMail></HiMail> Message
+        </Button>
+      </div>
+    </div>
   );
 }
