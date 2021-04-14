@@ -2,7 +2,12 @@
   "chatRooms": [
     {
       "participants": ["Alex", "Arlene"],
-      "messages": [{}, {}]
+      "messages": [
+        {
+          "sender": "Alex"
+        },
+        {}
+      ]
     }
   ]
 }
