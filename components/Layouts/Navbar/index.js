@@ -89,8 +89,8 @@ export default function Navbar() {
           <NavLink href="/prospective/facts-and-figures">
             Facts & Figures
           </NavLink>
-          <NavLink href="/prospective/parent-references">
-            Parent References
+          <NavLink href="/prospective/parent-reflections">
+            Parent Reflections
           </NavLink>
           <NavLink href="/prospective/girls-who-gap">Girls Who Gap</NavLink>
           <NavLink href="/prospective/faq">FAQ</NavLink>
