@@ -25,3 +25,7 @@
   align-items: center;
   color: var(--seashell);
 }
+.main {
+  max-height: 100vh;
+  margin-left: max(15vw, 200px);
+}

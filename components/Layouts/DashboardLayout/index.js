@@ -15,7 +15,12 @@ export default function DashboardLayout({ children }) {
         </div>
       </Redirect>
     );
-  return <Navbar></Navbar>;
+  return (
+    <>
+      <Navbar />
+      <main className={styles.main}>{children}</main>
+    </>
+  );
 }
 
 const Navbar = () => {

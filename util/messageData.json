@@ -1,0 +1,8 @@
+{
+  "chatRooms": [
+    {
+      "participants": ["Alex", "Arlene"],
+      "messages": [{}, {}]
+    }
+  ]
+}

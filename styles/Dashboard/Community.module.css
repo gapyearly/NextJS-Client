@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: flex-start;
+  padding: 2rem;
+}
+.community {
+  margin-left: auto;
+  text-align: left;
+}
+.community h1 {
+  text-align: left;
+}
+.window {
+  min-width: 50vw;
+}
+.windowHeader {
+  background-color: var(--clay);
+}
