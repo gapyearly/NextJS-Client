@@ -5,16 +5,14 @@ import strapi from "@api/strapi";
 import styles from "@components/MasonryGallery/PastExperienceCard.module.css";
 
 import Pill from "@components/Buttons/Pill.js";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
 
 import ExperienceGallery from "@components/MasonryGallery";
-import ExperienceCard from "@components/MasonryGallery/ExperienceCard";
-import ExperienceModalContent from "@components/MasonryGallery/ExperienceModalContent";
+import ParentReflectionCard from "@components/MasonryGallery/ParentReflectionCard";
+import ParentReflectionModalContent from "@components/MasonryGallery/ParentReflectionModalContent";
 import PageTitle from "@components/PageTitle";
 import Modal from "@components/Modal";
 
-export default function PastExperiences({ data }) {
+export default function ParentReflections({ data }) {
   const [modalVisibility, setModalVisibility] = useState(false);
   const [modalData, setModalData] = useState(null);
 
@@ -23,11 +21,11 @@ export default function PastExperiences({ data }) {
     setModalVisibility(true);
   };
   console.log(modalData);
-  const cards = data.map((experienceData) => {
+  const cards = data.map((parentReflectionData) => {
     return (
-      <ExperienceCard
-        key={experienceData.slug}
-        data={experienceData}
+      <ParentReflectionCard
+        key={parentReflectionData.slug}
+        data={parentReflectionData}
         onClick={onClick}
       />
     );
@@ -35,7 +33,7 @@ export default function PastExperiences({ data }) {
   // TODO: Add Search Bar
   return (
     <>
-      <PageTitle>Past Experiences</PageTitle>
+      <PageTitle>Parent Reflections</PageTitle>
       <Layout>
         <ExperienceGallery>{cards}</ExperienceGallery>
         <Modal
@@ -45,7 +43,7 @@ export default function PastExperiences({ data }) {
             setModalData(null);
           }}
         >
-          <ExperienceModalContent data={modalData} />
+          <ParentReflectionModalContent data={modalData} />
         </Modal>
       </Layout>
     </>
@@ -53,7 +51,7 @@ export default function PastExperiences({ data }) {
 }
 
 export async function getStaticProps(ctx) {
-  const { data } = await strapi.get("experiences");
+  const { data } = await strapi.get("parent_reflections");
   return {
     props: {
       data,

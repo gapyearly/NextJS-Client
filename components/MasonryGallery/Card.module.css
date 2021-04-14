@@ -36,16 +36,16 @@
   transition: 0.3s ease;
 }
 .redBg {
-  background-color: rgba(224, 11, 11, 0.12);
+  background-color: rgba(248, 93, 72, 0.12);
 }
 .yellowBg {
-  background-color: rgba(224, 210, 11, 0.12);
+  background-color: #fef8ea;
 }
 .greenBg {
-  background-color: rgba(11, 224, 125, 0.12);
+  background-color: #ddf1ea;
 }
 .blueBg {
-  background-color: rgba(11, 94, 224, 0.12);
+  background-color: #dee7f3;
 }
 
 .mentorCard h2 {
@@ -82,4 +82,7 @@
 }
 .mentorCardOverlay:hover {
   background-color: rgba(87, 5, 23, 0.5);
+}
+
+.parentReferenceCard {
 }
