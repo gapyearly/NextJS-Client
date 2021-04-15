@@ -2,6 +2,12 @@ import Link from "next/link";
 import styles from "./Dashboard.module.css";
 import { useAuth } from "@contexts/auth";
 import redirect from "nextjs-redirect";
+import { HiMail } from "react-icons/hi";
+import { FaGlobe } from "react-icons/fa";
+import { BsFillChatSquareFill, BsPersonFill } from "react-icons/bs";
+
+import { RiSettings3Fill } from "react-icons/ri";
+import { IoMdExit } from "react-icons/io";
 const Redirect = redirect("/login");
 
 export default function DashboardLayout({ children }) {
@@ -32,7 +38,33 @@ const Navbar = () => {
         alt="Gapyearly Logo"
         className={styles.logo}
       />
-      <NavItem href="dashboard/">Community Hub</NavItem>
+      <NavItem href="/dashboard/messaging">
+        <HiMail className={styles.navIcon} />
+        Messaging
+      </NavItem>
+
+      <NavItem href="/dashboard/community">
+        <FaGlobe className={styles.navIcon} />
+        Community Hub
+      </NavItem>
+      <NavItem href="/dashboard/submission">
+        <BsFillChatSquareFill className={styles.navIcon} />
+        Share Your story
+      </NavItem>
+      <NavItem href="/dashboard/profile">
+        <BsPersonFill className={styles.navIcon} />
+        Profile Overview
+      </NavItem>
+
+      <NavItem href="/dashboard/settings">
+        <RiSettings3Fill className={styles.navIcon} />
+        Account Settings
+      </NavItem>
+
+      <NavItem href="/dashboard/logout">
+        <IoMdExit className={styles.navIcon} />
+        Logout
+      </NavItem>
     </div>
   );
 };
