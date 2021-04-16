@@ -22,7 +22,6 @@
 }
 
 .mentorCard {
-  background-color: rgba(11, 94, 224, 0.12);
   padding: 0.9em;
   border-radius: 7px;
   box-shadow: 0 3px 5px var(--gray);
@@ -30,11 +29,25 @@
 }
 .mentorCardOverlay {
   background-color: rgba(11, 94, 224, 0.12);
+
   padding: 0;
   border-radius: 7px;
   margin: 0 0.8rem 1.6rem;
   transition: 0.3s ease;
 }
+.redBg {
+  background-color: rgba(248, 93, 72, 0.12);
+}
+.yellowBg {
+  background-color: #fef8ea;
+}
+.greenBg {
+  background-color: #ddf1ea;
+}
+.blueBg {
+  background-color: #dee7f3;
+}
+
 .mentorCard h2 {
   display: inline;
 }
@@ -69,4 +82,7 @@
 }
 .mentorCardOverlay:hover {
   background-color: rgba(87, 5, 23, 0.5);
+}
+
+.parentReferenceCard {
 }

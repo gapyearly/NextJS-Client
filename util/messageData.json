@@ -1,0 +1,13 @@
+{
+  "chatRooms": [
+    {
+      "participants": ["Alex", "Arlene"],
+      "messages": [
+        {
+          "sender": "Alex"
+        },
+        {}
+      ]
+    }
+  ]
+}

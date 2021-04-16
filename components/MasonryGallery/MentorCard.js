@@ -3,6 +3,7 @@ import Link from "next/link";
 import Button from "@components/Buttons/Button";
 import { HiMail } from "react-icons/hi";
 import ReactHtmlParser from "react-html-parser";
+
 export default function MentorCard({
   firstName,
   lastName,
@@ -10,10 +11,11 @@ export default function MentorCard({
   universityYear,
   summary,
   struggles,
+  bgColor,
 }) {
   return (
     <div className={styles.mentorCardOverlay}>
-      <div className={styles.mentorCard}>
+      <div className={`${styles.mentorCard} ${styles[`${bgColor}Bg`]}`}>
         <h2>{firstName} </h2>
         <h2>{lastName}</h2>
         <h3>
@@ -32,4 +34,3 @@ export default function MentorCard({
     </div>
   );
 }
-// REPLACE LINKGKDGKFGKDFLGD

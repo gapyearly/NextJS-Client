@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import { useAuth } from "@contexts/auth";
 import { useEffect } from "react";
 import { route } from "next/dist/next-server/server/router";
+import styles from "@styles/Login.module.css";
 
 const provider = "google";
 export default function Redirect() {
@@ -31,5 +32,5 @@ export default function Redirect() {
         });
     }
   }, [router]);
-  return <p>Loading</p>;
+  return <h1 className={styles.redirect}>Loading...</h1>;
 }
