@@ -1,7 +1,7 @@
 /**
  * Used in /blog gallery page.
  */
-import styles from "./PastExperienceCard.module.css";
+import styles from "./ParentReflectionCard.module.css";
 
 import Link from "next/link";
 
@@ -30,17 +30,16 @@ export default function ParentReflectionCard({ data, onClick }) {
 
   return (
     <div
-      className={styles.parentReflectionCard}
+      className={styles.card}
       onClick={handleClick}
       role="button"
       tabIndex={0}
     >
       <h2>{title}</h2>
       <h3>
-        By: {parentFullName}, parent of {childFullName}
+        – {parentFullName}, parent of {childFullName}
       </h3>
       <p>{description}</p>
-
       <img src={image.url} alt={image.alt} />
     </div>
   );
