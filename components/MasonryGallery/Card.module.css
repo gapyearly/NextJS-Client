@@ -84,5 +84,12 @@
   background-color: rgba(87, 5, 23, 0.5);
 }
 
-.parentReferenceCard {
+.parentReflectionCard {
+  padding: 0.9em;
+  transition: 0.15s ease-in;
+  margin: 0 0.8rem 1.6rem;
+  background-color: white;
+  /* border: solid 1px var(--berry); */
+  border-radius: 5px;
+  box-shadow: 0 3px 5px var(--gray);
 }

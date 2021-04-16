@@ -53,14 +53,14 @@ a {
 
   transition: color 0.15s ease;
   /* border-color: 0.15s ease; */
-  box-shadow: 0 -0.4em 0 inset var(--sunlight);
+  box-shadow: 0 -0.4em 0 inset rgba(255, 223, 157, 0.85);
   text-decoration: none;
   position: relative;
   z-index: 1;
   font-weight: 500;
 }
 .blueUnderline {
-  box-shadow: 0 -0.4em 0 inset var(--horizon);
+  box-shadow: 0 -0.4em 0 inset rgba(11, 94, 224, 0.85);
 }
 /* a:hover,
 a:focus,
