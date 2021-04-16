@@ -51,7 +51,7 @@ export default function ParentReflections({ data }) {
 }
 
 export async function getStaticProps(ctx) {
-  const { data } = await strapi.get("parent_reflections");
+  const { data } = await strapi.get("parent-reflections");
   return {
     props: {
       data,
