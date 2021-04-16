@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.45);
   z-index: 2000;
   backdrop-filter: blur(3px);
 }
@@ -17,12 +17,20 @@
   max-width: 65vw;
   height: 70vh;
   border-radius: 7px;
-  padding: 1.5em 0.7em 1.5em 1.7em;
+  padding: 1.5em 1.9em;
   overflow: auto;
   /* TODO: Change Max-width vw*/
 }
 .modal h2 {
   margin-top: 0;
+}
+.nameCitation {
+  /* for parent reflections */
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: right;
+  margin-bottom: 1.5rem;
 }
 .close {
   color: var(--clay);

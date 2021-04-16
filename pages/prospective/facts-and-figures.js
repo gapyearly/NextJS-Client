@@ -25,6 +25,10 @@ export default function FactsAndFigures({ data }) {
       </Head>
       <PageTitle>Facts and Figures</PageTitle>
       <Layout>
+        <h2>
+          Still on the fence? Get cold, hard facts on how gap years help all
+          students.
+        </h2>
         <LinkGallery>{cards}</LinkGallery>
       </Layout>
     </>

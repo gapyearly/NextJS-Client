@@ -1,0 +1,42 @@
+.card {
+  padding: 0.9em;
+  transition: 0.15s ease-in;
+  margin: 0 0.8rem 1.6rem;
+  background-color: white;
+  /* border: solid 1px var(--berry); */
+  border-radius: 5px;
+  box-shadow: 0 3px 5px var(--gray);
+}
+.card:active,
+.card:focus,
+.card:hover {
+  outline-color: var(--horizon);
+  color: var(--horizon);
+}
+.card p {
+  margin-bottom: 1rem;
+}
+.card h2 {
+  line-height: 1.2;
+}
+.card h3 {
+  margin: 0.1rem 0 0.7rem;
+  text-align: right;
+  font-style: italic;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.source {
+  color: var(--sunlight);
+  font-weight: 500;
+}
+.card img,
+.modal img {
+  overflow: hidden;
+  object-fit: cover;
+  width: 100%;
+  height: 13em;
+  border-radius: 5px;
+}
+
+/* duplicate code from PastExperienceCard, prob combine at some point */

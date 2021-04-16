@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import Layout from "@components/Layouts/Layout";
 import strapi from "@api/strapi";
-
 import styles from "@components/MasonryGallery/PastExperienceCard.module.css";
 
 import Pill from "@components/Buttons/Pill.js";
 
-import ExperienceGallery from "@components/MasonryGallery";
+import Gallery from "@components/MasonryGallery";
 import ParentReflectionCard from "@components/MasonryGallery/ParentReflectionCard";
 import ParentReflectionModalContent from "@components/MasonryGallery/ParentReflectionModalContent";
 import PageTitle from "@components/PageTitle";
@@ -35,7 +34,7 @@ export default function ParentReflections({ data }) {
     <>
       <PageTitle>Parent Reflections</PageTitle>
       <Layout>
-        <ExperienceGallery>{cards}</ExperienceGallery>
+        <Gallery>{cards}</Gallery>
         <Modal
           show={modalVisibility}
           onClose={() => {
