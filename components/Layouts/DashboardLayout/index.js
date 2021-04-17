@@ -49,7 +49,7 @@ const Navbar = () => {
       </NavItem>
       <NavItem href="/dashboard/submission">
         <BsFillChatSquareFill className={styles.navIcon} />
-        Share Your story
+        Share Your Story
       </NavItem>
       <NavItem href="/dashboard/profile">
         <BsPersonFill className={styles.navIcon} />
