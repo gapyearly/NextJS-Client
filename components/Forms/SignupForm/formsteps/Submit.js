@@ -27,8 +27,9 @@ export default function Submit({ formData, setForm }) {
     }
 
     await strapi.put(`users/${user.id}`, {
-      personalInfo: { ...formData, profilePicture: data[0].id || null },
+      ...formData,
       signupCompletion: true,
+      profilePicture: data[0].id || null,
     });
 
     NProgress.done();

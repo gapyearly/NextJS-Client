@@ -8,31 +8,40 @@ import MentorCard from "@components/MasonryGallery/MentorCard";
 export default function Mentorship({ data }) {
   console.log(data);
   let index = 0;
-  const cards = data.map(({ personalInfo, mentorInfo, id }) => {
-    index += 1;
-    const bgColor =
-      index % 4 === 0
-        ? "red"
-        : index % 4 === 1
-        ? "yellow"
-        : index % 4 === 2
-        ? "green"
-        : "blue";
-    console.log(bgColor);
-    return (
-      <MentorCard
-        key={id}
-        firstName={personalInfo.firstName}
-        lastName={personalInfo.lastName}
-        universityName={personalInfo.universityName}
-        universityYear={personalInfo.universityYear}
-        selfFunded={mentorInfo.selfFunded}
-        summary={mentorInfo.summary}
-        struggles={mentorInfo.struggles}
-        bgColor={bgColor}
-      ></MentorCard>
-    );
-  });
+  const cards = data.map(
+    ({
+      firstName,
+      mentorInfo,
+      id,
+      lastName,
+      universityName,
+      universityYear,
+    }) => {
+      index += 1;
+      const bgColor =
+        index % 4 === 0
+          ? "red"
+          : index % 4 === 1
+          ? "yellow"
+          : index % 4 === 2
+          ? "green"
+          : "blue";
+      console.log(bgColor);
+      return (
+        <MentorCard
+          key={id}
+          firstName={firstName}
+          lastName={lastName}
+          universityName={universityName}
+          universityYear={universityYear}
+          selfFunded={mentorInfo.selfFunded}
+          summary={mentorInfo.summary}
+          struggles={mentorInfo.struggles}
+          bgColor={bgColor}
+        ></MentorCard>
+      );
+    }
+  );
 
   return (
     <>

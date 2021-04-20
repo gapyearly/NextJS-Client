@@ -13,7 +13,7 @@ import Link from "next/link";
  */
 export default function BlogCard({ data, align }) {
   const { title, description, slug, image, author, profile } = data;
-  const fullName = `${author.personalInfo.firstName} ${author.personalInfo.lastName}`;
+  const fullName = `${author.firstName} ${author.lastName}`;
   // TODO Fix up structure and styling
   const BlogCardInfo = ({ className }) => {
     return (
