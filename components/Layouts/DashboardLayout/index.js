@@ -8,10 +8,14 @@ import { BsFillChatSquareFill, BsPersonFill } from "react-icons/bs";
 
 import { RiSettings3Fill } from "react-icons/ri";
 import { IoMdExit } from "react-icons/io";
+import { useRouter } from "next/router";
+
 const Redirect = redirect("/login");
+const SignupRedirect = redirect("/signup/additional-info");
 
 export default function DashboardLayout({ children }) {
-  const { isAuthenticated, loading } = useAuth();
+  const { isAuthenticated, loading, user } = useAuth();
+  const router = useRouter();
   if (loading) return <div></div>;
   if (!isAuthenticated)
     return (
@@ -21,6 +25,9 @@ export default function DashboardLayout({ children }) {
         </div>
       </Redirect>
     );
+  if (!user.signupCompletion) {
+    return <SignupRedirect />;
+  }
   return (
     <>
       <Navbar />

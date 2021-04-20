@@ -1,6 +1,6 @@
 import DashboardLayout from "@components/Layouts/DashboardLayout";
 import styles from "@styles/Dashboard/UserDashboard.module.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 import { useAuth } from "@contexts/auth";
@@ -19,24 +19,28 @@ import _ from "lodash";
 export default function Profile() {
   const { user, loading } = useAuth();
   const [personalInfo, setPersonalInfo] = useState(null);
-  if (!loading && user) {
-    setPersonalInfo(user.personalInfo);
-    const {
-      email,
-      role,
-      firstName,
-      lastName,
-      gapYearStart,
-      gapYearEnd,
-      universityName,
-      universityYearlocation,
-      profilePicture,
-      bio,
-      selfFunded,
-      summary,
-      struggles,
-    } = user;
-  }
+  // Loadings user information only once.
+  useEffect(() => {
+    if (!loading && user) {
+      setPersonalInfo(user.personalInfo);
+      const {
+        email,
+        role,
+        firstName,
+        lastName,
+        gapYearStart,
+        gapYearEnd,
+        universityName,
+        universityYearlocation,
+        profilePicture,
+        bio,
+        selfFunded,
+        summary,
+        struggles,
+      } = user;
+    }
+  }, [loading]);
+
   console.log(personalInfo);
   return (
     <DashboardLayout>
@@ -44,7 +48,6 @@ export default function Profile() {
       <div className={styles.container}>
         <div className={styles.profile}>
           <h2>Name:</h2>
-          <RIEInput />
         </div>
       </div>
     </DashboardLayout>
