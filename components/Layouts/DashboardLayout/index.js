@@ -12,7 +12,7 @@ import { useRouter } from "next/router";
 
 import { useAlert } from "react-alert";
 
-const Redirect = redirect("/login");
+const Redirect = redirect("/");
 const SignupRedirect = redirect("/signup/additional-info");
 
 export default function DashboardLayout({ children }) {
