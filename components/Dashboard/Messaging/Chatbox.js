@@ -1,5 +1,11 @@
 import { useAuth } from "@contexts/auth";
-import { MessageList, ChatList, Input, Button } from "react-chat-elements";
+import {
+  MessageList,
+  ChatList,
+  Input,
+  Button,
+  Popup,
+} from "react-chat-elements";
 import "react-chat-elements/dist/main.css";
 import getFullName from "../../../util/fullName";
 import strapi from "@api/strapi";
@@ -67,7 +73,6 @@ export default function Chatrooms() {
       });
     }
   }, [loading, user]);
-  console.log(messages);
   return (
     <div>
       <ChatList
@@ -87,8 +92,42 @@ export default function Chatrooms() {
         placeholder="Type here..."
         multiline={true}
         rightButtons={
-          <Button color="white" backgroundColor="black" text="Send" />
+          <Button
+            color="white"
+            backgroundColor="black"
+            text="Send"
+            onClick={() => {
+              console.log("Clicked");
+            }}
+          />
         }
+      />
+      <Popup
+        show={true}
+        header="Lorem ipsum dolor sit amet."
+        headerButtons={[
+          {
+            type: "transparent",
+            color: "black",
+            text: "close",
+            onClick: () => {
+              this.setState({ show: false });
+            },
+          },
+        ]}
+        text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem animi veniam voluptas eius!"
+        footerButtons={[
+          {
+            color: "white",
+            backgroundColor: "#ff5e3e",
+            text: "Vazgeç",
+          },
+          {
+            color: "white",
+            backgroundColor: "lightgreen",
+            text: "Tamam",
+          },
+        ]}
       />
     </div>
   );

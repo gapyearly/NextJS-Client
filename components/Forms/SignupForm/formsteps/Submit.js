@@ -5,12 +5,15 @@ import React, { useRef } from "react";
 import strapi from "@api/strapi";
 import { useAuth } from "@contexts/auth";
 
+import { useAlert } from "react-alert";
+
 import NProgress from "nprogress";
 import Router, { useRouter } from "next/router";
 
 export default function Submit({ formData, setForm }) {
   const { user } = useAuth();
   const router = useRouter();
+  const alert = useAlert();
   // TODO ERROR Message
   const submitForm = async () => {
     NProgress.start();
@@ -31,7 +34,7 @@ export default function Submit({ formData, setForm }) {
       signupCompletion: true,
       profilePicture: data[0].id || null,
     });
-
+    alert.show("Succesfully Logged in!");
     NProgress.done();
 
     const redirect = window.sessionStorage.getItem("redirect");
