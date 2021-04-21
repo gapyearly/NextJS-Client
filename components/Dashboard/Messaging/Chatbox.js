@@ -6,6 +6,7 @@ import {
   Button,
   Popup,
 } from "react-chat-elements";
+
 import "react-chat-elements/dist/main.css";
 import getFullName from "../../../util/fullName";
 import strapi from "@api/strapi";
@@ -14,12 +15,23 @@ import React, { useState, useEffect } from "react";
 import useSWR from "swr";
 
 export default function Chatrooms() {
-  const { user, loading } = useAuth();
+  const { user, loading, updateUser } = useAuth();
   const [conversations, setConversations] = useState([]);
-  const [messages, setMessages] = useState([]);
+  const [myMessage, setMyMessage] = useState("");
+  const [currentChatroomId, setCurrentChatroomId] = useState("");
+
+  const sendMessage = async () => {
+    try {
+      const message = await strapi.post("messages", {
+        chatroom: currentChatroomId,
+        content: myMessage,
+      });
+      setMyMessage("");
+      updateUser();
+    } catch (e) {}
+  };
 
   useEffect(() => {
-    // console.log(user);
     if (user && !loading) {
       // Fetch extra details about chatrooms
       const conversationPromises = user.chatrooms.map((chatroomId) => {
@@ -33,7 +45,7 @@ export default function Chatrooms() {
           });
           // Setup Chatitem object
           const chatItem = {};
-
+          chatItem.id = data.id;
           chatItem.title =
             !recipient.firstName && !recipient.lastName
               ? recipient.username
@@ -45,16 +57,16 @@ export default function Chatrooms() {
           chatItem.avatar = recipient.profilePicture
             ? recipient.profilePicture.url
             : null;
-          console.log(data);
           const messages = data.messages;
           // Set Messages
 
+          const myAvatar = user.profilePicture ? user.profilePicture.url : null;
           chatItem.messages = messages.map((message) => {
             return {
               position: message.sender === user.id ? "right" : "left",
               avatar:
                 message.sender === user.id
-                  ? user.profilePicture.url
+                  ? myAvatar
                   : recipient.profilePicture.url,
               date: new Date(message.createdAt),
               type: "text",
@@ -73,31 +85,41 @@ export default function Chatrooms() {
       });
     }
   }, [loading, user]);
+  const chatroom = conversations.find(
+    (chatItem) => currentChatroomId === chatItem.id
+  );
+
   return (
     <div>
       <ChatList
         className="chat-list"
         dataSource={conversations}
         onClick={(chatItem) => {
-          setMessages(chatItem.messages);
+          setCurrentChatroomId(chatItem.id);
         }}
       />
       <MessageList
         className="message-list"
         lockable={true}
         toBottomHeight={"100%"}
-        dataSource={messages}
+        dataSource={chatroom ? chatroom.messages : []}
       />
       <Input
         placeholder="Type here..."
         multiline={true}
+        ref={(e) => {
+          if (e) e.input.value = myMessage;
+        }}
+        onChange={(e) => {
+          setMyMessage(e.target.value);
+        }}
         rightButtons={
           <Button
             color="white"
             backgroundColor="black"
             text="Send"
             onClick={() => {
-              console.log("Clicked");
+              sendMessage();
             }}
           />
         }
