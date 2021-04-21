@@ -10,11 +10,13 @@ import { RiSettings3Fill } from "react-icons/ri";
 import { IoMdExit } from "react-icons/io";
 import { useRouter } from "next/router";
 
+import { useAlert } from "react-alert";
+
 const Redirect = redirect("/login");
 const SignupRedirect = redirect("/signup/additional-info");
 
 export default function DashboardLayout({ children }) {
-  const { isAuthenticated, loading, user } = useAuth();
+  const { isAuthenticated, loading, user, logout } = useAuth();
   const router = useRouter();
   if (loading) return <div></div>;
   if (!isAuthenticated)
@@ -30,13 +32,14 @@ export default function DashboardLayout({ children }) {
   }
   return (
     <>
-      <Navbar />
+      <Navbar logout={logout} />
       <main className={styles.main}>{children}</main>
     </>
   );
 }
 
-const Navbar = () => {
+const Navbar = ({ logout }) => {
+  const alert = useAlert();
   return (
     <div className={styles.navbar}>
       <img
@@ -68,7 +71,13 @@ const Navbar = () => {
         Account Settings
       </NavItem>
 
-      <NavItem href="/dashboard/logout">
+      <NavItem
+        href="/"
+        onClick={() => {
+          logout();
+          alert.success("Logged out");
+        }}
+      >
         <IoMdExit className={styles.navIcon} />
         Logout
       </NavItem>
@@ -76,10 +85,10 @@ const Navbar = () => {
   );
 };
 
-const NavItem = ({ href, children }) => {
+const NavItem = ({ href, children, onClick }) => {
   return (
-    <Link href={href}>
-      <div className={styles.navItem}>
+    <Link href={href} onClick>
+      <div className={styles.navItem} onClick={onClick}>
         <a>{children}</a>
       </div>
     </Link>

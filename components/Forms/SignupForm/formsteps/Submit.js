@@ -14,10 +14,11 @@ export default function Submit({ formData, setForm }) {
   const { user } = useAuth();
   const router = useRouter();
   const alert = useAlert();
+
   // TODO ERROR Message
   const submitForm = async () => {
     NProgress.start();
-    let data = null;
+    let data = [{}];
     try {
       if (formData.profilePicture) {
         const imageData = new FormData();
@@ -34,7 +35,7 @@ export default function Submit({ formData, setForm }) {
       signupCompletion: true,
       profilePicture: data[0].id || null,
     });
-    alert.show("Succesfully Logged in!");
+    alert.success("Succesfully Logged in!");
     NProgress.done();
 
     const redirect = window.sessionStorage.getItem("redirect");
