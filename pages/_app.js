@@ -1,6 +1,8 @@
 import "../styles/globals.css";
 import "../styles/NProgress.css";
 import "../styles/ckeditor.css";
+import "@styles/react-chat-elements.css";
+
 // Used for authentication handling, and user info
 
 import { AuthProvider } from "@contexts/auth";

@@ -14,6 +14,8 @@
 
 .navItems {
   margin: 1rem 3rem 0 0;
+  display: flex;
+  align-items: center;
 }
 
 .navItems > a,
@@ -27,7 +29,6 @@
   margin-left: 1.5rem;
 }
 .dropdown {
-  position: relative;
   display: inline-block;
 }
 /* Dropdown initial is not shown. Position is absolute to the dropdown span */
@@ -74,4 +75,8 @@
   height: calc(var(--navbarHeight) * 0.6);
   /*TODO: Gapyearly Logo Animation is delayed*/
   transition: top 0.3s;
+}
+.avatar {
+  display: inline-block;
+  margin: 0 0 0 1.5rem;
 }

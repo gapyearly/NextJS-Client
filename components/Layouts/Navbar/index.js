@@ -5,6 +5,9 @@ import debounce from "@util/debounce";
 import Navfolder from "./Navfolder";
 import NavLink from "./NavLink";
 import Link from "next/link";
+import { useAuth } from "@contexts/auth";
+
+import AvatarDropdown from "./AvatarDropdown";
 
 // How far the user has to scroll in px for nav to reappear
 const SCROLL_LENGTH = 50;
@@ -17,6 +20,8 @@ export default function Navbar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
   const [navbarHeight, setNavbarHeight] = useState(0);
+
+  const { isAuthenticated, user } = useAuth();
 
   /**
    * Changes the visiblitiy state based off if the user scrolled up.
@@ -50,6 +55,16 @@ export default function Navbar() {
     );
     setNavbarHeight(height.trim());
   }, []);
+  let NavUser;
+  if (isAuthenticated) {
+    NavUser = <AvatarDropdown avatar={user.profilePicture.url} />;
+  } else {
+    NavUser = (
+      <LoginButton color="greenBg" href="/login">
+        Log in
+      </LoginButton>
+    );
+  }
 
   return (
     <nav className={styles.navbar} id="navbar">
@@ -96,9 +111,7 @@ export default function Navbar() {
           <NavLink href="/prospective/faq">FAQ</NavLink>
         </Navfolder>
         <NavLink href="/blog">Blog</NavLink>
-        <LoginButton color="greenBg" href="/login">
-          Log in
-        </LoginButton>
+        {NavUser}
       </div>
     </nav>
   );

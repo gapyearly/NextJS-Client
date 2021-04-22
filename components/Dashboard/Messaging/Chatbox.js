@@ -7,7 +7,6 @@ import {
   Popup,
 } from "react-chat-elements";
 
-import "react-chat-elements/dist/main.css";
 import getFullName from "../../../util/fullName";
 import strapi from "@api/strapi";
 import React, { useState, useEffect } from "react";

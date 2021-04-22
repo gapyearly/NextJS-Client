@@ -12,11 +12,15 @@ import { useRouter } from "next/router";
 
 import { useAlert } from "react-alert";
 
+import React, { useState } from "react";
+
 const Redirect = redirect("/login");
 const SignupRedirect = redirect("/signup/additional-info");
 
 export default function DashboardLayout({ children }) {
   const { isAuthenticated, loading, user, logout } = useAuth();
+  const [loggingOut, setLoggingOut] = useState(false);
+
   const router = useRouter();
   if (loading) return <div></div>;
   if (!isAuthenticated)
@@ -27,18 +31,18 @@ export default function DashboardLayout({ children }) {
         </div>
       </Redirect>
     );
-  if (!user.signupCompletion) {
+  if (!user.signupCompletion && !loggingOut) {
     return <SignupRedirect />;
   }
   return (
     <>
-      <Navbar logout={logout} />
+      <Navbar logout={logout} setLoggingOut={setLoggingOut} />
       <main className={styles.main}>{children}</main>
     </>
   );
 }
 
-const Navbar = ({ logout }) => {
+const Navbar = ({ logout, setLoggingOut }) => {
   const alert = useAlert();
   return (
     <div className={styles.navbar}>
@@ -74,6 +78,7 @@ const Navbar = ({ logout }) => {
       <NavItem
         href="/"
         onClick={() => {
+          setLoggingOut(true);
           logout();
           alert.success("Logged out");
         }}
