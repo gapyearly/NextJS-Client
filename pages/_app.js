@@ -20,8 +20,19 @@ Router.events.on("routeChangeStart", (url) => {
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 function MyApp({ Component, pageProps }) {
+  const options = {
+    position: positions.TOP_CENTER,
+    // timeout: 5000,
+    offset: "30px",
+
+    // you can also just use 'scale'
+    transition: transitions.SCALE,
+    containerStyle: {
+      zIndex: 10002,
+    },
+  };
   return (
-    <AlertProvider template={AlertTemplate}>
+    <AlertProvider template={AlertTemplate} {...options}>
       <AuthProvider>
         <Component {...pageProps} />
       </AuthProvider>

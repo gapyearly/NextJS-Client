@@ -1,5 +1,5 @@
 import Button from "@components/Buttons/Button";
-
+import styles from "components/Forms/SignupForm/SignupForm.module.css";
 export default function Name({ next, previous, formData, setForm }) {
   const { firstName, lastName } = formData;
   console.log(firstName);
@@ -32,9 +32,11 @@ export default function Name({ next, previous, formData, setForm }) {
             required
           />
         </label>
-        <Button color="blueBg" type="submit">
-          Next
-        </Button>
+        <div className={styles.btns}>
+          <Button color="blueBg" type="submit" className={styles.firstNextBtn}>
+            Next
+          </Button>
+        </div>
       </form>
     </>
   );

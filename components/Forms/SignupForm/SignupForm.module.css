@@ -49,14 +49,35 @@ input#universityName {
 input#universityYear {
   width: 5rem;
 }
+.checkboxLabel,
+input#newsletterConsent,
+input#termsConsent {
+  display: inline !important;
+}
+.checkboxLabel p {
+  font-weight: 500;
+  text-align: left;
+  display: inline;
+}
+input#newsletterConsent,
+input#termsConsent {
+  width: fit-content;
+  margin-right: 10px;
+  margin-bottom: 0;
+}
 fieldset .gapYear {
   display: flex;
 }
 .btns {
   display: flex;
   justify-content: space-between;
+  width: 25rem;
+  margin-top: 2rem;
 }
-
+.firstNextBtn {
+  justify-self: flex-end;
+}
+/* FIXME:make 1st Next button (on name.js) align to right */
 .avatar {
   margin: 0 auto;
 }

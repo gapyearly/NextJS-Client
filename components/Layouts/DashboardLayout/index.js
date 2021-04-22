@@ -11,17 +11,15 @@ import { IoMdExit } from "react-icons/io";
 import { useRouter } from "next/router";
 
 import { useAlert } from "react-alert";
-
 import React, { useState } from "react";
 
-const Redirect = redirect("/login");
+const Redirect = redirect("/");
 const SignupRedirect = redirect("/signup/additional-info");
 
 export default function DashboardLayout({ children }) {
   const { isAuthenticated, loading, user, logout } = useAuth();
   const [loggingOut, setLoggingOut] = useState(false);
 
-  const router = useRouter();
   if (loading) return <div></div>;
   if (!isAuthenticated)
     return (
