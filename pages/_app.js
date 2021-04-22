@@ -26,13 +26,13 @@ function MyApp({ Component, pageProps }) {
     return (
       <div className={styles.alert}>
         {options.type === "info" && (
-          <IoInformationCircleOutline style={{ marginRight: "8px" }} />
+          <IoInformationCircleOutline style={{ marginRight: "6px" }} />
         )}
         {options.type === "success" && (
-          <FaCheck style={{ marginRight: "8px" }} />
+          <FaCheck style={{ marginRight: "6px" }} />
         )}
         {options.type === "error" && (
-          <FaExclamationCircle style={{ marginRight: "8px" }} />
+          <FaExclamationCircle style={{ marginRight: "6px" }} />
         )}
 
         {message}
