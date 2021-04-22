@@ -25,12 +25,14 @@ function MyApp({ Component, pageProps }) {
   const AlertTemplate = ({ options, message, close }) => {
     return (
       <div className={styles.alert}>
-        {options.type === "info" && <IoInformationCircleOutline />}
-        {options.type === "success" && <FaCheck />}
+        {options.type === "info" && (
+          <IoInformationCircleOutline style={{ marginRight: "8px" }} />
+        )}
+        {options.type === "success" && (
+          <FaCheck style={{ marginRight: "8px" }} />
+        )}
         {options.type === "error" && (
-          <FaExclamationCircle
-            value={{ style: { width: 5, marginRight: "15px" } }}
-          />
+          <FaExclamationCircle style={{ marginRight: "8px" }} />
         )}
 
         {message}
