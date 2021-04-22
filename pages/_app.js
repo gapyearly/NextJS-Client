@@ -2,6 +2,8 @@ import "../styles/globals.css";
 import "../styles/NProgress.css";
 import "../styles/ckeditor.css";
 import styles from "styles/Alert.module.css";
+import "@styles/react-chat-elements.css";
+
 // Used for authentication handling, and user info
 import { FaCheck, FaExclamationCircle } from "react-icons/fa";
 import { IoInformationCircleOutline, IoClose } from "react-icons/io5";
