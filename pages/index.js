@@ -8,16 +8,20 @@ import Pill from "@components/Buttons/Pill.js";
 
 export default function Home() {
   return (
-    <>
+    <div className={styles.home}>
       <Head>
         <Title>Home</Title>
       </Head>
-      <img className={styles.heroImg} src="images/IMG_0024.JPG" alt="" />
-      <h1 className={styles.heroTitle}>
-        Maximize your time outside the classroom.
-      </h1>
       <Layout>
-        <div className={styles.container}>
+        <div className={styles.hero}>
+          <h1>Maximize your time outside the classroom.</h1>
+          <img
+            className={styles.heroImg}
+            src="images/green-valley.svg"
+            alt=""
+          />
+        </div>
+        <div className={styles.mainContainer}>
           <div className={styles.connectContainer}>
             <img></img>
             <div className={styles.containerText}>
@@ -25,15 +29,15 @@ export default function Home() {
                 Been searching for a community of fellow gap year students? Look
                 no further…
               </h2>
-              <p>
+              <h3>
                 A gap year provides a lot of room for independent growth, but we
                 know sometimes it can be intimidating, isolating or just create
                 FOMO when you’re on your own. That’s why we created LetsGapp
                 Connect, the first global network of gap year students. Every
                 month you opt in, we’ll match you with a group of fellow gappers
                 with similar interests! Sign up today to join the community.
-              </p>
-              <Button color="blueBg" href="/connect">
+              </h3>
+              <Button color="darkBg" href="/connect">
                 Connect today!
               </Button>
             </div>
@@ -41,40 +45,42 @@ export default function Home() {
 
           <div className={styles.memberContainer}>
             <div className={styles.memberGrid}>
-              <img></img>
+              <img src="images/placeholder.jpg" alt=""></img>
             </div>
-            <div className={styles.futureMemberContainer}>
-              <h2>
-                Future gapper? We're here to help make your gap year the best
-                year yet.
-              </h2>
-              <p>
-                Our team of gap year alums from around the world are here to
-                answer any questions you have within 48 hours – all free of
-                charge.
-              </p>
-              <Button href="/connect" color="blueBg">
-                Meet our mentors!
-              </Button>
-            </div>
-            <div className={styles.gapMemberContainer}>
-              <h2>
-                <span className={styles.highlight}>
-                  Current or past gapper?
-                </span>{" "}
-                Support the community and share your experiences!
-              </h2>
-              <p>
-                We want to hear from you! Tell us about the memories you made,
-                your parent reflections, and advice for the community.
-              </p>
-              <Button href="/dashboard" color="blueBg">
-                Share your story!
-              </Button>
+            <div className={styles.memberText}>
+              <div className={styles.futureMemberContainer}>
+                <h2>
+                  <span className={styles.highlight}>Future gapper?</span> We're
+                  here to help make your gap year the best year yet.
+                </h2>
+                <h3>
+                  Our team of gap year alums from around the world are here to
+                  answer any questions you have within 48 hours – all free of
+                  charge.
+                </h3>
+                <Button href="/connect" color="greenBg">
+                  Meet our mentors!
+                </Button>
+              </div>
+              <div className={styles.gapMemberContainer}>
+                <h2>
+                  <span className={styles.highlight}>
+                    Current or past gapper?
+                  </span>{" "}
+                  Support the community and share your experiences!
+                </h2>
+                <h3>
+                  We want to hear from you! Tell us about the memories you made,
+                  your parent reflections, and advice for the community.
+                </h3>
+                <Button href="/dashboard" color="greenBg">
+                  Share your story!
+                </Button>
+              </div>
             </div>
           </div>
 
-          <div className="cardGallery">
+          <div className={styles.blogContainer}>
             <h2>
               Need gap year inspo? <br /> Check out these{" "}
               <Link href="/opportunities/past-experiences">
@@ -82,39 +88,41 @@ export default function Home() {
               </Link>{" "}
               from gappers!{" "}
             </h2>
-            <div className={"card"}>
-              <img
-                className={"cardImg"}
-                src="/images/placeholder.jpg"
-                alt=""
-              ></img>
-              <div className={"cardDesc"}>
-                <h3>Blog Title</h3>
-                <p>Author Name</p>
+            <div className={styles.cardGallery}>
+              <div className={"card"}>
+                <img
+                  className={"cardImg"}
+                  src="/images/placeholder.jpg"
+                  alt=""
+                ></img>
+                <div className={"cardDesc"}>
+                  <h3>Blog Title</h3>
+                  <p>Author Name</p>
+                </div>
               </div>
-            </div>
 
-            <div className={"card"}>
-              <img
-                className={"cardImg"}
-                src="/images/placeholder.jpg"
-                alt=""
-              ></img>
-              <div className={"cardDesc"}>
-                <h3>Blog Title</h3>
-                <p>Author Name</p>
+              <div className={"card"}>
+                <img
+                  className={"cardImg"}
+                  src="/images/placeholder.jpg"
+                  alt=""
+                ></img>
+                <div className={"cardDesc"}>
+                  <h3>Blog Title</h3>
+                  <p>Author Name</p>
+                </div>
               </div>
-            </div>
 
-            <div className={"card"}>
-              <img
-                className={"cardImg"}
-                src="/images/placeholder.jpg"
-                alt=""
-              ></img>
-              <div className={"cardDesc"}>
-                <h3>Blog Title</h3>
-                <p>Author Name</p>
+              <div className={"card"}>
+                <img
+                  className={"cardImg"}
+                  src="/images/placeholder.jpg"
+                  alt=""
+                ></img>
+                <div className={"cardDesc"}>
+                  <h3>Blog Title</h3>
+                  <p>Author Name</p>
+                </div>
               </div>
             </div>
           </div>
@@ -127,11 +135,11 @@ export default function Home() {
             Get the latest on{" "}
             <Link href="https://instagram.com/gapyearly">Instagram</Link>
           </h2>
-          <Button href="https://instagram.com/gapyearly" color="blueBg">
+          <Button href="https://instagram.com/gapyearly" color="greenBg">
             + Follow us!
           </Button>
 
-          <div className="newsletterContainer">
+          <div className={styles.newsletterContainer}>
             <h2>Never miss a beat.</h2>
             <h3>
               Subscribe to our newsletter for gap year opportunities and news!
@@ -143,12 +151,12 @@ export default function Home() {
               {/* needs to be submitted to backend */}
               <p>
                 We hate spam too - we will never sell your data. Read our
-                Privacy Policy here.
+                Privacy Policy <Link href="/privacy-policy">here</Link>.
               </p>
             </form>
           </div>
         </div>
       </Layout>
-    </>
+    </div>
   );
 }

@@ -1,17 +1,66 @@
-.container:not(.navbar) {
+.mainContainer {
   color: var(--seashell);
   background-color: var(--horizon);
+  padding: 0 20rem;
+  margin-top: 0;
 }
-.container {
-  color: var(--seashell);
-  background-color: var(--horizon);
+.home main {
   margin: 0;
-  padding: 1rem;
 }
-
-.heroImg {
-  width: 100vw;
-  height: 100vh;
+.home h2 {
+  font-weight: 600;
+}
+.home h3 {
+  font-weight: 500;
+}
+.hero {
+  background-image: url("../public/images/IMG_0024.JPG");
+  width: 100%;
+  background-repeat: no-repeat;
+  height: calc(100vh - var(--navbarHeight));
+  background-position: center;
+  position: relative;
+}
+.hero h1 {
+  text-align: right;
+  color: var(--seashell);
+  margin: 0;
+  position: absolute;
+  bottom: 7vh;
+  right: 6vw;
+  z-index: 1;
+  width: 8em;
+  font-size: calc(3rem + 1.3vw);
+}
+.hero img {
+  margin: 0;
+  /* min-width: 100vw; */
+  max-height: 100vh;
+  min-height: 80vh;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   object-fit: cover;
-  margin: 0;
+  object-position: right;
+  opacity: 0.65;
+}
+.highlight {
+  color: var(--sunlight);
+}
+.connectContainer,
+.memberContainer {
+  display: flex;
+}
+.memberGrid img {
+  width: 50px;
+}
+.blogContainer,
+.newsletterContainer {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.cardGallery {
+  display: flex;
+  flex-direction: row;
 }
