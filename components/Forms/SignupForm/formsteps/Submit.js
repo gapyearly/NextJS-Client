@@ -11,7 +11,7 @@ import NProgress from "nprogress";
 import Router, { useRouter } from "next/router";
 
 export default function Submit({ formData, setForm, previous }) {
-  const { user, updateUser } = useAuth();
+  const { user } = useAuth();
   const router = useRouter();
   const alert = useAlert();
 
@@ -35,9 +35,8 @@ export default function Submit({ formData, setForm, previous }) {
       signupCompletion: true,
       profilePicture: data[0].id || null,
     });
-    await updateUser();
     NProgress.done();
-    alert.success("Successfully logged in!");
+
     const redirect = window.sessionStorage.getItem("redirect");
     if (!redirect) return router.push("/dashboard");
     const sanatized = redirect.replaceAll(":", " ");
@@ -88,7 +87,14 @@ export default function Submit({ formData, setForm, previous }) {
           >
             Previous
           </Button>
-          <Button className={styles.submitBtn} color="darkBg" type="submit">
+          <Button
+            className={styles.submitBtn}
+            color="darkBg"
+            type="submit"
+            onClick={() => {
+              alert.success("Successfully logged in!");
+            }}
+          >
             Submit
           </Button>
         </div>
