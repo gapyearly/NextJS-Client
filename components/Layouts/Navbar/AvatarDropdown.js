@@ -40,7 +40,7 @@ const Dropdown = () => {
       <Navlink href="/dashboard">My Dashboard</Navlink>
       <Navlink href="/dashboard/profile">My Profile</Navlink>
       <Navlink href="/dashboard/messaging">Messaging</Navlink>
-      <Navlink href="/">Settings</Navlink>
+      <Navlink href="/dashboard/settings">Settings</Navlink>
       <a
         onClick={() => {
           alert.success("Logged out");

@@ -10,8 +10,7 @@ import {
 import getFullName from "../../../util/fullName";
 import strapi from "@api/strapi";
 import React, { useState, useEffect } from "react";
-
-import useSWR from "swr";
+import styles from "./Chatbox.module.css";
 
 export default function Chatrooms() {
   const { user, loading, updateUser } = useAuth();
@@ -89,40 +88,44 @@ export default function Chatrooms() {
   );
 
   return (
-    <div>
-      <ChatList
-        className="chat-list"
-        dataSource={conversations}
-        onClick={(chatItem) => {
-          setCurrentChatroomId(chatItem.id);
-        }}
-      />
-      <MessageList
-        className="message-list"
-        lockable={true}
-        toBottomHeight={"100%"}
-        dataSource={chatroom ? chatroom.messages : []}
-      />
-      <Input
-        placeholder="Type here..."
-        multiline={true}
-        ref={(e) => {
-          if (e) e.input.value = myMessage;
-        }}
-        onChange={(e) => {
-          setMyMessage(e.target.value);
-        }}
-        rightButtons={
-          <Button
-            color="white"
-            backgroundColor="black"
-            text="Send"
-            onClick={() => {
-              sendMessage();
-            }}
-          />
-        }
-      />
+    <div className={styles.container}>
+      <div>
+        <ChatList
+          className="chat-list"
+          dataSource={conversations}
+          onClick={(chatItem) => {
+            setCurrentChatroomId(chatItem.id);
+          }}
+        />
+      </div>
+      <div>
+        <MessageList
+          className="message-list"
+          lockable={true}
+          toBottomHeight={"100%"}
+          dataSource={chatroom ? chatroom.messages : []}
+        />
+        <Input
+          placeholder="Type here..."
+          multiline={true}
+          ref={(e) => {
+            if (e) e.input.value = myMessage;
+          }}
+          onChange={(e) => {
+            setMyMessage(e.target.value);
+          }}
+          rightButtons={
+            <Button
+              color="white"
+              backgroundColor="black"
+              text="Send"
+              onClick={() => {
+                sendMessage();
+              }}
+            />
+          }
+        />
+      </div>
     </div>
   );
 }

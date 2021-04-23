@@ -2,13 +2,12 @@ import Link from "next/link";
 import styles from "./Dashboard.module.css";
 import { useAuth } from "@contexts/auth";
 import redirect from "nextjs-redirect";
-import { HiMail } from "react-icons/hi";
-import { FaGlobe } from "react-icons/fa";
-import { BsFillChatSquareFill, BsPersonFill } from "react-icons/bs";
 
 import { RiSettings3Fill } from "react-icons/ri";
 import { IoMdExit } from "react-icons/io";
-import { useRouter } from "next/router";
+import { HiMail } from "react-icons/hi";
+import { FaGlobe, FaArrowLeft } from "react-icons/fa";
+import { BsFillChatSquareFill, BsPersonFill } from "react-icons/bs";
 
 import { useAlert } from "react-alert";
 import React, { useState } from "react";
@@ -74,7 +73,10 @@ const Navbar = ({ logout, setLoggingOut }) => {
         <RiSettings3Fill className={styles.navIcon} />
         Account Settings
       </NavItem>
-
+      <NavItem href="/">
+        <FaArrowLeft className={styles.navIcon} />
+        Exit Dashboard
+      </NavItem>
       <NavItem
         href="/"
         onClick={() => {
