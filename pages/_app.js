@@ -27,13 +27,11 @@ function MyApp({ Component, pageProps }) {
     return (
       <div className={styles.alert}>
         {options.type === "info" && (
-          <IoInformationCircleOutline style={{ marginRight: "6px" }} />
+          <IoInformationCircleOutline style={{ margin: "0 6px" }} />
         )}
-        {options.type === "success" && (
-          <FaCheck style={{ marginRight: "6px" }} />
-        )}
+        {options.type === "success" && <FaCheck style={{ margin: "0 6px" }} />}
         {options.type === "error" && (
-          <FaExclamationCircle style={{ marginRight: "6px" }} />
+          <FaExclamationCircle style={{ margin: "0 6px" }} />
         )}
 
         {message}
@@ -46,9 +44,7 @@ function MyApp({ Component, pageProps }) {
 
   const options = {
     position: positions.TOP_CENTER,
-    // timeout: 5000,
-
-    // you can also just use 'scale'
+    timeout: 3000,
     transition: transitions.FADE,
     containerStyle: {
       zIndex: 10002,
