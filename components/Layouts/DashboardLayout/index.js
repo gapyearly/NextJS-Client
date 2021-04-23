@@ -44,12 +44,14 @@ const Navbar = ({ logout, setLoggingOut }) => {
   const alert = useAlert();
   return (
     <div className={styles.navbar}>
-      <img
-        src="/images/lightlogo.png"
-        layout="fill"
-        alt="Gapyearly Logo"
-        className={styles.logo}
-      />
+      <Link href="/">
+        <img
+          src="/images/lightlogo.png"
+          layout="fill"
+          alt="Gapyearly Logo"
+          className={styles.logo}
+        />
+      </Link>
       <NavItem href="/dashboard/messaging">
         <HiMail className={styles.navIcon} />
         Messaging
