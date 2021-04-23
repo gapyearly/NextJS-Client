@@ -23,6 +23,7 @@ Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps }) {
   const AlertTemplate = ({ options, message, close }) => {
+    // const bgColor = options.type==="info" ?;
     return (
       <div className={styles.alert}>
         {options.type === "info" && (
