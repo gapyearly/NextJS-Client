@@ -23,11 +23,11 @@ export default function Home() {
         </div>
         <div className={styles.mainContainer}>
           <div className={styles.connectContainer}>
-            <img></img>
+            <img src="images/placeholder.jpg" alt=""></img>
             <div className={styles.containerText}>
               <h2>
-                Been searching for a community of fellow gap year students? Look
-                no further…
+                Searching for a community of fellow gap year students? Look no
+                further…
               </h2>
               <h3>
                 A gap year provides a lot of room for independent growth, but we
@@ -80,7 +80,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className={styles.blogContainer}>
+          <div className={styles.galleryContainer}>
             <h2>
               Need gap year inspo? <br /> Check out these{" "}
               <Link href="/opportunities/past-experiences">
@@ -88,56 +88,24 @@ export default function Home() {
               </Link>{" "}
               from gappers!{" "}
             </h2>
-            <div className={styles.cardGallery}>
-              <div className={"card"}>
-                <img
-                  className={"cardImg"}
-                  src="/images/placeholder.jpg"
-                  alt=""
-                ></img>
-                <div className={"cardDesc"}>
-                  <h3>Blog Title</h3>
-                  <p>Author Name</p>
-                </div>
-              </div>
-
-              <div className={"card"}>
-                <img
-                  className={"cardImg"}
-                  src="/images/placeholder.jpg"
-                  alt=""
-                ></img>
-                <div className={"cardDesc"}>
-                  <h3>Blog Title</h3>
-                  <p>Author Name</p>
-                </div>
-              </div>
-
-              <div className={"card"}>
-                <img
-                  className={"cardImg"}
-                  src="/images/placeholder.jpg"
-                  alt=""
-                ></img>
-                <div className={"cardDesc"}>
-                  <h3>Blog Title</h3>
-                  <p>Author Name</p>
-                </div>
-              </div>
-            </div>
+            <div className={styles.cardGallery}></div>
           </div>
 
-          <h2>
-            Check out our <Link href="/blog">blog</Link> to see what gappers
-            around the world are up to!
-          </h2>
-          <h2>
-            Get the latest on{" "}
-            <Link href="https://instagram.com/gapyearly">Instagram</Link>
-          </h2>
-          <Button href="https://instagram.com/gapyearly" color="greenBg">
-            + Follow us!
-          </Button>
+          <div className={styles.galleryContainer}>
+            <h2>
+              Check out our <Link href="/blog">blog</Link> to see what gappers
+              around the world are up to!
+            </h2>
+          </div>
+          <div className={styles.galleryContainer}>
+            <h2>
+              Get the latest on{" "}
+              <Link href="https://instagram.com/gapyearly">Instagram</Link>
+            </h2>
+            <Button href="https://instagram.com/gapyearly" color="greenBg">
+              + Follow us!
+            </Button>
+          </div>
 
           <div className={styles.newsletterContainer}>
             <h2>Never miss a beat.</h2>

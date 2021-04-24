@@ -1,9 +1,12 @@
+.home {
+  background-color: var(--horizon);
+}
 .mainContainer {
   color: var(--seashell);
-  background-color: var(--horizon);
-  padding: 0 20rem;
+  padding: 0 10rem;
   margin-top: 0;
 }
+
 .home main {
   margin: 0;
 }
@@ -50,15 +53,35 @@
 .connectContainer,
 .memberContainer {
   display: flex;
+  align-items: center;
+  width: 600px;
+  margin: 0 auto;
+  height: 100vh;
+
+  float: right;
+  width: 50%;
+
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+}
+.memberGrid img,
+.connectContainer img {
+  margin-right: 4rem;
 }
 .memberGrid img {
   width: 50px;
 }
-.blogContainer,
+.connectContainer img {
+  height: 10em;
+}
+.galleryContainer,
 .newsletterContainer {
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-content: center;
+  margin: 4rem 0;
 }
 .cardGallery {
   display: flex;
