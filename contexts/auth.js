@@ -24,16 +24,21 @@ export const AuthProvider = ({ children }) => {
       strapi.defaults.headers.Authorization = `Bearer ${token}`;
       try {
         const { data } = await strapi.get("users/me");
-        console.log(data);
         if (data) setUser(data);
       } catch (e) {
-        console.log(e);
         logout();
       }
     }
     setLoading(false);
   }
-
+  async function updateUser() {
+    try {
+      const { data } = await strapi.get("users/me");
+      if (data) setUser(data);
+    } catch (e) {
+      logout();
+    }
+  }
   // First Load
   useEffect(() => {
     revalidateUserFromStorage();
@@ -78,6 +83,7 @@ export const AuthProvider = ({ children }) => {
         loading,
         providerLogin,
         logout,
+        updateUser,
       }}
     >
       {children}

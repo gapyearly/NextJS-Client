@@ -9,7 +9,7 @@ import styles from "@styles/Blog.module.css";
 
 export default function BlogPost({ blogData }) {
   const { content, title, author, description } = blogData;
-  const fullName = `${author.personalInfo.firstName} ${author.personalInfo.lastName}`;
+  const fullName = `${author.firstName} ${author.lastName}`;
 
   console.log(blogData);
   return (

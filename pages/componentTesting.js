@@ -2,6 +2,7 @@ import Layout from "@components/Layouts/Layout";
 import SignupForm from "@components/Forms/SignupForm";
 import Modal from "@components/Modal";
 import DashboardLayout from "@components/Layouts/DashboardLayout/index.js";
+import Chatbox from "@components/Dashboard/Messaging/Chatbox";
 
 import redirect from "nextjs-redirect";
 export default function Test() {
@@ -10,5 +11,5 @@ export default function Test() {
   //   return <Redirect></Redirect>;
   // }
 
-  return <DashboardLayout></DashboardLayout>;
+  return <Chatbox></Chatbox>;
 }

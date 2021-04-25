@@ -23,6 +23,7 @@
   align-items: center;
   color: var(--seashell);
   transition: 0.1s ease;
+  cursor: pointer;
 }
 .navItem:active,
 .navItem:focus,

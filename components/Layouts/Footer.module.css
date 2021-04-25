@@ -1,11 +1,12 @@
 .footer {
   background-color: var(--berry);
-  height: 14rem;
+
   display: flex;
   flex-direction: column;
   color: var(--seashell);
   padding: 1em 3em 0;
   margin-top: 2em;
+  padding-bottom: 2em;
 }
 .footer_column {
   list-style-type: none;
@@ -27,4 +28,7 @@
 .socialMediaIconWrapper {
   display: flex;
   justify-content: flex-end;
+}
+.socialMediaIconWrapper a {
+  box-shadow: none;
 }

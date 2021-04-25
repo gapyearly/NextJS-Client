@@ -73,14 +73,14 @@ export default function Year({ next, previous, formData, setForm }) {
 
         <div className={styles.btns}>
           <Button
-            className={styles.nextBtn}
-            color="greenBg"
+            className={styles.previousBtn}
+            color="greyBg"
             onClick={previous}
             type="button"
           >
             Previous
           </Button>
-          <Button className={styles.previousBtn} color="blueBg" type="submit">
+          <Button className={styles.nextBtn} color="blueBg" type="submit">
             Next
           </Button>
         </div>

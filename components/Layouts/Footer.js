@@ -22,8 +22,15 @@ export default function Footer() {
     <footer id="footer" className={styles.footer}>
       <div className={styles.sitemap}>{footercolumns}</div>
       <div className={styles.socialMediaIconWrapper}>
-        <FaInstagram className="socialMediaIcon"></FaInstagram>
-        <FaFacebookF className="socialMediaIcon"></FaFacebookF>
+        <a href="https://www.instagram.com/gapyearly">
+          <FaInstagram className="socialMediaIcon"></FaInstagram>
+        </a>
+        <a href="https://www.facebook.com/gapyearly">
+          <FaFacebookF
+            className="socialMediaIcon"
+            style={{ marginLeft: 6, width: 15 }}
+          ></FaFacebookF>
+        </a>
       </div>
     </footer>
   );

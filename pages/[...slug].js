@@ -1,14 +1,18 @@
 import strapi from "@api/strapi";
 import RichText from "@components/Sections/RichText";
 import Layout from "@components/Layouts/Layout";
+import PageTitle from "@components/PageTitle";
 
 const DynamicPage = ({ pageInfo }) => {
-  const { pageContents } = pageInfo;
+  const { pageContents, title } = pageInfo;
   console.log(pageContents);
   return (
-    <Layout>
-      <RichText data={pageContents[0].content} />
-    </Layout>
+    <>
+      <PageTitle>{title}</PageTitle>
+      <Layout>
+        <RichText data={pageContents[0].content} />
+      </Layout>
+    </>
   );
 };
 

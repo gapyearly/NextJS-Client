@@ -45,7 +45,7 @@ main {
   color: var(--seashell);
   display: block;
   padding: 0.7rem;
-  max-width: 100vw;
+  max-width: 100%;
   margin: var(--navbarHeight) 0 1.5rem;
 }
 a {
@@ -100,6 +100,11 @@ textarea {
   font-size: inherit;
   font-family: inherit;
   border-radius: 5px;
+}
+
+/* DROPDOWN BC ITS STUPID AND UGLY */
+.dd-list-item:hover {
+  background-color: var(--horizon) !important;
 }
 input,
 textarea {
