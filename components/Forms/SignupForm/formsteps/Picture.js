@@ -3,28 +3,34 @@ import styles from "components/Forms/SignupForm/SignupForm.module.css";
 import AvatarEditor from "react-avatar-editor";
 import React, { useRef } from "react";
 
-export default function Bio({ next, previous, formData, setForm }) {
+export default function ProfilePicture({ next, previous, formData, setForm }) {
   const { profilePicture } = formData;
   const fileRef = useRef();
   const editorRef = useRef();
 
-  if (fileRef.current && fileRef.current.files) {
-    formData.profilePicture = fileRef.current.files[0];
-  }
+  const onSubmit = async () => {
+    const canvas = editorRef.current.editor.getImageScaledToCanvas();
+    canvas.toBlob((blob) => {
+      const file = new File([blob], fileRef.current.files[0].name, {
+        type: "image/png",
+      });
+      formData.profilePicture = file;
+    }, "image/png");
+    next();
+  };
 
+  if (fileRef.current && fileRef.current.files) {
+    // formData.profilePicture = fileRef.current.files[0];
+  }
+  // TODO: Zoom features
   return (
     <>
-      <form
         className={styles.avatarForm}
         onSubmit={next}
         action="javascript:void(0);"
       >
         <label htmlFor="profilePicture">Upload a profile picture!</label>
         <input
-          type="file"
-          id={styles.profilePicture}
-          ref={fileRef}
-          onChange={setForm}
         />
         {fileRef.current && fileRef.current.files && (
           <MyEditor profilePicture={fileRef.current.files[0]} ref={editorRef} />
@@ -48,17 +54,6 @@ export default function Bio({ next, previous, formData, setForm }) {
 }
 
 class MyEditor extends React.Component {
-  onClickSave = () => {
-    if (this.editor) {
-      // This returns a HTMLCanvasElement, it can be made into a data URL or a blob,
-      // drawn on another canvas, or added to the DOM.
-      const canvas = this.editor.getImage();
-
-      // If you want the image resized to the canvas size (also a HTMLCanvasElement)
-      const canvasScaled = this.editor.getImageScaledToCanvas();
-    }
-  };
-
   setEditorRef = (editor) => (this.editor = editor);
 
   render() {
