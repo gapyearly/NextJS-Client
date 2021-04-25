@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "@styles/Dashboard/UserDashboard.module.css";
 
-export default function Connect() {
+export default function AskQuestion() {
   return (
     <>
       <h3>Match me in future monthly rounds!</h3>
@@ -10,7 +10,6 @@ export default function Connect() {
         Gapyearly will use your profile info to match you with another gapper.
         Find out more about matching <Link href="/connect">here</Link>!
       </p>
-      <h3 className={styles.dateBanner}>Next match releases: April 25th</h3>
     </>
   );
 }
