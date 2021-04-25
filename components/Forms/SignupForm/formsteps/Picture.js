@@ -5,10 +5,13 @@ import React, { useRef } from "react";
 
 export default function Bio({ next, previous, formData, setForm }) {
   const { profilePicture } = formData;
-  const ref = useRef();
-  if (ref.current && ref.current.files) {
-    formData.profilePicture = ref.current.files[0];
+  const fileRef = useRef();
+  const editorRef = useRef();
+
+  if (fileRef.current && fileRef.current.files) {
+    formData.profilePicture = fileRef.current.files[0];
   }
+
   return (
     <>
       <form onSubmit={next} action="javascript:void(0);">
@@ -16,11 +19,11 @@ export default function Bio({ next, previous, formData, setForm }) {
         <input
           type="file"
           id={styles.profilePicture}
-          name="profilePicture"
-          ref={ref}
+          ref={fileRef}
+          onChange={setForm}
         />
-        {ref.current && ref.current.files && (
-          <MyEditor profilePicture={ref.current.files[0]} />
+        {fileRef.current && fileRef.current.files && (
+          <MyEditor profilePicture={fileRef.current.files[0]} ref={editorRef} />
         )}
         <div className={styles.btns}>
           <Button
@@ -66,6 +69,7 @@ class MyEditor extends React.Component {
         scale={1.2}
         rotate={0}
         className={styles.avatar}
+        ref={this.setEditorRef}
       />
     );
   }
