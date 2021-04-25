@@ -3,7 +3,7 @@
 }
 .mainContainer {
   color: var(--seashell);
-  padding: 0 10rem;
+
   margin-top: 0;
 }
 
@@ -54,26 +54,36 @@
 .memberContainer {
   display: flex;
   align-items: center;
-  width: 600px;
+  width: 70%;
   margin: 0 auto;
   height: 100vh;
-
+  /* height: 100vh;
   float: right;
   width: 50%;
 
   -webkit-box-pack: center;
   justify-content: center;
-  -webkit-box-align: center;
+  -webkit-box-align: center; */
 }
-.memberGrid img,
+.memberContainer img,
 .connectContainer img {
   margin-right: 4rem;
+  position: sticky;
+  top: 40%;
+  left: 20%;
+  width: 10em;
 }
-.memberGrid img {
-  width: 50px;
+.memberGrid {
+  height: 100vh;
 }
 .connectContainer img {
-  height: 10em;
+}
+.memberText,
+.connectText {
+  overflow: auto;
+}
+.futureMemberContainer {
+  margin-bottom: 2em;
 }
 .galleryContainer,
 .newsletterContainer {
@@ -86,4 +96,17 @@
 .cardGallery {
   display: flex;
   flex-direction: row;
+}
+.newsletterContainer form {
+  margin: auto;
+}
+.newsletterContainer {
+  background-image: url("../public/images/yellow-sun.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  height: 40vh;
+}
+.home #footer {
+  color: blue;
 }

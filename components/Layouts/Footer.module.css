@@ -28,5 +28,7 @@
 .socialMediaIconWrapper {
   display: flex;
   justify-content: flex-end;
-  cursor: pointer;
+}
+.socialMediaIconWrapper a {
+  box-shadow: none;
 }

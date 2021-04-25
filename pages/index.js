@@ -24,7 +24,7 @@ export default function Home() {
         <div className={styles.mainContainer}>
           <div className={styles.connectContainer}>
             <img src="images/placeholder.jpg" alt=""></img>
-            <div className={styles.containerText}>
+            <div className={styles.connectText}>
               <h2>
                 Searching for a community of fellow gap year students? Look no
                 further…
@@ -45,7 +45,7 @@ export default function Home() {
 
           <div className={styles.memberContainer}>
             <div className={styles.memberGrid}>
-              <img src="images/placeholder.jpg" alt=""></img>
+              <img src="images/redyellow-valleys.svg" alt=""></img>
             </div>
             <div className={styles.memberText}>
               <div className={styles.futureMemberContainer}>
