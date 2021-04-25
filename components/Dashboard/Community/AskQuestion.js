@@ -1,15 +1,34 @@
 import Link from "next/link";
 import styles from "@styles/Dashboard/UserDashboard.module.css";
+import React, { useState } from "react";
+import Button from "@components/Buttons/Button";
 
 export default function AskQuestion() {
+  const [question, setQuestion] = useState("");
   return (
     <>
-      <h3>Match me in future monthly rounds!</h3>
+      <h3>Have gap year questions?</h3>
       {/* Switch here */}
+      <p>We've got your back.</p>
+      <br />
       <p>
-        Gapyearly will use your profile info to match you with another gapper.
-        Find out more about matching <Link href="/connect">here</Link>!
+        Submit a question and we'll share it on <strong>@gapyearly</strong> on
+        Instagram with fellow gappers and gap alumni!
       </p>
+      <form>
+        <textarea
+          type="textarea"
+          name="question"
+          value={question}
+          onChange={(e) => {
+            setQuestion(e.target.value);
+          }}
+          placeholder="Ask question here"
+        />
+        <Button color="greenBg" type="button">
+          Submit
+        </Button>
+      </form>
     </>
   );
 }
