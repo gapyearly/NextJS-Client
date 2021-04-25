@@ -98,7 +98,7 @@
   flex-direction: row;
 }
 .newsletterContainer form {
-  margin: auto;
+  margin: 0 auto;
 }
 .newsletterContainer {
   background-image: url("../public/images/yellow-sun.svg");

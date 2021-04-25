@@ -14,8 +14,12 @@ export default function Bio({ next, previous, formData, setForm }) {
 
   return (
     <>
-      <form onSubmit={next} action="javascript:void(0);">
-        <label htmlFor="profilePicture">Upload a profile picture</label>
+      <form
+        className={styles.avatarForm}
+        onSubmit={next}
+        action="javascript:void(0);"
+      >
+        <label htmlFor="profilePicture">Upload a profile picture!</label>
         <input
           type="file"
           id={styles.profilePicture}
@@ -65,7 +69,7 @@ class MyEditor extends React.Component {
         height={250}
         border={30}
         borderRadius={150}
-        color={[255, 255, 255, 0.6]} // RGBA
+        color={[0, 0, 0, 0.38]} // RGBA
         scale={1.2}
         rotate={0}
         className={styles.avatar}

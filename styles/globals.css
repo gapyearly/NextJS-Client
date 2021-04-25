@@ -101,6 +101,11 @@ textarea {
   font-family: inherit;
   border-radius: 5px;
 }
+
+/* DROPDOWN BC ITS STUPID AND UGLY */
+.dd-list-item:hover {
+  background-color: var(--horizon) !important;
+}
 input,
 textarea {
   font-size: 0.9rem;

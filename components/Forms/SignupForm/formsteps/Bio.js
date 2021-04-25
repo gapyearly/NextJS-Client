@@ -3,8 +3,61 @@ import styles from "components/Forms/SignupForm/SignupForm.module.css";
 import AvatarEditor from "react-avatar-editor";
 import React from "react";
 
+import dynamic from "next/dynamic";
+
+// const Dropdown = dynamic(
+//   async () => {
+//     const module = await import("reactjs-dropdown-component");
+//     const DD = module.Dropdown;
+
+//     return ({ forwardedRef, ...props }) => <DD ref={forwardedRef} {...props} />;
+//   },
+//   { ssr: false }
+// );
+
+const DropdownMultiple = dynamic(
+  async () => {
+    const module = await import("reactjs-dropdown-component");
+    const DDM = module.DropdownMultiple;
+
+    return ({ forwardedRef, ...props }) => (
+      <DDM ref={forwardedRef} {...props} />
+    );
+  },
+  { ssr: false }
+);
 export default function Bio({ next, previous, formData, setForm }) {
-  const { instagram, interests, bio, profilePicture } = formData;
+  const { instagram, bio } = formData;
+  const interests = [
+    {
+      label: " Solo Travel",
+      value: "soloTravel",
+    },
+    {
+      label: " Outdoors",
+      value: "outdoors",
+    },
+    {
+      label: " Volunteering/Service",
+      value: "volunteeringService",
+    },
+    {
+      label: " Work/Interning",
+      value: "workInterning",
+    },
+    {
+      label: " Arts",
+      value: "arts",
+    },
+    {
+      label: " Science/Research",
+      value: "scienceResearch",
+    },
+  ];
+  const onChange = (item, name) => {
+    console.log(item, name);
+  };
+
   return (
     <>
       <form onSubmit={next} action="javascript:void(0);">
@@ -16,14 +69,59 @@ export default function Bio({ next, previous, formData, setForm }) {
           onChange={setForm}
           placeholder="e.g. @gapyearly"
         />
-        <label htmlFor="interests">Interests</label>
-        {/* alex change this to pills :D */}
-        <input
-          id={styles.interests}
+        <label htmlFor="instagram">Interests</label>
+        <DropdownMultiple
           name="interests"
-          value={interests}
-          onChange={setForm}
+          title="Select your interests"
+          titleSingular="interest"
+          searchable={["Search...", "No matching interest"]}
+          list={interests}
+          onChange={onChange}
+          styles={{
+            wrapper: {
+              width: "25rem",
+              marginBottom: "0.7rem",
+              marginTop: "0.3rem",
+              borderRadius: 5,
+            },
+            headerTitle: {
+              fontWeight: 500,
+            },
+            header: {
+              fontSize: "1rem",
+              border: "1px solid var(--horizon)",
+            },
+            listSearchBar: {
+              fontSize: "1rem",
+              height: "2rem",
+              marginBottom: 0,
+              color: "grey",
+            },
+            listItem: {
+              fontSize: "0.9rem",
+              padding: "4px 10px",
+            },
+            listItemNoResult: {
+              fontSize: "0.9rem",
+              padding: "4px 10px",
+            },
+            list: { maxHeight: "unset" },
+            scrollList: { padding: 0 },
+            checkIcon: { color: "var(--berry)" },
+          }}
         />
+
+        {/* wrapper
+header
+headerTitle
+headerArrowUpIcon
+headerArrowDownIcon
+checkIcon
+list
+listSearchBar
+scrollList
+listItem
+listItemNoResult */}
         <label htmlFor="bio">Write a short bio!</label>
         <textarea
           type="textarea"
