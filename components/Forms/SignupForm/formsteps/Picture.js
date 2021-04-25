@@ -25,12 +25,17 @@ export default function ProfilePicture({ next, previous, formData, setForm }) {
   // TODO: Zoom features
   return (
     <>
+      <form
         className={styles.avatarForm}
         onSubmit={next}
         action="javascript:void(0);"
       >
         <label htmlFor="profilePicture">Upload a profile picture!</label>
         <input
+          type="file"
+          id={styles.profilePicture}
+          ref={fileRef}
+          onChange={setForm}
         />
         {fileRef.current && fileRef.current.files && (
           <MyEditor profilePicture={fileRef.current.files[0]} ref={editorRef} />
