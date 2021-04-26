@@ -4,6 +4,8 @@ import Layout from "@components/Layouts/Layout";
 import Link from "next/link";
 import Title from "@components/Title";
 import Button from "@components/Buttons/Button.js";
+import strapi from "@api/strapi";
+
 import Pill from "@components/Buttons/Pill.js";
 
 export default function Home() {
@@ -128,3 +130,11 @@ export default function Home() {
     </div>
   );
 }
+// export async function getStaticProps(ctx) {
+//   const { data } = await strapi.get("blog");
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// }

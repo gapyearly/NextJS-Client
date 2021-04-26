@@ -62,14 +62,16 @@ export default function Bio({ next, previous, formData, setForm }) {
     <>
       <form onSubmit={next} action="javascript:void(0);">
         <label htmlFor="instagram">Instagram Handle</label>
+        @
         <input
           id={styles.instagram}
           name="instagram"
           value={instagram}
           onChange={setForm}
-          placeholder="e.g. @gapyearly"
+          pattern="^[@^%<>^$]+$
+          "
         />
-        <label htmlFor="instagram">Interests</label>
+        <label htmlFor="interests">Interests</label>
         <DropdownMultiple
           name="interests"
           title="Select your interests"
@@ -110,7 +112,6 @@ export default function Bio({ next, previous, formData, setForm }) {
             checkIcon: { color: "var(--berry)" },
           }}
         />
-
         {/* wrapper
 header
 headerTitle

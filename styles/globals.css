@@ -246,3 +246,61 @@ li {
   margin: 2rem 0 0.5rem 0;
   font-size: 3rem;
 }
+
+/* MESSAGING STYLES */
+/* Chat list container */
+.rce-container-clist {
+  height: 100%;
+  background-color: #fef8ea;
+}
+/* Chat list user card */
+.rce-citem {
+  background: unset !important;
+}
+.rce-container-citem:hover,
+.rce-container-citem:active,
+.rce-container-citem:focus {
+  background-color: rgba(248, 93, 72, 0.12);
+}
+/* Chat list user name */
+.rce-citem-body--top-title {
+  font-weight: 500;
+}
+
+/* Messages list  */
+.rce-mlist {
+  overflow-y: scroll !important;
+  height: 90vh;
+  padding-bottom: 10rem;
+}
+/* Input container */
+.rce-container-input {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* width: 100%; */
+  min-width: unset;
+  height: fit-content;
+}
+/* Message input */
+.rce-input-textarea {
+  padding: 7px !important;
+  margin: 5px;
+  overflow: hidden;
+  background-color: #dee7f3;
+  width: unset;
+}
+/* Message send btn */
+.rce-input-buttons {
+  align-self: flex-start;
+}
+
+/* Sender message  */
+.rce-mbox {
+  box-shadow: unset !important;
+  background: rgba(248, 93, 72, 0.12) !important;
+}
+/* Recipient/current user message  */
+.rce-mbox-right {
+  background: white !important;
+}

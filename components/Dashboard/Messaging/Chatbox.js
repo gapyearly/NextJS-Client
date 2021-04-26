@@ -62,10 +62,10 @@ export default function Chatrooms() {
           chatItem.messages = messages.map((message) => {
             return {
               position: message.sender === user.id ? "right" : "left",
-              avatar:
-                message.sender === user.id
-                  ? myAvatar
-                  : recipient.profilePicture.url,
+              // avatar:
+              //   message.sender === user.id
+              //     ? myAvatar
+              //     : recipient.profilePicture.url,
               date: new Date(message.createdAt),
               type: "text",
               text: message.content,
@@ -98,7 +98,7 @@ export default function Chatrooms() {
           }}
         />
       </div>
-      <div>
+      <div className={styles.messagingWindow}>
         <MessageList
           className="message-list"
           lockable={true}
@@ -106,6 +106,7 @@ export default function Chatrooms() {
           dataSource={chatroom ? chatroom.messages : []}
         />
         <Input
+          className="typeInput"
           placeholder="Type here..."
           multiline={true}
           ref={(e) => {
@@ -117,7 +118,8 @@ export default function Chatrooms() {
           rightButtons={
             <Button
               color="white"
-              backgroundColor="black"
+              className="sendBtn"
+              backgroundColor="var(--horizon)"
               text="Send"
               onClick={() => {
                 sendMessage();
