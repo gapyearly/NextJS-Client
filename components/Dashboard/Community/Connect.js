@@ -8,7 +8,8 @@ export default function Connect() {
       {/* Switch here */}
       <p>
         Gapyearly will use your profile info to match you with another gapper.
-        Find out more about matching <Link href="/connect">here</Link>!
+        Find out more about matching <Link href="/community/connect">here</Link>
+        !
       </p>
       <h3 className={styles.dateBanner}>Next match releases: April 25th</h3>
     </>

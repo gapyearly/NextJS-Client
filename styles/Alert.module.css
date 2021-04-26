@@ -1,6 +1,5 @@
 .alert,
 .alert button {
-  background-color: var(--aqua);
   color: var(--seashell);
   display: flex;
   align-items: center;
@@ -13,4 +12,19 @@
 }
 .icon {
   padding-right: 500px;
+}
+.blueBg {
+  background-color: var(--horizon);
+}
+.greenBg {
+  background-color: var(--aqua);
+}
+.darkBg {
+  background-color: var(--berry);
+}
+.redBg {
+  background-color: var(--clay);
+}
+.greyBg {
+  background-color: var(--gray);
 }
