@@ -57,7 +57,12 @@ export default function Navbar() {
   }, []);
   let NavUser;
   if (isAuthenticated) {
-    NavUser = <AvatarDropdown avatar={user.profilePicture.url} />;
+    // TODO Default Profile Picture
+    if (user.profilePicture) {
+      NavUser = <AvatarDropdown avatar={user.profilePicture.url} />;
+    } else {
+      NavUser = <AvatarDropdown />;
+    }
   } else {
     NavUser = (
       <LoginButton color="greenBg" href="/login">
