@@ -261,9 +261,11 @@ li {
 }
 .rce-container-citem:hover,
 .rce-container-citem:active,
-.rce-container-citem:focus {
+.rce-container-citem:focus,
+.rce-container-clist .current {
   background-color: rgba(248, 93, 72, 0.12);
 }
+
 /* Chat list user name */
 .rce-citem-body--top-title {
   font-weight: 500;

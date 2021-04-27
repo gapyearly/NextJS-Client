@@ -11,7 +11,8 @@ export default function Chatrooms() {
   const [conversations, setConversations] = useState([]);
   const [myMessage, setMyMessage] = useState("");
   const [currentChatroomId, setCurrentChatroomId] = useState("");
-
+  const [pageLoading, setPageLoading] = useState(false);
+  // TODO: Optimize Messaging it sux lmao
   const sendMessage = async () => {
     try {
       await strapi.post("messages", {
@@ -41,6 +42,10 @@ export default function Chatrooms() {
           // Setup Chatitem object
           const chatItem = {};
           chatItem.id = data.id;
+          console.log(data.id, currentChatroomId);
+          if (data.id === currentChatroomId) {
+            chatItem.className = "current";
+          }
           chatItem.title =
             !recipient.firstName && !recipient.lastName
               ? recipient.username
@@ -76,10 +81,14 @@ export default function Chatrooms() {
           }
           return chatItem;
         });
+        if (!pageLoading) {
+          setCurrentChatroomId(formattedConvos[0].id);
+          setPageLoading(true);
+        }
         setConversations(formattedConvos);
       });
     }
-  }, [loading, user]);
+  }, [loading, user, currentChatroomId]);
   const chatroom = conversations.find(
     (chatItem) => currentChatroomId === chatItem.id
   );
