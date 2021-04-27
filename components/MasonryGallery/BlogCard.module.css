@@ -6,7 +6,6 @@
   border-radius: 7px;
 }
 .blogContainer {
-  cursor: pointer;
   display: flex;
   justify-content: center;
   margin-bottom: 1.5rem;
@@ -24,5 +23,9 @@
   margin: 0 auto;
 }
 .blogText a {
-  display: block;
+  display: inline;
+}
+.blogUserLink {
+  display: flex;
+  justify-content: flex-end;
 }

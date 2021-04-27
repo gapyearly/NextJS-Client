@@ -2,7 +2,7 @@ import Link from "next/link";
 import styles from "./Dashboard.module.css";
 import { useAuth } from "@contexts/auth";
 import redirect from "nextjs-redirect";
-
+import { useRouter } from "next/router";
 import { RiSettings3Fill } from "react-icons/ri";
 import { IoMdExit } from "react-icons/io";
 import { HiMail } from "react-icons/hi";
@@ -12,15 +12,16 @@ import { BsFillChatSquareFill, BsPersonFill } from "react-icons/bs";
 import { useAlert } from "react-alert";
 import React, { useState } from "react";
 
-const Redirect = redirect("/");
+const Redirect = redirect("/login");
 const SignupRedirect = redirect("/signup/additional-info");
 
 export default function DashboardLayout({ children }) {
   const { isAuthenticated, loading, user, logout } = useAuth();
   const [loggingOut, setLoggingOut] = useState(false);
-
+  const router = useRouter();
   if (loading) return <div></div>;
-  if (!isAuthenticated)
+  if (!isAuthenticated) {
+    window.sessionStorage.setItem("redirect", router.pathname);
     return (
       <Redirect>
         <div style={{ display: "grid", placeItems: "center" }}>
@@ -28,6 +29,7 @@ export default function DashboardLayout({ children }) {
         </div>
       </Redirect>
     );
+  }
   if (!user.signupCompletion && !loggingOut) {
     return <SignupRedirect />;
   }

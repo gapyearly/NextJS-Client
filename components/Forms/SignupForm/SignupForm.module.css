@@ -86,3 +86,8 @@ fieldset .gapYear {
 .avatarForm {
   margin: 0 auto;
 }
+input#instagram {
+  display: inline;
+  width: 15rem !important;
+  margin-left: 0.5rem;
+}

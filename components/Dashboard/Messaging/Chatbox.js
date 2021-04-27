@@ -1,11 +1,5 @@
 import { useAuth } from "@contexts/auth";
-import {
-  MessageList,
-  ChatList,
-  Input,
-  Button,
-  Popup,
-} from "react-chat-elements";
+import { MessageList, ChatList, Input, Button } from "react-chat-elements";
 
 import getFullName from "../../../util/fullName";
 import strapi from "@api/strapi";
@@ -20,7 +14,7 @@ export default function Chatrooms() {
 
   const sendMessage = async () => {
     try {
-      const message = await strapi.post("messages", {
+      await strapi.post("messages", {
         chatroom: currentChatroomId,
         content: myMessage,
       });
@@ -33,6 +27,9 @@ export default function Chatrooms() {
     if (user && !loading) {
       // Fetch extra details about chatrooms
       const conversationPromises = user.chatrooms.map((chatroomId) => {
+        if (chatroomId.id) {
+          chatroomId = chatroomId.id;
+        }
         return strapi.get(`chatrooms/${chatroomId}`);
       });
       // Filter all chatrooms and messages
@@ -62,10 +59,10 @@ export default function Chatrooms() {
           chatItem.messages = messages.map((message) => {
             return {
               position: message.sender === user.id ? "right" : "left",
-              avatar:
-                message.sender === user.id
-                  ? myAvatar
-                  : recipient.profilePicture.url,
+              // avatar:
+              //   message.sender === user.id
+              //     ? myAvatar
+              //     : recipient.profilePicture.url,
               date: new Date(message.createdAt),
               type: "text",
               text: message.content,
@@ -89,16 +86,15 @@ export default function Chatrooms() {
 
   return (
     <div className={styles.container}>
-      <div>
-        <ChatList
-          className="chat-list"
-          dataSource={conversations}
-          onClick={(chatItem) => {
-            setCurrentChatroomId(chatItem.id);
-          }}
-        />
-      </div>
-      <div>
+      <ChatList
+        className="chat-list"
+        dataSource={conversations}
+        onClick={(chatItem) => {
+          setCurrentChatroomId(chatItem.id);
+        }}
+      />
+
+      <div className={styles.messagingWindow}>
         <MessageList
           className="message-list"
           lockable={true}
@@ -106,6 +102,7 @@ export default function Chatrooms() {
           dataSource={chatroom ? chatroom.messages : []}
         />
         <Input
+          className="typeInput"
           placeholder="Type here..."
           multiline={true}
           ref={(e) => {
@@ -117,7 +114,8 @@ export default function Chatrooms() {
           rightButtons={
             <Button
               color="white"
-              backgroundColor="black"
+              className="sendBtn"
+              backgroundColor="var(--horizon)"
               text="Send"
               onClick={() => {
                 sendMessage();

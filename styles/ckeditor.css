@@ -19,7 +19,9 @@
   --ck-image-style-spacing: 1.5em;
   --ck-todo-list-checkmark-size: 16px;
 }
-
+.ck-content {
+  padding-left: 1rem;
+}
 /* ckeditor5-font/theme/fontsize.css */
 .ck-content .text-tiny {
   font-size: 0.7em;
@@ -150,4 +152,7 @@
   margin: 1em 0;
   display: block;
   min-width: 15em;
+}
+.ck-content p {
+  margin-bottom: 1rem;
 }

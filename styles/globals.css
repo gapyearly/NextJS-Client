@@ -212,7 +212,7 @@ li {
   padding: 0.2em 0.6em 0.5em;
   margin: 0;
 }
-
+/* SCROLLBAR */
 #modal-root ::-webkit-scrollbar {
   width: 25px;
   margin: 3px;
@@ -245,4 +245,94 @@ li {
 .error404 h1 {
   margin: 2rem 0 0.5rem 0;
   font-size: 3rem;
+}
+
+/* MESSAGING STYLES */
+/* Chat list container */
+.rce-container-clist {
+  height: 100%;
+  background-color: #fef8ea;
+  /* width: 100%; */
+  border-bottom-left-radius: 10px;
+}
+/* Chat list user card */
+.rce-citem {
+  background: unset !important;
+}
+.rce-container-citem:hover,
+.rce-container-citem:active,
+.rce-container-citem:focus {
+  background-color: rgba(248, 93, 72, 0.12);
+}
+/* Chat list user name */
+.rce-citem-body--top-title {
+  font-weight: 500;
+}
+
+/* Messages list container  */
+.rce-container-mlist {
+  width: 100%;
+}
+
+.rce-container-mlist ::-webkit-scrollbar {
+  width: 25px;
+  margin: 3px;
+  padding: 4px;
+}
+.rce-container-mlist ::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  background-image: linear-gradient(var(--horizon), var(--horizon));
+  /*border-right: 4px var(--seashell) solid*/
+  /*background-clip: padding-box;*/
+  border: 7px solid rgba(255, 255, 255, 0);
+  background-clip: padding-box;
+  padding: 4px;
+}
+
+.rce-container-mlist ::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.3);
+}
+.rce-container-mlist ::-webkit-scrollbar-track {
+  padding: 4px;
+}
+
+/* Messages list  */
+.rce-mlist {
+  overflow-y: scroll !important;
+  height: calc(90vh - 47px);
+  /* dependent on message input container height, 47px */
+}
+/* Input container */
+.rce-container-input {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* width: 100%; */
+  min-width: unset;
+  height: fit-content;
+  border-bottom-right-radius: 10px;
+}
+/* Message input */
+.rce-input-textarea {
+  padding: 7px !important;
+  margin: 5px;
+  overflow: hidden;
+  background-color: #dee7f3;
+  width: calc(100% - 65px);
+  /* doesnt scale because of 2nd window parent */
+}
+/* Message send btn */
+.rce-input-buttons button {
+  margin: 0;
+}
+
+/* Sender message  */
+.rce-mbox {
+  box-shadow: unset !important;
+  background: rgba(248, 93, 72, 0.12) !important;
+}
+/* Recipient/current user message  */
+.rce-mbox-right {
+  background: #dee7f3 !important;
 }

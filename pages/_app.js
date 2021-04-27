@@ -23,9 +23,14 @@ Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps }) {
   const AlertTemplate = ({ options, message, close }) => {
-    // const bgColor = options.type==="info" ?;
+    const bgColor =
+      options.type === "info"
+        ? "blueBg"
+        : options.type === "success"
+        ? "greenBg"
+        : "redBg";
     return (
-      <div className={styles.alert}>
+      <div className={`${styles.alert} ${styles[bgColor]}`}>
         {options.type === "info" && (
           <IoInformationCircleOutline style={{ margin: "0 6px" }} />
         )}
@@ -35,7 +40,7 @@ function MyApp({ Component, pageProps }) {
         )}
 
         {message}
-        <button onClick={close}>
+        <button onClick={close} className={styles[bgColor]}>
           <IoClose />
         </button>
       </div>
