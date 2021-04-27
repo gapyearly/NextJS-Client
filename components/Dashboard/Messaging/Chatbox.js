@@ -3,7 +3,7 @@ import { MessageList, ChatList, Input, Button } from "react-chat-elements";
 
 import getFullName from "../../../util/fullName";
 import strapi from "@api/strapi";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Chatbox.module.css";
 
 export default function Chatrooms() {
@@ -12,6 +12,9 @@ export default function Chatrooms() {
   const [myMessage, setMyMessage] = useState("");
   const [currentChatroomId, setCurrentChatroomId] = useState("");
   const [pageLoading, setPageLoading] = useState(false);
+  // Input, controlled field
+  const input = useRef();
+  if (input.current) input.current.input.value = myMessage;
   // TODO: Optimize Messaging it sux lmao
   const sendMessage = async () => {
     try {
@@ -20,6 +23,8 @@ export default function Chatrooms() {
         content: myMessage,
       });
       setMyMessage("");
+      // Reset textarea styling
+      input.current.input.style = "";
       updateUser();
     } catch (e) {}
   };
@@ -114,9 +119,7 @@ export default function Chatrooms() {
           className="typeInput"
           placeholder="Type here..."
           multiline={true}
-          ref={(e) => {
-            if (e) e.input.value = myMessage;
-          }}
+          ref={input}
           onChange={(e) => {
             setMyMessage(e.target.value);
           }}
