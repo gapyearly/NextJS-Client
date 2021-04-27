@@ -44,3 +44,9 @@
   margin-right: 0 !important;
   box-sizing: border-box;
 }
+.exitDashBtn {
+  position: absolute;
+  top: 0.5rem;
+  right: 2rem;
+  font-size: 0.9rem;
+}

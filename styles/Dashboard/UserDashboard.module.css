@@ -50,7 +50,9 @@
   color: var(--seashell);
   display: block;
 }
-
+.askWindow Button {
+  margin: inherit auto;
+}
 /* PROFILE OVERVIEW */
 .profile > h3 {
   display: block;

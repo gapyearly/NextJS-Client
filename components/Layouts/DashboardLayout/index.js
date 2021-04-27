@@ -8,7 +8,7 @@ import { IoMdExit } from "react-icons/io";
 import { HiMail } from "react-icons/hi";
 import { FaGlobe, FaArrowLeft } from "react-icons/fa";
 import { BsFillChatSquareFill, BsPersonFill } from "react-icons/bs";
-
+import Button from "@components/Buttons/Button";
 import { useAlert } from "react-alert";
 import React, { useState } from "react";
 
@@ -36,7 +36,13 @@ export default function DashboardLayout({ children }) {
   return (
     <>
       <Navbar logout={logout} setLoggingOut={setLoggingOut} />
-      <main className={styles.main}>{children}</main>
+      <main className={styles.main}>
+        {children}
+        <Button className={styles.exitDashBtn} color="greenBg" href="/">
+          <FaArrowLeft style={{ marginRight: 5 }} />
+          Back to Gapyearly
+        </Button>
+      </main>
     </>
   );
 }
@@ -74,10 +80,6 @@ const Navbar = ({ logout, setLoggingOut }) => {
       <NavItem href="/dashboard/settings">
         <RiSettings3Fill className={styles.navIcon} />
         Account Settings
-      </NavItem>
-      <NavItem href="/">
-        <FaArrowLeft className={styles.navIcon} />
-        Exit Dashboard
       </NavItem>
       <NavItem
         href="/"

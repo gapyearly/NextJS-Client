@@ -22,14 +22,14 @@ export default function AskQuestion() {
     }
   };
   return (
-    <>
+    <div className={styles.askWindow}>
       <h3>Have gap year questions?</h3>
-      {/* Switch here */}
       <p>We've got your back.</p>
       <br />
       <p>
-        Submit a question and we'll share it on <strong>@gapyearly</strong> on
-        Instagram with fellow gappers and gap alumni!
+        Submit a question and we'll share it on{" "}
+        <a href="https://instagram.com/gapyearly">@gapyearly</a> on Instagram
+        with fellow gappers and gap alumni!
       </p>
       <form>
         <textarea
@@ -39,12 +39,12 @@ export default function AskQuestion() {
           onChange={(e) => {
             setQuestion(e.target.value);
           }}
-          placeholder="Ask question here"
+          placeholder="Ask away!"
         />
         <Button color="greenBg" type="button" onClick={submit}>
           Submit
         </Button>
       </form>
-    </>
+    </div>
   );
 }

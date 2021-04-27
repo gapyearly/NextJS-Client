@@ -119,7 +119,7 @@ textarea {
 }
 textarea {
   border-radius: 5px;
-
+  resize: none;
   height: 5rem;
 }
 input,
