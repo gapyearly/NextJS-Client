@@ -253,6 +253,7 @@ li {
   height: 100%;
   background-color: #fef8ea;
   /* width: 100%; */
+  border-bottom-left-radius: 10px;
 }
 /* Chat list user card */
 .rce-citem {
@@ -270,6 +271,7 @@ li {
 
 /* Messages list container  */
 .rce-container-mlist {
+  width: 100%;
 }
 
 .rce-container-mlist ::-webkit-scrollbar {
@@ -298,8 +300,8 @@ li {
 /* Messages list  */
 .rce-mlist {
   overflow-y: scroll !important;
-  height: 90vh;
-  padding-bottom: 3rem;
+  height: calc(90vh - 47px);
+  /* dependent on message input container height, 47px */
 }
 /* Input container */
 .rce-container-input {
@@ -309,6 +311,7 @@ li {
   /* width: 100%; */
   min-width: unset;
   height: fit-content;
+  border-bottom-right-radius: 10px;
 }
 /* Message input */
 .rce-input-textarea {
@@ -316,11 +319,12 @@ li {
   margin: 5px;
   overflow: hidden;
   background-color: #dee7f3;
-  width: 70%;
+  width: calc(100% - 65px);
+  /* doesnt scale because of 2nd window parent */
 }
 /* Message send btn */
-.rce-input-buttons {
-  align-self: flex-start;
+.rce-input-buttons button {
+  margin: 0;
 }
 
 /* Sender message  */

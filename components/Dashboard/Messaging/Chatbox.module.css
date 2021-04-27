@@ -10,7 +10,8 @@
 .messagingWindow {
   display: flex;
   flex-direction: column;
-  width: 50vw;
+  width: calc(100% - 240px);
+  /* dependent on chatlist width (min-width: 240px) */
   position: relative;
 }
 .chatList {

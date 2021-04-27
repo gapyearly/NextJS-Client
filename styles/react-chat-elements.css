@@ -1521,6 +1521,8 @@ audio:focus {
 .rce-input-buttons {
   margin: 5px;
   display: inline;
+  position: absolute;
+  top: 0;
 }
 
 .rce-input-buttons > * {
