@@ -11,10 +11,20 @@ export default function Chatrooms() {
   const [conversations, setConversations] = useState([]);
   const [myMessage, setMyMessage] = useState("");
   const [currentChatroomId, setCurrentChatroomId] = useState("");
-  const [pageLoading, setPageLoading] = useState(false);
+  const [pageLoading, setPageLoading] = useState(true);
   // Input, controlled field
   const input = useRef();
   if (input.current) input.current.input.value = myMessage;
+
+  // Apply styling to currently selected conversation.
+
+  const newConversations = conversations.forEach((chatroom) => {
+    if (chatroom.id === currentChatroomId) {
+      chatroom.className = "current";
+    } else {
+      chatroom.className = "";
+    }
+  });
   // TODO: Optimize Messaging it sux lmao
   const sendMessage = async () => {
     try {
@@ -48,9 +58,7 @@ export default function Chatrooms() {
           const chatItem = {};
           chatItem.id = data.id;
           console.log(data.id, currentChatroomId);
-          if (data.id === currentChatroomId) {
-            chatItem.className = "current";
-          }
+
           chatItem.title =
             !recipient.firstName && !recipient.lastName
               ? recipient.username
@@ -86,14 +94,15 @@ export default function Chatrooms() {
           }
           return chatItem;
         });
-        if (!pageLoading) {
+        const sortedConvos = formattedConvos.sort((a,b) => a.date.)
+        if (pageLoading) {
           setCurrentChatroomId(formattedConvos[0].id);
-          setPageLoading(true);
+          setPageLoading(false);
         }
         setConversations(formattedConvos);
       });
     }
-  }, [loading, user, currentChatroomId]);
+  }, [loading, user]);
   const chatroom = conversations.find(
     (chatItem) => currentChatroomId === chatItem.id
   );
@@ -109,6 +118,12 @@ export default function Chatrooms() {
       />
 
       <div className={styles.messagingWindow}>
+        {pageLoading && (
+          <>
+            <br />
+            <h1>Loading . . .</h1>
+          </>
+        )}
         <MessageList
           className="message-list"
           lockable={true}
