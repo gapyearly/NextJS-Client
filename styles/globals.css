@@ -212,7 +212,7 @@ li {
   padding: 0.2em 0.6em 0.5em;
   margin: 0;
 }
-
+/* SCROLLBAR */
 #modal-root ::-webkit-scrollbar {
   width: 25px;
   margin: 3px;
@@ -252,6 +252,7 @@ li {
 .rce-container-clist {
   height: 100%;
   background-color: #fef8ea;
+  /* width: 100%; */
 }
 /* Chat list user card */
 .rce-citem {
@@ -267,11 +268,38 @@ li {
   font-weight: 500;
 }
 
+/* Messages list container  */
+.rce-container-mlist {
+}
+
+.rce-container-mlist ::-webkit-scrollbar {
+  width: 25px;
+  margin: 3px;
+  padding: 4px;
+}
+.rce-container-mlist ::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  background-image: linear-gradient(var(--horizon), var(--horizon));
+  /*border-right: 4px var(--seashell) solid*/
+  /*background-clip: padding-box;*/
+  border: 7px solid rgba(255, 255, 255, 0);
+  background-clip: padding-box;
+  padding: 4px;
+}
+
+.rce-container-mlist ::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.3);
+}
+.rce-container-mlist ::-webkit-scrollbar-track {
+  padding: 4px;
+}
+
 /* Messages list  */
 .rce-mlist {
   overflow-y: scroll !important;
   height: 90vh;
-  padding-bottom: 10rem;
+  padding-bottom: 3rem;
 }
 /* Input container */
 .rce-container-input {
@@ -288,7 +316,7 @@ li {
   margin: 5px;
   overflow: hidden;
   background-color: #dee7f3;
-  width: unset;
+  width: 70%;
 }
 /* Message send btn */
 .rce-input-buttons {
@@ -302,5 +330,5 @@ li {
 }
 /* Recipient/current user message  */
 .rce-mbox-right {
-  background: white !important;
+  background: #dee7f3 !important;
 }

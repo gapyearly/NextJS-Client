@@ -3,7 +3,8 @@
   object-fit: cover;
   margin-left: auto;
   text-align: left;
-  width: 85vw;
+  width: 100%;
+  box-sizing: border-box;
 
   /* 100vw - nav width, 
   FIXME: to include mobile menu/max-width px value */
@@ -61,4 +62,5 @@
   position: relative;
   right: 0;
   margin: 3rem;
+  border-radius: 10px;
 }

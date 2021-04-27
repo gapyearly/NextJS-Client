@@ -1136,8 +1136,8 @@
   }
 }
 .rce-button {
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
   align-items: center;
   justify-content: center;
   font-size: 12px;
@@ -1492,8 +1492,7 @@ audio:focus {
   font-weight: 700;
 }
 .rce-container-input {
-  display: flex;
-  min-width: 100%;
+  width: 100%;
   box-sizing: border-box;
   flex-direction: row;
   background: #fff;
@@ -1516,17 +1515,17 @@ audio:focus {
   height: 37px;
   padding: 10px 5px;
   resize: none;
+  display: inline;
 }
 
 .rce-input-buttons {
-  display: flex;
-  flex-direction: row;
   margin: 5px;
+  display: inline;
 }
 
 .rce-input-buttons > * {
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  flex-direction: row; */
 }
 
 .rce-input-buttons .rce-button:nth-child(even) {

@@ -1,13 +1,17 @@
 .container {
   display: flex;
+  flex-direction: row;
   border-radius: 10px;
-  /* background-color: black; */
+  background-color: white;
   height: 90vh;
   position: relative;
-  width: 70vw;
+  width: 100%;
 }
 .messagingWindow {
   display: flex;
   flex-direction: column;
   width: 50vw;
+  position: relative;
+}
+.chatList {
 }

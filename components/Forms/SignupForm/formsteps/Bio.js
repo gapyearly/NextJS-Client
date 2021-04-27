@@ -30,28 +30,60 @@ export default function Bio({ next, previous, formData, setForm }) {
   const { instagram, bio } = formData;
   const interests = [
     {
-      label: " Solo Travel",
-      value: "soloTravel",
+      label: "Solo Travel/Backpacking",
+      value: "soloTravelBackpacking",
     },
     {
-      label: " Outdoors",
+      label: "Outdoors",
       value: "outdoors",
     },
     {
-      label: " Volunteering/Service",
+      label: "Volunteering/Service",
       value: "volunteeringService",
     },
     {
-      label: " Work/Interning",
+      label: "Work/Interning",
       value: "workInterning",
     },
     {
-      label: " Arts",
+      label: "Arts",
       value: "arts",
     },
     {
-      label: " Science/Research",
+      label: "Science/Research",
       value: "scienceResearch",
+    },
+    {
+      label: "Technology",
+      value: "technology",
+    },
+    {
+      label: "",
+      value: "",
+    },
+    {
+      label: "",
+      value: "",
+    },
+    {
+      label: "",
+      value: "",
+    },
+    {
+      label: "",
+      value: "",
+    },
+    {
+      label: "",
+      value: "",
+    },
+    {
+      label: "",
+      value: "",
+    },
+    {
+      label: "",
+      value: "",
     },
   ];
   const onChange = (item, name) => {

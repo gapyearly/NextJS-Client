@@ -89,15 +89,14 @@ export default function Chatrooms() {
 
   return (
     <div className={styles.container}>
-      <div>
-        <ChatList
-          className="chat-list"
-          dataSource={conversations}
-          onClick={(chatItem) => {
-            setCurrentChatroomId(chatItem.id);
-          }}
-        />
-      </div>
+      <ChatList
+        className="chat-list"
+        dataSource={conversations}
+        onClick={(chatItem) => {
+          setCurrentChatroomId(chatItem.id);
+        }}
+      />
+
       <div className={styles.messagingWindow}>
         <MessageList
           className="message-list"
