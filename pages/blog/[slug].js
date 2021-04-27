@@ -8,8 +8,13 @@ import { FaArrowLeft } from "react-icons/fa";
 import styles from "@styles/Blog.module.css";
 
 export default function BlogPost({ blogData }) {
-  const { content, title, author, description } = blogData;
-  const fullName = `${author.firstName} ${author.lastName}`;
+  const { content, title, author, description, submittedBy } = blogData;
+  const name = {};
+  if (author) {
+    name.name = `${author.firstName} ${author.lastName}`;
+  } else {
+    name.name = submittedBy;
+  }
 
   console.log(blogData);
   return (
@@ -21,7 +26,7 @@ export default function BlogPost({ blogData }) {
       </Link>
       <article>
         <h1 className={styles.title}>{title}</h1>
-        <h2 className={styles.author}>By {fullName}</h2>
+        <h2 className={styles.author}>By {name.name}</h2>
         <RichText data={content}></RichText>
       </article>
       <Link href="/blog" passHref>

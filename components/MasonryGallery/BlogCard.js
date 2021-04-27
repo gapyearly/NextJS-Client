@@ -12,18 +12,41 @@ import Link from "next/link";
  * @param  {string} href
  */
 export default function BlogCard({ data, align }) {
-  const { title, description, slug, image, author, profile } = data;
-  const fullName = `${author.firstName} ${author.lastName}`;
+  const {
+    title,
+    description,
+    slug,
+    image,
+    author,
+    profile,
+    submittedBy,
+  } = data;
+  const name = {};
+  if (author) {
+    name.name = `${author.firstName} ${author.lastName}`;
+    name.user = true;
+  } else {
+    name.name = submittedBy;
+    name.user = false;
+  }
   // TODO Fix up structure and styling
-  const BlogCardInfo = ({ className }) => {
+  const BlogCardInfo = ({ className, align }) => {
     return (
       <div className={styles.blogText}>
         <Link href={`/blog/${slug}`}>
-          <h2 className={className}>{title}</h2>
+          <a className="noUnderline">
+            <h2 className={className}>{title}</h2>
+          </a>
         </Link>
-        <Link href={`/${profile}`}>
-          <a className={className}>By: {fullName}</a>
-        </Link>
+        <div className={align === "right" ? styles.blogUserLink : ""}>
+          {name.user ? (
+            <Link href={`/${profile}`}>
+              <a className={className}>By: {name.name}</a>
+            </Link>
+          ) : (
+            <a className={className}>By: {name.name}</a>
+          )}
+        </div>
         <p className={className}>{description}</p>
       </div>
     );
@@ -37,11 +60,11 @@ export default function BlogCard({ data, align }) {
     align === "left" ? (
       <>
         <Image />
-        <BlogCardInfo />
+        <BlogCardInfo align={align} />
       </>
     ) : (
       <>
-        <BlogCardInfo className={styles.blogTextRight} />
+        <BlogCardInfo className={styles.blogTextRight} align={align} />
         <Image />
       </>
     );

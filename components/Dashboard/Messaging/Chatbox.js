@@ -1,11 +1,5 @@
 import { useAuth } from "@contexts/auth";
-import {
-  MessageList,
-  ChatList,
-  Input,
-  Button,
-  Popup,
-} from "react-chat-elements";
+import { MessageList, ChatList, Input, Button } from "react-chat-elements";
 
 import getFullName from "../../../util/fullName";
 import strapi from "@api/strapi";
@@ -20,7 +14,7 @@ export default function Chatrooms() {
 
   const sendMessage = async () => {
     try {
-      const message = await strapi.post("messages", {
+      await strapi.post("messages", {
         chatroom: currentChatroomId,
         content: myMessage,
       });
@@ -33,6 +27,9 @@ export default function Chatrooms() {
     if (user && !loading) {
       // Fetch extra details about chatrooms
       const conversationPromises = user.chatrooms.map((chatroomId) => {
+        if (chatroomId.id) {
+          chatroomId = chatroomId.id;
+        }
         return strapi.get(`chatrooms/${chatroomId}`);
       });
       // Filter all chatrooms and messages
