@@ -9,15 +9,15 @@ export default function AskQuestion() {
   const alert = useAlert();
   const submit = async () => {
     try {
-      if (!question) return alert.error("Please enter a question.");
+      if (!question) return alert.error("Please enter a question");
       await strapi.post("questions", {
         question,
       });
       setQuestion("");
-      alert.success("Question Submitted.");
+      alert.success("Question submitted");
     } catch {
       alert.error(
-        "Error Occurred while trying to submit question. Please contact an admin."
+        "Error occurred while trying to submit question. Please contact an admin."
       );
     }
   };

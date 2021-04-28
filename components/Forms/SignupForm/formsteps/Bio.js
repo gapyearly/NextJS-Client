@@ -27,8 +27,8 @@ const DropdownMultiple = dynamic(
   { ssr: false }
 );
 export default function Bio({ next, previous, formData, setForm }) {
-  const { instagram, bio } = formData;
-  const interests = [
+  const { instagram, interests, bio } = formData;
+  const interest = [
     {
       label: "Solo Travel/Backpacking",
       value: "soloTravelBackpacking",
@@ -58,32 +58,47 @@ export default function Bio({ next, previous, formData, setForm }) {
       value: "technology",
     },
     {
-      label: "",
-      value: "",
+      label: "Politics/Advocacy",
+      value: "politicsAdvocacy",
     },
     {
-      label: "",
-      value: "",
+      label: "Writing/Journalism",
+      value: "writingJournalism",
     },
     {
-      label: "",
-      value: "",
+      label: "Entrepreneurship",
+      value: "entrepreneurship",
     },
     {
-      label: "",
-      value: "",
+      label: "North America",
+      value: "northAmerica",
     },
     {
-      label: "",
-      value: "",
+      label: "South America",
+      value: "southAmerica",
     },
     {
-      label: "",
-      value: "",
+      label: "Africa",
+      value: "africa",
     },
     {
-      label: "",
-      value: "",
+      label: "Asia",
+      value: "asia",
+    },
+
+    {
+      label: "Australia",
+      value: "australia",
+    },
+
+    {
+      label: "Antartica",
+      value: "antartica",
+    },
+
+    {
+      label: "Europe",
+      value: "europe",
     },
   ];
   const onChange = (item, name) => {
@@ -100,8 +115,6 @@ export default function Bio({ next, previous, formData, setForm }) {
           name="instagram"
           value={instagram}
           onChange={setForm}
-          pattern="^[@^%<>^$]+$
-          "
         />
         <label htmlFor="interests">Interests</label>
         <DropdownMultiple
@@ -109,7 +122,8 @@ export default function Bio({ next, previous, formData, setForm }) {
           title="Select your interests"
           titleSingular="interest"
           searchable={["Search...", "No matching interest"]}
-          list={interests}
+          value={instagram}
+          list={interest}
           onChange={onChange}
           styles={{
             wrapper: {

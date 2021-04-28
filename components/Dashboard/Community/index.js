@@ -1,5 +1,5 @@
-import Connect from "./Connect";
-import AskQuestion from "./AskQuestion";
+import Connect from "./ConnectWindow";
+import AskQuestion from "./AskQuestionWindow";
 
 const pages = {
   connect: {
