@@ -1,10 +1,7 @@
-.container {
+.communityContainer {
   padding: 2rem 0;
-  object-fit: cover;
-  margin-left: auto;
   text-align: left;
   width: 100%;
-  box-sizing: border-box;
 
   /* 100vw - nav width, 
   FIXME: to include mobile menu/max-width px value */
@@ -59,10 +56,90 @@
 }
 .chatboxWindow {
   max-width: 70vw;
-  height: 90vh;
+  height: 85vh;
   box-shadow: 0px 3px 6px lightgray;
   position: relative;
   right: 0;
-  margin: 3rem;
+  margin: 4rem auto;
   border-radius: 10px;
+}
+
+/* SHARE YOUR STORY */
+.shareYourStory {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 70%;
+  margin: auto;
+}
+.submitContentBtn {
+}
+.shareYourStory h2 {
+}
+.submitBg {
+  color: var(--clay);
+}
+
+.textBubbleButtonContainer {
+  margin: 0 1rem 2rem;
+}
+.textBubbleButton {
+  display: flex;
+  align-items: center;
+  width: 10rem;
+  height: 8rem;
+  position: relative;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+.textBubbleButton BsFillChatSquareFill {
+  z-index: -1;
+}
+.textBubbleButton h2 {
+  z-index: 1;
+  text-align: center;
+  color: var(--seashell);
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+.textBubbleButton::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+}
+.redBg {
+  background-color: var(--clay);
+}
+.redBg::after {
+  border-top: 2rem solid var(--clay);
+}
+
+.blueBg {
+  background-color: var(--horizon);
+}
+.blueBg::after {
+  border-top: 2rem solid var(--horizon);
+}
+
+.greenBg {
+  background-color: var(--aqua);
+}
+.greenBg::after {
+  border-top: 2rem solid var(--aqua);
+}
+
+.darkBg {
+  background-color: var(--clay);
+}
+.darkBg::after {
+  border-top: 2rem solid var(--clay);
+}
+.bold {
+  font-weight: 700;
 }

@@ -94,7 +94,7 @@ export default function Chatrooms() {
           }
           return chatItem;
         });
-        const sortedConvos = formattedConvos.sort((a,b) => a.date.)
+        // const sortedConvos = formattedConvos.sort((a,b) => a.date.)
         if (pageLoading) {
           setCurrentChatroomId(formattedConvos[0].id);
           setPageLoading(false);
@@ -108,49 +108,53 @@ export default function Chatrooms() {
   );
 
   return (
-    <div className={styles.container}>
-      <ChatList
-        className="chat-list"
-        dataSource={conversations}
-        onClick={(chatItem) => {
-          setCurrentChatroomId(chatItem.id);
-        }}
-      />
+    <>
+      <h2 className={styles.messagingHeader}>My Inbox</h2>
 
-      <div className={styles.messagingWindow}>
-        {pageLoading && (
-          <>
-            <br />
-            <h1>Loading . . .</h1>
-          </>
-        )}
-        <MessageList
-          className="message-list"
-          lockable={true}
-          toBottomHeight={"100%"}
-          dataSource={chatroom ? chatroom.messages : []}
-        />
-        <Input
-          className="typeInput"
-          placeholder="Type here..."
-          multiline={true}
-          ref={input}
-          onChange={(e) => {
-            setMyMessage(e.target.value);
+      <div className={styles.container}>
+        <ChatList
+          className="chat-list"
+          dataSource={conversations}
+          onClick={(chatItem) => {
+            setCurrentChatroomId(chatItem.id);
           }}
-          rightButtons={
-            <Button
-              color="white"
-              className="sendBtn"
-              backgroundColor="var(--horizon)"
-              text="Send"
-              onClick={() => {
-                sendMessage();
-              }}
-            />
-          }
         />
+
+        <div className={styles.messagingWindow}>
+          {pageLoading && (
+            <>
+              <br />
+              <h1>Loading . . .</h1>
+            </>
+          )}
+          <MessageList
+            className="message-list"
+            lockable={true}
+            toBottomHeight={"100%"}
+            dataSource={chatroom ? chatroom.messages : []}
+          />
+          <Input
+            className="typeInput"
+            placeholder="Type here..."
+            multiline={true}
+            ref={input}
+            onChange={(e) => {
+              setMyMessage(e.target.value);
+            }}
+            rightButtons={
+              <Button
+                color="white"
+                className="sendBtn"
+                backgroundColor="var(--horizon)"
+                text="Send"
+                onClick={() => {
+                  sendMessage();
+                }}
+              />
+            }
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
