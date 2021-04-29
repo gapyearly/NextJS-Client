@@ -9,8 +9,8 @@ export default function ProfilePicture({ next, previous, formData, setForm }) {
   const editorRef = useRef();
 
   const onSubmit = async () => {
-    const canvas = editorRef.current.editor.getImageScaledToCanvas();
-    canvas.toBlob((blob) => {
+    const canvas = await editorRef.current.editor.getImageScaledToCanvas();
+    await canvas.toBlob((blob) => {
       const file = new File([blob], fileRef.current.files[0].name, {
         type: "image/png",
       });
@@ -27,7 +27,7 @@ export default function ProfilePicture({ next, previous, formData, setForm }) {
     <>
       <form
         className={styles.avatarForm}
-        onSubmit={next}
+        onSubmit={onSubmit}
         action="javascript:void(0);"
       >
         <label htmlFor="profilePicture">Upload a profile picture!</label>
