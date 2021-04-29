@@ -73,7 +73,7 @@ export default function Chatrooms() {
           const messages = data.messages;
           // Set Messages
 
-          const myAvatar = user.profilePicture ? user.profilePicture.url : null;
+          // const myAvatar = user.profilePicture ? user.profilePicture.url : null;
           chatItem.messages = messages.map((message) => {
             return {
               position: message.sender === user.id ? "right" : "left",
@@ -96,7 +96,9 @@ export default function Chatrooms() {
         });
         // const sortedConvos = formattedConvos.sort((a,b) => a.date.)
         if (pageLoading) {
-          setCurrentChatroomId(formattedConvos[0].id);
+          if (formattedConvos.length !== 0) {
+            setCurrentChatroomId(formattedConvos[0].id);
+          }
           setPageLoading(false);
         }
         setConversations(formattedConvos);
