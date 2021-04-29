@@ -3,7 +3,7 @@ import { MessageList, ChatList, Input, Button } from "react-chat-elements";
 
 import getFullName from "../../../util/fullName";
 import strapi from "@api/strapi";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./Chatbox.module.css";
 
 export default function Chatrooms() {
@@ -11,7 +11,21 @@ export default function Chatrooms() {
   const [conversations, setConversations] = useState([]);
   const [myMessage, setMyMessage] = useState("");
   const [currentChatroomId, setCurrentChatroomId] = useState("");
+  const [pageLoading, setPageLoading] = useState(true);
+  // Input, controlled field
+  const input = useRef();
+  if (input.current) input.current.input.value = myMessage;
 
+  // Apply styling to currently selected conversation.
+
+  const newConversations = conversations.forEach((chatroom) => {
+    if (chatroom.id === currentChatroomId) {
+      chatroom.className = "current";
+    } else {
+      chatroom.className = "";
+    }
+  });
+  // TODO: Optimize Messaging it sux lmao
   const sendMessage = async () => {
     try {
       await strapi.post("messages", {
@@ -19,6 +33,8 @@ export default function Chatrooms() {
         content: myMessage,
       });
       setMyMessage("");
+      // Reset textarea styling
+      input.current.input.style = "";
       updateUser();
     } catch (e) {}
   };
@@ -41,6 +57,8 @@ export default function Chatrooms() {
           // Setup Chatitem object
           const chatItem = {};
           chatItem.id = data.id;
+          console.log(data.id, currentChatroomId);
+
           chatItem.title =
             !recipient.firstName && !recipient.lastName
               ? recipient.username
@@ -55,7 +73,7 @@ export default function Chatrooms() {
           const messages = data.messages;
           // Set Messages
 
-          const myAvatar = user.profilePicture ? user.profilePicture.url : null;
+          // const myAvatar = user.profilePicture ? user.profilePicture.url : null;
           chatItem.messages = messages.map((message) => {
             return {
               position: message.sender === user.id ? "right" : "left",
@@ -76,6 +94,13 @@ export default function Chatrooms() {
           }
           return chatItem;
         });
+        // const sortedConvos = formattedConvos.sort((a,b) => a.date.)
+        if (pageLoading) {
+          if (formattedConvos.length !== 0) {
+            setCurrentChatroomId(formattedConvos[0].id);
+          }
+          setPageLoading(false);
+        }
         setConversations(formattedConvos);
       });
     }
@@ -85,45 +110,53 @@ export default function Chatrooms() {
   );
 
   return (
-    <div className={styles.container}>
-      <ChatList
-        className="chat-list"
-        dataSource={conversations}
-        onClick={(chatItem) => {
-          setCurrentChatroomId(chatItem.id);
-        }}
-      />
+    <>
+      <h2 className={styles.messagingHeader}>My Inbox</h2>
 
-      <div className={styles.messagingWindow}>
-        <MessageList
-          className="message-list"
-          lockable={true}
-          toBottomHeight={"100%"}
-          dataSource={chatroom ? chatroom.messages : []}
-        />
-        <Input
-          className="typeInput"
-          placeholder="Type here..."
-          multiline={true}
-          ref={(e) => {
-            if (e) e.input.value = myMessage;
+      <div className={styles.container}>
+        <ChatList
+          className="chat-list"
+          dataSource={conversations}
+          onClick={(chatItem) => {
+            setCurrentChatroomId(chatItem.id);
           }}
-          onChange={(e) => {
-            setMyMessage(e.target.value);
-          }}
-          rightButtons={
-            <Button
-              color="white"
-              className="sendBtn"
-              backgroundColor="var(--horizon)"
-              text="Send"
-              onClick={() => {
-                sendMessage();
-              }}
-            />
-          }
         />
+
+        <div className={styles.messagingWindow}>
+          {pageLoading && (
+            <>
+              <br />
+              <h1>Loading . . .</h1>
+            </>
+          )}
+          <MessageList
+            className="message-list"
+            lockable={true}
+            toBottomHeight={"100%"}
+            dataSource={chatroom ? chatroom.messages : []}
+          />
+          <Input
+            className="typeInput"
+            placeholder="Type here..."
+            multiline={true}
+            ref={input}
+            onChange={(e) => {
+              setMyMessage(e.target.value);
+            }}
+            rightButtons={
+              <Button
+                color="white"
+                className="sendBtn"
+                backgroundColor="var(--horizon)"
+                text="Send"
+                onClick={() => {
+                  sendMessage();
+                }}
+              />
+            }
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

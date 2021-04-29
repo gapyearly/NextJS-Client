@@ -1441,6 +1441,7 @@ audio:focus {
 .rce-container-clist {
   display: block;
   overflow: auto;
+  overflow-x: hidden;
 }
 .rce-container-mlist {
   position: relative;

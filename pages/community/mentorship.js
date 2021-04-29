@@ -4,6 +4,7 @@ import PageTitle from "@components/PageTitle";
 import LinkGallery from "@components/MasonryGallery";
 import Head from "next/head";
 import MentorCard from "@components/MasonryGallery/MentorCard";
+import Title from "@components/Title";
 
 export default function Mentorship({ data }) {
   console.log(data);
@@ -46,7 +47,7 @@ export default function Mentorship({ data }) {
   return (
     <>
       <Head>
-        <title>Mentorship | Gapyearly</title>
+        <Title>Mentorship</Title>
       </Head>
       <PageTitle>Mentorship</PageTitle>
       <Layout>

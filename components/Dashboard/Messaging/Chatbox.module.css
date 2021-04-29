@@ -3,7 +3,7 @@
   flex-direction: row;
   border-radius: 10px;
   background-color: white;
-  height: 90vh;
+  height: 80vh;
   position: relative;
   width: 100%;
 }
@@ -15,4 +15,12 @@
   position: relative;
 }
 .chatList {
+}
+.messagingHeader {
+  display: block;
+  background-color: var(--berry);
+  color: var(--seashell);
+  padding: 0.5rem 1rem;
+  margin: 0;
+  border-radius: 10px 10px 0 0;
 }

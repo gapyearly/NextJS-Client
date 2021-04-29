@@ -119,7 +119,7 @@ textarea {
 }
 textarea {
   border-radius: 5px;
-
+  resize: none;
   height: 5rem;
 }
 input,
@@ -255,15 +255,40 @@ li {
   /* width: 100%; */
   border-bottom-left-radius: 10px;
 }
+
+.rce-container-clist::-webkit-scrollbar {
+  width: 25px;
+  margin: 3px;
+  padding: 4px;
+}
+.rce-container-clist::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 100px;
+  border-radius: 100px;
+  background-image: linear-gradient(var(--horizon), var(--horizon));
+  /*border-right: 4px var(--seashell) solid*/
+  /*background-clip: padding-box;*/
+  border: 7px solid rgba(255, 255, 255, 0);
+  background-clip: padding-box;
+  padding: 4px;
+}
+
+.rce-container-clist::-webkit-scrollbar-thumb:hover {
+  filter: brightness(0.3);
+}
+.rce-container-clist::-webkit-scrollbar-track {
+  padding: 4px;
+}
 /* Chat list user card */
 .rce-citem {
   background: unset !important;
 }
 .rce-container-citem:hover,
 .rce-container-citem:active,
-.rce-container-citem:focus {
+.rce-container-citem:focus,
+.rce-container-clist .current {
   background-color: rgba(248, 93, 72, 0.12);
 }
+
 /* Chat list user name */
 .rce-citem-body--top-title {
   font-weight: 500;
@@ -300,7 +325,7 @@ li {
 /* Messages list  */
 .rce-mlist {
   overflow-y: scroll !important;
-  height: calc(90vh - 47px);
+  height: calc(80vh - 47px);
   /* dependent on message input container height, 47px */
 }
 /* Input container */

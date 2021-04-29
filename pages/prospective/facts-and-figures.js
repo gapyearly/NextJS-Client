@@ -3,6 +3,7 @@ import strapi from "@api/strapi";
 import LinkGallery from "@components/MasonryGallery";
 import LinkCard from "@components/MasonryGallery/FactsFiguresCard";
 import PageTitle from "@components/PageTitle";
+import Title from "@components/Title";
 import Head from "next/head";
 export default function FactsAndFigures({ data }) {
   const cards = data.factCard.map(
@@ -21,7 +22,7 @@ export default function FactsAndFigures({ data }) {
   return (
     <>
       <Head>
-        <title>Facts and Figures | Gapyearly</title>
+        <Title>Facts and Figures</Title>
       </Head>
       <PageTitle>Facts and Figures</PageTitle>
       <Layout>

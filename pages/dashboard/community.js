@@ -11,7 +11,7 @@ function DashCommunity() {
     <DashboardLayout>
       <h1 className={styles.title}>Community Hub</h1>
 
-      <div className={styles.container}>
+      <div className={styles.communityContainer}>
         <div className={styles.buttonSigns}>
           <Button
             onClick={() => {
