@@ -1,19 +1,9 @@
 import Button from "@components/Buttons/Button";
 import styles from "components/Forms/SignupForm/SignupForm.module.css";
-import AvatarEditor from "react-avatar-editor";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import dynamic from "next/dynamic";
-
-// const Dropdown = dynamic(
-//   async () => {
-//     const module = await import("reactjs-dropdown-component");
-//     const DD = module.Dropdown;
-
-//     return ({ forwardedRef, ...props }) => <DD ref={forwardedRef} {...props} />;
-//   },
-//   { ssr: false }
-// );
+import strapi from "api/strapi";
 
 const DropdownMultiple = dynamic(
   async () => {
@@ -27,82 +17,28 @@ const DropdownMultiple = dynamic(
   { ssr: false }
 );
 export default function Bio({ next, previous, formData, setForm }) {
-  const { instagram, interests, bio } = formData;
-  const interest = [
-    {
-      label: "Solo Travel/Backpacking",
-      value: "soloTravelBackpacking",
-    },
-    {
-      label: "Outdoors",
-      value: "outdoors",
-    },
-    {
-      label: "Volunteering/Service",
-      value: "volunteeringService",
-    },
-    {
-      label: "Work/Interning",
-      value: "workInterning",
-    },
-    {
-      label: "Arts",
-      value: "arts",
-    },
-    {
-      label: "Science/Research",
-      value: "scienceResearch",
-    },
-    {
-      label: "Technology",
-      value: "technology",
-    },
-    {
-      label: "Politics/Advocacy",
-      value: "politicsAdvocacy",
-    },
-    {
-      label: "Writing/Journalism",
-      value: "writingJournalism",
-    },
-    {
-      label: "Entrepreneurship",
-      value: "entrepreneurship",
-    },
-    {
-      label: "North America",
-      value: "northAmerica",
-    },
-    {
-      label: "South America",
-      value: "southAmerica",
-    },
-    {
-      label: "Africa",
-      value: "africa",
-    },
-    {
-      label: "Asia",
-      value: "asia",
-    },
+  const [interests, setInterests] = useState([]);
+  useEffect(() => {
+    const getInterests = async () => {
+      try {
+        const { data } = await strapi.get("interests");
+        const formattedInterests = data.map((interest) => {
+          return {
+            label: interest.name,
+            value: interest.id,
+          };
+        });
+        setInterests(formattedInterests);
+      } catch {
+        console.log("Can't get Interests");
+      }
+    };
+    getInterests();
+  }, []);
 
-    {
-      label: "Australia",
-      value: "australia",
-    },
-
-    {
-      label: "Antartica",
-      value: "antartica",
-    },
-
-    {
-      label: "Europe",
-      value: "europe",
-    },
-  ];
-  const onChange = (item, name) => {
-    console.log(item, name);
+  const { instagram, bio } = formData;
+  const onChange = (item) => {
+    formData.interests = item.map((interest) => interest.value);
   };
 
   return (
@@ -122,8 +58,7 @@ export default function Bio({ next, previous, formData, setForm }) {
           title="Select your interests"
           titleSingular="interest"
           searchable={["Search...", "No matching interest"]}
-          value={instagram}
-          list={interest}
+          list={interests}
           onChange={onChange}
           styles={{
             wrapper: {

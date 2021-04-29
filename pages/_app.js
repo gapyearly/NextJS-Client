@@ -10,6 +10,7 @@ import { IoInformationCircleOutline, IoClose } from "react-icons/io5";
 import { AuthProvider } from "@contexts/auth";
 
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
+import { DefaultSeo } from "next-seo";
 
 import NProgress from "nprogress";
 import Router from "next/router";
