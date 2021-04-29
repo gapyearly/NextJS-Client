@@ -11,12 +11,26 @@ export default function MentorSubmit() {
       <h1 className={styles.title}>Mentor Submission</h1>
       <form className={styles.mentorSubmit}>
         <label htmlFor="activities">
-          What did you do over your gap year? (Month by month)
+          What did you do over your gap year, by the month?*
         </label>
-        <textarea placeholder="e.g.July-August, September, November-January, etc." />
+        <textarea
+          name="activities"
+          id="activities"
+          placeholder="e.g. 
+          
+          July-August:
+   September:
+       November-January:
+        February:
+        March:
+        April-July:"
+          required
+        />
 
-        <label htmlForm="struggles">What were your struggles?</label>
-        <textarea />
+        <label htmlForm="struggles">What were your struggles?*</label>
+        <textarea name="struggles" id="struggles" required />
+        <Button color="greenBg">Submit</Button>
+        {/* alert, submit action */}
       </form>
     </DashboardLayout>
   );

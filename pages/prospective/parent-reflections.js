@@ -10,6 +10,8 @@ import ParentReflectionCard from "@components/MasonryGallery/ParentReflectionCar
 import ParentReflectionModalContent from "@components/MasonryGallery/ParentReflectionModalContent";
 import PageTitle from "@components/PageTitle";
 import Modal from "@components/Modal";
+import Head from "next/head";
+import Title from "@components/Title";
 
 export default function ParentReflections({ data }) {
   const [modalVisibility, setModalVisibility] = useState(false);
@@ -32,6 +34,9 @@ export default function ParentReflections({ data }) {
   // TODO: Add Search Bar
   return (
     <>
+      <Head>
+        <Title>Parent Reflections</Title>
+      </Head>
       <PageTitle>Parent Reflections</PageTitle>
       <Layout>
         <Gallery>{cards}</Gallery>

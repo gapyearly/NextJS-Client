@@ -7,7 +7,8 @@ import styles from "@components/MasonryGallery/PastExperienceCard.module.css";
 import Pill from "@components/Buttons/Pill.js";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
-
+import Head from "next/head";
+import Title from "@components/Title";
 import ExperienceGallery from "@components/MasonryGallery";
 import ExperienceCard from "@components/MasonryGallery/ExperienceCard";
 import ExperienceModalContent from "@components/MasonryGallery/ExperienceModalContent";
@@ -35,6 +36,9 @@ export default function PastExperiences({ data }) {
   // TODO: Add Search Bar
   return (
     <>
+      <Head>
+        <Title>Past Experiences</Title>
+      </Head>
       <PageTitle>Past Experiences</PageTitle>
       <Layout>
         <ExperienceGallery>{cards}</ExperienceGallery>

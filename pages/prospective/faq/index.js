@@ -3,6 +3,8 @@ import ReactHtmlParser from "react-html-parser";
 import styles from "styles/Accordion.module.css";
 import PageTitle from "@components/PageTitle";
 import strapi from "@api/strapi";
+import Head from "next/head";
+import Title from "@components/Title";
 import {
   Accordion,
   AccordionItem,
@@ -15,6 +17,9 @@ export default function FAQ({ data }) {
   console.log(data);
   return (
     <>
+      <Head>
+        <Title>FAQs</Title>
+      </Head>
       <PageTitle>FAQs</PageTitle>
       <Layout>
         <Accordion
