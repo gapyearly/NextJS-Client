@@ -162,3 +162,10 @@
 .bold {
   font-weight: 700;
 }
+/* MENTOR SUBMIT */
+.mentorSubmit {
+  margin: 0 auto;
+}
+.mentorSubmit textarea {
+  height: 15rem;
+}
