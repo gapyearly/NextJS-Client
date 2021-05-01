@@ -29,14 +29,16 @@ export default function Profile() {
 
 const StaticProfile = () => {
   return (
-    <div>
+    <>
       <h1 className={styles.title}>Profile Overview</h1>
-      <div className={styles.container}>
-        <div className={styles.profile}>
-          <h2>Name:</h2>
+      <div className={styles.profileContainer}>
+        <div className={styles.container}>
+          <div className={styles.profile}>
+            <h2>Name:</h2>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

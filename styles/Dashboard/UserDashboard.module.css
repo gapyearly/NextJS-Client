@@ -169,3 +169,14 @@
 .mentorSubmit textarea {
   height: 15rem;
 }
+
+.profileContainer {
+  padding: 2rem 0;
+  text-align: left;
+  width: 100%;
+
+  /* 100vw - nav width, 
+  FIXME: to include mobile menu/max-width px value */
+  display: flex;
+  justify-content: space-evenly;
+}
