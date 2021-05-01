@@ -1,0 +1,25 @@
+.blogPreviewContainer {
+  width: 20vw;
+  display: inline;
+  flex-direction: column;
+  margin: 0 0.7rem;
+  border-radius: 7px;
+  background-color: var(--berry);
+}
+
+.previewText h3,
+.previewText p {
+  margin: 0;
+  text-align: left;
+}
+.blogPreviewContainer img {
+  width: 20vw;
+  height: 20vw;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 7px 7px 0 0;
+}
+.previewText {
+  width: 20vw;
+  padding: 0.2em 1em 0.5em;
+}

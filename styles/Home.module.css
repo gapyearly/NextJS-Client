@@ -110,3 +110,13 @@
 .home #footer {
   color: blue;
 }
+.cardGallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+@media (max-width: 800px) {
+  .cardGallery {
+    flex-direction: column;
+  }
+}

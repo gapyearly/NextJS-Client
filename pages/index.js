@@ -5,10 +5,14 @@ import Link from "next/link";
 import Title from "@components/Title";
 import Button from "@components/Buttons/Button.js";
 import strapi from "@api/strapi";
-
+import BlogPreview from "@components/Home/BlogPreview";
 import Pill from "@components/Buttons/Pill.js";
 
-export default function Home() {
+export default function Home({ blogData, experienceData }) {
+  const blogCards = blogData.map((blogCardData) => {
+    return <BlogPreview key={blogCardData.slug} data={blogCardData} />;
+  });
+
   return (
     <div className={styles.home}>
       <Head>
@@ -98,6 +102,8 @@ export default function Home() {
               Check out our <Link href="/blog">blog</Link> to see what gappers
               around the world are up to!
             </h2>
+
+            <div className={styles.cardGallery}>{blogCards}</div>
           </div>
           <div className={styles.galleryContainer}>
             <h2>
@@ -130,11 +136,25 @@ export default function Home() {
     </div>
   );
 }
-// export async function getStaticProps(ctx) {
-//   const { data } = await strapi.get("blog");
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }
+export async function getStaticProps(ctx) {
+  const { data: blogData } = await strapi.get("blogs", {
+    params: {
+      _sort: "published_at:DESC",
+      _limit: 3,
+    },
+  });
+
+  const { data: experienceData } = await strapi.get("experiences", {
+    params: {
+      _sort: "published_at:DESC",
+      _limit: 3,
+    },
+  });
+
+  return {
+    props: {
+      blogData,
+      experienceData,
+    },
+  };
+}
