@@ -35,7 +35,9 @@ export default function Home({ blogData, experienceData }) {
             alt=""
           />
         </div>
+
         <div className={styles.mainContainer}>
+          <div className={styles.gradient}></div>
           <div className={styles.connectContainer}>
             <div className={styles.connectImage}>
               <img src="images/staff.jpg" alt=""></img>
