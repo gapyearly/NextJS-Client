@@ -22,10 +22,10 @@ export default function BlogPreview({ data }) {
           </a>
         </Link>
         <p>
-          By{" "}
+          by{" "}
           {name.user ? (
-            <Link href={`/${profile}`} color="blueUnderline">
-              <a>{name.name}</a>
+            <Link href={`/${profile}`}>
+              <a className="blueUnderline">{name.name}</a>
             </Link>
           ) : (
             <a>{name.name}</a>

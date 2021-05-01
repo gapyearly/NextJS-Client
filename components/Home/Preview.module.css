@@ -1,25 +1,58 @@
-.blogPreviewContainer {
-  width: 20vw;
+/* TODO: cleanup this mess of css */
+
+.blogPreviewContainer,
+.experiencePreviewContainer {
+  width: 20rem;
+  height: 20rem;
   display: inline;
   flex-direction: column;
-  margin: 0 0.7rem;
+  margin: 0 1.5rem;
   border-radius: 7px;
+}
+.blogPreviewContainer {
   background-color: var(--berry);
 }
-
+.experiencePreviewContainer {
+  background-color: var(--seashell);
+}
 .previewText h3,
 .previewText p {
   margin: 0;
-  text-align: left;
 }
-.blogPreviewContainer img {
-  width: 20vw;
-  height: 20vw;
+.previewText h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+.experiencePreviewContainer h3,
+.experiencePreviewContainer a {
+  color: var(--berry);
+}
+
+.experiencePreviewContainer .location {
+  color: var(--clay);
+  font-weight: 500;
+}
+.blogPreviewContainer img,
+.experiencePreviewContainer img {
   object-fit: cover;
   overflow: hidden;
+  max-height: 80%;
+  width: 20rem;
   border-radius: 7px 7px 0 0;
 }
+.experiencePreviewContainer img {
+  max-height: 65%;
+  /* FIXME: max-height unreliable across devices */
+}
 .previewText {
-  width: 20vw;
+  width: 100%;
   padding: 0.2em 1em 0.5em;
+  height: 10em;
+}
+@media (max-width: 800px) {
+  .experiencePreviewContainer,
+  .blogPreviewContainer {
+    margin-bottom: 1.5rem;
+  }
 }
