@@ -30,6 +30,7 @@ const defaultData = {
   interests: [],
   bio: "",
   profilePicture: null,
+  newsletter: true,
 };
 
 export default function SignupForm() {
