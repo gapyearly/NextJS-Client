@@ -1,7 +1,6 @@
 import DashboardLayout from "@components/Layouts/DashboardLayout";
 import styles from "@styles/Dashboard/UserDashboard.module.css";
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import React, { useState } from "react";
 
 import { useAuth } from "@contexts/auth";
 import Button from "@components/Buttons/Button";
@@ -18,41 +17,28 @@ import _ from "lodash";
 
 export default function Profile() {
   const { user, loading } = useAuth();
-  const [personalInfo, setPersonalInfo] = useState(null);
+  const [editProfile, setEditProfile] = useState(false);
   // Loadings user information only once.
-  useEffect(() => {
-    if (!loading && user) {
-      setPersonalInfo(user.personalInfo);
-      const {
-        email,
-        role,
-        firstName,
-        lastName,
-        gapYearStart,
-        gapYearEnd,
-        universityName,
-        universityYearlocation,
-        profilePicture,
-        bio,
-        selfFunded,
-        summary,
-        struggles,
-      } = user;
-    }
-  }, [loading]);
 
-  console.log(personalInfo);
   return (
     <DashboardLayout>
+      <StaticProfile />
+    </DashboardLayout>
+  );
+}
+
+const StaticProfile = () => {
+  return (
+    <div>
       <h1 className={styles.title}>Profile Overview</h1>
       <div className={styles.container}>
         <div className={styles.profile}>
           <h2>Name:</h2>
         </div>
       </div>
-    </DashboardLayout>
+    </div>
   );
-}
+};
 
 /* export async function getStaticProps(ctx) {
   const { data } = await strapi.get("users-permissions_user");

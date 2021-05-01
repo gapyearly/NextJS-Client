@@ -94,7 +94,9 @@ export default function Chatrooms() {
           }
           return chatItem;
         });
-        // const sortedConvos = formattedConvos.sort((a,b) => a.date.)
+        const sortedConvos = formattedConvos.sort(
+          (a, b) => a.date.getTime() > b
+        );
         if (pageLoading) {
           if (formattedConvos.length !== 0) {
             setCurrentChatroomId(formattedConvos[0].id);

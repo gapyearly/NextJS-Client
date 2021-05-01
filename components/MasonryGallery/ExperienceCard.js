@@ -22,6 +22,7 @@ export default function ExperienceCard({ data, onClick }) {
     onClick(data);
   };
 
+  
   return (
     <div
       className={styles.card}
