@@ -15,7 +15,6 @@ export default function Chatrooms() {
   // Input, controlled field
   const input = useRef();
   if (input.current) input.current.input.value = myMessage;
-
   // Apply styling to currently selected conversation.
 
   const newConversations = conversations.forEach((chatroom) => {
@@ -57,7 +56,6 @@ export default function Chatrooms() {
           // Setup Chatitem object
           const chatItem = {};
           chatItem.id = data.id;
-          console.log(data.id, currentChatroomId);
 
           chatItem.title =
             !recipient.firstName && !recipient.lastName
@@ -71,10 +69,14 @@ export default function Chatrooms() {
             ? recipient.profilePicture.url
             : null;
           const messages = data.messages;
-          // Set Messages
 
-          // const myAvatar = user.profilePicture ? user.profilePicture.url : null;
+          // Set Messages
+          let unread = 0;
           chatItem.messages = messages.map((message) => {
+            console.log(message.read);
+            if (!message.read && message.sender !== user.id) {
+              unread += 1;
+            }
             return {
               position: message.sender === user.id ? "right" : "left",
               // avatar:
@@ -86,17 +88,21 @@ export default function Chatrooms() {
               text: message.content,
             };
           });
+          chatItem.unread = unread;
 
           if (messages.length !== 0) {
             const recentMessage = messages[messages.length - 1];
             chatItem.date = new Date(recentMessage.createdAt);
             chatItem.subtitle = recentMessage.content;
+          } else {
+            chatItem.date = new Date(data.createdAt);
           }
           return chatItem;
         });
-        const sortedConvos = formattedConvos.sort(
-          (a, b) => a.date.getTime() > b
-        );
+        formattedConvos.sort((a, b) => {
+          return b.date.getTime() - a.date.getTime();
+        });
+
         if (pageLoading) {
           if (formattedConvos.length !== 0) {
             setCurrentChatroomId(formattedConvos[0].id);

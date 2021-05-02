@@ -178,5 +178,11 @@
   /* 100vw - nav width, 
   FIXME: to include mobile menu/max-width px value */
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: row;
+  height: 80vh;
+  position: relative;
+}
+
+.avatar {
+  border-radius: 100%;
 }
