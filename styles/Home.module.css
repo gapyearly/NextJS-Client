@@ -25,7 +25,7 @@
   margin-bottom: -15rem;
 }
 .hero {
-  background-image: url("../public/images/IMG_0006.JPG");
+  background-image: url("/images/IMG_0006.JPG");
   width: 100%;
   background-repeat: no-repeat;
   height: calc(100vh - var(--navbarHeight));
@@ -125,7 +125,7 @@
   margin: 0 auto;
 }
 .newsletterContainer {
-  background-image: url("../public/images/yellow-sun.svg");
+  background-image: url("/images/yellow-sun.svg");
   background-repeat: no-repeat;
   background-size: 1350px;
   /* ~2x the height, bc it displays half the sun */
