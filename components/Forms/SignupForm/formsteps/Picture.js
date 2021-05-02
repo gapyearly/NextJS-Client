@@ -3,19 +3,27 @@ import styles from "components/Forms/SignupForm/SignupForm.module.css";
 import AvatarEditor from "react-avatar-editor";
 import React, { useRef } from "react";
 
-export default function ProfilePicture({ next, previous, formData, setForm }) {
-  const { profilePicture } = formData;
+export default function ProfilePicture({
+  next,
+  previous,
+  setForm,
+  useProfilePicture,
+}) {
   const fileRef = useRef();
   const editorRef = useRef();
+  const [profilePicture, setProfilePicture] = useProfilePicture;
 
   const onSubmit = async () => {
-    const canvas = await editorRef.current.editor.getImageScaledToCanvas();
-    await canvas.toBlob((blob) => {
-      const file = new File([blob], fileRef.current.files[0].name, {
-        type: "image/png",
-      });
-      formData.profilePicture = file;
-    }, "image/png");
+    if (fileRef.current.files.length !== 0) {
+      const canvas = await editorRef.current.editor.getImageScaledToCanvas();
+      await canvas.toBlob((blob) => {
+        const file = new File([blob], fileRef.current.files[0].name, {
+          type: "image/png",
+        });
+        setProfilePicture(file);
+      }, "image/png");
+    }
+
     next();
   };
 
@@ -37,7 +45,7 @@ export default function ProfilePicture({ next, previous, formData, setForm }) {
           ref={fileRef}
           onChange={setForm}
         />
-        {fileRef.current && fileRef.current.files && (
+        {fileRef.current && fileRef.current.files.length !== 0 && (
           <MyEditor profilePicture={fileRef.current.files[0]} ref={editorRef} />
         )}
         <div className={styles.btns}>
