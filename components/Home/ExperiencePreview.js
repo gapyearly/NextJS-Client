@@ -27,19 +27,21 @@ export default function ExperiencePreview({ data }) {
   }
 
   return (
-    <div className={styles.experiencePreviewContainer}>
-      <img src={image.url} alt={image.alt} />
-      <div className={styles.previewText}>
-        <h3>{title}</h3>
+    <Link href={`/opportunities/past-experiences?experience=${slug}`}>
+      <div className={styles.experiencePreviewContainer}>
+        <img src={image.url} alt={image.alt} />
+        <div className={styles.previewText}>
+          <h3>{title}</h3>
 
-        <p className={styles.location}>
-          <FaMapMarkerAlt></FaMapMarkerAlt> {location}
-        </p>
+          <p className={styles.location}>
+            <FaMapMarkerAlt></FaMapMarkerAlt> {location}
+          </p>
 
-        <span>{CategoryComponent(category)}</span>
-        <Link href="/">Read more...</Link>
-        {/* AAAAAA slug */}
+          <span>{CategoryComponent(category)}</span>
+
+          {/* AAAAAA slug */}
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }

@@ -39,9 +39,12 @@ export default function Home({ blogData, experienceData }) {
         <div className={styles.mainContainer}>
           <div className={styles.gradient}></div>
           <div className={styles.connectContainer}>
-            <div className={styles.connectImage}>
-              <img src="images/staff.jpg" alt=""></img>
-            </div>
+            <img
+              className={styles.connectImage}
+              src="images/staff.jpg"
+              alt="Screenshot of Gapyearly staff members on a zoom meeting"
+            ></img>
+
             <div className={styles.connectText}>
               <h2>
                 Searching for a community of fellow gap year students? Look no
@@ -62,9 +65,12 @@ export default function Home({ blogData, experienceData }) {
           </div>
 
           <div className={styles.memberContainer}>
-            <div className={styles.memberImage}>
-              <img src="images/staff.jpg" alt=""></img>
-            </div>
+            <img
+              className={styles.memberImage}
+              src="images/mentor-grid.png"
+              alt="9 individual photos of Gapyearly's mentors and members, smiling and facing the camera."
+            ></img>
+
             <div className={styles.memberText}>
               <div className={styles.futureMemberContainer}>
                 <h2>
@@ -156,8 +162,7 @@ export default function Home({ blogData, experienceData }) {
               {/* needs to be submitted to backend */}
             </form>
             <p>
-              We hate spam too - we will never sell your data. Read our Privacy
-              Policy{" "}
+              We hate spam too. Read our Privacy Policy{" "}
               <Link href="/privacy-policy" className="greenUnderline">
                 here
               </Link>
