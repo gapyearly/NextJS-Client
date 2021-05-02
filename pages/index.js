@@ -54,7 +54,7 @@ export default function Home({ blogData, experienceData }) {
                 students. Every month you opt in, we’ll match you with a group
                 of fellow gappers with similar interests!
               </h3>
-              <Button color="darkBg" href="/connect">
+              <Button color="darkBg" href="/community/connect">
                 Connect today!
               </Button>
             </div>
@@ -78,7 +78,7 @@ export default function Home({ blogData, experienceData }) {
                   answer any questions you have within 48 hours – all free of
                   charge.
                 </h3>
-                <Button href="/connect" color="blueBg">
+                <Button href="/community/mentorship" color="blueBg">
                   Meet our mentors!
                 </Button>
               </div>
@@ -93,7 +93,7 @@ export default function Home({ blogData, experienceData }) {
                   We want to hear from you! Tell us about the memories you made,
                   your parent reflections, and advice for the community.
                 </h3>
-                <Button href="/dashboard" color="blueBg">
+                <Button href="/dashboard/submission" color="blueBg">
                   Share your story!
                 </Button>
               </div>

@@ -15,6 +15,7 @@ import {
   RIESelect,
 } from "riek";
 import _ from "lodash";
+import { cloneElement } from "react";
 
 export default function Profile() {
   const [editProfile, setEditProfile] = useState(false);
@@ -29,29 +30,30 @@ export default function Profile() {
 
 const StaticProfile = () => {
   const { user } = useAuth();
+  console.log(user);
   return (
     <>
       <h1 className={styles.title}>Profile Overview</h1>
-      <div className={styles.profileContainer}>
+      <div className={styles.profile}>
         <img
           src={user.profilePicture.url}
           alt="Profile Avatar"
           className={styles.avatar}
         />
-        <div className={styles.container}>
-          <h3>Name:</h3>
+        <div className={styles.profileContainer}>
+          <h2>Name:</h2>
           <p>{fullName(user)}</p>
           <hr />
-          <h3>Role:</h3>
+          <h2>Role:</h2>
           <p>{fullName(user)}</p>
           <hr />
-          <h3>Gap Year:</h3>
-          <p>Yo</p>
+          <h2>Gap Year:</h2>
+          <p></p>
           <hr />
-          <h3>Location:</h3>
+          <h2>Location:</h2>
           <p>Location</p>
           <hr />
-          <h3>Bio:</h3>
+          <h2>Bio:</h2>
           <p>Location</p>
         </div>
       </div>

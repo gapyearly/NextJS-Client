@@ -28,7 +28,7 @@ export default function BlogPreview({ data }) {
                 <a className="blueUnderline">{name.name}</a>
               </Link>
             ) : (
-              <a>{name.name}</a>
+              <p>{name.name}</p>
             )}
           </p>
         </div>
