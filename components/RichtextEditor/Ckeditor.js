@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
-export default function MyEditor({ ref }) {
+export default function MyEditor({ data, onChange }) {
   const editorRef = useRef();
-  ref = editorRef;
   const [editorLoaded, setEditorLoaded] = useState(false);
   const { CKEditor, ClassicEditor } = editorRef.current || {};
 
@@ -15,7 +14,15 @@ export default function MyEditor({ ref }) {
   }, []);
 
   return editorLoaded ? (
-    <CKEditor editor={ClassicEditor} data="" config={{ toolbar }} />
+    <CKEditor
+      editor={ClassicEditor}
+      data={data}
+      config={{ toolbar }}
+      onChange={(event, editor) => {
+        const data = editor.getData();
+        onChange(data);
+      }}
+    />
   ) : (
     <div>Editor loading</div>
   );
