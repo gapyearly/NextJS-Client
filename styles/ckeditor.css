@@ -156,3 +156,11 @@
 .ck-content p {
   margin-bottom: 1rem;
 }
+
+/* 
+  Below is FOR CKEDITOR STLYING
+*/
+#mentorForm .ck-editor__editable {
+  height: 15rem;
+  width: 25rem;
+}
