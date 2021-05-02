@@ -97,9 +97,18 @@ const Navbar = ({ logout, setLoggingOut }) => {
 };
 
 const NavItem = ({ href, children, onClick }) => {
+  const router = useRouter();
+  // Apply Hover effect on routername
+  let styling;
+  if (router.pathname.includes(href) && href !== "/") {
+    styling = `${styles.navItem} ${styles.onHover}`;
+  } else {
+    styling = styles.navItem;
+  }
+
   return (
     <Link href={href} onClick>
-      <div className={styles.navItem} onClick={onClick}>
+      <div className={styling} onClick={onClick}>
         <a>{children}</a>
       </div>
     </Link>

@@ -27,7 +27,8 @@
 }
 .navItem:active,
 .navItem:focus,
-.navItem:hover {
+.navItem:hover,
+.onHover {
   background-color: var(--clay);
 }
 .navItem a {
