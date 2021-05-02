@@ -43,7 +43,8 @@ export default function Submit({ formData, setForm, previous }) {
     const sanatized = redirect.replaceAll(":", " ");
     router.push(sanatized);
   };
-  const newsletter = formData;
+  const { newsletter } = formData;
+  console.log(newsletter);
   return (
     <>
       <form onSubmit={submitForm} action="javascript:void(0);">
@@ -53,8 +54,8 @@ export default function Submit({ formData, setForm, previous }) {
           // value={termsConsent}
           onChange={setForm}
           type="checkbox"
-          checked
           required
+          defaultChecked
         />
         <label htmlFor="termsConsent" className={styles.checkboxLabel}>
           <p>
@@ -67,11 +68,11 @@ export default function Submit({ formData, setForm, previous }) {
         <br />
         <input
           id={styles.newsletterConsent}
-          name="subscribe"
+          name="newsletter"
           value={newsletter}
           onChange={setForm}
+          defaultChecked
           type="checkbox"
-          checked
         />
         <label htmlFor="newsletterConsent" className={styles.checkboxLabel}>
           <p>

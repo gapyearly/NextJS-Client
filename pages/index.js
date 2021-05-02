@@ -5,10 +5,22 @@ import Link from "next/link";
 import Title from "@components/Title";
 import Button from "@components/Buttons/Button.js";
 import strapi from "@api/strapi";
-
+import BlogPreview from "@components/Home/BlogPreview";
+import ExperiencePreview from "@components/Home/ExperiencePreview";
 import Pill from "@components/Buttons/Pill.js";
 
-export default function Home() {
+export default function Home({ blogData, experienceData }) {
+  const blogCards = blogData.map((blogCardData) => {
+    return <BlogPreview key={blogCardData.slug} data={blogCardData} />;
+  });
+  const experienceCards = experienceData.map((experienceCardData) => {
+    return (
+      <ExperiencePreview
+        key={experienceCardData.slug}
+        data={experienceCardData}
+      />
+    );
+  });
   return (
     <div className={styles.home}>
       <Head>
@@ -17,15 +29,18 @@ export default function Home() {
       <Layout>
         <div className={styles.hero}>
           <h1>Maximize your time outside the classroom.</h1>
-          <img
-            className={styles.heroImg}
-            src="images/green-valley.svg"
-            alt=""
-          />
+          <img className={styles.heroImg} src="images/blue-valley.svg" alt="" />
         </div>
+
         <div className={styles.mainContainer}>
+          <div className={styles.gradient}></div>
           <div className={styles.connectContainer}>
-            <img src="images/placeholder.jpg" alt=""></img>
+            <img
+              className={styles.connectImage}
+              src="images/staff.jpg"
+              alt="Screenshot of Gapyearly staff members on a zoom meeting"
+            ></img>
+
             <div className={styles.connectText}>
               <h2>
                 Searching for a community of fellow gap year students? Look no
@@ -34,10 +49,10 @@ export default function Home() {
               <h3>
                 A gap year provides a lot of room for independent growth, but we
                 know sometimes it can be intimidating, isolating or just create
-                FOMO when you’re on your own. That’s why we created LetsGapp
-                Connect, the first global network of gap year students. Every
-                month you opt in, we’ll match you with a group of fellow gappers
-                with similar interests! Sign up today to join the community.
+                FOMO when you’re on your own. <br /> That’s why we created
+                Gapyearly Connect, the first global network of gap year
+                students. Every month you opt in, we’ll match you with a group
+                of fellow gappers with similar interests!
               </h3>
               <Button color="darkBg" href="/connect">
                 Connect today!
@@ -46,9 +61,12 @@ export default function Home() {
           </div>
 
           <div className={styles.memberContainer}>
-            <div className={styles.memberGrid}>
-              <img src="images/redyellow-valleys.svg" alt=""></img>
-            </div>
+            <img
+              className={styles.memberImage}
+              src="images/mentor-grid.png"
+              alt="9 individual photos of Gapyearly's mentors and members, smiling and facing the camera."
+            ></img>
+
             <div className={styles.memberText}>
               <div className={styles.futureMemberContainer}>
                 <h2>
@@ -60,7 +78,7 @@ export default function Home() {
                   answer any questions you have within 48 hours – all free of
                   charge.
                 </h3>
-                <Button href="/connect" color="greenBg">
+                <Button href="/connect" color="blueBg">
                   Meet our mentors!
                 </Button>
               </div>
@@ -75,7 +93,7 @@ export default function Home() {
                   We want to hear from you! Tell us about the memories you made,
                   your parent reflections, and advice for the community.
                 </h3>
-                <Button href="/dashboard" color="greenBg">
+                <Button href="/dashboard" color="blueBg">
                   Share your story!
                 </Button>
               </div>
@@ -86,28 +104,47 @@ export default function Home() {
             <h2>
               Need gap year inspo? <br /> Check out these{" "}
               <Link href="/opportunities/past-experiences">
-                past experiences
+                <a
+                  href="/opportunities/past-experiences"
+                  className="blueUnderline"
+                >
+                  past experiences
+                </a>
               </Link>{" "}
               from gappers!{" "}
             </h2>
-            <div className={styles.cardGallery}></div>
+            <div className={styles.cardGallery}>{experienceCards}</div>
           </div>
 
           <div className={styles.galleryContainer}>
             <h2>
-              Check out our <Link href="/blog">blog</Link> to see what gappers
-              around the world are up to!
+              Check out our{" "}
+              <Link href="/blog">
+                <a className="blueUnderline" href="/blog">
+                  blog
+                </a>
+              </Link>{" "}
+              to see what gappers around the world are up to!
             </h2>
+
+            <div className={styles.cardGallery}>{blogCards}</div>
           </div>
-          <div className={styles.galleryContainer}>
+          {/* <div className={styles.galleryContainer}>
             <h2>
               Get the latest on{" "}
-              <Link href="https://instagram.com/gapyearly">Instagram</Link>
+              <Link href="https://instagram.com/gapyearly">
+                <a
+                  href="https://instagram.com/gapyearly"
+                  className="blueUnderline"
+                >
+                  Instagram
+                </a>
+              </Link>
             </h2>
-            <Button href="https://instagram.com/gapyearly" color="greenBg">
+            <Button href="https://instagram.com/gapyearly" color="blueBg">
               + Follow us!
             </Button>
-          </div>
+          </div> */}
 
           <div className={styles.newsletterContainer}>
             <h2>Never miss a beat.</h2>
@@ -117,24 +154,39 @@ export default function Home() {
             <form>
               <label htmlFor="newsletterEmail"></label>
               <input id="newsletterEmail" placeholder="Enter your email" />
-              <Button color="greenBg">Submit</Button>
+              <Button color="blueBg">Submit</Button>
               {/* needs to be submitted to backend */}
-              <p>
-                We hate spam too - we will never sell your data. Read our
-                Privacy Policy <Link href="/privacy-policy">here</Link>.
-              </p>
             </form>
+            <p>
+              We hate spam too - check out our
+              <Link href="/privacy-policy"> Privacy Policy</Link>.
+            </p>
+            {/* <img src="images/yellow-sun.svg" alt="" /> */}
           </div>
         </div>
       </Layout>
     </div>
   );
 }
-// export async function getStaticProps(ctx) {
-//   const { data } = await strapi.get("blog");
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// }
+export async function getStaticProps(ctx) {
+  const { data: blogData } = await strapi.get("blogs", {
+    params: {
+      _sort: "published_at:DESC",
+      _limit: 3,
+    },
+  });
+
+  const { data: experienceData } = await strapi.get("experiences", {
+    params: {
+      _sort: "published_at:DESC",
+      _limit: 3,
+    },
+  });
+
+  return {
+    props: {
+      blogData,
+      experienceData,
+    },
+  };
+}

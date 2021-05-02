@@ -1,0 +1,61 @@
+/* TODO: cleanup this mess of css */
+
+.blogPreviewContainer,
+.experiencePreviewContainer {
+  width: calc((20rem + 20vw) / 2);
+  height: calc((20rem + 20vw) / 2);
+  display: flex;
+  flex-direction: column;
+  margin: 0 1.5rem;
+  border-radius: 7px;
+  cursor: pointer;
+}
+.blogPreviewContainer {
+  background-color: var(--berry);
+}
+.experiencePreviewContainer {
+  background-color: var(--seashell);
+}
+.previewText h3,
+.previewText p {
+  margin: 0;
+}
+.previewText h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+.experiencePreviewContainer h3,
+.experiencePreviewContainer a {
+  color: var(--berry);
+}
+
+.experiencePreviewContainer .location {
+  color: var(--clay);
+  font-weight: 500;
+}
+.blogPreviewContainer img,
+.experiencePreviewContainer img {
+  object-fit: cover;
+  overflow: hidden;
+  flex: 70%;
+  width: 100%;
+  border-radius: 7px 7px 0 0;
+}
+.experiencePreviewContainer img {
+  /* FIXME: max-height unreliable across devices */
+}
+.previewText {
+  width: 100%;
+  padding: 0.7em 1em 0.8em;
+  flex: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (max-width: 800px) {
+  .experiencePreviewContainer,
+  .blogPreviewContainer {
+    margin-bottom: 1.5rem;
+  }
+}

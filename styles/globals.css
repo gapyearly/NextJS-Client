@@ -18,7 +18,7 @@ html,
 body {
   margin: 0;
   font-family: "Quicksand", sans-serif;
-  font-size: calc(0.9em + 0.2vw);
+  font-size: calc(0.83em + 0.2vw);
   color: var(--berry);
   background-color: var(--seashell);
 }
@@ -61,6 +61,10 @@ a {
 }
 .blueUnderline {
   box-shadow: 0 -0.4em 0 inset rgba(11, 94, 224, 0.85);
+}
+
+.greenUnderline {
+  box-shadow: 0 -0.4em 0 inset rgba(0, 169, 152, 0.85);
 }
 /* a:hover,
 a:focus,
@@ -176,42 +180,6 @@ li {
   margin: 0;
 }
 
-.cardGallery {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-@media (max-width: 800px) {
-  .cardGallery {
-    flex-direction: column;
-  }
-}
-.card {
-  width: 20vw;
-  display: inline;
-  flex-direction: column;
-  margin: 0 0.7rem;
-  border-radius: 7px;
-  background-color: var(--berry);
-}
-
-.card h3,
-.card p {
-  margin: 0;
-}
-.cardImg {
-  width: 20vw;
-  height: 20vw;
-  object-fit: cover;
-  overflow: hidden;
-  border-radius: 7px 7px 0 0;
-}
-.cardDesc {
-  color: var(--seashell);
-  width: 20vw;
-  padding: 0.2em 0.6em 0.5em;
-  margin: 0;
-}
 /* SCROLLBAR */
 #modal-root ::-webkit-scrollbar {
   width: 25px;

@@ -9,40 +9,42 @@ import Title from "@components/Title";
 export default function Mentorship({ data }) {
   console.log(data);
   let index = 0;
-  const cards = data.map(
-    ({
-      firstName,
-      mentorInfo,
-      id,
-      lastName,
-      universityName,
-      universityYear,
-    }) => {
-      index += 1;
-      const bgColor =
-        index % 4 === 0
-          ? "red"
-          : index % 4 === 1
-          ? "yellow"
-          : index % 4 === 2
-          ? "green"
-          : "blue";
-      console.log(bgColor);
-      return (
-        <MentorCard
-          key={id}
-          firstName={firstName}
-          lastName={lastName}
-          universityName={universityName}
-          universityYear={universityYear}
-          selfFunded={mentorInfo.selfFunded}
-          summary={mentorInfo.summary}
-          struggles={mentorInfo.struggles}
-          bgColor={bgColor}
-        ></MentorCard>
-      );
-    }
-  );
+  const cards = data
+    .filter((user) => user.mentorInfo)
+    .map(
+      ({
+        firstName,
+        mentorInfo,
+        id,
+        lastName,
+        universityName,
+        universityYear,
+      }) => {
+        index += 1;
+        const bgColor =
+          index % 4 === 0
+            ? "red"
+            : index % 4 === 1
+            ? "yellow"
+            : index % 4 === 2
+            ? "green"
+            : "blue";
+        console.log(bgColor);
+        return (
+          <MentorCard
+            key={id}
+            firstName={firstName}
+            lastName={lastName}
+            universityName={universityName}
+            universityYear={universityYear}
+            selfFunded={mentorInfo.selfFunded}
+            summary={mentorInfo.summary}
+            struggles={mentorInfo.struggles}
+            bgColor={bgColor}
+          ></MentorCard>
+        );
+      }
+    );
 
   return (
     <>

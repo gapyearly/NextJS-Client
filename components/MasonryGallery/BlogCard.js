@@ -30,24 +30,25 @@ export default function BlogCard({ data, align }) {
     name.user = false;
   }
   // TODO Fix up structure and styling
-  const BlogCardInfo = ({ className, align }) => {
+  const BlogCardInfo = ({ className }) => {
     return (
-      <div className={styles.blogText}>
+      <div className={className}>
         <Link href={`/blog/${slug}`}>
           <a className="noUnderline">
-            <h2 className={className}>{title}</h2>
+            <h2>{title}</h2>
           </a>
         </Link>
-        <div className={align === "right" ? styles.blogUserLink : ""}>
+        <div>
+          By{" "}
           {name.user ? (
             <Link href={`/${profile}`}>
-              <a className={className}>By: {name.name}</a>
+              <a>{name.name}</a>
             </Link>
           ) : (
-            <a className={className}>By: {name.name}</a>
+            <a>{name.name}</a>
           )}
         </div>
-        <p className={className}>{description}</p>
+        <p>{description}</p>
       </div>
     );
   };
@@ -60,11 +61,14 @@ export default function BlogCard({ data, align }) {
     align === "left" ? (
       <>
         <Image />
-        <BlogCardInfo align={align} />
+        <BlogCardInfo className={styles.blogTextLeft} align={align} />
       </>
     ) : (
       <>
-        <BlogCardInfo className={styles.blogTextRight} align={align} />
+        <BlogCardInfo
+          className={`${styles.blogTextRight} ${styles.blogTextLeft}`}
+          align={align}
+        />
         <Image />
       </>
     );

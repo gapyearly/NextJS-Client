@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "@components/Layouts/Layout";
 import strapi from "@api/strapi";
 
-import styles from "@components/MasonryGallery/PastExperienceCard.module.css";
+import { useRouter } from "next/router";
 
 import Pill from "@components/Buttons/Pill.js";
-import { FaMapMarkerAlt } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
+import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
+
 import Head from "next/head";
 import Title from "@components/Title";
 import ExperienceGallery from "@components/MasonryGallery";
@@ -16,14 +16,22 @@ import PageTitle from "@components/PageTitle";
 import Modal from "@components/Modal";
 
 export default function PastExperiences({ data }) {
+  const router = useRouter();
   const [modalVisibility, setModalVisibility] = useState(false);
   const [modalData, setModalData] = useState(null);
-
+  const { experience } = router.query;
+  useEffect(() => {
+    if (router.isReady) {
+      const experienceModalContent = data.find((experienceData) => {
+        return experienceData.slug === experience;
+      });
+      if (experienceModalContent) onClick(experienceModalContent);
+    }
+  }, [router]);
   const onClick = (data) => {
     setModalData(data);
     setModalVisibility(true);
   };
-  console.log(modalData);
   const cards = data.map((experienceData) => {
     return (
       <ExperienceCard
