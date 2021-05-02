@@ -13,25 +13,26 @@ export default function BlogPreview({ data }) {
   }
 
   return (
-    <div className={styles.blogPreviewContainer}>
-      <img src={image.url} alt={image.alt} />
-      <div className={styles.previewText}>
-        <Link href={`/blog/${slug}`}>
+    <Link href={`/blog/${slug}`}>
+      <div className={styles.blogPreviewContainer}>
+        <img src={image.url} alt={image.alt} />
+        <div className={styles.previewText}>
           <a className="noUnderline">
             <h3>{title}</h3>
           </a>
-        </Link>
-        <p>
-          by{" "}
-          {name.user ? (
-            <Link href={`/${profile}`}>
-              <a className="blueUnderline">{name.name}</a>
-            </Link>
-          ) : (
-            <a>{name.name}</a>
-          )}
-        </p>
+
+          <p>
+            by{" "}
+            {name.user ? (
+              <Link href={`/${profile}`}>
+                <a className="blueUnderline">{name.name}</a>
+              </Link>
+            ) : (
+              <a>{name.name}</a>
+            )}
+          </p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }

@@ -2,12 +2,13 @@
 
 .blogPreviewContainer,
 .experiencePreviewContainer {
-  width: 20rem;
-  height: 20rem;
-  display: inline;
+  width: calc((20rem + 20vw) / 2);
+  height: calc((20rem + 20vw) / 2);
+  display: flex;
   flex-direction: column;
   margin: 0 1.5rem;
   border-radius: 7px;
+  cursor: pointer;
 }
 .blogPreviewContainer {
   background-color: var(--berry);
@@ -37,18 +38,20 @@
 .experiencePreviewContainer img {
   object-fit: cover;
   overflow: hidden;
-  max-height: 80%;
-  width: 20rem;
+  flex: 70%;
+  width: 100%;
   border-radius: 7px 7px 0 0;
 }
 .experiencePreviewContainer img {
-  max-height: 65%;
   /* FIXME: max-height unreliable across devices */
 }
 .previewText {
   width: 100%;
-  padding: 0.2em 1em 0.5em;
-  height: 10em;
+  padding: 0.7em 1em 0.8em;
+  flex: 30%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 @media (max-width: 800px) {
   .experiencePreviewContainer,
