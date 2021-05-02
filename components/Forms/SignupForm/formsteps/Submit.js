@@ -10,19 +10,25 @@ import { useAlert } from "react-alert";
 import NProgress from "nprogress";
 import Router, { useRouter } from "next/router";
 
-export default function Submit({ formData, setForm, previous }) {
+export default function Submit({
+  formData,
+  setForm,
+  previous,
+  useProfilePicture,
+}) {
   const { user, updateUser } = useAuth();
   const router = useRouter();
   const alert = useAlert();
+  const [profilePicture, setProfilePicture] = useProfilePicture;
 
   // TODO ERROR Message
   const submitForm = async () => {
     NProgress.start();
     let data = [{}];
     try {
-      if (formData.profilePicture) {
+      if (profilePicture) {
         const imageData = new FormData();
-        imageData.append("files", formData.profilePicture);
+        imageData.append("files", profilePicture);
         const ctx = await strapi.post("upload", imageData);
         data = ctx.data;
       }
@@ -44,15 +50,12 @@ export default function Submit({ formData, setForm, previous }) {
     router.push(sanatized);
   };
   const { newsletter } = formData;
-  console.log(newsletter);
   return (
     <>
       <form onSubmit={submitForm} action="javascript:void(0);">
         <input
           id={styles.termsConsent}
           name="termsConsent"
-          // value={termsConsent}
-          onChange={setForm}
           type="checkbox"
           required
           defaultChecked

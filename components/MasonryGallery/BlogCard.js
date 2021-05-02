@@ -45,7 +45,7 @@ export default function BlogCard({ data, align }) {
               <a>{name.name}</a>
             </Link>
           ) : (
-            <a>{name.name}</a>
+            <p>{name.name}</p>
           )}
         </div>
         <p>{description}</p>

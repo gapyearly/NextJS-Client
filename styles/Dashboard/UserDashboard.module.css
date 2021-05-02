@@ -170,19 +170,25 @@
   height: 15rem;
 }
 
-.profileContainer {
+.profile {
   padding: 2rem 0;
-  text-align: left;
-  width: 100%;
 
-  /* 100vw - nav width, 
-  FIXME: to include mobile menu/max-width px value */
+  width: 45em;
+  margin: auto;
   display: flex;
   flex-direction: row;
-  height: 80vh;
-  position: relative;
 }
 
 .avatar {
   border-radius: 100%;
+  object-fit: cover;
+  width: 10rem;
+  height: 10rem;
+  margin-right: 4rem;
+}
+.profileContainer {
+  width: 70%;
+}
+.profile hr {
+  border-top: 1px solid var(--berry);
 }

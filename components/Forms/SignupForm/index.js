@@ -35,11 +35,13 @@ const defaultData = {
 
 export default function SignupForm() {
   const { user } = useAuth();
-  console.log(user);
   // Form data hook. formData represents form state, setForm changes the form state
   const [formData, setForm] = useForm(defaultData);
   // Slideshow hook. Step represents which step on slideshow we are on. Navigation allows you to traverse slideshow
   const { step, navigation } = useStep({ initialStep: 0, steps });
+
+  const useProfilePicture = useState(null);
+
   // Original State
   const [style, setStyle] = useState({
     opacity: 0,
@@ -80,7 +82,7 @@ export default function SignupForm() {
     setStyle({ opacity: 1, transform: "translate(0,0)" });
   };
 
-  const props = { next, formData, setForm, previous };
+  const props = { next, formData, setForm, previous, useProfilePicture };
 
   const FormComponent = formSteps[step.id];
   return (

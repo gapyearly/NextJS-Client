@@ -56,8 +56,12 @@ export default function Home() {
             *Please note: There are a limited number of spots every month and
             are given out on a first-come-first-serve basis!
           </p>
-          <Button className={styles.applyBtn} color="greenBg" href="/">
-            Apply!
+          <Button
+            className={styles.applyBtn}
+            color="greenBg"
+            href="/dashboard/community"
+          >
+            Match me!
           </Button>
         </div>
       </Layout>
