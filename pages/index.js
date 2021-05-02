@@ -29,11 +29,7 @@ export default function Home({ blogData, experienceData }) {
       <Layout>
         <div className={styles.hero}>
           <h1>Maximize your time outside the classroom.</h1>
-          <img
-            className={styles.heroImg}
-            src="images/green-valley.svg"
-            alt=""
-          />
+          <img className={styles.heroImg} src="images/blue-valley.svg" alt="" />
         </div>
 
         <div className={styles.mainContainer}>
@@ -82,7 +78,7 @@ export default function Home({ blogData, experienceData }) {
                   answer any questions you have within 48 hours – all free of
                   charge.
                 </h3>
-                <Button href="/connect" color="greenBg">
+                <Button href="/connect" color="blueBg">
                   Meet our mentors!
                 </Button>
               </div>
@@ -97,7 +93,7 @@ export default function Home({ blogData, experienceData }) {
                   We want to hear from you! Tell us about the memories you made,
                   your parent reflections, and advice for the community.
                 </h3>
-                <Button href="/dashboard" color="greenBg">
+                <Button href="/dashboard" color="blueBg">
                   Share your story!
                 </Button>
               </div>
@@ -110,7 +106,7 @@ export default function Home({ blogData, experienceData }) {
               <Link href="/opportunities/past-experiences">
                 <a
                   href="/opportunities/past-experiences"
-                  className="greenUnderline"
+                  className="blueUnderline"
                 >
                   past experiences
                 </a>
@@ -124,7 +120,7 @@ export default function Home({ blogData, experienceData }) {
             <h2>
               Check out our{" "}
               <Link href="/blog">
-                <a className="greenUnderline" href="/blog">
+                <a className="blueUnderline" href="/blog">
                   blog
                 </a>
               </Link>{" "}
@@ -139,13 +135,13 @@ export default function Home({ blogData, experienceData }) {
               <Link href="https://instagram.com/gapyearly">
                 <a
                   href="https://instagram.com/gapyearly"
-                  className="greenUnderline"
+                  className="blueUnderline"
                 >
                   Instagram
                 </a>
               </Link>
             </h2>
-            <Button href="https://instagram.com/gapyearly" color="greenBg">
+            <Button href="https://instagram.com/gapyearly" color="blueBg">
               + Follow us!
             </Button>
           </div> */}
@@ -158,15 +154,12 @@ export default function Home({ blogData, experienceData }) {
             <form>
               <label htmlFor="newsletterEmail"></label>
               <input id="newsletterEmail" placeholder="Enter your email" />
-              <Button color="greenBg">Submit</Button>
+              <Button color="blueBg">Submit</Button>
               {/* needs to be submitted to backend */}
             </form>
             <p>
-              We hate spam too. Read our Privacy Policy{" "}
-              <Link href="/privacy-policy" className="greenUnderline">
-                here
-              </Link>
-              .
+              We hate spam too - check out our
+              <Link href="/privacy-policy"> Privacy Policy</Link>.
             </p>
             {/* <img src="images/yellow-sun.svg" alt="" /> */}
           </div>
