@@ -1309,7 +1309,7 @@ audio:focus {
   flex-direction: column;
   display: block;
   overflow: hidden;
-  min-width: 240px;
+  width: 240px;
 }
 
 .rce-container-citem.rce-citem-status-encircle {

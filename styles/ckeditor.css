@@ -160,7 +160,11 @@
 /* 
   Below is FOR CKEDITOR STLYING
 */
+#mentorForm .ck-editor {
+  margin-bottom: 0.8rem;
+  margin-top: 0.5rem;
+}
 #mentorForm .ck-editor__editable {
   height: 15rem;
-  width: 25rem;
+  width: 100%;
 }

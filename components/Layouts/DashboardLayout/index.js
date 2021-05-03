@@ -37,7 +37,7 @@ export default function DashboardLayout({ children }) {
     <>
       <Navbar logout={logout} setLoggingOut={setLoggingOut} />
       <main className={styles.main}>
-        {children}
+        <div className={styles.mainCenter}>{children}</div>
         <Button className={styles.exitDashBtn} color="greenBg" href="/">
           <FaArrowLeft style={{ marginRight: 5 }} />
           Back to Gapyearly
