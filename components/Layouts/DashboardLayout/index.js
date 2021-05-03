@@ -20,7 +20,7 @@ export default function DashboardLayout({ children }) {
   const [loggingOut, setLoggingOut] = useState(false);
   const router = useRouter();
   if (loading) return <div></div>;
-  if (!isAuthenticated) {
+  if (!isAuthenticated && !loggingOut) {
     window.sessionStorage.setItem("redirect", router.pathname);
     return (
       <Redirect>
@@ -30,7 +30,7 @@ export default function DashboardLayout({ children }) {
       </Redirect>
     );
   }
-  if (!user.signupCompletion && !loggingOut) {
+  if (!loggingOut && !user.signupCompletion) {
     return <SignupRedirect />;
   }
   return (
