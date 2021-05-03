@@ -7,6 +7,11 @@
   --horizon: #0b5ee0;
   --clay: #f85d48;
   --gray: rgba(0, 0, 0, 0.35);
+
+  --lightred: rgba(248, 93, 72, 0.12);
+  --lightyellow: #fef8ea;
+  --lightgreen: #ddf1ea;
+  --lightblue: #dee7f3;
 }
 
 * {
@@ -179,7 +184,9 @@ li {
   font-size: 0.9rem;
   margin: 0;
 }
-
+#text {
+  width: 100%;
+}
 /* SCROLLBAR */
 #modal-root ::-webkit-scrollbar {
   width: 25px;
