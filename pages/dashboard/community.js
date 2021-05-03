@@ -29,7 +29,12 @@ function DashCommunity() {
           >
             Ask the community
           </Button>
-          <Button href="/dashboard/community/members" color="greenBg">
+          <Button
+            color="greenBg"
+            onClick={() => {
+              setWindow(communityPages.allmembers);
+            }}
+          >
             View all members
           </Button>
         </div>

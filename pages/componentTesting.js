@@ -3,6 +3,7 @@ import SignupForm from "@components/Forms/SignupForm";
 import Modal from "@components/Modal";
 import DashboardLayout from "@components/Layouts/DashboardLayout/index.js";
 import Chatbox from "@components/Dashboard/Messaging/Chatbox";
+import MessageModal from "@components/Dashboard/Messaging/MessageModal";
 
 import redirect from "nextjs-redirect";
 export default function Test() {
@@ -11,14 +12,5 @@ export default function Test() {
   //   return <Redirect></Redirect>;
   // }
 
-  return (
-    <>
-      <h0>dasdas</h0>
-      <h1>Gapyearly</h1>
-      <h2>Gapyearly</h2>
-      <h3>Gapyearly</h3>
-      <h4>Gapyearly</h4>
-      <p>Gapyearly</p>
-    </>
-  );
+  return <MessageModal>hey</MessageModal>;
 }
