@@ -28,8 +28,6 @@
   transition: 0.3s ease;
 }
 .mentorCardOverlay {
-  background-color: rgba(11, 94, 224, 0.12);
-
   padding: 0;
   border-radius: 7px;
   margin: 0 0.8rem 1.6rem;

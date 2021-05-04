@@ -16,6 +16,7 @@ import {
 } from "riek";
 import _ from "lodash";
 import { cloneElement } from "react";
+import Bio from "@components/Forms/SignupForm/formsteps/Bio";
 
 export default function Profile() {
   const [editProfile, setEditProfile] = useState(false);
@@ -45,16 +46,32 @@ const StaticProfile = () => {
           <p>{fullName(user)}</p>
           <hr />
           <h2>Role:</h2>
-          <p>{fullName(user)}</p>
+          <p>{user.role.name}</p>
           <hr />
           <h2>Gap Year:</h2>
-          <p></p>
+          <p>
+            {user.gapYearStart}-{user.gapYearEnd}
+          </p>
+          <hr />
+          <h2>University:</h2>
+          <p>
+            {user.universityName} {user.universityYear}
+          </p>
           <hr />
           <h2>Location:</h2>
-          <p>Location</p>
+          <p>{user.location}</p>
+          <hr />
+          <h2>Instagram:</h2>
+          <p>@{user.instagram}</p>
+          <hr />
+          <h2>Interests:</h2>
+          <p>{user.interests}</p>
+          <hr />
+          <h2>Languages:</h2>
+          <p>{user.language}</p>
           <hr />
           <h2>Bio:</h2>
-          <p>Location</p>
+          <p>{user.bio}</p>
         </div>
       </div>
     </>

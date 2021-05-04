@@ -18,7 +18,7 @@ export default function Submission() {
           Review an <span className={styles.bold}>Experience</span>
         </TextBubbleButton>
         <TextBubbleButton color="blueBg" href="/dashboard/submission/blog">
-          Coming <span className={styles.bold}>Soon</span>
+          Write a <span className={styles.bold}>Blog Post</span>
         </TextBubbleButton>
         <TextBubbleButton
           color="greenBg"
@@ -27,7 +27,10 @@ export default function Submission() {
           Share a <span className={styles.bold}>Parent Reference</span>
         </TextBubbleButton>
 
-        <TextBubbleButton color="redBg" href="/dashboard/submission/experience">
+        <TextBubbleButton
+          color="redBg"
+          href="/dashboard/submission/girls-who-gap"
+        >
           Share your{" "}
           <span className={styles.bold}>Solo Female Travel Tips</span>
         </TextBubbleButton>
