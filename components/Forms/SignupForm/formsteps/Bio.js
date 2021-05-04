@@ -36,7 +36,7 @@ export default function Bio({ next, previous, formData, setForm }) {
     getInterests();
   }, []);
 
-  const { instagram, bio } = formData;
+  const { instagram, language, bio } = formData;
   const onChange = (item) => {
     formData.interests = item.map((interest) => interest.value);
   };
@@ -104,6 +104,14 @@ listSearchBar
 scrollList
 listItem
 listItemNoResult */}
+        <label htmlFor="language">Language interests (if applicable)</label>
+        <input
+          id={styles.language}
+          name="language"
+          value={language}
+          onChange={setForm}
+          placeholder="e.g. Mandarin Chinese, French, Portugese"
+        />
         <label htmlFor="bio">Write a short bio!</label>
         <textarea
           type="textarea"

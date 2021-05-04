@@ -163,6 +163,9 @@
   font-weight: 700;
 }
 /*  SUBMIT */
+.submissionContainer form {
+  margin: 0 auto;
+}
 .submissionContainer h2 {
   text-align: center;
   font-weight: 500;
@@ -172,12 +175,6 @@
 .submissionContainer input,
 .submissionContainer form {
   width: 40rem !important;
-}
-.mentorSubmit {
-  margin: 0 auto;
-}
-.mentorSubmit textarea {
-  height: 15rem;
 }
 
 /* PROFILE OVERVIEW */

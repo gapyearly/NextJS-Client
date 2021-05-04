@@ -23,7 +23,7 @@ export default function MentorSubmit() {
       await strapi.put(`users/${user.id}`, {
         mentorInfo: { summary, struggles },
       });
-      alert.success("Mentor info succesfully submited: pending approval");
+      alert.success("Mentor profile succesfully submited: pending approval");
       router.push("/dashboard/submission");
     } catch {
       alert.error("Could not submit. Please refresh or contact admin.");
@@ -33,7 +33,7 @@ export default function MentorSubmit() {
   // Styled in ckeditor styles
   return (
     <DashboardLayout>
-      <h1 className={styles.title}>Mentor Submission</h1>
+      <h1 className={styles.title}>Mentor Profile</h1>
       <div className={styles.submissionContainer}>
         <h2>
           Check out examples of{" "}
@@ -48,10 +48,7 @@ export default function MentorSubmit() {
           <label htmlFor="activities">
             What did you do over your gap year, by the month?*
           </label>
-          <p>
-            e.g. July-August: September: November-January: February: March:
-            April-July:
-          </p>
+
           <Editor onChange={setSummary} />
 
           <label htmlForm="struggles">What were your struggles?*</label>
