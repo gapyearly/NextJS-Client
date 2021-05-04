@@ -3,7 +3,9 @@ import styles from "@styles/Dashboard/UserDashboard.module.css";
 import React, { useState } from "react";
 import Button from "@components/Buttons/Button";
 import communityPages from "@components/Dashboard/Community";
-
+import { BsPeopleFill, BsQuestionCircleFill } from "react-icons/bs";
+import { FaMapMarkerAlt } from "react-icons/fa";
+import { IoInformationCircleOutline } from "react-icons/io5";
 function DashCommunity() {
   const [window, setWindow] = useState(communityPages.connect);
   const Page = window.component;
@@ -19,6 +21,7 @@ function DashCommunity() {
             }}
             color="redBg"
           >
+            <FaMapMarkerAlt style={{ marginRight: 6 }} />
             Gapyearly Connect
           </Button>
           <Button
@@ -27,6 +30,7 @@ function DashCommunity() {
             }}
             color="blueBg"
           >
+            <BsQuestionCircleFill style={{ marginRight: 6 }} />
             Ask the community
           </Button>
           <Button
@@ -35,6 +39,7 @@ function DashCommunity() {
               setWindow(communityPages.allmembers);
             }}
           >
+            <BsPeopleFill style={{ marginRight: 6 }} />
             View all members
           </Button>
         </div>

@@ -12,5 +12,5 @@ export default function Test() {
   //   return <Redirect></Redirect>;
   // }
 
-  return <MessageModal>hey</MessageModal>;
+  return <SignupForm></SignupForm>;
 }
