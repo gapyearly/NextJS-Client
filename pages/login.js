@@ -10,14 +10,16 @@ export default function Login() {
       <div className={styles.container}>
         <h1>Log in to access all of Gapyearly!</h1>
         <h2>
-          200+ gappers from 15 countries. <br></br>
-          <span style={{ fontWeight: 600 }}>
-            One community, infinite possibilities.
-          </span>
+          <span className={styles.bold}>200+ gappers from 30 countries. </span>
+          <br></br>
+          One community, infinite possibilities.
         </h2>
         <h2>
-          Get access to resources, connections, inspiration, and so much more
-          for free, <span style={{ fontWeight: 600 }}>forever</span>.
+          Get access to a global gap year{" "}
+          <span className={styles.bold}>community</span>, personalized{" "}
+          <span className={styles.bold}>mentorship</span>, impactful{" "}
+          <span className={styles.bold}>experiences</span>, and so much more for
+          free -- forever.
         </h2>
         <div className={styles.btns}>
           <Link href="/auth/google">

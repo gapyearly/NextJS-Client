@@ -8,25 +8,26 @@ import { useRouter } from "next/router";
 import Editor from "@components/RichtextEditor/Ckeditor";
 import React, { useState } from "react";
 import Link from "next/link";
-export default function ExperienceSubmit() {
-const {
-  title,
-  slug,
-  cost,
-  funRating,
-  personalGrowthRating,
-  activitiesDone,
-  dayToDayExperiences,
-  tips,
-  memorableMoment,
-  lessonsLearned,
-  image,
-  category,
-  location,
-  submittedBy,links
-  href
-  // idk if href goes here
-} = formData;
+export default function ExperienceSubmit(formData, setForm) {
+  const {
+    title,
+    slug,
+    cost,
+    funRating,
+    personalGrowthRating,
+    activitiesDone,
+    dayToDayExperiences,
+    tips,
+    memorableMoment,
+    lessonsLearned,
+    image,
+    category,
+    location,
+    submittedBy,
+    links,
+    href,
+    // idk if href goes here
+  } = formData;
   const { user } = useAuth();
   const alert = useAlert();
   const router = useRouter();
@@ -70,7 +71,7 @@ const {
             onChange={setForm}
           />
 
-<label htmlFor="experienceLocation"></label>
+          <label htmlFor="experienceLocation"></label>
           <input
             id={styles.experienceLocation}
             name="experienceLocation"
@@ -85,7 +86,7 @@ const {
             onChange={setForm}
           />
 
-<label htmlFor="experiencePersonalGrowthRating"></label>
+          <label htmlFor="experiencePersonalGrowthRating"></label>
           <input
             id={styles.experiencePersonalGrowthRating}
             name="experiencePersonalGrowthRating"
@@ -93,7 +94,7 @@ const {
             onChange={setForm}
           />
 
-<label htmlFor="experienceCost"></label>
+          <label htmlFor="experienceCost"></label>
           <input
             id={styles.experienceCost}
             name="experienceCost"
@@ -101,7 +102,7 @@ const {
             onChange={setForm}
           />
 
-<label htmlFor="experienceCategory"></label>
+          <label htmlFor="experienceCategory"></label>
           <input
             id={styles.experienceCategory}
             name="experienceCategory"
@@ -109,8 +110,7 @@ const {
             onChange={setForm}
           />
 
-
-<label htmlFor="experienceImage"></label>
+          <label htmlFor="experienceImage"></label>
           <input
             id={styles.experienceImage}
             name="experienceImage"
@@ -118,15 +118,13 @@ const {
             onChange={setForm}
           />
 
-
-<label htmlFor="experienceActivitiesDone"></label>
+          <label htmlFor="experienceActivitiesDone"></label>
           <textarea
             id={styles.experienceActivitiesDone}
             name="experienceActivitiesDone"
             value={activitiesDone}
             onChange={setForm}
           />
-
 
           <label htmlFor="experienceTitle"></label>
           <input
@@ -135,7 +133,7 @@ const {
             value={title}
             onChange={setForm}
           />
-{/* required, label namews, input types, placeholders */}
+          {/* required, label namews, input types, placeholders */}
           <label htmlFor="activities">
             What did you do over your gap year, by the month?*
           </label>
