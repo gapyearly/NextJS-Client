@@ -36,10 +36,13 @@ export default function Submit({
       console.log(e);
     }
 
+    const role = window.sessionStorage.getItem("role");
+
     await strapi.put(`users/${user.id}`, {
       ...formData,
       signupCompletion: true,
       profilePicture: data[0].id || null,
+      role: role || undefined,
     });
     await updateUser();
     NProgress.done();

@@ -56,7 +56,7 @@ export default function Navbar() {
     setNavbarHeight(height.trim());
   }, []);
   let NavUser;
-  if (isAuthenticated) {
+  if (isAuthenticated && user && user.signupCompletion) {
     // TODO Default Profile Picture
     if (user.profilePicture) {
       NavUser = <AvatarDropdown avatar={user.profilePicture.url} />;
