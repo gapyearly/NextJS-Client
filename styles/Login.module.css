@@ -31,3 +31,7 @@
   display: block;
   margin: 20rem auto;
 }
+
+.bold {
+  font-weight: 600;
+}
