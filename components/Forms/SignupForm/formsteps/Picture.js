@@ -87,9 +87,9 @@ class MyEditor extends React.Component {
         <AvatarEditor
           scale={parseFloat(this.state.scale)}
           image={this.props.profilePicture}
-          width={400}
-          height={400}
-          border={30}
+          width={200}
+          height={200}
+          border={0}
           position={this.state.position}
           onPositionChange={this.handlePositionChange}
           borderRadius={200}
