@@ -12,5 +12,13 @@ export default function Test() {
   //   return <Redirect></Redirect>;
   // }
 
-  return <SignupForm></SignupForm>;
+  return (
+    <MessageModal
+      recipient={{
+        firstName: "hey",
+        lastName: "hey",
+        id: "608ef42a55b3a961b431375e",
+      }}
+    />
+  );
 }
