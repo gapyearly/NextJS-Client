@@ -3,7 +3,6 @@ import styles from "@styles/Dashboard/UserDashboard.module.css";
 import React, { useState } from "react";
 import { useAuth } from "@contexts/auth";
 import fullName from "@util/fullName";
-
 import Button from "@components/Buttons/Button";
 import strapi from "@api/strapi";
 import {
@@ -49,8 +48,10 @@ const StaticProfile = () => {
           <p>{user.role.name}</p>
           <hr />
           <h2>Gap Year:</h2>
-          <p>
-            {user.gapYearStart}-{user.gapYearEnd}
+          <p className={styles.alignRight}>
+            {user.gapYearStart}
+            {user.gapYearStart && user.gapYearEnd && "-"}
+            {user.gapYearEnd}
           </p>
           <hr />
           <h2>University:</h2>
@@ -67,7 +68,7 @@ const StaticProfile = () => {
           <h2>Interests:</h2>
           <p>{user.interests}</p>
           <hr />
-          <h2>Languages:</h2>
+          <h2>Language Interests:</h2>
           <p>{user.language}</p>
           <hr />
           <h2>Bio:</h2>
