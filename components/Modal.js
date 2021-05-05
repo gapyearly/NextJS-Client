@@ -23,7 +23,6 @@ const Modal = ({ show, onClose, children, title }) => {
   }, [show]);
 
   const handleCloseClick = (e) => {
-    e.preventDefault();
     // If the mouse click contains the modal, don't close the modal. Except when the anchor is clicked.
     if (ref.current.contains(e.target) && e.target.localName !== "path") return;
     onClose();
@@ -34,7 +33,7 @@ const Modal = ({ show, onClose, children, title }) => {
       <div className={styles.modal} ref={ref}>
         <div className={styles.header}>
           <h2>{title}</h2>
-          <a className={styles.close} href="#" onClick={handleCloseClick}>
+          <a className={styles.close} href="#" onClick={onClose}>
             <IoMdCloseCircle />
           </a>
         </div>

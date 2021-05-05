@@ -1,0 +1,47 @@
+.accordion__item {
+  background-color: var(--lightblue);
+  color: var(--berry);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.7rem;
+  width: 100%;
+  margin: 0.3rem 0;
+}
+
+.accordion__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.accordion__button > div {
+  display: flex;
+  align-items: center;
+}
+
+.accordion__button:focus {
+  outline: none;
+}
+.accordion__button[aria-expanded="true"]::before,
+.accordion__button[aria-selected="true"]::before {
+  transform: rotate(45deg);
+}
+.accordion__panel[aria-expanded="true"],
+.accordion__panel[aria-disabled="true"],
+.accordion__panel[aria-hidden="false"] {
+  transition: 0.3s ease;
+}
+.accordion__panel {
+  padding: 1rem;
+}
+.accordion__item:not(:last-child) {
+  margin-bottom: 0.3rem;
+}
+
+.avatar {
+  display: inline-block;
+  margin-right: 0.7rem;
+}
+
+.alignRight {
+  text-align: right;
+}

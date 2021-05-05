@@ -51,3 +51,9 @@
   right: 2rem;
   font-size: 0.9rem;
 }
+.mainCenter {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  /* not sure if this acc does anything */
+}

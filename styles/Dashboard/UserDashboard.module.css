@@ -162,14 +162,22 @@
 .bold {
   font-weight: 700;
 }
-/* MENTOR SUBMIT */
-.mentorSubmit {
+/*  SUBMIT */
+.submissionContainer form {
   margin: 0 auto;
 }
-.mentorSubmit textarea {
-  height: 15rem;
+.submissionContainer h2 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.submissionContainer input,
+.submissionContainer form {
+  width: 40rem !important;
 }
 
+/* PROFILE OVERVIEW */
 .profile {
   padding: 2rem 0;
 

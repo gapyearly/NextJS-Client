@@ -10,7 +10,7 @@ export default function Mentorship({ data }) {
   console.log(data);
   let index = 0;
   const cards = data
-    .filter((user) => user.mentorInfo)
+    .filter((user) => user.mentorInfo && user.mentorInfo.approved)
     .map(
       ({
         firstName,

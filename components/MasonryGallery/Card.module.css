@@ -28,24 +28,22 @@
   transition: 0.3s ease;
 }
 .mentorCardOverlay {
-  background-color: rgba(11, 94, 224, 0.12);
-
   padding: 0;
   border-radius: 7px;
   margin: 0 0.8rem 1.6rem;
   transition: 0.3s ease;
 }
 .redBg {
-  background-color: rgba(248, 93, 72, 0.12);
+  background-color: var(--lightred);
 }
 .yellowBg {
-  background-color: #fef8ea;
+  background-color: var(--lightyellow);
 }
 .greenBg {
-  background-color: #ddf1ea;
+  background-color: var(--lightgreen);
 }
 .blueBg {
-  background-color: #dee7f3;
+  background-color: var(--lightblue);
 }
 
 .mentorCard h2 {

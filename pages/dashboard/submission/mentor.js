@@ -23,7 +23,7 @@ export default function MentorSubmit() {
       await strapi.put(`users/${user.id}`, {
         mentorInfo: { summary, struggles },
       });
-      alert.success("Mentor info succesfully submited: pending approval");
+      alert.success("Mentor profile succesfully submited: pending approval");
       router.push("/dashboard/submission");
     } catch {
       alert.error("Could not submit. Please refresh or contact admin.");
@@ -33,31 +33,30 @@ export default function MentorSubmit() {
   // Styled in ckeditor styles
   return (
     <DashboardLayout>
-      <h1 className={styles.title}>Mentor Submission</h1>
-      <h2>
-        Check out examples of{" "}
-        <Link href="community/mentorship">mentor profiles</Link>!
-      </h2>
-      <form
-        id="mentorForm"
-        className={styles.mentorSubmit}
-        onSubmit={onSubmit}
-        action="javascript:void(0);"
-      >
-        <label htmlFor="activities">
-          What did you do over your gap year, by the month?*
-        </label>
-        <p>
-          e.g. July-August: September: November-January: February: March:
-          April-July:
-        </p>
-        <Editor onChange={setSummary} />
+      <h1 className={styles.title}>Mentor Profile</h1>
+      <div className={styles.submissionContainer}>
+        <h2>
+          Check out examples of{" "}
+          <Link href="../../community/mentorship">mentor profiles</Link>!
+        </h2>
+        <form
+          id="mentorForm"
+          className={styles.mentorSubmit}
+          onSubmit={onSubmit}
+          action="javascript:void(0);"
+        >
+          <label htmlFor="activities">
+            What did you do over your gap year, by the month?*
+          </label>
 
-        <label htmlForm="struggles">What were your struggles?*</label>
-        <Editor onChange={setStruggles} />
-        <Button color="greenBg">Submit</Button>
-        {/* alert, submit action */}
-      </form>
+          <Editor onChange={setSummary} />
+
+          <label htmlForm="struggles">What were your struggles?*</label>
+          <Editor onChange={setStruggles} />
+          <Button color="greenBg">Submit</Button>
+          {/* alert, submit action */}
+        </form>
+      </div>
     </DashboardLayout>
   );
 }
