@@ -34,6 +34,16 @@
 .formContainer label {
   display: block;
 }
+.formContainer input,
+.formContainer form,
+.formContainer textarea {
+  width: 25rem;
+}
+.formContainer input,
+.formContainer textarea {
+  margin-bottom: 0.8rem;
+  margin-top: 0.35rem;
+}
 input#gapYearStart,
 input#gapYearEnd,
 input#universityYear,

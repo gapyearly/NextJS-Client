@@ -8,13 +8,14 @@ import { useRouter } from "next/router";
 import Editor from "@components/RichtextEditor/Ckeditor";
 import React, { useState } from "react";
 import Link from "next/link";
-
+import { useForm, useStep } from "react-hooks-helper";
 import NProgress from "nprogress";
 export default function MentorSubmit() {
   const { user } = useAuth();
   const alert = useAlert();
   const router = useRouter();
   const [summary, setSummary] = useState();
+  const [formData, setForm] = useForm({ selfFunded: false });
   const [struggles, setStruggles] = useState();
 
   const onSubmit = async (event) => {
@@ -25,7 +26,7 @@ export default function MentorSubmit() {
     try {
       NProgress.start();
       await strapi.put(`users/${user.id}`, {
-        mentorInfo: { summary, struggles },
+        mentorInfo: { selfFunded, summary, struggles },
       });
       alert.success("Mentor profile succesfully submited: pending approval");
       router.push("/dashboard/submission");
@@ -34,7 +35,7 @@ export default function MentorSubmit() {
     }
     NProgress.done();
   };
-
+  const { selfFunded } = formData;
   // Styled in ckeditor styles
   return (
     <DashboardLayout>
@@ -49,27 +50,30 @@ export default function MentorSubmit() {
           className={styles.mentorSubmit}
           onSubmit={onSubmit}
         >
-          <label> Was your gap year self-funded?</label>
-          <label htmlFor="selfFunded">
-            <input
-              type="radio"
-              id="selfFunded"
-              value="selfFunded"
-              name="mentorFunding"
-            />
-            Yes
-          </label>
-
-          <label htmlFor="notSelfFunded">
-            <input
-              type="radio"
-              id="notSelfFunded"
-              value="notSelfFunded"
-              name="mentorFunding"
-            />
-            No
-          </label>
-
+          <div className={styles.selfFundedContainer}>
+            <label> Was your gap year self-funded?</label>
+            <div className={styles.radioBtn}>
+              <input
+                type="radio"
+                id="selfFunded"
+                value={selfFunded}
+                name="mentorFunding"
+                onChange={setForm}
+              />
+              <label htmlFor="selfFunded">Yes</label>
+            </div>
+            <div className={styles.radioBtn}>
+              <label htmlFor="notSelfFunded">
+                <input
+                  type="radio"
+                  id="notSelfFunded"
+                  value="notSelfFunded"
+                  name="mentorFunding"
+                />
+                No
+              </label>
+            </div>
+          </div>
           <label htmlFor="activities">
             What did you do over your gap year, by the month?*
           </label>
