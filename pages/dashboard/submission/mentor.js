@@ -8,19 +8,22 @@ import { useRouter } from "next/router";
 import Editor from "@components/RichtextEditor/Ckeditor";
 import React, { useState } from "react";
 import Link from "next/link";
-import { useForm, useStep } from "react-hooks-helper";
 import NProgress from "nprogress";
 export default function MentorSubmit() {
   const { user } = useAuth();
   const alert = useAlert();
   const router = useRouter();
   const [summary, setSummary] = useState();
-  const [formData, setForm] = useForm({ selfFunded: false });
   const [struggles, setStruggles] = useState();
+  const [selfFunded, setSelfFunded] = useState(null);
 
+  const onValueChange = (e) => {
+    setSelfFunded(e.target.value);
+  };
   const onSubmit = async (event) => {
     event.preventDefault();
-    if (!summary || !struggles) {
+    console.log(selfFunded);
+    if (!summary || !struggles || !selfFunded) {
       return alert.error("Please enter required fields.");
     }
     try {
@@ -35,7 +38,6 @@ export default function MentorSubmit() {
     }
     NProgress.done();
   };
-  const { selfFunded } = formData;
   // Styled in ckeditor styles
   return (
     <DashboardLayout>
@@ -56,9 +58,9 @@ export default function MentorSubmit() {
               <input
                 type="radio"
                 id="selfFunded"
-                value={selfFunded}
+                value={true}
                 name="mentorFunding"
-                onChange={setForm}
+                onChange={onValueChange}
               />
               <label htmlFor="selfFunded">Yes</label>
             </div>
@@ -67,8 +69,9 @@ export default function MentorSubmit() {
                 <input
                   type="radio"
                   id="notSelfFunded"
-                  value="notSelfFunded"
+                  value={false}
                   name="mentorFunding"
+                  onChange={onValueChange}
                 />
                 No
               </label>
