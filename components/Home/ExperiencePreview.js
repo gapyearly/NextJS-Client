@@ -1,6 +1,6 @@
 import styles from "./Preview.module.css";
 import Link from "next/link";
-import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import {
   CostComponent,
   CategoryComponent,

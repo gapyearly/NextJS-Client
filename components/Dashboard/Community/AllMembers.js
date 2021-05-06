@@ -11,7 +11,10 @@ import strapi from "@api/strapi";
 import fullName from "@util/fullName";
 import RolePill from "../ProfileComponents/role";
 import { Avatar } from "react-chat-elements";
+import { FaMapMarkerAlt, FaInstagram } from "react-icons/fa";
+import MessageModal from "@components/Dashboard/Messaging/MessageModal";
 
+import Link from "next/link";
 export default function Allmembers() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
@@ -36,8 +39,12 @@ export default function Allmembers() {
                   type="circle"
                 />
               </div>
-              {fullName(user)}
+              <h3>{fullName(user)}</h3>
               <RolePill role={user.role.name} />
+              <div>
+                <FaMapMarkerAlt styles={{ color: "var(--clay)" }} />{" "}
+                {user.location}
+              </div>
             </div>
             <p className={styles.alignRight}>
               {user.gapYearStart}
@@ -46,7 +53,28 @@ export default function Allmembers() {
             </p>
           </AccordionItemButton>
         </AccordionItemHeading>
-        <AccordionItemPanel>test Data</AccordionItemPanel>
+        <AccordionItemPanel className={styles.userDescription}>
+          {/* <MessageModal recipient={{firstName:{user.firstName}
+        }} /> */}
+          <p>
+            {user.universityName} {user.universityYear}
+          </p>
+          <div className={styles.instagram}>
+            <FaInstagram />
+            <a
+              href={`https://instagram.com/${user.instagram}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {user.instagram}
+            </a>
+            <h4>Interests:</h4>
+            <p>{user.interests}</p>
+
+            <p>{user.language}</p>
+            {user.bio}
+          </div>
+        </AccordionItemPanel>
       </AccordionItem>
     );
   });

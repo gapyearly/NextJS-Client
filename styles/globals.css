@@ -121,9 +121,7 @@ textarea {
   border: 1px solid var(--horizon);
 
   padding: 4px 7px;
-  display: block;
-  margin-bottom: 0.8rem;
-  margin-top: 0.35rem;
+
   /* all form elements are inline otherwise */
 }
 textarea {
@@ -131,11 +129,7 @@ textarea {
   resize: none;
   height: 5rem;
 }
-input,
-textarea,
-form {
-  width: 25rem;
-}
+
 fieldset {
   margin-bottom: 1rem;
   border: 1.5px solid var(--berry);

@@ -5,13 +5,14 @@ export default function Name({ next, previous, formData, setForm }) {
   console.log(firstName);
   return (
     <>
-      <h1>Hi there!</h1>
-      <h2> We're so excited to have you here.</h2>
-      <p>Let's get to know you a bit better. </p>
-      <p>What's your name?</p>
       <form onSubmit={next} action="javascript:void(0);">
+        <h1>Hi there!</h1>
+        <h2> We're so excited to have you here.</h2>
+        <p>Let's get to know you a bit better. </p>
+        <p>What's your name?</p>
+
         <label>
-          First Name *
+          First Name*
           <input
             id="firstName"
             label="First Name"
@@ -22,7 +23,7 @@ export default function Name({ next, previous, formData, setForm }) {
           />
         </label>
         <label>
-          Last Name *
+          Last Name*
           <input
             id="lastName"
             label="Last Name"

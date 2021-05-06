@@ -172,11 +172,13 @@
   font-size: 1.3rem;
   margin-bottom: 2rem;
 }
-.submissionContainer input,
-.submissionContainer form {
-  width: 40rem !important;
-}
 
+.submissionContainer form {
+  width: 40rem;
+}
+.selfFundedContainer {
+  margin-bottom: 0.5rem;
+}
 /* PROFILE OVERVIEW */
 .profile {
   padding: 2rem 0;

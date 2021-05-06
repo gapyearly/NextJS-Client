@@ -3,9 +3,7 @@ import Link from "next/link";
 import styles from "./Button.module.css";
 
 export default function LoginButton({ color, href, children }) {
-  const handleClick = () => {
-    window.sessionStorage.setItem("redirect", "/dashboard");
-  };
+  const handleClick = () => {};
   return (
     <Link href={href}>
       <button
