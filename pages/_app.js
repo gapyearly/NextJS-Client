@@ -14,6 +14,7 @@ import { DefaultSeo } from "next-seo";
 
 import NProgress from "nprogress";
 import Router from "next/router";
+import Head from "next/head";
 
 Router.events.on("routeChangeStart", (url) => {
   console.log(`Loading: ${url}`);
@@ -57,11 +58,16 @@ function MyApp({ Component, pageProps }) {
     },
   };
   return (
-    <AlertProvider template={AlertTemplate} {...options}>
-      <AuthProvider>
-        <Component {...pageProps} />
-      </AuthProvider>
-    </AlertProvider>
+    <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <AlertProvider template={AlertTemplate} {...options}>
+        <AuthProvider>
+          <Component {...pageProps} />
+        </AuthProvider>
+      </AlertProvider>
+    </>
   );
 }
 
