@@ -1,10 +1,29 @@
 import Layout from "@components/Layouts/Layout";
 import Button from "@components/Buttons/Button";
-import btnstyles from "@components/Buttons/Button.module.css";
 import styles from "@components/Forms/form.module.css";
 import PageTitle from "@components/PageTitle";
-
+import { useAlert } from "react-alert";
+import { useForm } from "react-hooks-helper";
+import strapi from "@api/strapi";
+const defaultData = {
+  fullName: "",
+  email: "",
+  position: "",
+  currentLocation: "",
+  statementOfInterest: "",
+};
 export default function JoinTeam() {
+  const alert = useAlert();
+  const [formData, setForm] = useForm({});
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      await strapi.post("/join-the-team", formData);
+      alert.success("Message sent. Please wait for a reply.");
+    } catch {
+      alert.error("Could not send message.");
+    }
+  };
   return (
     <>
       <PageTitle>Join the Team</PageTitle>
@@ -55,13 +74,14 @@ export default function JoinTeam() {
         </p>
 
         {/* TODO: alex fill in action pls */}
-        <form method="POST" action="#" className={styles.joinTeam}>
+        <form onSubmit={onSubmit} className={styles.joinTeam}>
           <label htmlFor="fullName">
             Full name
             <input
               id="joinTeamFullName"
               type="text"
               name="fullName"
+              onChange={setForm}
               required
             ></input>
           </label>
@@ -73,6 +93,7 @@ export default function JoinTeam() {
               type="email"
               name="email"
               placeholder="example@email.com"
+              onChange={setForm}
               required
             ></input>
           </label>
@@ -85,6 +106,7 @@ export default function JoinTeam() {
               name="currentLocation"
               placeholder="
               "
+              onChange={setForm}
               required
             ></input>
           </label>
@@ -96,6 +118,7 @@ export default function JoinTeam() {
               type="text"
               name="position"
               placeholder="e.g. Content - Team Lead"
+              onChange={setForm}
               required
             ></input>
           </label>
@@ -111,12 +134,11 @@ export default function JoinTeam() {
               id="joinTeamStatementOfInterest"
               type="textarea"
               name="statementOfInterest"
+              onChange={setForm}
               required
             ></textarea>
           </label>
-          <Button color="greenBg" href="#">
-            Submit
-          </Button>
+          <Button color="greenBg">Submit</Button>
         </form>
       </Layout>
     </>

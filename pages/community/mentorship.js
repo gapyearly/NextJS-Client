@@ -5,9 +5,9 @@ import LinkGallery from "@components/MasonryGallery";
 import Head from "next/head";
 import MentorCard from "@components/MasonryGallery/MentorCard";
 import Title from "@components/Title";
+import shuffle from "@util/shuffleArray";
 
 export default function Mentorship({ data }) {
-  console.log(data);
   let index = 0;
   const cards = data
     .filter((user) => user.mentorInfo && user.mentorInfo.approved)
@@ -45,7 +45,7 @@ export default function Mentorship({ data }) {
         );
       }
     );
-
+  shuffle(cards);
   return (
     <>
       <Head>

@@ -8,6 +8,8 @@ import { useRouter } from "next/router";
 import Editor from "@components/RichtextEditor/Ckeditor";
 import React, { useState } from "react";
 import Link from "next/link";
+
+import NProgress from "nprogress";
 export default function MentorSubmit() {
   const { user } = useAuth();
   const alert = useAlert();
@@ -15,11 +17,13 @@ export default function MentorSubmit() {
   const [summary, setSummary] = useState();
   const [struggles, setStruggles] = useState();
 
-  const onSubmit = async () => {
+  const onSubmit = async (event) => {
+    event.preventDefault();
     if (!summary || !struggles) {
       return alert.error("Please enter required fields.");
     }
     try {
+      NProgress.start();
       await strapi.put(`users/${user.id}`, {
         mentorInfo: { summary, struggles },
       });
@@ -28,6 +32,7 @@ export default function MentorSubmit() {
     } catch {
       alert.error("Could not submit. Please refresh or contact admin.");
     }
+    NProgress.done();
   };
 
   // Styled in ckeditor styles
@@ -43,7 +48,6 @@ export default function MentorSubmit() {
           id="mentorForm"
           className={styles.mentorSubmit}
           onSubmit={onSubmit}
-          action="javascript:void(0);"
         >
           <label htmlFor="activities">
             What did you do over your gap year, by the month?*
