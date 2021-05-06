@@ -13,12 +13,13 @@ export default function Test() {
   // }
 
   return (
-    <MessageModal
-      recipient={{
-        firstName: "hey",
-        lastName: "hey",
-        id: "608ef42a55b3a961b431375e",
-      }}
-    />
+    // <MessageModal
+    //   recipient={{
+    //     firstName: "hey",
+    //     lastName: "hey",
+    //     id: "608ef42a55b3a961b431375e",
+    //   }}
+    // />
+    <SignupForm />
   );
 }

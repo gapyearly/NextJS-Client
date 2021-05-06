@@ -32,3 +32,6 @@
 .socialMediaIconWrapper a {
   box-shadow: none;
 }
+.centerFooter {
+  text-align: center;
+}
