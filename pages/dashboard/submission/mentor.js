@@ -49,13 +49,34 @@ export default function MentorSubmit() {
           className={styles.mentorSubmit}
           onSubmit={onSubmit}
         >
+          <label> Was your gap year self-funded?</label>
+          <label htmlFor="selfFunded">
+            <input
+              type="radio"
+              id="selfFunded"
+              value="selfFunded"
+              name="mentorFunding"
+            />
+            Yes
+          </label>
+
+          <label htmlFor="notSelfFunded">
+            <input
+              type="radio"
+              id="notSelfFunded"
+              value="notSelfFunded"
+              name="mentorFunding"
+            />
+            No
+          </label>
+
           <label htmlFor="activities">
             What did you do over your gap year, by the month?*
           </label>
 
           <Editor onChange={setSummary} />
 
-          <label htmlForm="struggles">What were your struggles?*</label>
+          <label>What were your struggles?*</label>
           <Editor onChange={setStruggles} />
           <Button color="greenBg">Submit</Button>
           {/* alert, submit action */}

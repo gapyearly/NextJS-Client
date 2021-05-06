@@ -1409,16 +1409,20 @@ audio:focus {
 
 .rce-citem-body--top-title {
   font-size: 16px;
+  font-weight: 600;
 }
 
 .rce-citem-body--bottom-title {
-  color: #555;
+  color: var(--berry);
+  opacity: 0.65;
   font-size: 15px;
 }
 
 .rce-citem-body--top-time {
-  font-size: 12px;
+  font-size: 0;
   color: rgba(0, 0, 0, 0.4);
+  width: 0;
+  display: none;
 }
 
 .rce-citem-body--bottom-status {
