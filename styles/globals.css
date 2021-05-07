@@ -18,7 +18,9 @@
   box-sizing: border-box;
   --navbarHeight: 3.9rem;
 }
-
+html {
+  width: 100vw;
+}
 html,
 body {
   margin: 0;
@@ -36,14 +38,25 @@ body {
 main {
   min-height: 60vh;
   /* TODO: sticky footer not working */
-  margin: 0 7rem;
+  margin: 0 auto;
   flex: 1;
 }
-@media (max-width: 800px) {
+@media (max-width: 599px) {
   main {
-    margin: 0 4rem;
+    width: 85%;
   }
 }
+@media (min-width: 600px) {
+  main {
+    width: 500px;
+  }
+}
+@media (min-width: 1200px) {
+  main {
+    width: 1000px;
+  }
+}
+
 .header {
   background-color: var(--horizon);
   text-align: center;
@@ -158,6 +171,7 @@ legend {
 form {
   margin-top: 2rem;
 }
+
 h1 {
   text-align: center;
   margin: 0 0 0.6em 0;
