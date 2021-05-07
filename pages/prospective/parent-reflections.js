@@ -38,7 +38,8 @@ export default function ParentReflections({ data }) {
         <Title>Parent Reflections</Title>
       </Head>
       <PageTitle>Parent Reflections</PageTitle>
-      <Layout>
+      <Layout className="galleryWidth">
+        <h2>Advice from parents, to parents–put your mind to rest!</h2>
         <Gallery>{cards}</Gallery>
         <Modal
           show={modalVisibility}

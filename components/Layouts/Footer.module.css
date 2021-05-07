@@ -1,12 +1,13 @@
 .footer {
   background-color: var(--berry);
-
-  display: flex;
-  flex-direction: column;
   color: var(--seashell);
-  padding: 1em 3em 0;
+  padding: 1em 3em 0.7em;
   margin-top: 2em;
-  padding-bottom: 2em;
+}
+@media (min-width: 1000px) {
+  .footer {
+    padding: 1em 6rem 0.7em;
+  }
 }
 .footer_column {
   list-style-type: none;
@@ -34,4 +35,11 @@
 }
 .centerFooter {
   text-align: center;
+}
+.footer ul {
+  padding-left: 0;
+  padding-right: 5em;
+}
+.legal {
+  margin-bottom: 0.5rem;
 }

@@ -1,0 +1,13 @@
+.layout main {
+  min-height: 70vh;
+  max-width: 100vw;
+}
+.galleryWidth {
+  width: 85%;
+}
+.layout main > h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+}

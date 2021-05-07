@@ -48,7 +48,7 @@ export default function PastExperiences({ data }) {
         <Title>Past Experiences</Title>
       </Head>
       <PageTitle>Past Experiences</PageTitle>
-      <Layout>
+      <Layout className="galleryWidth">
         <ExperienceGallery>{cards}</ExperienceGallery>
         <Modal
           show={modalVisibility}

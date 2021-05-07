@@ -23,16 +23,26 @@ export default function Footer() {
       <div className={styles.sitemap}>{footercolumns}</div>
       <div className={styles.socialMediaIconWrapper}>
         <a href="https://www.instagram.com/gapyearly">
-          <FaInstagram className="socialMediaIcon"></FaInstagram>
+          <FaInstagram size="1.5rem" className="socialMediaIcon"></FaInstagram>
         </a>
         <a href="https://www.facebook.com/gapyearly">
           <FaFacebookF
             className="socialMediaIcon"
-            style={{ marginLeft: 6, width: 15 }}
+            size="1.5rem"
+            style={{ marginLeft: 6 }}
           ></FaFacebookF>
         </a>
       </div>
       <div className={styles.centerFooter}>
+        <div className={styles.legal}>
+          <Link href="/privacy-policy">
+            <a className="blueUnderline">Privacy Policy</a>
+          </Link>{" "}
+          |{" "}
+          <Link href="/terms">
+            <a className="blueUnderline">Terms of Use</a>
+          </Link>
+        </div>
         <p>
           © Gapyearly 2021 | Built by{" "}
           <a
