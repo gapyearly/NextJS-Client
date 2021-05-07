@@ -69,7 +69,7 @@ export default function Allmembers() {
               {user.instagram}
             </a>
             <h4>Interests:</h4>
-            <p>{user.interests}</p>
+            <p>{/* user.interests */}</p>
 
             <p>{user.language}</p>
             {user.bio}

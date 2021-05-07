@@ -67,8 +67,7 @@ export default function Submit({
           <p>
             I agree to the Gapyearly{" "}
             <Link href="/privacy-policy">Privacy Policy</Link>,{" "}
-            <Link href="/terms-of-use">Terms of Use</Link>, and{" "}
-            <Link href="/code-of-conduct">Code of Conduct</Link>*
+            <Link href="/terms">Terms of Use</Link>*
           </p>
         </label>
         <br />

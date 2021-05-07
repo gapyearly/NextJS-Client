@@ -51,8 +51,16 @@ export default function Mentorship({ data }) {
       <Head>
         <Title>Mentorship</Title>
       </Head>
-      <PageTitle>Mentorship</PageTitle>
-      <Layout>
+      <PageTitle>Mentorship Team</PageTitle>
+      <Layout className="galleryWidth">
+        <h2>
+          We’re a group of students who have recently been in your shoes… We
+          know firsthand what kinds of questions you are working through and are
+          here to help, so shoot! We promise to respond in 48 hours, FREE of
+          charge. Browse through our profiles and request a specific mentor, or
+          ask general questions to any of us!
+        </h2>
+
         <LinkGallery> {cards}</LinkGallery>
       </Layout>
     </>

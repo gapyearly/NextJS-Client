@@ -1,6 +1,9 @@
 .home {
   background-color: var(--aqua);
 }
+.home main {
+  width: 100%;
+}
 .mainContainer {
   color: var(--seashell);
 
@@ -64,10 +67,15 @@
   /* box-shadow: 0 -0.4em 0 inset rgba(11, 94, 224, 0.85); */
 }
 .connectContainer,
+.memberContainer,
+.galleryContainer {
+  width: 70%;
+}
+.connectContainer,
 .memberContainer {
   display: flex;
   align-items: center;
-  width: 70%;
+
   margin: 0 auto;
   height: 70vh;
   /* height: 100vh;
@@ -78,7 +86,15 @@
   justify-content: center;
   -webkit-box-align: center; */
 }
-
+@media (max-width: 900px) {
+  .connectContainer,
+  .memberContainer {
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding-bottom: 5rem;
+  }
+}
 .connectImage,
 .memberImage {
   /* background-color: beige; */
@@ -89,6 +105,16 @@
   object-fit: contain;
   border-radius: 5px;
 }
+
+@media (max-width: 900px) {
+  .connectImage,
+  .memberImage {
+    margin-right: 0;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+}
+
 .connectImage {
   height: 15em;
 }
@@ -98,9 +124,9 @@
 
 .memberText,
 .connectText {
-  overflow: auto;
   flex: 65%;
 }
+
 .futureMemberContainer {
   margin-bottom: 2em;
 }
@@ -108,9 +134,8 @@
 .newsletterContainer {
   display: flex;
   flex-direction: column;
-
   align-content: center;
-  margin: 4rem 0 8rem;
+  margin: 4rem auto 8rem;
 }
 .galleryContainer h2,
 .newsletterContainer h2 {
@@ -127,18 +152,41 @@
 .newsletterContainer {
   background-image: url("/images/yellow-sun.svg");
   background-repeat: no-repeat;
-  background-size: 1350px;
+
   /* ~2x the height, bc it displays half the sun */
   background-position: top;
-  height: 600px;
+
   text-align: center;
   color: var(--berry);
   margin-bottom: 0;
-  padding-top: 270px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+@media (max-width: 600px) {
+  .newsletterContainer {
+    background-size: 700px;
+    height: 400px;
+
+    padding: 160px 70px 0;
+  }
+}
+@media (min-width: 601px) {
+  .newsletterContainer {
+    background-size: 1000px;
+    height: 500px;
+    padding: 200px 160px 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .newsletterContainer {
+    background-size: 1350px;
+    height: 600px;
+    padding: 270px 90px 0;
+  }
+}
+
 .newsletterContainer h2 {
   margin-bottom: 0;
   font-weight: 700;
