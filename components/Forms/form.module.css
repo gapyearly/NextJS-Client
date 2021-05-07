@@ -22,9 +22,3 @@
 .joinTeam {
   width: 25rem;
 }
-@media (max-width: 599px) {
-  .contact,
-  .joinTeam {
-    width: 85%;
-  }
-}
