@@ -1,17 +1,18 @@
 import DashboardLayout from "@components/Layouts/DashboardLayout";
-import styles from "@styles/Dashboard/UserDashboard.module.css";
-import React, { useState, cloneElement } from "react";
-import { useAuth } from "@contexts/auth";
-import fullName from "@util/fullName";
-import { useForm } from "react-hooks-helper";
-import EasyEdit, { Types } from "react-easy-edit";
-import strapi from "@api/strapi";
-
 import InterestDropdown from "@components/Forms/InterestsDropdown";
 import Interests from "@components/Dashboard/ProfileComponents/interests";
 
+import styles from "@styles/Dashboard/UserDashboard.module.css";
+
+import { useAuth } from "@contexts/auth";
+import EasyEdit, { Types } from "react-easy-edit";
+import strapi from "@api/strapi";
+import React, { useRef } from "react";
+
 import { useAlert } from "react-alert";
 import NProgress from "nprogress";
+
+import Modal from "@components/Modal";
 
 export default function Profile() {
   const { user, updateUser, isAuthenticated } = useAuth();
@@ -143,15 +144,16 @@ export default function Profile() {
               onSave={(value) => {
                 saveProfile(value, "interests");
               }}
+              placeholder="No Interests"
             />
             <hr />
             <h2>Language Interests:</h2>
             <EasyEdit
               type={Types.TEXT}
               onSave={(value) => {
-                saveProfile(value, "languages");
+                saveProfile(value, "language");
               }}
-              value={user.languages}
+              value={user.language}
               placeholder="Click to edit what languages your interested in."
             />
             <hr />
