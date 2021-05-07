@@ -69,19 +69,6 @@
   width: 80%;
   margin: 0 auto 1rem;
 }
-/* PROFILE OVERVIEW */
-.profile > h3 {
-  display: block;
-}
-.chatboxWindow {
-  max-width: 70vw;
-  height: 85vh;
-  box-shadow: 0px 3px 6px lightgray;
-  position: relative;
-  right: 0;
-  margin: 4rem auto;
-  border-radius: 10px;
-}
 
 /* SHARE YOUR STORY */
 .shareYourStory {
@@ -201,4 +188,20 @@
 }
 .profile hr {
   border-top: 1px solid var(--berry);
+}
+.profile > h3 {
+  display: block;
+}
+.chatboxWindow {
+  max-width: 70vw;
+  height: 85vh;
+  box-shadow: 0px 3px 6px lightgray;
+  position: relative;
+  right: 0;
+  margin: 4rem auto;
+  border-radius: 10px;
+}
+
+.profileSection {
+  display: flex;
 }

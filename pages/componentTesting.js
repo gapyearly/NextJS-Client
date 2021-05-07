@@ -4,6 +4,7 @@ import Modal from "@components/Modal";
 import DashboardLayout from "@components/Layouts/DashboardLayout/index.js";
 import Chatbox from "@components/Dashboard/Messaging/Chatbox";
 import MessageModal from "@components/Dashboard/Messaging/MessageModal";
+import Interests from "@components/Dashboard/ProfileComponents/interests";
 
 import redirect from "nextjs-redirect";
 export default function Test() {
@@ -20,6 +21,6 @@ export default function Test() {
     //     id: "608ef42a55b3a961b431375e",
     //   }}
     // />
-    <SignupForm />
+    <Interests interests={["wewe"]} />
   );
 }
