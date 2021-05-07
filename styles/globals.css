@@ -32,32 +32,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-main {
-  min-height: 60vh;
-  /* TODO: sticky footer not working */
-  margin: 0 auto;
-  flex: 1;
-}
-@media (max-width: 599px) {
-  main {
-    width: 85%;
-  }
-}
-@media (min-width: 600px) {
-  main {
-    width: 540px;
-  }
-}
-@media (min-width: 800px) {
-  main {
-    width: 700px;
-  }
-}
-@media (min-width: 1200px) {
-  main {
-    width: 1000px;
-  }
-}
 
 .header {
   background-color: var(--horizon);
@@ -345,4 +319,12 @@ li {
 /* Recipient/current user message  */
 .rce-mbox-right {
   background: #dee7f3 !important;
+}
+
+/* PROFILE EDITING */
+.easy-edit-button[name="save"] {
+  background-color: var(--horizon);
+}
+.easy-edit-button[name="cancel"] {
+  background-color: var(--clay);
 }

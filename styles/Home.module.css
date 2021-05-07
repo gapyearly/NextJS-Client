@@ -2,7 +2,12 @@
   background-color: var(--aqua);
 }
 .home main {
-  width: 100%;
+  width: 100% !important;
+  max-width: 100vw;
+  min-height: 60vh;
+  /* TODO: sticky footer not working */
+  margin: 0 auto;
+  flex: 1;
 }
 .mainContainer {
   color: var(--seashell);
