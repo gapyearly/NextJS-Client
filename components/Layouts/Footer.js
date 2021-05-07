@@ -32,6 +32,26 @@ export default function Footer() {
           ></FaFacebookF>
         </a>
       </div>
+      <div className={styles.centerFooter}>
+        <p>
+          © Gapyearly 2021 | Built by{" "}
+          <a
+            href="https://github.com/NukeWolf"
+            target="_blank"
+            className="blueUnderline"
+          >
+            Alex
+          </a>{" "}
+          and{" "}
+          <a
+            className="blueUnderline"
+            href="https://www.arlenewang.me"
+            target="_blank"
+          >
+            Arlene
+          </a>
+        </p>
+      </div>
     </footer>
   );
 }
