@@ -43,7 +43,7 @@ export default function MentorSubmit() {
     <DashboardLayout>
       <h1 className={styles.title}>Mentor Profile</h1>
       <div className={styles.submissionContainer}>
-        <h2>
+        <h2 className={styles.userDashH2}>
           Check out examples of{" "}
           <Link href="../../community/mentorship">mentor profiles</Link>!
         </h2>

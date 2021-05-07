@@ -1,7 +1,7 @@
 import DashboardLayout from "@components/Layouts/DashboardLayout";
 import InterestDropdown from "@components/Forms/InterestsDropdown";
 import Interests from "@components/Dashboard/ProfileComponents/interests";
-
+import Pill from "@components/Buttons/Pill";
 import styles from "@styles/Dashboard/UserDashboard.module.css";
 
 import { useAuth } from "@contexts/auth";
@@ -29,11 +29,13 @@ export default function Profile() {
     }
     NProgress.done();
   };
+
   if (!isAuthenticated) return <DashboardLayout />;
   return (
-    <DashboardLayout>
+    <DashboardLayout className="userDash">
       <>
         <h1 className={styles.title}>Profile Overview</h1>
+        <h2 className={styles.userDashH2}>Click any field to edit/add info!</h2>
         <div className={styles.profile}>
           <img
             src={user.profilePicture.url}
@@ -41,7 +43,7 @@ export default function Profile() {
             className={styles.avatar}
           />
           <div className={styles.profileContainer}>
-            <h2>Name:</h2>
+            <h3>Name:</h3>
             <div className={styles.profileSection}>
               <EasyEdit
                 type={Types.TEXT}
@@ -49,32 +51,36 @@ export default function Profile() {
                   saveProfile(value, "firstName");
                 }}
                 value={user.firstName}
-                placeholder="Click to edit First Name"
-                instructions="First Name"
+                placeholder="Edit First Name"
+                // instructions="First Name"
+                className={styles.inline}
+                name="inline"
               />
+              <p>&nbsp;</p>
+              {/* space btwn first and last name */}
               <EasyEdit
                 type={Types.TEXT}
                 onSave={(value) => {
                   saveProfile(value, "lastName");
                 }}
                 value={user.lastName}
-                placeholder="Click to edit Last Name"
-                instructions="Last Name"
+                placeholder="Edit Last Name"
+                name="inline"
               />
             </div>
             <hr />
-            <h2>Role:</h2>
+            <h3>Role:</h3>
             <p>{user.role.name}</p>
             <hr />
-            <h2>Gap Year:</h2>
+            <h3>Gap Year:</h3>
             <EasyEdit
               type={Types.NUMBER}
               onSave={(value) => {
                 saveProfile(value, "gapYearStart");
               }}
               value={user.gapYearStart}
-              placeholder="Enter start of Gapyear"
-              instructions="Gap Year Start"
+              placeholder="+ Add start of gap year (e.g. 2020)"
+              // instructions="Gap Year Start"
             />
             <EasyEdit
               type={Types.NUMBER}
@@ -82,19 +88,19 @@ export default function Profile() {
                 saveProfile(value, "gapYearEnd");
               }}
               value={user.gapYearEnd}
-              placeholder="Enter end of Gapyear"
-              instructions="Gap Year End"
+              placeholder="+ Add end of gap year (e.g. 2021)"
+              // instructions="Gap Year End"
             />
             <hr />
-            <h2>University:</h2>
+            <h3>University:</h3>
             <EasyEdit
               type={Types.TEXT}
               onSave={(value) => {
                 saveProfile(value, "universityName");
               }}
               value={user.universityName}
-              placeholder="Enter university name"
-              instructions="University"
+              placeholder="+ Add university name"
+              // instructions="University"
             />
             <EasyEdit
               type={Types.NUMBER}
@@ -102,21 +108,21 @@ export default function Profile() {
                 saveProfile(value, "universityYear");
               }}
               value={user.universityYear}
-              placeholder="Enter graduation year"
-              instructions="Graduation Year"
+              placeholder="+ Add graduation year"
+              // instructions="Graduation Year"
             />
             <hr />
-            <h2>Location:</h2>
+            <h3>Location:</h3>
             <EasyEdit
               type={Types.TEXT}
               onSave={(value) => {
                 saveProfile(value, "location");
               }}
               value={user.location}
-              placeholder="Enter your location"
+              placeholder="+ Add location (state/province, country)"
             />
             <hr />
-            <h2>Instagram:</h2>
+            <h3>Instagram:</h3>
             <div className={styles.profileSection}>
               @
               <EasyEdit
@@ -125,11 +131,11 @@ export default function Profile() {
                   saveProfile(value, "instagram");
                 }}
                 value={user.instagram}
-                placeholder="Your Instagram Handle"
+                placeholder=" + Add username"
               />
             </div>
             <hr />
-            <h2>Interests:</h2>
+            <h3>Interests:</h3>
             <EasyEdit
               type={Types.TEXT}
               value={user.interests.length !== 0 ? user.interests : ""}
@@ -144,27 +150,28 @@ export default function Profile() {
               onSave={(value) => {
                 saveProfile(value, "interests");
               }}
-              placeholder="No Interests"
+              placeholder="+ Add interests"
             />
             <hr />
-            <h2>Language Interests:</h2>
+            <h3>Language Interests:</h3>
             <EasyEdit
               type={Types.TEXT}
               onSave={(value) => {
                 saveProfile(value, "language");
               }}
               value={user.language}
-              placeholder="Click to edit what languages your interested in."
+              placeholder="+ Add languages (e.g. Mandarin Chinese, French, Portuguese)"
             />
             <hr />
-            <h2>Bio:</h2>
+            <h3>Bio:</h3>
             <EasyEdit
               type={Types.TEXTAREA}
               onSave={(value) => {
                 saveProfile(value, "bio");
               }}
               value={user.bio}
-              placeholder="Click to create a bio."
+              maxLength="500"
+              placeholder="+ Add a bio (max. characters: 500)"
             />
           </div>
         </div>
