@@ -132,7 +132,7 @@ export default function Profile() {
             <h2>Interests:</h2>
             <EasyEdit
               type={Types.TEXT}
-              value={user.interests}
+              value={user.interests.length !== 0 ? user.interests : ""}
               displayComponent={<Interests />}
               editComponent={
                 <InterestDropdown
