@@ -28,6 +28,7 @@
     "react-avatar-editor": "^11.1.0",
     "react-chat-elements": "^10.14.0",
     "react-dom": "17.0.1",
+    "react-easy-edit": "^1.13.1",
     "react-hooks-helper": "^1.6.0",
     "react-html-parser": "^2.0.2",
     "react-icons": "^4.2.0",

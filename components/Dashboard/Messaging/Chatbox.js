@@ -49,56 +49,59 @@ export default function Chatrooms() {
       });
       // Filter all chatrooms and messages
       Promise.all(conversationPromises).then((data) => {
-        const formattedConvos = data.map(({ data }) => {
-          const recipient = data.participants.find((participant) => {
-            return user.id !== participant.id;
-          });
-          // Setup Chatitem object
-          const chatItem = {};
-          chatItem.id = data.id;
+        const formattedConvos = data
+          .map(({ data }) => {
+            const recipient = data.participants.find((participant) => {
+              return user.id !== participant.id;
+            });
+            if (!recipient) return undefined;
+            // Setup Chatitem object
+            const chatItem = {};
+            chatItem.id = data.id;
 
-          chatItem.title =
-            !recipient.firstName && !recipient.lastName
-              ? recipient.username
-              : getFullName(recipient);
-          chatItem.alt =
-            !recipient.firstName && !recipient.lastName
-              ? recipient.username
-              : getFullName(recipient);
-          chatItem.avatar = recipient.profilePicture
-            ? recipient.profilePicture.url
-            : null;
-          const messages = data.messages;
+            chatItem.title =
+              !recipient.firstName && !recipient.lastName
+                ? recipient.username
+                : getFullName(recipient);
+            chatItem.alt =
+              !recipient.firstName && !recipient.lastName
+                ? recipient.username
+                : getFullName(recipient);
+            chatItem.avatar = recipient.profilePicture
+              ? recipient.profilePicture.url
+              : null;
+            const messages = data.messages;
 
-          // Set Messages
-          let unread = 0;
-          chatItem.messages = messages.map((message) => {
-            console.log(message.read);
-            if (!message.read && message.sender !== user.id) {
-              unread += 1;
+            // Set Messages
+            let unread = 0;
+            chatItem.messages = messages.map((message) => {
+              console.log(message.read);
+              if (!message.read && message.sender !== user.id) {
+                unread += 1;
+              }
+              return {
+                position: message.sender === user.id ? "right" : "left",
+                // avatar:
+                //   message.sender === user.id
+                //     ? myAvatar
+                //     : recipient.profilePicture.url,
+                date: new Date(message.createdAt),
+                type: "text",
+                text: message.content,
+              };
+            });
+            chatItem.unread = unread;
+
+            if (messages.length !== 0) {
+              const recentMessage = messages[messages.length - 1];
+              chatItem.date = new Date(recentMessage.createdAt);
+              chatItem.subtitle = recentMessage.content;
+            } else {
+              chatItem.date = new Date(data.createdAt);
             }
-            return {
-              position: message.sender === user.id ? "right" : "left",
-              // avatar:
-              //   message.sender === user.id
-              //     ? myAvatar
-              //     : recipient.profilePicture.url,
-              date: new Date(message.createdAt),
-              type: "text",
-              text: message.content,
-            };
-          });
-          chatItem.unread = unread;
-
-          if (messages.length !== 0) {
-            const recentMessage = messages[messages.length - 1];
-            chatItem.date = new Date(recentMessage.createdAt);
-            chatItem.subtitle = recentMessage.content;
-          } else {
-            chatItem.date = new Date(data.createdAt);
-          }
-          return chatItem;
-        });
+            return chatItem;
+          })
+          .filter((convo) => convo);
         formattedConvos.sort((a, b) => {
           return b.date.getTime() - a.date.getTime();
         });
