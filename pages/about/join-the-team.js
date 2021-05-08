@@ -5,6 +5,8 @@ import PageTitle from "@components/PageTitle";
 import { useAlert } from "react-alert";
 import { useForm } from "react-hooks-helper";
 import strapi from "@api/strapi";
+import { NextSeo } from "next-seo";
+
 const defaultData = {
   fullName: "",
   email: "",
@@ -26,7 +28,7 @@ export default function JoinTeam() {
   };
   return (
     <>
-      <PageTitle>Join the Team</PageTitle>
+      <PageTitle title="Join the Team" />
       <Layout>
         <h2>JOIN US in changing how the world takes a gap year.</h2>
         <p className={styles.contactDescription}>

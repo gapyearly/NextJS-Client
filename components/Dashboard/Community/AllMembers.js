@@ -15,6 +15,7 @@ import { FaMapMarkerAlt, FaInstagram } from "react-icons/fa";
 import MessageModal from "@components/Dashboard/Messaging/MessageModal";
 
 import Link from "next/link";
+import Interests from "../ProfileComponents/interests";
 export default function Allmembers() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
@@ -69,8 +70,11 @@ export default function Allmembers() {
               {user.instagram}
             </a>
             <h4>Interests:</h4>
-            <p>{/* user.interests */}</p>
-
+            <p>
+              <Interests
+                interests={user.interests.map((intrest) => intrest.id)}
+              />
+            </p>
             <p>{user.language}</p>
             {user.bio}
           </div>

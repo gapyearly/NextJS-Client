@@ -69,19 +69,6 @@
   width: 80%;
   margin: 0 auto 1rem;
 }
-/* PROFILE OVERVIEW */
-.profile > h3 {
-  display: block;
-}
-.chatboxWindow {
-  max-width: 70vw;
-  height: 85vh;
-  box-shadow: 0px 3px 6px lightgray;
-  position: relative;
-  right: 0;
-  margin: 4rem auto;
-  border-radius: 10px;
-}
 
 /* SHARE YOUR STORY */
 .shareYourStory {
@@ -166,7 +153,35 @@
 .submissionContainer form {
   margin: 0 auto;
 }
-.submissionContainer h2 {
+.submissionContainer form > label {
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  display: inline-block;
+}
+
+.submissionContainer form textarea {
+  width: 100%;
+}
+.submissionContainer form input[type="text"] {
+  width: 60%;
+}
+.submissionContainer:last-child {
+  margin-bottom: 0.5rem;
+}
+.submissionContainer .rating {
+  display: block;
+}
+.submissionContainer .rating input {
+  width: 1.5rem;
+}
+.submissionContainer .radioBtn label {
+  display: block;
+}
+.submissionContainer .rating::after {
+  content: " /5";
+  font-size: 1rem;
+}
+.userDashH2 {
   text-align: center;
   font-weight: 500;
   font-size: 1.3rem;
@@ -196,9 +211,33 @@
   height: 10rem;
   margin-right: 4rem;
 }
+
 .profileContainer {
   width: 70%;
 }
 .profile hr {
   border-top: 1px solid var(--berry);
+}
+.profile > h3 {
+  display: block;
+}
+.chatboxWindow {
+  max-width: 70vw;
+  height: 85vh;
+  box-shadow: 0px 3px 6px lightgray;
+  position: relative;
+  right: 0;
+  margin: 4rem auto;
+  border-radius: 10px;
+}
+
+.profileSection {
+  display: flex;
+}
+.viewAll {
+  width: 100%;
+}
+.viewAll Button {
+  margin: auto;
+  display: block;
 }

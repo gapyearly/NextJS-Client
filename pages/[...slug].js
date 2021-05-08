@@ -5,10 +5,10 @@ import PageTitle from "@components/PageTitle";
 
 const DynamicPage = ({ pageInfo }) => {
   const { pageContents, title } = pageInfo;
-  console.log(pageContents);
+
   return (
     <>
-      <PageTitle>{title}</PageTitle>
+      <PageTitle title={title} />;
       <Layout>
         <RichText data={pageContents[0].content} />
       </Layout>

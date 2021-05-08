@@ -1,171 +1,181 @@
 import DashboardLayout from "@components/Layouts/DashboardLayout";
+import InterestDropdown from "@components/Forms/InterestsDropdown";
+import Interests from "@components/Dashboard/ProfileComponents/interests";
+import Pill from "@components/Buttons/Pill";
 import styles from "@styles/Dashboard/UserDashboard.module.css";
-import React, { useState, cloneElement } from "react";
+
 import { useAuth } from "@contexts/auth";
-import fullName from "@util/fullName";
-import { useForm } from "react-hooks-helper";
 import EasyEdit, { Types } from "react-easy-edit";
 import strapi from "@api/strapi";
+import React, { useRef } from "react";
+
+import { useAlert } from "react-alert";
+import NProgress from "nprogress";
+
+import Modal from "@components/Modal";
 
 export default function Profile() {
-  const [editProfile, setEditProfile] = useState(false);
-  const { user } = useAuth();
-  // Loadings user information only once.
+  const { user, updateUser, isAuthenticated } = useAuth();
+  const alert = useAlert();
 
+  const saveProfile = async (value, field) => {
+    NProgress.start();
+    try {
+      await strapi.put(`users/${user.id}`, { [field]: value });
+      await updateUser();
+      alert.success("Profile Updated");
+    } catch {
+      alert.error("Error: Could not update profile.");
+    }
+    NProgress.done();
+  };
+
+  if (!isAuthenticated) return <DashboardLayout />;
   return (
-    <DashboardLayout>
-      <StaticProfile user={user} />
+    <DashboardLayout className="userDash">
+      <>
+        <h1 className={styles.title}>Profile Overview</h1>
+        <h2 className={styles.userDashH2}>Click any field to edit/add info!</h2>
+        <div className={styles.profile}>
+          <img
+            src={user.profilePicture.url}
+            alt="Profile Avatar"
+            className={styles.avatar}
+          />
+          <div className={styles.profileContainer}>
+            <h3>Name:</h3>
+            <div className={styles.profileSection}>
+              <EasyEdit
+                type={Types.TEXT}
+                onSave={(value) => {
+                  saveProfile(value, "firstName");
+                }}
+                value={user.firstName}
+                placeholder="Edit First Name"
+                // instructions="First Name"
+                className={styles.inline}
+                name="inline"
+              />
+              <p>&nbsp;</p>
+              {/* space btwn first and last name */}
+              <EasyEdit
+                type={Types.TEXT}
+                onSave={(value) => {
+                  saveProfile(value, "lastName");
+                }}
+                value={user.lastName}
+                placeholder="Edit Last Name"
+                name="inline"
+              />
+            </div>
+            <hr />
+            <h3>Role:</h3>
+            <p>{user.role.name}</p>
+            <hr />
+            <h3>Gap Year:</h3>
+            <EasyEdit
+              type={Types.NUMBER}
+              onSave={(value) => {
+                saveProfile(value, "gapYearStart");
+              }}
+              value={user.gapYearStart}
+              placeholder="+ Add start of gap year (e.g. 2020)"
+              // instructions="Gap Year Start"
+            />
+            <EasyEdit
+              type={Types.NUMBER}
+              onSave={(value) => {
+                saveProfile(value, "gapYearEnd");
+              }}
+              value={user.gapYearEnd}
+              placeholder="+ Add end of gap year (e.g. 2021)"
+              // instructions="Gap Year End"
+            />
+            <hr />
+            <h3>University:</h3>
+            <EasyEdit
+              type={Types.TEXT}
+              onSave={(value) => {
+                saveProfile(value, "universityName");
+              }}
+              value={user.universityName}
+              placeholder="+ Add university name"
+              // instructions="University"
+            />
+            <EasyEdit
+              type={Types.NUMBER}
+              onSave={(value) => {
+                saveProfile(value, "universityYear");
+              }}
+              value={user.universityYear}
+              placeholder="+ Add graduation year"
+              // instructions="Graduation Year"
+            />
+            <hr />
+            <h3>Location:</h3>
+            <EasyEdit
+              type={Types.TEXT}
+              onSave={(value) => {
+                saveProfile(value, "location");
+              }}
+              value={user.location}
+              placeholder="+ Add location (state/province, country)"
+            />
+            <hr />
+            <h3>Instagram:</h3>
+            <div className={styles.profileSection}>
+              @
+              <EasyEdit
+                type={Types.TEXT}
+                onSave={(value) => {
+                  saveProfile(value, "instagram");
+                }}
+                value={user.instagram}
+                placeholder=" + Add username"
+              />
+            </div>
+            <hr />
+            <h3>Interests:</h3>
+            <EasyEdit
+              type={Types.TEXT}
+              value={user.interests.length !== 0 ? user.interests : ""}
+              displayComponent={<Interests />}
+              editComponent={
+                <InterestDropdown
+                  select={user.interests.map((id) => {
+                    return { value: id };
+                  })}
+                />
+              }
+              onSave={(value) => {
+                saveProfile(value, "interests");
+              }}
+              placeholder="+ Add interests"
+            />
+            <hr />
+            <h3>Language Interests:</h3>
+            <EasyEdit
+              type={Types.TEXT}
+              onSave={(value) => {
+                saveProfile(value, "language");
+              }}
+              value={user.language}
+              placeholder="+ Add languages (e.g. Mandarin Chinese, French, Portuguese)"
+            />
+            <hr />
+            <h3>Bio:</h3>
+            <EasyEdit
+              type={Types.TEXTAREA}
+              onSave={(value) => {
+                saveProfile(value, "bio");
+              }}
+              value={user.bio}
+              maxLength="500"
+              placeholder="+ Add a bio (max. characters: 500)"
+            />
+          </div>
+        </div>
+      </>
     </DashboardLayout>
   );
 }
-
-const StaticProfile = ({ user }) => {
-  const saveProfile = (field, value) => {};
-  return (
-    <>
-      <h1 className={styles.title}>Profile Overview</h1>
-      <div className={styles.profile}>
-        <img
-          src={user.profilePicture.url}
-          alt="Profile Avatar"
-          className={styles.avatar}
-        />
-        <div className={styles.profileContainer}>
-          <h2>Name:</h2>
-          <div>
-            <EasyEdit
-              type={Types.TEXT}
-              onSave={saveProfile}
-              value={user.firstName}
-              instructions="Edit First Name"
-            />
-            <EasyEdit
-              type={Types.TEXT}
-              onSave={saveProfile}
-              value={user.lastName}
-              instructions="Edit Last Name"
-            />
-          </div>
-          <hr />
-          <h2>Role:</h2>
-          <p>{user.role.name}</p>
-          <hr />
-          <h2>Gap Year:</h2>
-          <p className={styles.alignRight}>
-            {user.gapYearStart}
-            {user.gapYearStart && user.gapYearEnd && "-"}
-            {user.gapYearEnd}
-          </p>
-          <hr />
-          <h2>University:</h2>
-          <p>
-            {user.universityName} {user.universityYear}
-          </p>
-          <hr />
-          <h2>Location:</h2>
-          <p>{user.location}</p>
-          <hr />
-          <h2>Instagram:</h2>
-          <p>@{user.instagram}</p>
-          <hr />
-          <h2>Interests:</h2>
-          <p>{user.interests}</p>
-          <hr />
-          <h2>Language Interests:</h2>
-          <p>{user.language}</p>
-          <hr />
-          <h2>Bio:</h2>
-          <p>{user.bio}</p>
-        </div>
-      </div>
-    </>
-  );
-};
-const EditableProfile = ({ user }) => {
-  const [formData, setForm] = useForm(user);
-  console.log(formData);
-  return (
-    <>
-      <h1 className={styles.title}>Profile Overview</h1>
-      <div className={styles.profile}>
-        <img
-          src={user.profilePicture.url}
-          alt="Profile Avatar"
-          className={styles.avatar}
-        />
-        <div className={styles.profileContainer}>
-          <h2>Name:</h2>
-          <label htmlFor="firstName">
-            First Name
-            <input
-              id={styles.experienceTitle}
-              name="firstName"
-              onChange={setForm}
-            />
-          </label>
-          <label htmlFor="lastName">
-            Last Name
-            <input
-              id={styles.experienceTitle}
-              name="lastName"
-              onChange={setForm}
-            />
-          </label>
-          <hr />
-          <h2>Gap Year:</h2>
-          <label htmlFor="gapYearStart">
-            Gapyear Start
-            <input
-              id={styles.experienceTitle}
-              name="gapYearStart"
-              onChange={setForm}
-            />
-          </label>
-          <br />
-          <label htmlFor="gapYearEnd">
-            Gapyear End
-            <input
-              id={styles.experienceTitle}
-              name="gapYearEnd"
-              onChange={setForm}
-            />
-          </label>
-          <hr />
-          <h2>University:</h2>
-          <label htmlFor="universityName">
-            University
-            <input
-              id={styles.experienceTitle}
-              name="universityName"
-              onChange={setForm}
-            />
-          </label>
-          <br />
-          <label htmlFor="universityYear">
-            Graduation Year
-            <input
-              id={styles.experienceTitle}
-              name="universityYear"
-              onChange={setForm}
-            />
-          </label>
-          <hr />
-          <h2>Location:</h2>
-          <p>{user.location}</p>
-          <hr />
-          <h2>Instagram:</h2>
-          <p>@{user.instagram}</p>
-          <hr />
-          <h2>Interests:</h2>
-          <p>{user.interests}</p>
-          <hr />
-          <h2>Language Interests:</h2>
-          <p>{user.language}</p>
-          <hr />
-          <h2>Bio:</h2>
-          <p>{user.bio}</p>
-        </div>
-      </div>
-    </>
-  );
-};

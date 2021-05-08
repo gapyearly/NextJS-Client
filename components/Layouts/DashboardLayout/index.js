@@ -11,6 +11,7 @@ import { BsFillChatSquareFill, BsPersonFill } from "react-icons/bs";
 import Button from "@components/Buttons/Button";
 import { useAlert } from "react-alert";
 import React, { useState } from "react";
+import { NextSeo } from "next-seo";
 
 const Redirect = redirect("/login");
 const SignupRedirect = redirect("/signup/additional-info");
@@ -19,11 +20,17 @@ export default function DashboardLayout({ children }) {
   const { isAuthenticated, loading, user, logout } = useAuth();
   const [loggingOut, setLoggingOut] = useState(false);
   const router = useRouter();
-  if (loading) return <div></div>;
+  if (loading)
+    return (
+      <>
+        <NextSeo noindex={true} />
+      </>
+    );
   if (!isAuthenticated && !loggingOut) {
     window.sessionStorage.setItem("redirect", router.pathname);
     return (
       <Redirect>
+        <NextSeo noindex={true} />
         <div style={{ display: "grid", placeItems: "center" }}>
           <h1>Please sign in . . .</h1>
         </div>
@@ -31,15 +38,22 @@ export default function DashboardLayout({ children }) {
     );
   }
   if (!loggingOut && !user.signupCompletion) {
-    return <SignupRedirect />;
+    window.sessionStorage.setItem("redirect", router.pathname);
+    return (
+      <>
+        <NextSeo noindex={true} />
+        <SignupRedirect />
+      </>
+    );
   }
   return (
     <>
+      <NextSeo noindex={true} />
       <Navbar logout={logout} setLoggingOut={setLoggingOut} />
       <main className={styles.main}>
         <div className={styles.mainCenter}>{children}</div>
         <Button className={styles.exitDashBtn} color="greenBg" href="/">
-          <FaArrowLeft style={{ marginRight: 5 }} />
+          {/* <FaArrowLeft style={{ marginRight: 5 }} /> */}
           Back to Gapyearly
         </Button>
       </main>

@@ -43,7 +43,7 @@ export default function MentorSubmit() {
     <DashboardLayout>
       <h1 className={styles.title}>Mentor Profile</h1>
       <div className={styles.submissionContainer}>
-        <h2>
+        <h2 className={styles.userDashH2}>
           Check out examples of{" "}
           <Link href="../../community/mentorship">mentor profiles</Link>!
         </h2>
@@ -55,14 +55,16 @@ export default function MentorSubmit() {
           <div className={styles.selfFundedContainer}>
             <label> Was your gap year self-funded?</label>
             <div className={styles.radioBtn}>
-              <input
-                type="radio"
-                id="selfFunded"
-                value={true}
-                name="mentorFunding"
-                onChange={onValueChange}
-              />
-              <label htmlFor="selfFunded">Yes</label>
+              <label htmlFor="selfFunded">
+                <input
+                  type="radio"
+                  id="selfFunded"
+                  value={true}
+                  name="mentorFunding"
+                  onChange={onValueChange}
+                />
+                Yes
+              </label>
             </div>
             <div className={styles.radioBtn}>
               <label htmlFor="notSelfFunded">

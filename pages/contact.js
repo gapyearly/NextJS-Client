@@ -29,10 +29,7 @@ export default function Contact() {
   };
   return (
     <>
-      <Head>
-        <Title>Contact</Title>
-      </Head>
-      <PageTitle>Contact</PageTitle>
+      <PageTitle title="Contact" />
       <Layout>
         <p className={styles.contactDescription}>
           Questions? Suggestions? Feedback? Any ways we can help you?

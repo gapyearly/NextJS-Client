@@ -31,6 +31,11 @@ export default function PastExperiences({ data }) {
   const onClick = (data) => {
     setModalData(data);
     setModalVisibility(true);
+    router.push(
+      `/opportunities/past-experiences?exprience=${data.slug}`,
+      undefined,
+      { shallow: true }
+    );
   };
   const cards = data.map((experienceData) => {
     return (
@@ -44,10 +49,7 @@ export default function PastExperiences({ data }) {
   // TODO: Add Search Bar
   return (
     <>
-      <Head>
-        <Title>Past Experiences</Title>
-      </Head>
-      <PageTitle>Past Experiences</PageTitle>
+      <PageTitle title="Past Experiences" />
       <Layout className="galleryWidth">
         <ExperienceGallery>{cards}</ExperienceGallery>
         <Modal
@@ -55,6 +57,9 @@ export default function PastExperiences({ data }) {
           onClose={() => {
             setModalVisibility(false);
             setModalData(null);
+            router.push(`/opportunities/past-experiences`, undefined, {
+              shallow: true,
+            });
           }}
         >
           <ExperienceModalContent data={modalData} />

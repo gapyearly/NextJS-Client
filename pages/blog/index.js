@@ -13,7 +13,7 @@ export default function Blog({ data }) {
   // TODO: Add Search Bar
   return (
     <>
-      <PageTitle>Blog</PageTitle>
+      <PageTitle title="Blog" />
       <Layout className={styles.margin}>{cards}</Layout>
     </>
   );

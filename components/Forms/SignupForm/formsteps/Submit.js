@@ -41,7 +41,7 @@ export default function Submit({
     await strapi.put(`users/${user.id}`, {
       ...formData,
       signupCompletion: true,
-      profilePicture: data[0].id || null,
+      profilePicture: data[0].id || undefined,
       role: role || undefined,
     });
     await updateUser();

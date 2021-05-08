@@ -11,12 +11,7 @@ import { IoChatboxEllipses } from "react-icons/io5";
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <Title>Home</Title>
-      </Head>
-
-      <PageTitle>Gapyearly Connect</PageTitle>
-
+      <PageTitle title="Gapyearly Connect" />
       <Layout>
         <div className={styles.connectContainer}>
           <h2>

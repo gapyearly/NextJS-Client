@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import fullName from "@util/fullName";
 import Button from "@components/Buttons/Button";
 import { useRouter } from "next/router";
+import { BsPeopleFill } from "react-icons/bs";
 import strapi from "@api/strapi";
 // Uses user as a query parameter
 
@@ -33,7 +34,7 @@ export default function Profile() {
   console.log(loading, profile);
   return (
     <DashboardLayout>
-      <h1 className={styles.title}>Profile Overview</h1>
+      <h1 className={styles.title}>Member Profile</h1>
       {loading && (
         <div className={styles.profile}>
           <h2>Loading Profile . . .</h2>
@@ -121,6 +122,11 @@ const StaticProfile = ({ user }) => {
             </>
           )}
         </div>
+      </div>
+      <div className={styles.viewAll}>
+        <Button color="blueBg" href="/dashboard/community">
+          <BsPeopleFill style={{ marginRight: 6 }} /> View all members
+        </Button>
       </div>
     </>
   );
