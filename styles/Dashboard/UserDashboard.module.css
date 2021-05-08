@@ -222,7 +222,7 @@
   display: block;
 }
 .chatboxWindow {
-  max-width: 70vw;
+  width: 800px;
   height: 85vh;
   box-shadow: 0px 3px 6px lightgray;
   position: relative;
@@ -230,7 +230,21 @@
   margin: 4rem auto;
   border-radius: 10px;
 }
-
+/* @media (max-width: 600px) {
+  .chatboxWindow {
+    width: 300px;
+  }
+} */
+@media (max-width: 1100px) {
+  .chatboxWindow {
+    width: 600px;
+  }
+}
+@media (min-width: 1101px) {
+  .chatboxWindow {
+    width: 800px;
+  }
+}
 .profileSection {
   display: flex;
 }
