@@ -5,43 +5,44 @@ import DashboardLayout from "@components/Layouts/DashboardLayout";
 import strapi from "@api/strapi";
 import { useAlert } from "react-alert";
 import { useRouter } from "next/router";
-import Editor from "@components/RichtextEditor/Ckeditor";
+import ListEditor from "@components/RichtextEditor/List";
 import React, { useState } from "react";
 import Link from "next/link";
-export default function ExperienceSubmit(formData, setForm) {
-  const {
-    title,
-    slug,
-    cost,
-    funRating,
-    personalGrowthRating,
-    activitiesDone,
-    dayToDayExperiences,
-    tips,
-    memorableMoment,
-    lessonsLearned,
-    image,
-    category,
-    location,
-    submittedBy,
-    links,
-    href,
-    // idk if href goes here
-  } = formData;
+import { useForm } from "react-hooks-helper";
+export default function ExperienceSubmit() {
+  // const {
+  //   title,
+  //   slug,
+  //   cost,
+  //   funRating,
+  //   personalGrowthRating,
+  //   activitiesDone,
+  //   dayToDayExperiences,
+  //   tips,
+  //   memorableMoment,
+  //   lessonsLearned,
+  //   image,
+  //   category,
+  //   location,
+  //   submittedBy,
+  //   links,
+  //   href,
+  //   // idk if href goes here
+  // } = formData;
+
   const { user } = useAuth();
   const alert = useAlert();
   const router = useRouter();
-  const [summary, setSummary] = useState();
-  const [struggles, setStruggles] = useState();
+  const [dayToDay, setDayToDay] = useState();
 
+  const [formData, setForm] = useForm({});
+  console.log(formData);
   const onSubmit = async () => {
-    if (!summary || !struggles) {
+    if (!dayToDay) {
       return alert.error("Please enter required fields.");
     }
     try {
-      await strapi.put(`users/${user.id}`, {
-        mentorInfo: { summary, struggles },
-      });
+      await strapi.post(`experiences/${user.id}`);
       alert.success("Experience review succesfully submited: pending approval");
       router.push("/dashboard/submission");
     } catch {
@@ -54,7 +55,7 @@ export default function ExperienceSubmit(formData, setForm) {
     <DashboardLayout>
       <h1 className={styles.title}>Experience Review</h1>
       <div className={styles.submissionContainer}>
-        <h2>
+        <h2 className={styles.userDashH2}>
           Check out examples of{" "}
           <Link href="../../opportunities/past-experiences">
             past experiences
@@ -63,84 +64,222 @@ export default function ExperienceSubmit(formData, setForm) {
         </h2>
 
         <form id="mentorForm" onSubmit={onSubmit} action="javascript:void(0);">
-          <label htmlFor="experienceTitle"></label>
+          <label htmlFor="experienceTitle">Name of Experience*</label>
           <input
-            id={styles.experienceTitle}
+            id="experienceTitle"
             name="experienceTitle"
-            value={title}
+            value={formData.title}
+            type="text"
             onChange={setForm}
+            required
           />
 
-          <label htmlFor="experienceLocation"></label>
+          <label htmlFor="experienceLocation">Location*</label>
           <input
-            id={styles.experienceLocation}
+            id="experienceLocation"
             name="experienceLocation"
-            value={location}
+            type="text"
+            value={formData.location}
             onChange={setForm}
+            required
           />
-          <label htmlFor="experienceFunRating"></label>
-          <input
-            id={styles.experienceFunRating}
-            name="experienceFunRating"
-            value={funRating}
-            onChange={setForm}
-          />
-
-          <label htmlFor="experiencePersonalGrowthRating"></label>
-          <input
-            id={styles.experiencePersonalGrowthRating}
-            name="experiencePersonalGrowthRating"
-            value={personalGrowthRating}
-            onChange={setForm}
-          />
-
-          <label htmlFor="experienceCost"></label>
-          <input
-            id={styles.experienceCost}
-            name="experienceCost"
-            value={cost}
-            onChange={setForm}
-          />
-
-          <label htmlFor="experienceCategory"></label>
-          <input
-            id={styles.experienceCategory}
-            name="experienceCategory"
-            value={category}
-            onChange={setForm}
-          />
-
-          <label htmlFor="experienceImage"></label>
-          <input
-            id={styles.experienceImage}
-            name="experienceImage"
-            value={image}
-            onChange={setForm}
-          />
-
-          <label htmlFor="experienceActivitiesDone"></label>
-          <textarea
-            id={styles.experienceActivitiesDone}
-            name="experienceActivitiesDone"
-            value={activitiesDone}
-            onChange={setForm}
-          />
-
-          <label htmlFor="experienceTitle"></label>
-          <input
-            id={styles.experienceTitle}
-            name="experienceTitle"
-            value={title}
-            onChange={setForm}
-          />
-          {/* required, label namews, input types, placeholders */}
-          <label htmlFor="activities">
-            What did you do over your gap year, by the month?*
+          <label htmlFor="experienceFunRating">
+            How would you rate your fun out of 5?*
           </label>
-          <Editor onChange={setSummary} />
+          <span className={styles.rating}>
+            <input
+              id="experienceFunRating"
+              name="funRating"
+              value={formData.funRating}
+              onChange={setForm}
+              type="number"
+              min="1"
+              max="5"
+              required
+            />
+          </span>
 
-          <label htmlFor="struggles">What were your struggles?*</label>
-          <Editor onChange={setStruggles} />
+          <label htmlFor="experiencePersonalGrowthRating">
+            How would you rate your personal growth out of 5?*
+          </label>
+          <span className={styles.rating}>
+            <input
+              id="experiencePersonalGrowthRating"
+              name="personalGrowthRating"
+              value={formData.personalGrowthRating}
+              onChange={setForm}
+              required
+              min="1"
+              max="5"
+              type="number"
+            />
+          </span>
+
+          <label htmlFor="experienceCost">
+            Let’s talk money. Did you earn or spend money on this experience
+            overall?
+          </label>
+          <div className={styles.radioBtn}>
+            <label htmlFor="experienceCostFree">
+              {" "}
+              <input
+                id="experienceCostFree"
+                name="cost"
+                value="Free"
+                onChange={setForm}
+                type="radio"
+                required
+              />
+              Free
+            </label>
+            <label htmlFor="experienceCostCost_Money">
+              <input
+                id="experienceCostCost_Money"
+                name="cost"
+                value="Cost_Money"
+                onChange={setForm}
+                type="radio"
+              />
+              Cost Money
+            </label>
+
+            <label htmlFor="experienceCostBroke_Even">
+              {" "}
+              <input
+                id="experienceCostBroke_Even"
+                name="cost"
+                value="Broke_Even"
+                onChange={setForm}
+                type="radio"
+              />
+              Broke Even
+            </label>
+            <label htmlFor="experienceCostEarned_Money">
+              <input
+                id="experienceCostEarned_Money"
+                name="cost"
+                value="Earned_Money"
+                onChange={setForm}
+                type="radio"
+              />
+              Earned Money
+            </label>
+          </div>
+
+          <label htmlFor="experienceCategory">
+            How would you categorize your experience?*
+          </label>
+          <div className={styles.radioBtn}>
+            <label htmlFor="experienceCategoryTravel">
+              <input
+                id="experienceCategoryTravel"
+                name="category"
+                value="travel"
+                onChange={setForm}
+                type="radio"
+                required
+              />
+              Travel
+            </label>
+
+            <label htmlFor="experienceCategoryProgram">
+              <input
+                id="experienceCategoryProgram"
+                name="category"
+                value="programs"
+                onChange={setForm}
+                type="radio"
+              />
+              Program (incl. classes)
+            </label>
+
+            <label htmlFor="experienceCategoryPaidWork">
+              <input
+                id="experienceCategoryPaidWork"
+                name="category"
+                value="paidWork"
+                onChange={setForm}
+                type="radio"
+              />
+              Paid work (incl. internship)
+            </label>
+
+            <label htmlFor="experienceCategoryVolunteer">
+              <input
+                id="experienceCategoryVolunteer"
+                name="category"
+                value="volunteer"
+                onChange={setForm}
+                type="radio"
+              />
+              Volunteer
+            </label>
+
+            <label htmlFor="experienceCategoryEntrepreneurship">
+              <input
+                id="experienceCategoryEntrepreneurship"
+                name="category"
+                value="entrepreneurship"
+                onChange={setForm}
+                type="radio"
+              />
+              Entrepreneurship
+            </label>
+          </div>
+
+          <label htmlFor="experienceImage">
+            Upload a picture that best represents your experience!* (Please
+            ensure you have permission to use your image.)
+          </label>
+          <input
+            required
+            id="experienceImage"
+            name="experienceImage"
+            value={formData.image}
+            onChange={setForm}
+            type="file"
+          />
+
+          <label htmlFor="experienceActivitiesDone">
+            What types of activities were done?*
+          </label>
+          <textarea
+            id="experienceActivitiesDone"
+            name="activitiesDone"
+            value={formData.activitiesDone}
+            onChange={setForm}
+            required
+          />
+
+          <label htmlFor="dayToDay">What was your day-to-day like?*</label>
+          <ListEditor onChange={setDayToDay} />
+          {/* required, label namews, input types, placeholders */}
+          <label htmlFor="topTips">
+            Your top tips for anyone doing this experience?
+          </label>
+          <textarea
+            id="experienceTopTips"
+            name="topTips"
+            value={formData.topTips}
+            onChange={setForm}
+            placeholder="Advice about preparation, things to do, safety..."
+          />
+          <label htmlFor="memorableMoment">Most memorable moment?</label>
+          <textarea
+            id="experienceMemorableMoment"
+            name="memorableMoment"
+            value={formData.memorableMoment}
+            onChange={setForm}
+          />
+          <label htmlFor="lessonsLearned">
+            Lessons learned/experience gained?
+          </label>
+          <textarea
+            id="experienceLessonsLearned"
+            name="lessonsLearned"
+            value={formData.lessonsLearned}
+            onChange={setForm}
+          />
 
           <Button color="greenBg">Submit</Button>
           {/* alert, submit action */}

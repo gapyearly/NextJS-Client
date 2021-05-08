@@ -11,7 +11,7 @@
   --lightred: rgba(248, 93, 72, 0.13);
   --lightyellow: rgba(255, 223, 157, 0.13);
   --lightgreen: rgba(0, 169, 152, 0.13);
-  --lightblue: rgba((11, 95, 225, 0.13));
+  --lightblue: rgba(11, 95, 225, 0.13);
 }
 
 * {
@@ -99,7 +99,11 @@ textarea {
   font-family: inherit;
   border-radius: 5px;
 }
-
+input[type="text"],
+input[type="file"],
+textarea {
+  display: block;
+}
 /* DROPDOWN BC ITS STUPID AND UGLY */
 .dd-list-item:hover {
   background-color: var(--horizon) !important;

@@ -21,6 +21,7 @@ export default function Test() {
     //     id: "608ef42a55b3a961b431375e",
     //   }}
     // />
-    <Interests interests={["wewe"]} />
+    // <Interests interests={["wewe"]} />
+    <SignupForm />
   );
 }

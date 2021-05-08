@@ -153,6 +153,34 @@
 .submissionContainer form {
   margin: 0 auto;
 }
+.submissionContainer form > label {
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  display: inline-block;
+}
+
+.submissionContainer form textarea {
+  width: 100%;
+}
+.submissionContainer form input[type="text"] {
+  width: 60%;
+}
+.submissionContainer:last-child {
+  margin-bottom: 0.5rem;
+}
+.submissionContainer .rating {
+  display: block;
+}
+.submissionContainer .rating input {
+  width: 1.5rem;
+}
+.submissionContainer .radioBtn label {
+  display: block;
+}
+.submissionContainer .rating::after {
+  content: " /5";
+  font-size: 1rem;
+}
 .userDashH2 {
   text-align: center;
   font-weight: 500;
@@ -205,4 +233,11 @@
 
 .profileSection {
   display: flex;
+}
+.viewAll {
+  width: 100%;
+}
+.viewAll Button {
+  margin: auto;
+  display: block;
 }

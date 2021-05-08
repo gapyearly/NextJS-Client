@@ -53,7 +53,7 @@ export default function DashboardLayout({ children }) {
       <main className={styles.main}>
         <div className={styles.mainCenter}>{children}</div>
         <Button className={styles.exitDashBtn} color="greenBg" href="/">
-          <FaArrowLeft style={{ marginRight: 5 }} />
+          {/* <FaArrowLeft style={{ marginRight: 5 }} /> */}
           Back to Gapyearly
         </Button>
       </main>

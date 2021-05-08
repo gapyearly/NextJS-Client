@@ -55,14 +55,16 @@ export default function MentorSubmit() {
           <div className={styles.selfFundedContainer}>
             <label> Was your gap year self-funded?</label>
             <div className={styles.radioBtn}>
-              <input
-                type="radio"
-                id="selfFunded"
-                value={true}
-                name="mentorFunding"
-                onChange={onValueChange}
-              />
-              <label htmlFor="selfFunded">Yes</label>
+              <label htmlFor="selfFunded">
+                <input
+                  type="radio"
+                  id="selfFunded"
+                  value={true}
+                  name="mentorFunding"
+                  onChange={onValueChange}
+                />
+                Yes
+              </label>
             </div>
             <div className={styles.radioBtn}>
               <label htmlFor="notSelfFunded">
