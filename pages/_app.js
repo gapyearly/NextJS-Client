@@ -68,7 +68,7 @@ function MyApp({ Component, pageProps }) {
         openGraph={{
           type: "website",
           locale: "en_IE",
-          url: "https://www.url.ie/",
+          url: "https://www.gapyearly.com",
           site_name: "gapyearly",
           images: [{ url: "/images/gapyearly-avatar.png" }],
           title: "gapyearly — Welcome to Gapyearly.",
