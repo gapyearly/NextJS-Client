@@ -23,12 +23,13 @@ export default function TeamCard({ image, fullName, bio, location }) {
 
   return (
     <div className={styles.teamCardContainer}>
-      <div>
-        <img src={image.url} alt={image.alt}></img>
+      <img src={image.url} alt={image.alt}></img>
+
+      <div className={styles.teamCardText}>
+        <h2>{fullName}</h2>
+        <h3>{location}</h3>
+        <p>{bio}</p>
       </div>
-      <h2>{fullName}</h2>
-      <h3>{location}</h3>
-      <p>{bio}</p>
     </div>
   );
 }

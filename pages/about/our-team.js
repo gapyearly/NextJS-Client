@@ -1,7 +1,7 @@
 import Layout from "@components/Layouts/Layout";
 import Button from "@components/Buttons/Button";
 import btnstyles from "@components/Buttons/Button.module.css";
-import styles from "@components/Forms/form.module.css";
+import styles from "@components/MasonryGallery/TeamCard.module.css";
 import PageTitle from "@components/PageTitle";
 import Link from "next/link";
 import DashboardLayout from "@components/Layouts/DashboardLayout";
@@ -26,17 +26,14 @@ export default function OurTeam({ data }) {
     <>
       <PageTitle title="Meet Our Team" />
       <Layout>
-        <div className={styles.teamContainer}>
-          <p>
-            We always say Gapyearly is made “for gappers, by gappers”… so, who
-            are they? Our team is comprised of past and present gappers who are
-            passionate about the benefits of gap years, among other things. You
-            can get to know the team below, and if you’re interested in applying
-            for a position you can do so <Link href="/join-the-team">here</Link>
-            !
-          </p>
-          {cards}
-        </div>
+        <p>
+          We always say Gapyearly is made “for gappers, by gappers”… so, who are
+          they? Our team is comprised of past and present gappers who are
+          passionate about the benefits of gap years, among other things. You
+          can get to know the team below, and if you’re interested in applying
+          for a position you can do so <Link href="/join-the-team">here</Link>!
+        </p>
+        <div className={styles.teamContainer}>{cards}</div>
       </Layout>
     </>
   );

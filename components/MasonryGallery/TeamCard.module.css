@@ -1,0 +1,30 @@
+.teamCardContainer img {
+  overflow: hidden;
+  object-fit: cover;
+  width: 15em;
+  height: 15em;
+  border-radius: 5px;
+  flex: 1;
+  margin-right: 1.5rem;
+}
+.teamCardContainer {
+  display: flex;
+  margin-bottom: 2rem;
+}
+@media (max-width: 800px) {
+  .teamCardContainer {
+    flex-direction: column;
+    flex: unset;
+  }
+  .teamCardContainer img {
+    margin: 0 auto;
+    flex: unset;
+    margin-bottom: 1.5rem;
+  }
+}
+.teamCardText {
+  flex: 2;
+}
+.teamContainer {
+  margin: 2rem 0;
+}
