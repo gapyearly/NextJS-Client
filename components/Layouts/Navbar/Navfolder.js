@@ -6,9 +6,9 @@ import styles from "./Navbar.module.css";
  */
 export default function Navfolder({ title, href, children }) {
   return (
-    <span className={styles.dropdown}>
+    <div className={styles.dropdown}>
       <a className={styles.navLink}>{title}</a>
       <div className={styles.dropdownContent}>{children}</div>
-    </span>
+    </div>
   );
 }
