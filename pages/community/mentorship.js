@@ -8,6 +8,7 @@ import Title from "@components/Title";
 import shuffle from "@util/shuffleArray";
 
 export default function Mentorship({ data }) {
+  console.log(data);
   let index = 0;
   const cards = data
     .filter((user) => user.mentorInfo && user.mentorInfo.approved)
@@ -19,6 +20,7 @@ export default function Mentorship({ data }) {
         lastName,
         universityName,
         universityYear,
+        profilePicture,
       }) => {
         index += 1;
         const bgColor =
@@ -29,7 +31,6 @@ export default function Mentorship({ data }) {
             : index % 4 === 2
             ? "green"
             : "blue";
-        console.log(bgColor);
         return (
           <MentorCard
             key={id}
@@ -41,6 +42,7 @@ export default function Mentorship({ data }) {
             summary={mentorInfo.summary}
             struggles={mentorInfo.struggles}
             bgColor={bgColor}
+            profilePicture={profilePicture}
           ></MentorCard>
         );
       }

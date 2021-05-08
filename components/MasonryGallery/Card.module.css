@@ -52,6 +52,24 @@
 .mentorCard ul {
   margin: 0;
 }
+.mentorCard .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mentorCard .headerProfile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.mentorCard .header h2 {
+  margin-bottom: 0;
+}
+.mentorCard .profilePicture {
+  border-radius: 50%;
+  width: 2rem;
+  margin-right: 0.5rem;
+}
 .mentorCard h3 {
   margin-top: 0.1rem;
   font-weight: 600;
@@ -70,6 +88,9 @@
 .messageBtn Button {
   transition: 1s ease;
 }
+.selfFundedContainer button {
+  font-size: 0.7rem;
+}
 .mentorCard:hover + .messageBtn,
 .messageBtn:hover {
   display: block;
@@ -78,10 +99,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-.mentorCardOverlay:hover {
-  background-color: rgba(87, 5, 23, 0.5);
-}
 
+.mentorCardOverlay:hover {
+  background-color: rgba(87, 5, 23, 0.4);
+}
 .parentReflectionCard {
   padding: 0.9em;
   transition: 0.15s ease-in;

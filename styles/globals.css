@@ -9,9 +9,9 @@
   --gray: rgba(0, 0, 0, 0.35);
   --navbarHeight: 3.9rem;
   --lightred: rgba(248, 93, 72, 0.13);
-  --lightyellow: #fef8ea;
-  --lightgreen: #ddf1ea;
-  --lightblue: #dee7f3;
+  --lightyellow: rgba(255, 223, 157, 0.13);
+  --lightgreen: rgba(0, 169, 152, 0.13);
+  --lightblue: rgba((11, 95, 225, 0.13));
 }
 
 * {
