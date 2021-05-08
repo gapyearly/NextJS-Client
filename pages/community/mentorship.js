@@ -50,10 +50,7 @@ export default function Mentorship({ data }) {
   shuffle(cards);
   return (
     <>
-      <Head>
-        <Title>Mentorship</Title>
-      </Head>
-      <PageTitle>Mentorship Team</PageTitle>
+      <PageTitle title="Mentorship Team" />
       <Layout className="galleryWidth">
         <h2>
           We’re a group of students who have recently been in your shoes… We

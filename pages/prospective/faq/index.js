@@ -17,10 +17,7 @@ export default function FAQ({ data }) {
   console.log(data);
   return (
     <>
-      <Head>
-        <Title>FAQs</Title>
-      </Head>
-      <PageTitle>FAQs</PageTitle>
+      <PageTitle title="FAQs" />
       <Layout>
         <Accordion
           className={styles.accordion}

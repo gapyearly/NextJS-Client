@@ -34,10 +34,7 @@ export default function ParentReflections({ data }) {
   // TODO: Add Search Bar
   return (
     <>
-      <Head>
-        <Title>Parent Reflections</Title>
-      </Head>
-      <PageTitle>Parent Reflections</PageTitle>
+      <PageTitle title="Parent Reflections" />
       <Layout className="galleryWidth">
         <h2>Advice from parents, to parents–put your mind to rest!</h2>
         <Gallery>{cards}</Gallery>

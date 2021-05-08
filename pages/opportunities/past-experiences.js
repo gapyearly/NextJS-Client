@@ -49,10 +49,7 @@ export default function PastExperiences({ data }) {
   // TODO: Add Search Bar
   return (
     <>
-      <Head>
-        <Title>Past Experiences</Title>
-      </Head>
-      <PageTitle>Past Experiences</PageTitle>
+      <PageTitle title="Past Experiences" />
       <Layout className="galleryWidth">
         <ExperienceGallery>{cards}</ExperienceGallery>
         <Modal

@@ -7,6 +7,8 @@ import Link from "next/link";
 import DashboardLayout from "@components/Layouts/DashboardLayout";
 import strapi from "@api/strapi";
 import TeamCard from "@components/MasonryGallery/TeamCard";
+import { NextSeo } from "next-seo";
+
 export default function OurTeam({ data }) {
   console.log(data);
   const cards = data.TeamMemberBio.map(({ fullName, image, bio, location }) => {
@@ -22,7 +24,7 @@ export default function OurTeam({ data }) {
   });
   return (
     <>
-      <PageTitle>Meet Our Team</PageTitle>
+      <PageTitle title="Meet Our Team" />
       <Layout>
         <div className={styles.teamContainer}>
           <p>

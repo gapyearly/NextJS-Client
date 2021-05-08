@@ -21,10 +21,7 @@ export default function FactsAndFigures({ data }) {
   );
   return (
     <>
-      <Head>
-        <Title>Facts and Figures</Title>
-      </Head>
-      <PageTitle>Facts and Figures</PageTitle>
+      <PageTitle title="Facts and Figures" />
       <Layout className="galleryWidth">
         <h2>
           Still on the fence? Get cold, hard facts on how gap years help all

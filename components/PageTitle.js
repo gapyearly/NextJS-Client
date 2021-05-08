@@ -1,8 +1,12 @@
-export default function PageTitle({ children }) {
+import { NextSeo } from "next-seo";
+export default function PageTitle({ title }) {
   return (
-    <header>
-      <h1 className="header">{children}</h1>
-    </header>
+    <>
+      <NextSeo title={title} />
+      <header>
+        <h1 className="header">{title}</h1>
+      </header>
+    </>
     // currently in global css, could pass in colours but ehhhhhhhhh low priority
   );
 }
