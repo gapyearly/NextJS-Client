@@ -62,6 +62,20 @@ function MyApp({ Component, pageProps }) {
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
+      <DefaultSeo
+        title="gapyearly — Welcome to Gapyearly."
+        description="A free gap year guide written by gap year students. See what gap year students have done & plan a life-changing year with our gap year mentors."
+        openGraph={{
+          type: "website",
+          locale: "en_IE",
+          url: "https://www.url.ie/",
+          site_name: "gapyearly",
+          images: [{ url: "/images/gapyearly-avatar.png" }],
+          title: "gapyearly — Welcome to Gapyearly.",
+          description:
+            "A free gap year guide written by gap year students. See what gap year students have done & plan a life-changing year with our gap year mentors.",
+        }}
+      />
       <AlertProvider template={AlertTemplate} {...options}>
         <AuthProvider>
           <Component {...pageProps} />

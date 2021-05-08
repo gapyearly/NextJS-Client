@@ -31,6 +31,7 @@ export default function DashboardLayout({ children }) {
     );
   }
   if (!loggingOut && !user.signupCompletion) {
+    window.sessionStorage.setItem("redirect", router.pathname);
     return <SignupRedirect />;
   }
   return (
