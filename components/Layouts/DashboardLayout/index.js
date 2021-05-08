@@ -91,10 +91,10 @@ const Navbar = ({ logout, setLoggingOut }) => {
         Profile Overview
       </NavItem>
 
-      <NavItem href="/dashboard/settings">
+      {/* <NavItem href="/dashboard/settings">
         <RiSettings3Fill className={styles.navIcon} />
         Account Settings
-      </NavItem>
+      </NavItem> */}
       <NavItem
         href="/"
         onClick={() => {

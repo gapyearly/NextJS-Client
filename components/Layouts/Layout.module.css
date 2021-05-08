@@ -5,14 +5,16 @@
 - dashboardWidth: for user dashboard, which uses margin to avoid the nav at the side */
 
 .layout main {
-  min-height: 70vh;
   max-width: 100vw;
-  min-height: 60vh;
   /* TODO: sticky footer not working */
   margin: 0 auto;
-  flex: 1;
-}
 
+  flex: 1;
+  height: 100%;
+}
+.layout {
+  height: 100%;
+}
 @media (max-width: 599px) {
   .layout main {
     width: 85%;
