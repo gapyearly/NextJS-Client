@@ -63,14 +63,14 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <DefaultSeo
-        title="gapyearly — Welcome to Gapyearly."
+        title="Welcome to Gapyearly."
+        titleTemplate="%s | Gapyearly"
         description="A free gap year guide written by gap year students. See what gap year students have done & plan a life-changing year with our gap year mentors."
         openGraph={{
           type: "website",
-          locale: "en_IE",
           url: "https://www.gapyearly.com",
-          site_name: "gapyearly",
-          images: [{ url: "/images/gapyearly-avatar.png" }],
+          site_name: "Gapyearly",
+          images: [{ url: "/images/discover-your-direction.jpg" }],
           title: "gapyearly — Welcome to Gapyearly.",
           description:
             "A free gap year guide written by gap year students. See what gap year students have done & plan a life-changing year with our gap year mentors.",
