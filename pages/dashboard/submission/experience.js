@@ -6,43 +6,32 @@ import strapi from "@api/strapi";
 import { useAlert } from "react-alert";
 import { useRouter } from "next/router";
 import ListEditor from "@components/RichtextEditor/List";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { useForm } from "react-hooks-helper";
 export default function ExperienceSubmit() {
-  // const {
-  //   title,
-  //   slug,
-  //   cost,
-  //   funRating,
-  //   personalGrowthRating,
-  //   activitiesDone,
-  //   dayToDayExperiences,
-  //   tips,
-  //   memorableMoment,
-  //   lessonsLearned,
-  //   image,
-  //   category,
-  //   location,
-  //   submittedBy,
-  //   links,
-  //   href,
-  //   // idk if href goes here
-  // } = formData;
-
-  const { user } = useAuth();
   const alert = useAlert();
   const router = useRouter();
   const [dayToDay, setDayToDay] = useState();
-
   const [formData, setForm] = useForm({});
+
+  const imageRef = useRef();
+  if (imageRef.current && imageRef.current.files) {
+    formData.image = imageRef.current.files[0];
+  }
+
   console.log(formData);
-  const onSubmit = async () => {
+  const onSubmit = async (e) => {
+    e.preventDefault();
     if (!dayToDay) {
       return alert.error("Please enter required fields.");
     }
     try {
-      await strapi.post(`experiences/${user.id}`);
+      const imageData = new FormData();
+      imageData.append("files", formData.image);
+      const ctx = await strapi.post("upload", imageData);
+      const image = ctx.data;
+      await strapi.post(`experiences`, { ...formData, dayToDay, image });
       alert.success("Experience review succesfully submited: pending approval");
       router.push("/dashboard/submission");
     } catch {
@@ -63,11 +52,11 @@ export default function ExperienceSubmit() {
           !
         </h2>
 
-        <form id="mentorForm" onSubmit={onSubmit} action="javascript:void(0);">
+        <form id="mentorForm" onSubmit={onSubmit}>
           <label htmlFor="experienceTitle">Name of Experience*</label>
           <input
             id="experienceTitle"
-            name="experienceTitle"
+            name="title"
             value={formData.title}
             type="text"
             onChange={setForm}
@@ -77,7 +66,7 @@ export default function ExperienceSubmit() {
           <label htmlFor="experienceLocation">Location*</label>
           <input
             id="experienceLocation"
-            name="experienceLocation"
+            name="location"
             type="text"
             value={formData.location}
             onChange={setForm}
@@ -235,9 +224,8 @@ export default function ExperienceSubmit() {
             required
             id="experienceImage"
             name="experienceImage"
-            value={formData.image}
-            onChange={setForm}
             type="file"
+            ref={imageRef}
           />
 
           <label htmlFor="experienceActivitiesDone">
