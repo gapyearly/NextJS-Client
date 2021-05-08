@@ -2,7 +2,7 @@ import { NextSeo } from "next-seo";
 export default function PageTitle({ title }) {
   return (
     <>
-      <NextSeo title={title} />
+      <NextSeo title={title} opengraph={{ title: `${title} | Gapyearly` }} />
       <header>
         <h1 className="header">{title}</h1>
       </header>
