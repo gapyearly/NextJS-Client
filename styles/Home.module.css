@@ -36,10 +36,10 @@
   background-image: url("/images/IMG_0006.JPG");
   width: 100%;
   background-repeat: no-repeat;
-  height: calc(100vh - var(--navbarHeight));
+  height: 100vh;
   background-position: center;
   position: relative;
-
+  background-size: cover;
   /* background-color: rgba(70, 0, 42, 0.35);
   background-blend-mode: overlay; */
 }
@@ -58,13 +58,43 @@
   margin: 0;
   /* min-width: 100vw; */
   max-height: 100vh;
-  min-height: 80vh;
+
   position: absolute;
   bottom: 0;
   right: 0;
   object-fit: cover;
   object-position: right;
   /* opacity: 0.65; */
+}
+
+@media (max-width: 600px) {
+  .hero img {
+    /* max-height: 60vh;
+    min-height: 50vh; */
+    min-width: none;
+    height: 300px;
+    width: 100vw;
+  }
+  .hero h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 1000px) {
+  .hero img {
+    /* max-height: 60vh;
+    min-height: 50vh; */
+    min-width: none;
+    height: 400px;
+    width: 100vw;
+  }
+  .hero h1 {
+    font-size: 40px;
+  }
+}
+@media (min-width: 1001px) {
+  .hero img {
+    min-height: 60vh;
+  }
 }
 .highlight {
   color: var(--sunlight);

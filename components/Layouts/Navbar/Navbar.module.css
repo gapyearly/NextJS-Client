@@ -38,11 +38,23 @@
   background-color: var(--berry);
   color: var(--seashell);
   min-width: 10rem;
+  height: min-content;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   padding: 10px;
   border-radius: 5px;
 }
-
+.dropdownContent::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%);
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  border-bottom: 2rem solid var(--bery);
+}
 .dropdownContent a:not(:last-child) {
   margin-bottom: 0.5rem;
 }
