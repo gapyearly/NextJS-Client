@@ -7,8 +7,8 @@ import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import styles from "@styles/Blog.module.css";
 
-export default function BlogPost({ blogData }) {
-  const { content, title, author, profile, submittedBy } = blogData;
+export default function GWGReflection({ gwgData }) {
+  const { content, title, author, profile, submittedBy } = gwgData;
   const name = {};
   if (author) {
     name.name = `${author.firstName} ${author.lastName}`;
@@ -19,8 +19,8 @@ export default function BlogPost({ blogData }) {
   }
 
   return (
-    <Layout>
-      <Link href="/girls-who-gap" passHref>
+    <Layout className="article">
+      <Link href="/prospective/girls-who-gap" passHref>
         <div className={styles.clickable}>
           <FaArrowLeft size="13" /> <a>Back to all reflections</a>
         </div>
@@ -39,7 +39,7 @@ export default function BlogPost({ blogData }) {
         </div>
         <RichText data={content}></RichText>
       </article>
-      <Link href="/girls-who-gap" passHref>
+      <Link href="/prospective/girls-who-gap" passHref>
         <div className={styles.clickable}>
           <FaArrowLeft size="13" /> <a>Back to all reflections</a>
         </div>
@@ -52,7 +52,7 @@ export default function BlogPost({ blogData }) {
 
 export async function getStaticProps({ params }) {
   // We have the required page data, pass it to the page component
-  const { data } = await strapi.get(`/girls-who-gap?slug=${params.slug}`);
+  const { data } = await strapi.get(`/girls-who-gaps?slug=${params.slug}`);
 
   return {
     props: {

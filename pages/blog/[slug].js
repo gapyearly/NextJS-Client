@@ -17,7 +17,7 @@ export default function BlogPost({ blogData }) {
   }
 
   return (
-    <Layout>
+    <Layout className="article">
       <Link href="/blog" passHref>
         <div className={styles.clickable}>
           <FaArrowLeft size="13" /> <a>Back to all posts</a>
