@@ -46,7 +46,7 @@ export default function ParentReflectionSubmit() {
       <div className={styles.submissionContainer}>
         <h2 className={styles.userDashH2}>
           Check out examples of{" "}
-          <Link href="../../prospectice/parent-references">
+          <Link href="../../prospective/parent-references">
             parent references
           </Link>
           !
