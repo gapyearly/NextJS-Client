@@ -35,6 +35,9 @@ class MyDocument extends Document {
           />
         </Head>
         <body>
+          <noscript>
+            You need to enable JavaScript to run this website.
+          </noscript>
           <Main />
           <NextScript />
           <div id="modal-root"></div>
