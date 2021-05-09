@@ -60,6 +60,7 @@ export default function InterestDropdown({ onChange, setParentValue, select }) {
           },
           headerTitle: {
             fontWeight: 500,
+            lineHeight: 1.7,
           },
           header: {
             fontSize: "1rem",

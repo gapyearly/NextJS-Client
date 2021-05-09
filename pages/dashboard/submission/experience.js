@@ -222,7 +222,7 @@ export default function ExperienceSubmit() {
           <input
             required
             id="experienceImage"
-            name="experienceImage"
+            name="image"
             type="file"
             ref={imageRef}
           />

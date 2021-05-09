@@ -82,6 +82,8 @@
   }
   .exitDashBtn {
     position: absolute;
-    right: 30%;
+    right: 10%;
+    font-size: 12px;
+    padding: 4px 6px;
   }
 }
