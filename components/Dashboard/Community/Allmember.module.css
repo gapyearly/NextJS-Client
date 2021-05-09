@@ -64,9 +64,7 @@
   margin-bottom: 0.1rem;
 }
 .userDescription Button {
-  position: absolute;
-  right: 0;
-  top: 0;
+  display: block;
 }
 .userDescription {
   position: relative;

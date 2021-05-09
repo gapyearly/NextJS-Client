@@ -33,8 +33,9 @@ export default function MessageModal({ show, recipient, onClose }) {
     NProgress.done();
     onClose();
   };
+  if (!show) return <></>;
   return (
-    <Modal show="true" title="Start a conversation" onClose={onClose}>
+    <Modal show={show} title="Start a conversation" onClose={onClose}>
       <div className=""></div>
       <p>Send your first message to {fullName(recipient)}</p>
       <br />

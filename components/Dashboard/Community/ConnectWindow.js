@@ -4,14 +4,12 @@ import Switch from "rc-switch";
 import "rc-switch/assets/index.css";
 import strapi from "@api/strapi";
 import { useAlert } from "react-alert";
-import { useRouter } from "next/router";
 import { useAuth } from "@contexts/auth";
 import React, { useState } from "react";
 import NProgress from "nprogress";
 export default function Connect() {
   const { user, updateUser } = useAuth();
   const alert = useAlert();
-  const router = useRouter();
   const [disabled, setDisabled] = useState(false);
 
   const onClick = async (value) => {
@@ -33,7 +31,6 @@ export default function Connect() {
     setDisabled(false);
     NProgress.done();
   };
-  console.log(user && user.gapyearlyConnect && user.gapyearlyConnect.enabled);
   return (
     <>
       <Switch
