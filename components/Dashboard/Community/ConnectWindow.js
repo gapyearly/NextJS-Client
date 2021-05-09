@@ -22,7 +22,11 @@ export default function Connect() {
         gapyearlyConnect: { enabled: value },
       });
       await updateUser();
-      alert.success("Matching enabled!");
+      if (value === true) {
+        alert.success("Enabled matching!");
+      } else {
+        alert.success("Disabled matching!");
+      }
     } catch {
       alert.error("Could not enable. Please refresh or contact admin.");
     }
@@ -32,19 +36,23 @@ export default function Connect() {
   console.log(user && user.gapyearlyConnect && user.gapyearlyConnect.enabled);
   return (
     <>
-      <h3>Match me in future monthly rounds!</h3>
-
-      <p>
-        Gapyearly will use your profile info to match you with another gapper.
-        Find out more about matching <Link href="/community/connect">here</Link>
-        !
-      </p>
-      <h3 className={styles.dateBanner}>Next match releases: April 25th</h3>
       <Switch
         onClick={onClick}
         checked={user && user.gapyearlyConnect && user.gapyearlyConnect.enabled}
         disabled={disabled}
       />
+      <h3>Match me in future monthly rounds!</h3>
+      <p>
+        When the switch is on, you'll be included in the upcoming rounds of
+        massages.
+      </p>
+      <p>
+        Gapyearly will use your profile info to match you with another gapper.
+        Find out more about matching <Link href="/community/connect">here</Link>
+        !
+      </p>
+
+      <h3 className={styles.dateBanner}>Next match releases: April 25th</h3>
     </>
   );
 }
