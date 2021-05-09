@@ -1,6 +1,6 @@
 import Layout from "@components/Layouts/Layout";
 import ReactHtmlParser from "react-html-parser";
-import styles from "styles/Accordion.module.css";
+import styles from "@styles/Blog.module.css";
 import PageTitle from "@components/PageTitle";
 import strapi from "@api/strapi";
 import Head from "next/head";
@@ -19,22 +19,40 @@ export default function GirlsWhoGap({ data }) {
       name.name = submittedBy;
       name.user = false;
     }
-    console.log(gwgData.author);
-    console.log(name.name);
+
     return (
-      <li key={gwgData.slug}>
-        <Link href={`/prospective/girls-who-gap/${gwgData.slug}`}>
-          <a>{name.name}</a>
-        </Link>
-      </li>
+      <>
+        <h3 key={gwgData.slug}>
+          <Link href={`/prospective/girls-who-gap/${gwgData.slug}`}>
+            <a className="noUnderline">{gwgData.title}</a>
+          </Link>
+        </h3>
+        <h4>
+          by{" "}
+          <Link href="/">
+            <a>{name.name}</a>
+          </Link>
+        </h4>
+      </>
     );
   });
   return (
     <>
       <PageTitle title="Girls Who Gap" />
       <Layout>
-        dasd
-        <ul>{list}</ul>
+        <h2>
+          {" "}
+          It can be especially daunting to travel alone as a girl; parents may
+          also feel much more nervous about letting their daughters go to
+          foreign countries. Despite initial fears, female gappers and their
+          parents across the board speak to the strength, confidence, and
+          leadership girls gain through taking charge of their lives for a year.
+        </h2>
+        <h2>
+          We've gathered a few reflections that you could use as resources while
+          making your choice!
+        </h2>
+        <div className={styles.reflectionContainer}>{list}</div>
       </Layout>
     </>
   );

@@ -27,62 +27,85 @@ export default function Allmembers() {
   }, []);
   console.log(users);
   const AccordionItems = users.map((user) => {
+    console.log(user);
     return (
-      <AccordionItem key={user.username} className={styles.accordion__item}>
-        <AccordionItemHeading className={styles.accordion__heading}>
-          <AccordionItemButton className={styles.accordion__button}>
-            <div>
-              <div className={styles.avatar}>
-                <Avatar
-                  src={user.profilePicture && user.profilePicture.url}
-                  alt={"profile"}
-                  size="small"
-                  type="circle"
-                />
-              </div>
-              <h3>{fullName(user)}</h3>
-              <RolePill role={user.role.name} />
+      <div className={styles.allMembersContainer} key="">
+        <AccordionItem key={user.username} className={styles.accordion__item}>
+          <AccordionItemHeading className={styles.accordion__heading}>
+            <AccordionItemButton className={styles.accordion__button}>
               <div>
-                <FaMapMarkerAlt styles={{ color: "var(--clay)" }} />{" "}
-                {user.location}
+                <div className={styles.avatar}>
+                  <Avatar
+                    src={user.profilePicture && user.profilePicture.url}
+                    alt={"profile"}
+                    size="small"
+                    type="circle"
+                  />
+                </div>
+                <h3>{fullName(user)}</h3>
+                <RolePill role={user.role.name} />
+                {user.location && (
+                  <div>
+                    <FaMapMarkerAlt className={styles.pinIcon} />{" "}
+                    {user.location}
+                  </div>
+                )}
               </div>
-            </div>
-            <p className={styles.alignRight}>
-              {user.gapYearStart}
-              {user.gapYearStart && user.gapYearEnd && "-"}
-              {user.gapYearEnd}
-            </p>
-          </AccordionItemButton>
-        </AccordionItemHeading>
-        <AccordionItemPanel className={styles.userDescription}>
-          {/* <MessageModal recipient={{firstName:{user.firstName}
+              <p className={styles.alignRight}>
+                {user.gapYearStart}
+                {user.gapYearStart && user.gapYearEnd && "-"}
+                {user.gapYearEnd}
+              </p>
+            </AccordionItemButton>
+          </AccordionItemHeading>
+          <AccordionItemPanel className={styles.userDescription}>
+            {/* <MessageModal recipient={{firstName:{user.firstName}
         }} /> */}
-          <p>
-            {user.universityName} {user.universityYear}
-          </p>
-          <div className={styles.instagram}>
-            <FaInstagram />
-            <a
-              href={`https://instagram.com/${user.instagram}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {user.instagram}
-            </a>
-            <h4>Interests:</h4>
             <p>
-              <Interests
-                interests={user.interests.map((intrest) => intrest.id)}
-              />
+              {user.universityName} {user.universityYear}
             </p>
-            <p>{user.language}</p>
-            {user.bio}
-          </div>
-        </AccordionItemPanel>
-      </AccordionItem>
+
+            {user.instagram && (
+              <>
+                <FaInstagram className={styles.igIcon} />
+                <a
+                  href={`https://instagram.com/${user.instagram}`}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  @{user.instagram}
+                </a>
+              </>
+            )}
+            {user.interests.length > 0 && (
+              <>
+                <h4>Interests:</h4>
+                <p>
+                  <Interests
+                    interests={user.interests.map((interest) => interest.id)}
+                  />
+                </p>
+              </>
+            )}
+
+            {user.language && (
+              <>
+                <h4>Language Interests:</h4>
+                <p>{user.language}</p>
+              </>
+            )}
+            {user.bio && (
+              <>
+                <h4>Bio:</h4>
+                {user.bio}
+              </>
+            )}
+          </AccordionItemPanel>
+        </AccordionItem>
+      </div>
     );
   });
-
+  console.log();
   return (
     <Accordion className={styles.accordion} allowZeroExpanded>
       {AccordionItems}

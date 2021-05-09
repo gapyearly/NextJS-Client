@@ -11,3 +11,11 @@
   cursor: pointer;
   margin-top: 1.5em;
 }
+.reflectionContainer h3 a {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.reflectionContainer h4 {
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
