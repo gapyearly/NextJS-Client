@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 import strapi from "api/strapi";
+import { useMediaQuery } from "react-responsive";
 
 const DropdownMultiple = dynamic(
   async () => {
@@ -38,6 +39,8 @@ export default function InterestDropdown({ onChange, setParentValue, select }) {
     if (onChange) return onChange(item);
     if (setParentValue) setParentValue(item.map((interest) => interest.value));
   };
+  const isMobile = useMediaQuery({ query: `(max-width:500px)` });
+  const isTinyPhone = useMediaQuery({ query: `(max-width:400px)` });
   return (
     interests.length !== 0 && (
       <DropdownMultiple
@@ -50,7 +53,7 @@ export default function InterestDropdown({ onChange, setParentValue, select }) {
         select={select}
         styles={{
           wrapper: {
-            width: "25rem",
+            width: isTinyPhone ? "15rem" : isMobile ? "20rem" : "25rem",
             marginBottom: "0.7rem",
             marginTop: "0.3rem",
             borderRadius: 5,

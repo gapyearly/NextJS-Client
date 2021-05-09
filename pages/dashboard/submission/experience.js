@@ -1,6 +1,5 @@
 import Button from "@components/Buttons/Button";
 import styles from "@styles/Dashboard/UserDashboard.module.css";
-import { useAuth } from "@contexts/auth";
 import DashboardLayout from "@components/Layouts/DashboardLayout";
 import strapi from "@api/strapi";
 import { useAlert } from "react-alert";

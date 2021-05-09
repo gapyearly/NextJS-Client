@@ -25,12 +25,7 @@
   transition: 0.1s ease;
   cursor: pointer;
 }
-.navItem:active,
-.navItem:focus,
-.navItem:hover,
-.onHover {
-  background-color: var(--clay);
-}
+
 .navItem a {
   box-shadow: none;
   font-weight: 400;
@@ -56,4 +51,37 @@
   display: block;
   width: 100%;
   /* not sure if this acc does anything */
+}
+@media (max-width: 800px) {
+  .navbar {
+    width: 3rem;
+  }
+  .main {
+    margin-left: 3rem;
+    /* dependent on width of nabar */
+  }
+  .navItem {
+    margin: 0;
+    padding: 0.9rem 1rem;
+    display: flex;
+    align-items: center;
+    color: var(--seashell);
+    transition: 0.1s ease;
+    cursor: pointer;
+  }
+}
+.navItem:active,
+.navItem:focus,
+.navItem:hover,
+.onHover {
+  background-color: var(--clay);
+}
+@media (max-width: 500px) {
+  .mainCenter {
+    margin-top: 3rem;
+  }
+  .exitDashBtn {
+    position: absolute;
+    right: 30%;
+  }
 }

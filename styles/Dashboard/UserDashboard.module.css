@@ -1,3 +1,8 @@
+.title {
+  margin-top: 2rem;
+}
+
+/* COMMUNITY HUB*/
 .communityContainer {
   padding: 2rem 0;
   text-align: left;
@@ -8,13 +13,6 @@
   display: flex;
   justify-content: space-evenly;
 }
-
-.title {
-  margin-top: 2rem;
-}
-
-/* COMMUNITY HUB*/
-
 .buttonSigns > Button {
   display: block;
   margin-bottom: 1.2rem;
@@ -68,6 +66,19 @@
 .askWindow textarea {
   width: 80%;
   margin: 0 auto 1rem;
+}
+@media (max-width: 800px) {
+  .communityContainer {
+    flex-direction: column;
+    padding-left: 10%;
+  }
+  .window {
+    width: 70vw;
+    box-shadow: 0px 3px 6px lightgray;
+    position: relative;
+    right: 0;
+    overflow-y: auto;
+  }
 }
 
 /* SHARE YOUR STORY */
@@ -149,6 +160,7 @@
 .bold {
   font-weight: 700;
 }
+
 /*  SUBMIT */
 .submissionContainer form {
   margin: 0 auto;
@@ -194,11 +206,17 @@
 .selfFundedContainer {
   margin-bottom: 0.5rem;
 }
+@media (max-width: 500px) {
+  .submissionContainer form {
+    max-width: 70vw;
+    margin: 0 auto;
+  }
+}
+
 /* PROFILE OVERVIEW */
 .profile {
   padding: 2rem 0;
-
-  width: 45em;
+  width: 100%;
   margin: auto;
   display: flex;
   flex-direction: row;
@@ -221,6 +239,16 @@
 .profile > h3 {
   display: block;
 }
+@media (max-width: 500px) {
+  .profile {
+    flex-direction: column;
+    align-items: center;
+  }
+  .avatar {
+    margin-right: 0;
+  }
+}
+
 .chatboxWindow {
   width: 800px;
   height: 85vh;
