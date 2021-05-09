@@ -8,10 +8,12 @@ import ListEditor from "@components/RichtextEditor/List";
 import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { useForm } from "react-hooks-helper";
+import NProgress from "nprogress";
+
 export default function ExperienceSubmit() {
   const alert = useAlert();
   const router = useRouter();
-  const [dayToDay, setDayToDay] = useState();
+  const [dayToDayExperiences, setDayToDayExperiences] = useState();
   const [formData, setForm] = useForm({});
 
   const imageRef = useRef();
@@ -22,20 +24,26 @@ export default function ExperienceSubmit() {
   console.log(formData);
   const onSubmit = async (e) => {
     e.preventDefault();
-    if (!dayToDay) {
+    if (!dayToDayExperiences) {
       return alert.error("Please enter required fields.");
     }
+    NProgress.start();
     try {
       const imageData = new FormData();
       imageData.append("files", formData.image);
       const ctx = await strapi.post("upload", imageData);
       const image = ctx.data;
-      await strapi.post(`experiences`, { ...formData, dayToDay, image });
+      await strapi.post(`experiences`, {
+        ...formData,
+        dayToDayExperiences,
+        image,
+      });
       alert.success("Experience review succesfully submited: pending approval");
       router.push("/dashboard/submission");
     } catch {
       alert.error("Could not submit. Please refresh or contact admin.");
     }
+    NProgress.done();
   };
 
   // Styled in ckeditor styles
@@ -238,8 +246,10 @@ export default function ExperienceSubmit() {
             required
           />
 
-          <label htmlFor="dayToDay">What was your day-to-day like?*</label>
-          <ListEditor onChange={setDayToDay} />
+          <label htmlFor="dayToDayExperiences">
+            What was your day-to-day like?*
+          </label>
+          <ListEditor onChange={setDayToDayExperiences} />
           {/* required, label namews, input types, placeholders */}
           <label htmlFor="topTips">
             Your top tips for anyone doing this experience?
