@@ -13,7 +13,7 @@ import RolePill from "../ProfileComponents/role";
 import { Avatar } from "react-chat-elements";
 import { FaMapMarkerAlt, FaInstagram } from "react-icons/fa";
 import MessageModal from "@components/Dashboard/Messaging/MessageModal";
-
+import Button from "@components/Buttons/Button";
 import Link from "next/link";
 import Interests from "../ProfileComponents/interests";
 export default function Allmembers() {
@@ -59,8 +59,7 @@ export default function Allmembers() {
             </AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel className={styles.userDescription}>
-            {/* <MessageModal recipient={{firstName:{user.firstName}
-        }} /> */}
+            <Button color="greenBg">Message</Button>
             <p>
               {user.universityName} {user.universityYear}
             </p>

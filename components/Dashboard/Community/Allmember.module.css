@@ -63,3 +63,11 @@
   margin-top: 0.5rem;
   margin-bottom: 0.1rem;
 }
+.userDescription Button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.userDescription {
+  position: relative;
+}
