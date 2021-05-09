@@ -17,7 +17,7 @@ export default function Chatrooms() {
   if (input.current) input.current.input.value = myMessage;
   // Apply styling to currently selected conversation.
 
-  const newConversations = conversations.forEach((chatroom) => {
+  conversations.forEach((chatroom) => {
     if (chatroom.id === currentChatroomId) {
       chatroom.className = "current";
     } else {
@@ -119,6 +119,10 @@ export default function Chatrooms() {
   const chatroom = conversations.find(
     (chatItem) => currentChatroomId === chatItem.id
   );
+  if (chatroom) {
+    strapi.put(`chatrooms/readMessages/${currentChatroomId}`);
+    chatroom.unread = 0;
+  }
 
   return (
     <>
@@ -128,7 +132,7 @@ export default function Chatrooms() {
         <ChatList
           className="chat-list"
           dataSource={conversations}
-          onClick={(chatItem) => {
+          onClick={async (chatItem) => {
             setCurrentChatroomId(chatItem.id);
           }}
         />

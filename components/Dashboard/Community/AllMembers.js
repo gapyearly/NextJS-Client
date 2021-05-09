@@ -13,11 +13,11 @@ import RolePill from "../ProfileComponents/role";
 import { Avatar } from "react-chat-elements";
 import { FaMapMarkerAlt, FaInstagram } from "react-icons/fa";
 import MessageModal from "@components/Dashboard/Messaging/MessageModal";
-
-import Link from "next/link";
+import Button from "@components/Buttons/Button";
 import Interests from "../ProfileComponents/interests";
 export default function Allmembers() {
   const [users, setUsers] = useState([]);
+  const [modal, setModal] = useState({ show: false });
   useEffect(() => {
     const fetchUsers = async () => {
       const { data } = await strapi.get("users");
@@ -25,9 +25,7 @@ export default function Allmembers() {
     };
     fetchUsers();
   }, []);
-  console.log(users);
   const AccordionItems = users.map((user) => {
-    console.log(user);
     return (
       <div className={styles.allMembersContainer} key="">
         <AccordionItem key={user.username} className={styles.accordion__item}>
@@ -59,8 +57,6 @@ export default function Allmembers() {
             </AccordionItemButton>
           </AccordionItemHeading>
           <AccordionItemPanel className={styles.userDescription}>
-            {/* <MessageModal recipient={{firstName:{user.firstName}
-        }} /> */}
             <p>
               {user.universityName} {user.universityYear}
             </p>
@@ -100,15 +96,30 @@ export default function Allmembers() {
                 {user.bio}
               </>
             )}
+            <Button
+              color="greenBg"
+              onClick={() => {
+                setModal({ show: true, recipient: user });
+              }}
+            >
+              Message
+            </Button>
           </AccordionItemPanel>
         </AccordionItem>
       </div>
     );
   });
-  console.log();
   return (
-    <Accordion className={styles.accordion} allowZeroExpanded>
-      {AccordionItems}
-    </Accordion>
+    <>
+      <Accordion className={styles.accordion} allowZeroExpanded>
+        {AccordionItems}
+      </Accordion>
+      <MessageModal
+        {...modal}
+        onClose={() => {
+          setModal({ show: false });
+        }}
+      />
+    </>
   );
 }
