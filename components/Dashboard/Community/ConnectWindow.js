@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "@styles/Dashboard/UserDashboard.module.css";
 import Switch from "rc-switch";
+import "rc-switch/assets/index.css";
 import strapi from "@api/strapi";
 import { useAlert } from "react-alert";
 import { useRouter } from "next/router";
@@ -37,14 +38,13 @@ export default function Connect() {
     <>
       <h3>Match me in future monthly rounds!</h3>
 
-      <Switch onChange={onValueChange} onClick={onClick} />
-
       <p>
         Gapyearly will use your profile info to match you with another gapper.
         Find out more about matching <Link href="/community/connect">here</Link>
         !
       </p>
       <h3 className={styles.dateBanner}>Next match releases: April 25th</h3>
+      <Switch onChange={onValueChange} onClick={onClick} />
     </>
   );
 }
