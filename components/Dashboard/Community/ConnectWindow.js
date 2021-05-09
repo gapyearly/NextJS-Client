@@ -9,31 +9,27 @@ import { useAuth } from "@contexts/auth";
 import React, { useState } from "react";
 import NProgress from "nprogress";
 export default function Connect() {
-  const { user } = useAuth();
+  const { user, updateUser } = useAuth();
   const alert = useAlert();
   const router = useRouter();
-  const [enabled, setEnabled] = useState(false);
-  const onValueChange = (e) => {
-    setEnabled(e.target.value);
-    console.log(setEnabled(e.target.value));
-  };
+  const [disabled, setDisabled] = useState(false);
 
-  const onClick = async (event) => {
-    event.preventDefault();
-    console.log(enabled);
+  const onClick = async (value) => {
+    setDisabled(true);
     try {
       NProgress.start();
       await strapi.put(`users/${user.id}`, {
-        connectInfo: { enabled },
+        gapyearlyConnect: { enabled: value },
       });
+      await updateUser();
       alert.success("Matching enabled!");
-      router.push("/dashboard/submission");
     } catch {
       alert.error("Could not enable. Please refresh or contact admin.");
     }
+    setDisabled(false);
     NProgress.done();
   };
-
+  console.log(user && user.gapyearlyConnect && user.gapyearlyConnect.enabled);
   return (
     <>
       <h3>Match me in future monthly rounds!</h3>
@@ -44,7 +40,11 @@ export default function Connect() {
         !
       </p>
       <h3 className={styles.dateBanner}>Next match releases: April 25th</h3>
-      <Switch onChange={onValueChange} onClick={onClick} />
+      <Switch
+        onClick={onClick}
+        checked={user && user.gapyearlyConnect && user.gapyearlyConnect.enabled}
+        disabled={disabled}
+      />
     </>
   );
 }
