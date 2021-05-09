@@ -25,6 +25,7 @@ body {
   font-size: calc(0.83em + 0.2vw);
   color: var(--berry);
   background-color: var(--seashell);
+  height: 100%;
 }
 
 body {

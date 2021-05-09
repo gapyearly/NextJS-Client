@@ -1,53 +1,49 @@
 import Button from "@components/Buttons/Button";
 import styles from "@styles/Dashboard/UserDashboard.module.css";
-import { useAuth } from "@contexts/auth";
 import DashboardLayout from "@components/Layouts/DashboardLayout";
 import strapi from "@api/strapi";
 import { useAlert } from "react-alert";
 import { useRouter } from "next/router";
 import ListEditor from "@components/RichtextEditor/List";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Link from "next/link";
 import { useForm } from "react-hooks-helper";
-export default function ExperienceSubmit() {
-  // const {
-  //   title,
-  //   slug,
-  //   cost,
-  //   funRating,
-  //   personalGrowthRating,
-  //   activitiesDone,
-  //   dayToDayExperiences,
-  //   tips,
-  //   memorableMoment,
-  //   lessonsLearned,
-  //   image,
-  //   category,
-  //   location,
-  //   submittedBy,
-  //   links,
-  //   href,
-  //   // idk if href goes here
-  // } = formData;
+import NProgress from "nprogress";
 
-  const { user } = useAuth();
+export default function ExperienceSubmit() {
   const alert = useAlert();
   const router = useRouter();
-  const [dayToDay, setDayToDay] = useState();
-
+  const [dayToDayExperiences, setDayToDayExperiences] = useState();
   const [formData, setForm] = useForm({});
+
+  const imageRef = useRef();
+  if (imageRef.current && imageRef.current.files) {
+    formData.image = imageRef.current.files[0];
+  }
+
   console.log(formData);
-  const onSubmit = async () => {
-    if (!dayToDay) {
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    if (!dayToDayExperiences) {
       return alert.error("Please enter required fields.");
     }
+    NProgress.start();
     try {
-      await strapi.post(`experiences/${user.id}`);
+      const imageData = new FormData();
+      imageData.append("files", formData.image);
+      const ctx = await strapi.post("upload", imageData);
+      const image = ctx.data;
+      await strapi.post(`experiences`, {
+        ...formData,
+        dayToDayExperiences,
+        image,
+      });
       alert.success("Experience review succesfully submited: pending approval");
       router.push("/dashboard/submission");
     } catch {
       alert.error("Could not submit. Please refresh or contact admin.");
     }
+    NProgress.done();
   };
 
   // Styled in ckeditor styles
@@ -63,11 +59,11 @@ export default function ExperienceSubmit() {
           !
         </h2>
 
-        <form id="mentorForm" onSubmit={onSubmit} action="javascript:void(0);">
+        <form id="mentorForm" onSubmit={onSubmit}>
           <label htmlFor="experienceTitle">Name of Experience*</label>
           <input
             id="experienceTitle"
-            name="experienceTitle"
+            name="title"
             value={formData.title}
             type="text"
             onChange={setForm}
@@ -77,7 +73,7 @@ export default function ExperienceSubmit() {
           <label htmlFor="experienceLocation">Location*</label>
           <input
             id="experienceLocation"
-            name="experienceLocation"
+            name="location"
             type="text"
             value={formData.location}
             onChange={setForm}
@@ -234,10 +230,9 @@ export default function ExperienceSubmit() {
           <input
             required
             id="experienceImage"
-            name="experienceImage"
-            value={formData.image}
-            onChange={setForm}
+            name="image"
             type="file"
+            ref={imageRef}
           />
 
           <label htmlFor="experienceActivitiesDone">
@@ -251,8 +246,10 @@ export default function ExperienceSubmit() {
             required
           />
 
-          <label htmlFor="dayToDay">What was your day-to-day like?*</label>
-          <ListEditor onChange={setDayToDay} />
+          <label htmlFor="dayToDayExperiences">
+            What was your day-to-day like?*
+          </label>
+          <ListEditor onChange={setDayToDayExperiences} />
           {/* required, label namews, input types, placeholders */}
           <label htmlFor="topTips">
             Your top tips for anyone doing this experience?

@@ -31,7 +31,8 @@ export default function OurTeam({ data }) {
           they? Our team is comprised of past and present gappers who are
           passionate about the benefits of gap years, among other things. You
           can get to know the team below, and if you’re interested in applying
-          for a position you can do so <Link href="/join-the-team">here</Link>!
+          for a position you can do so{" "}
+          <Link href="/about/join-the-team">here</Link>!
         </p>
         <div className={styles.teamContainer}>{cards}</div>
       </Layout>

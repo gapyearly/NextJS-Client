@@ -12,9 +12,11 @@ import Button from "@components/Buttons/Button";
 import { useAlert } from "react-alert";
 import React, { useState } from "react";
 import { NextSeo } from "next-seo";
+import { useMediaQuery } from "react-responsive";
 
 const Redirect = redirect("/login");
 const SignupRedirect = redirect("/signup/additional-info");
+const MAX_WIDTH_QUERY = "800px";
 
 export default function DashboardLayout({ children }) {
   const { isAuthenticated, loading, user, logout } = useAuth();
@@ -49,7 +51,7 @@ export default function DashboardLayout({ children }) {
   return (
     <>
       <NextSeo noindex={true} />
-      <Navbar logout={logout} setLoggingOut={setLoggingOut} />
+      <DesktopNavbar logout={logout} setLoggingOut={setLoggingOut} />
       <main className={styles.main}>
         <div className={styles.mainCenter}>{children}</div>
         <Button className={styles.exitDashBtn} color="greenBg" href="/">
@@ -61,40 +63,41 @@ export default function DashboardLayout({ children }) {
   );
 }
 
-const Navbar = ({ logout, setLoggingOut }) => {
+const DesktopNavbar = ({ logout, setLoggingOut }) => {
   const alert = useAlert();
+  const isMobile = useMediaQuery({ query: `(max-width:${MAX_WIDTH_QUERY})` });
   return (
     <div className={styles.navbar}>
       <Link href="/">
         <img
-          src="/images/lightlogo.png"
+          src={
+            isMobile
+              ? "/images/Gapyearly_Light_LogoSymbol.svg"
+              : "/images/lightlogo.png"
+          }
           layout="fill"
           alt="Gapyearly Logo"
           className={styles.logo}
         />
       </Link>
-      <NavItem href="/dashboard/messaging">
+      <NavItem href="/dashboard/messaging" label="Messaging">
         <HiMail className={styles.navIcon} />
-        Messaging
       </NavItem>
 
-      <NavItem href="/dashboard/community">
+      <NavItem href="/dashboard/community" label="Community Hub">
         <FaGlobe className={styles.navIcon} />
-        Community Hub
       </NavItem>
-      <NavItem href="/dashboard/submission">
+      <NavItem href="/dashboard/submission" label="Share Your Story">
         <BsFillChatSquareFill className={styles.navIcon} />
-        Share Your Story
       </NavItem>
-      <NavItem href="/dashboard/profile">
+      <NavItem href="/dashboard/profile" label="Profile Overview">
         <BsPersonFill className={styles.navIcon} />
-        Profile Overview
       </NavItem>
 
-      <NavItem href="/dashboard/settings">
+      {/* <NavItem href="/dashboard/settings">
         <RiSettings3Fill className={styles.navIcon} />
         Account Settings
-      </NavItem>
+      </NavItem> */}
       <NavItem
         href="/"
         onClick={() => {
@@ -102,16 +105,17 @@ const Navbar = ({ logout, setLoggingOut }) => {
           logout();
           alert.success("Logged out");
         }}
+        label="Logout"
       >
         <IoMdExit className={styles.navIcon} />
-        Logout
       </NavItem>
     </div>
   );
 };
 
-const NavItem = ({ href, children, onClick }) => {
+const NavItem = ({ href, children, onClick, label }) => {
   const router = useRouter();
+  const isMobile = useMediaQuery({ query: `(max-width:${MAX_WIDTH_QUERY})` });
   // Apply Hover effect on routername
   let styling;
   if (router.pathname.includes(href) && href !== "/") {
@@ -123,7 +127,10 @@ const NavItem = ({ href, children, onClick }) => {
   return (
     <Link href={href} onClick>
       <div className={styling} onClick={onClick}>
-        <a>{children}</a>
+        <a>
+          {children}
+          {!isMobile && label}
+        </a>
       </div>
     </Link>
   );

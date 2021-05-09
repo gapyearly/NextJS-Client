@@ -8,29 +8,40 @@ import { FaArrowLeft } from "react-icons/fa";
 import styles from "@styles/Blog.module.css";
 
 export default function BlogPost({ blogData }) {
-  const { content, title, author, description, submittedBy } = blogData;
+  const { content, title, author, profile, submittedBy } = blogData;
   const name = {};
   if (author) {
     name.name = `${author.firstName} ${author.lastName}`;
+    name.user = true;
   } else {
     name.name = submittedBy;
+    name.user = false;
   }
 
   return (
     <Layout>
-      <Link href="/blog" passHref>
+      <Link href="/girls-who-gap" passHref>
         <div className={styles.clickable}>
-          <FaArrowLeft size="13" /> <a>Back to all posts</a>
+          <FaArrowLeft size="13" /> <a>Back to all reflections</a>
         </div>
       </Link>
       <article>
         <h1 className={styles.title}>{title}</h1>
-        <h2 className={styles.author}>By {name.name}</h2>
+        <div>
+          By{" "}
+          {name.user ? (
+            <Link href={`/${profile}`}>
+              <a>{name.name}</a>
+            </Link>
+          ) : (
+            <span>{name.name}</span>
+          )}
+        </div>
         <RichText data={content}></RichText>
       </article>
-      <Link href="/blog" passHref>
+      <Link href="/girls-who-gap" passHref>
         <div className={styles.clickable}>
-          <FaArrowLeft size="13" /> <a>Back to all posts</a>
+          <FaArrowLeft size="13" /> <a>Back to all reflections</a>
         </div>
       </Link>
       <form></form>
@@ -41,21 +52,21 @@ export default function BlogPost({ blogData }) {
 
 export async function getStaticProps({ params }) {
   // We have the required page data, pass it to the page component
-  const { data } = await strapi.get(`/blogs?slug=${params.slug}`);
+  const { data } = await strapi.get(`/girls-who-gap?slug=${params.slug}`);
 
   return {
     props: {
-      blogData: data[0],
+      gwgData: data[0],
     },
   };
 }
 
 export async function getStaticPaths() {
   // Get all pages from Strapi
-  const { data } = await strapi.get("blogs");
-  const paths = data.map((blog) => {
+  const { data } = await strapi.get("girls-who-gaps");
+  const paths = data.map((gwg) => {
     return {
-      params: { slug: blog.slug },
+      params: { slug: gwg.slug },
     };
   });
   return { paths, fallback: false };

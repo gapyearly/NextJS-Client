@@ -102,3 +102,13 @@ input#instagram {
   width: 15rem !important;
   margin-left: 0.5rem;
 }
+@media (max-width: 450px) {
+  .formContainer input,
+  .formContainer form,
+  .formContainer textarea {
+    width: 90%;
+  }
+  .btns {
+    width: 100%;
+  }
+}

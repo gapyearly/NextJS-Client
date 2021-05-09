@@ -1,7 +1,6 @@
 import DashboardLayout from "@components/Layouts/DashboardLayout";
 import InterestDropdown from "@components/Forms/InterestsDropdown";
 import Interests from "@components/Dashboard/ProfileComponents/interests";
-import Pill from "@components/Buttons/Pill";
 import styles from "@styles/Dashboard/UserDashboard.module.css";
 
 import { useAuth } from "@contexts/auth";

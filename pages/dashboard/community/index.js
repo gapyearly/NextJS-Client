@@ -5,7 +5,6 @@ import Button from "@components/Buttons/Button";
 import communityPages from "@components/Dashboard/Community";
 import { BsPeopleFill, BsQuestionCircleFill } from "react-icons/bs";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { IoInformationCircleOutline } from "react-icons/io5";
 function DashCommunity() {
   const [window, setWindow] = useState(communityPages.connect);
   const Page = window.component;
