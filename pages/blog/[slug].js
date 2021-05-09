@@ -16,7 +16,6 @@ export default function BlogPost({ blogData }) {
     name.name = submittedBy;
   }
 
-  console.log(blogData);
   return (
     <Layout>
       <Link href="/blog" passHref>

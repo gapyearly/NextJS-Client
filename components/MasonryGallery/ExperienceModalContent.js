@@ -10,7 +10,6 @@ import { FaMapMarkerAlt, FaStar } from "react-icons/fa";
 
 export default function ModalContent({ data }) {
   if (!data) return;
-  console.log(data);
   const {
     cost,
     author,

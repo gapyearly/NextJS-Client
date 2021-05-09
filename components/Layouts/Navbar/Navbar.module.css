@@ -88,6 +88,8 @@
   /*TODO: Gapyearly Logo Animation is delayed*/
   transition: top 0.3s;
 }
+
+/* Avatar Dropdown Components */
 .avatar {
   display: inline-block;
   margin: 0 0 0 1.5rem;
@@ -115,4 +117,66 @@
 }
 .avatarDropdownContent a:not(:last-child) {
   margin-bottom: 0.5rem;
+}
+
+/* Mobile Navbar */
+.menuIcon {
+  cursor: pointer;
+}
+.menuIconWrapper {
+  background-color: var(--seashell);
+  z-index: 3002;
+  transform: translateX(0);
+  transition: all 0.6s ease;
+}
+.menuIconWrapperActive {
+  transform: translateX(-12rem);
+  transition: all 0.6s ease;
+  background-color: var(--seashell);
+  z-index: 3002;
+  width: 40px;
+}
+.mobileSidebar {
+  position: fixed;
+  top: 0;
+  width: 20rem;
+  height: 100vh;
+  background-color: var(--berry);
+  padding: 1rem;
+  overflow: hidden;
+  color: var(--seashell);
+  z-index: 3002;
+  animation-fill-mode: both;
+  animation-duration: 500ms;
+  animation-delay: 0ms;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-name: revealSidebar;
+}
+@keyframes revealSidebar {
+  0% {
+    transform: translate3d(100%, 0px, 0px);
+  }
+  100% {
+    transform: translateX(-45%);
+  }
+}
+
+.headerItem {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: 1.7rem;
+}
+
+.childItem {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+.childItem a {
+  font-size: 1.2rem;
+  box-shadow: none;
 }
