@@ -49,7 +49,7 @@ export default function Connect() {
         !
       </p>
 
-      <h3 className={styles.dateBanner}>Next match releases: April 25th</h3>
+      <h3 className={styles.dateBanner}>Next match releases: June 1</h3>
     </>
   );
 }

@@ -1,7 +1,17 @@
 .title {
   margin-top: 2rem;
 }
-
+.dashInstructions span {
+  font-weight: 600;
+}
+.dashInstructions {
+  width: 70%;
+  margin: 0 auto;
+}
+.dashInstructions li {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
 /* COMMUNITY HUB*/
 .communityContainer {
   padding: 2rem 0;
@@ -258,19 +268,20 @@
   margin: 4rem auto;
   border-radius: 10px;
 }
-/* @media (max-width: 600px) {
+
+@media (min-width: 1101px) {
   .chatboxWindow {
-    width: 300px;
+    width: 800px;
   }
-} */
+}
 @media (max-width: 1100px) {
   .chatboxWindow {
     width: 600px;
   }
 }
-@media (min-width: 1101px) {
+@media (max-width: 600px) {
   .chatboxWindow {
-    width: 800px;
+    width: 300px;
   }
 }
 .profileSection {
