@@ -20,7 +20,6 @@ export default function BlogSubmit() {
     formData.image = imageRef.current.files[0];
   }
 
-  console.log(formData);
   const onSubmit = async (e) => {
     e.preventDefault();
     if (!content) {

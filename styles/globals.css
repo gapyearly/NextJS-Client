@@ -221,28 +221,6 @@ li {
   border-bottom-left-radius: 10px;
 }
 
-.rce-container-clist::-webkit-scrollbar {
-  width: 25px;
-  margin: 3px;
-  padding: 4px;
-}
-.rce-container-clist::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 100px;
-  border-radius: 100px;
-  background-image: linear-gradient(var(--horizon), var(--horizon));
-  /*border-right: 4px var(--seashell) solid*/
-  /*background-clip: padding-box;*/
-  border: 7px solid rgba(255, 255, 255, 0);
-  background-clip: padding-box;
-  padding: 4px;
-}
-
-.rce-container-clist::-webkit-scrollbar-thumb:hover {
-  filter: brightness(0.3);
-}
-.rce-container-clist::-webkit-scrollbar-track {
-  padding: 4px;
-}
 /* Chat list user card */
 .rce-citem {
   background: unset !important;
@@ -265,10 +243,9 @@ li {
 }
 
 .rce-container-mlist ::-webkit-scrollbar {
-  width: 25px;
-  margin: 3px;
-  padding: 4px;
+  width: 18px;
 }
+
 .rce-container-mlist ::-webkit-scrollbar-thumb {
   -webkit-border-radius: 100px;
   border-radius: 100px;
@@ -277,20 +254,17 @@ li {
   /*background-clip: padding-box;*/
   border: 7px solid rgba(255, 255, 255, 0);
   background-clip: padding-box;
-  padding: 4px;
 }
 
 .rce-container-mlist ::-webkit-scrollbar-thumb:hover {
   filter: brightness(0.3);
-}
-.rce-container-mlist ::-webkit-scrollbar-track {
-  padding: 4px;
 }
 
 /* Messages list  */
 .rce-mlist {
   overflow-y: scroll !important;
   height: calc(80vh - 47px);
+  padding-top: 10px;
   /* dependent on message input container height, 47px */
 }
 /* Input container */
@@ -333,4 +307,9 @@ li {
 }
 .easy-edit-button[name="cancel"] {
   background-color: var(--clay);
+}
+
+.rc-switch-checked {
+  border-color: var(--aqua) !important;
+  background-color: var(--aqua) !important;
 }

@@ -16,7 +16,6 @@ export default function Redirect() {
     if (router.isReady) {
       providerLogin(router.query, provider)
         .then((newuser) => {
-          console.log(newuser);
           if (!newuser.signupCompletion) {
             return router.push("/signup/additional-info");
           }

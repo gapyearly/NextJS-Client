@@ -14,7 +14,6 @@ import {
 } from "react-accessible-accordion";
 
 export default function FAQ({ data }) {
-  console.log(data);
   return (
     <>
       <PageTitle title="FAQs" />

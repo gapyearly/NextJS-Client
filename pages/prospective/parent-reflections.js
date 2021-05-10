@@ -21,7 +21,6 @@ export default function ParentReflections({ data }) {
     setModalData(data);
     setModalVisibility(true);
   };
-  console.log(modalData);
   const cards = data.map((parentReflectionData) => {
     return (
       <ParentReflectionCard

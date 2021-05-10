@@ -75,7 +75,6 @@ export default function Chatrooms() {
             // Set Messages
             let unread = 0;
             chatItem.messages = messages.map((message) => {
-              console.log(message.read);
               if (!message.read && message.sender !== user.id) {
                 unread += 1;
               }

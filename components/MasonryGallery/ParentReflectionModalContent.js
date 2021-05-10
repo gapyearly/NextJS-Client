@@ -5,7 +5,6 @@ import Pill from "@components/Buttons/Pill.js";
 import RichText from "@components/Sections/RichText.js";
 export default function ParentReflectionModalContent({ data }) {
   if (!data) return;
-  console.log(data);
   const {
     title,
     parentFullName,

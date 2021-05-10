@@ -160,15 +160,15 @@
 .rce-mbox {
   position: relative;
   background: white;
-  border-radius: 5px;
+  border-radius: 10px;
   box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
   border-top-left-radius: 0px;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-right: 5px;
   margin-top: 3px;
   flex-direction: column;
   margin-bottom: 3px;
-  padding: 6px 9px 8px 9px;
+  padding: 6px 10px 10px 10px;
   float: left;
   min-width: 140px;
 }
@@ -199,7 +199,7 @@
 .rce-mbox.rce-mbox-right {
   float: right;
   margin-left: 5px;
-  margin-right: 20px;
+  margin-right: 0px;
   border-top-right-radius: 0px;
   border-top-left-radius: 5px;
 }

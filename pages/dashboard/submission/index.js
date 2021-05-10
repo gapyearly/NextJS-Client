@@ -24,7 +24,7 @@ export default function Submission() {
           color="greenBg"
           href="/dashboard/submission/parent-reference"
         >
-          Share a <span className={styles.bold}>Parent Reference</span>
+          Share a <span className={styles.bold}>Parent Reflections</span>
         </TextBubbleButton>
 
         <TextBubbleButton

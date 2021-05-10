@@ -25,6 +25,11 @@ export default function Interests({ interests, value }) {
   if (value) interests = value;
   return (
     !loading &&
-    interests.map((interestId) => interestsKey[interestId]).join(", ")
+    interests
+      .map((interestId) => {
+        if (typeof interestId === "string") return interestsKey[interestId];
+        return interestsKey[interestId.id];
+      })
+      .join(", ")
   );
 }

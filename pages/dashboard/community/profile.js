@@ -6,6 +6,8 @@ import Button from "@components/Buttons/Button";
 import { useRouter } from "next/router";
 import { BsPeopleFill } from "react-icons/bs";
 import strapi from "@api/strapi";
+import Interests from "@components/Dashboard/ProfileComponents/interests";
+
 // Uses user as a query parameter
 
 export default function Profile() {
@@ -18,7 +20,6 @@ export default function Profile() {
     const fetchUser = async () => {
       try {
         const { user } = router.query;
-        console.log(user);
         if (!user) throw Error;
         const { data: profile } = await strapi.get(`users`, {
           params: {
@@ -31,7 +32,6 @@ export default function Profile() {
     };
     if (router.isReady) fetchUser();
   }, [router]);
-  console.log(loading, profile);
   return (
     <DashboardLayout>
       <h1 className={styles.title}>Member Profile</h1>
@@ -104,7 +104,9 @@ const StaticProfile = ({ user }) => {
             <>
               <hr />
               <h2>Interests:</h2>
-              <p>{user.interests}</p>
+              <p>
+                <Interests interests={user.interests} />
+              </p>
             </>
           )}
           {user.language && (

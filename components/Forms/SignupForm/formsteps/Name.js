@@ -2,7 +2,6 @@ import Button from "@components/Buttons/Button";
 import styles from "components/Forms/SignupForm/SignupForm.module.css";
 export default function Name({ next, previous, formData, setForm }) {
   const { firstName, lastName } = formData;
-  console.log(firstName);
   return (
     <>
       <form onSubmit={next} action="javascript:void(0);">

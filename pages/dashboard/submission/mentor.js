@@ -22,7 +22,6 @@ export default function MentorSubmit() {
   };
   const onSubmit = async (event) => {
     event.preventDefault();
-    console.log(selfFunded);
     if (!summary || !struggles || !selfFunded) {
       return alert.error("Please enter required fields.");
     }
