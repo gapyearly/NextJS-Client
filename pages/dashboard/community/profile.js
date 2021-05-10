@@ -6,7 +6,7 @@ import Button from "@components/Buttons/Button";
 import { useRouter } from "next/router";
 import { BsPeopleFill } from "react-icons/bs";
 import strapi from "@api/strapi";
-import Interests from "@components/Dashboard/ProfileComponents";
+import Interests from "@components/Dashboard/ProfileComponents/interests";
 
 // Uses user as a query parameter
 
