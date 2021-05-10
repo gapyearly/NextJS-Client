@@ -22,7 +22,7 @@ export default function Submission() {
         </TextBubbleButton>
         <TextBubbleButton
           color="greenBg"
-          href="/dashboard/submission/parent-reference"
+          href="/dashboard/submission/parent-reflection"
         >
           Share a <span className={styles.bold}>Parent Reflections</span>
         </TextBubbleButton>
