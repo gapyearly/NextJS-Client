@@ -43,7 +43,7 @@
         },
         {
           "linkLabel": "Gapyearly Connect",
-          "href": "/connect"
+          "href": "/community/connect"
         }
       ]
     },
@@ -55,8 +55,8 @@
           "href": "/prospective/facts-and-figures"
         },
         {
-          "linkLabel": "Parent References",
-          "href": "/prospective/parent-references"
+          "linkLabel": "Parent Reflections",
+          "href": "/prospective/parent-reflections"
         },
         {
           "linkLabel": "Girls Who Gap",
