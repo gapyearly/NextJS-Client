@@ -8,7 +8,7 @@ export default function PageTitle({ title }) {
           type: "website",
           url: "https://www.gapyearly.com",
           site_name: "Gapyearly",
-          images: [{ url: "/images/discover-your-direction.jpg" }],
+          images: [{ url: "/images/logo.png" }],
           title: `${title} — Welcome to Gapyearly.`,
           description:
             "A free gap year guide written by gap year students. See what gap year students have done & plan a life-changing year with our gap year mentors.",

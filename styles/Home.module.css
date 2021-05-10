@@ -57,7 +57,7 @@
 .hero img {
   margin: 0;
   /* min-width: 100vw; */
-  max-height: 100vh;
+  /* max-height: 100vh; */
 
   position: absolute;
   bottom: 0;
@@ -69,7 +69,12 @@
 
 @media (min-width: 1001px) {
   .hero img {
-    min-height: 70vh;
+    min-height: 600px;
+  }
+}
+@media (min-width: 1330px) and (max-width: 1600px) {
+  .hero img {
+    min-height: 700px;
   }
 }
 @media (max-width: 1000px) {
