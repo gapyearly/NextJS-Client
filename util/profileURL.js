@@ -1,3 +1,3 @@
-export default function getFullName(author) {
+export default function getProfileURL(author) {
   return `/dashboard/community/profile?user=${author.username}`;
 }

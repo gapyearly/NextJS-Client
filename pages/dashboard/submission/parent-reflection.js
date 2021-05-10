@@ -41,12 +41,12 @@ export default function ParentReflectionSubmit() {
   // Styled in ckeditor styles
   return (
     <DashboardLayout>
-      <h1 className={styles.title}>Parent Reference</h1>
+      <h1 className={styles.title}>Parent Reflection</h1>
       <div className={styles.submissionContainer}>
         <h2 className={styles.userDashH2}>
           Check out examples of{" "}
-          <Link href="../../prospective/parent-references">
-            parent references
+          <Link href="../../prospective/parent-reflections">
+            parent reflection
           </Link>
           !
         </h2>

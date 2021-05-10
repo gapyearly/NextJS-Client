@@ -2,7 +2,7 @@
  * Used in /blog gallery page.
  */
 import styles from "./BlogCard.module.css";
-
+import getProfileURL from "@util/profileURL";
 import Link from "next/link";
 /**
  * Paremters for a blogcard
@@ -41,7 +41,7 @@ export default function BlogCard({ data, align }) {
         <div>
           By{" "}
           {name.user ? (
-            <Link href={`/${profile}`}>
+            <Link href={getProfileURL(author)}>
               <a>{name.name}</a>
             </Link>
           ) : (

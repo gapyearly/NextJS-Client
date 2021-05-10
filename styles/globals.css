@@ -308,3 +308,8 @@ li {
 .easy-edit-button[name="cancel"] {
   background-color: var(--clay);
 }
+
+.rc-switch-checked {
+  border-color: var(--aqua) !important;
+  background-color: var(--aqua) !important;
+}

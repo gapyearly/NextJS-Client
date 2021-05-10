@@ -6,6 +6,8 @@ import strapi from "@api/strapi";
 import Head from "next/head";
 import Title from "@components/Title";
 import Link from "next/link";
+
+import getProfileURL from "@util/profileURL";
 export default function GirlsWhoGap({ data }) {
   const list = data.map((gwgData) => {
     const { title, description, slug, author, profile, submittedBy } = data;
@@ -15,7 +17,7 @@ export default function GirlsWhoGap({ data }) {
       name.name = `${gwgData.author.firstName} ${gwgData.author.lastName}`;
       name.user = true;
     } else {
-      name.name = submittedBy;
+      name.name = gwgData.submittedBy;
       name.user = false;
     }
 
@@ -28,9 +30,13 @@ export default function GirlsWhoGap({ data }) {
         </h3>
         <h4>
           by{" "}
-          <Link href="/">
-            <a>{name.name}</a>
-          </Link>
+          {name.user ? (
+            <Link href={getProfileURL(author)}>
+              <a>{name.name}</a>
+            </Link>
+          ) : (
+            <span>{name.name}</span>
+          )}
         </h4>
       </>
     );

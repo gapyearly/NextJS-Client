@@ -24,9 +24,7 @@ export default function MessageModal({ show, recipient, onClose }) {
         content: message,
       });
       updateUser();
-      alert.success(
-        "Message sent. A chatroom has been created in the messaging tab."
-      );
+      alert.success("Message sent!");
     } catch {
       alert.error("Error occurred in attempting to send message.");
     }

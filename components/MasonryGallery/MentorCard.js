@@ -4,8 +4,12 @@ import Button from "@components/Buttons/Button";
 import { HiMail } from "react-icons/hi";
 import ReactHtmlParser from "react-html-parser";
 import Pill from "@components/Buttons/Pill";
+import React, { useState } from "react";
+import MessageModal from "@components/Dashboard/Messaging/MessageModal";
 
 export default function MentorCard({ user, bgColor }) {
+  const [modal, setModal] = useState({ show: false });
+
   const {
     firstName,
     lastName,
@@ -43,10 +47,21 @@ export default function MentorCard({ user, bgColor }) {
         {ReactHtmlParser(mentorInfo.struggles)}
       </div>
       <div className={styles.messageBtn}>
-        <Button href="/" color="darkBg">
+        <Button
+          onClick={() => {
+            setModal({ show: true, recipient: user });
+          }}
+          color="darkBg"
+        >
           <HiMail></HiMail> Message
         </Button>
       </div>
+      <MessageModal
+        {...modal}
+        onClose={() => {
+          setModal({ show: false });
+        }}
+      />
     </div>
   );
 }
