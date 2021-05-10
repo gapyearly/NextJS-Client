@@ -11,41 +11,20 @@ export default function Mentorship({ data }) {
   let index = 0;
   const cards = data
     .filter((user) => user.mentorInfo && user.mentorInfo.approved)
-    .map(
-      ({
-        firstName,
-        mentorInfo,
-        id,
-        lastName,
-        universityName,
-        universityYear,
-        profilePicture,
-      }) => {
-        index += 1;
-        const bgColor =
-          index % 4 === 0
-            ? "red"
-            : index % 4 === 1
-            ? "yellow"
-            : index % 4 === 2
-            ? "green"
-            : "blue";
-        return (
-          <MentorCard
-            key={id}
-            firstName={firstName}
-            lastName={lastName}
-            universityName={universityName}
-            universityYear={universityYear}
-            selfFunded={mentorInfo.selfFunded}
-            summary={mentorInfo.summary}
-            struggles={mentorInfo.struggles}
-            bgColor={bgColor}
-            profilePicture={profilePicture}
-          ></MentorCard>
-        );
-      }
-    );
+    .map((user) => {
+      index += 1;
+      const bgColor =
+        index % 4 === 0
+          ? "red"
+          : index % 4 === 1
+          ? "yellow"
+          : index % 4 === 2
+          ? "green"
+          : "blue";
+      return (
+        <MentorCard key={user.id} user={user} bgColor={bgColor}></MentorCard>
+      );
+    });
   shuffle(cards);
   return (
     <>

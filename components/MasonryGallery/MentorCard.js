@@ -5,17 +5,15 @@ import { HiMail } from "react-icons/hi";
 import ReactHtmlParser from "react-html-parser";
 import Pill from "@components/Buttons/Pill";
 
-export default function MentorCard({
-  firstName,
-  lastName,
-  universityName,
-  universityYear,
-  summary,
-  struggles,
-  bgColor,
-  profilePicture,
-  selfFunded,
-}) {
+export default function MentorCard({ user, bgColor }) {
+  const {
+    firstName,
+    lastName,
+    universityName,
+    universityYear,
+    mentorInfo,
+    profilePicture,
+  } = user;
   return (
     <div className={styles.mentorCardOverlay}>
       <div className={`${styles.mentorCard} ${styles[`${bgColor}Bg`]}`}>
@@ -32,7 +30,7 @@ export default function MentorCard({
             <h2>{lastName}</h2>{" "}
           </div>
           <span className={styles.selfFundedContainer}>
-            {SelfFundedComponent(selfFunded)}
+            {SelfFundedComponent(mentorInfo.selfFunded)}
           </span>
         </div>
         <h3>
@@ -40,9 +38,9 @@ export default function MentorCard({
         </h3>
 
         <h4>WHAT I DID:</h4>
-        {ReactHtmlParser(summary)}
+        {ReactHtmlParser(mentorInfo.summary)}
         <h4>WHAT I STRUGGLED WITH:</h4>
-        {ReactHtmlParser(struggles)}
+        {ReactHtmlParser(mentorInfo.struggles)}
       </div>
       <div className={styles.messageBtn}>
         <Button href="/" color="darkBg">
