@@ -4,7 +4,9 @@
 - homeWidth: for homepage
 - dashboardWidth: for user dashboard, which uses margin to avoid the nav at the side *
 - article: for pages with no PageTitle such as blog, gwg articles*/
-
+.article {
+  margin-top: var(--navbarHeight) !important;
+}
 .layout main {
   max-width: 100vw;
   /* TODO: sticky footer not working */
@@ -47,8 +49,4 @@
 }
 .userDash {
   width: 100%;
-}
-
-.article {
-  margin-top: var(--navbarHeight);
 }
