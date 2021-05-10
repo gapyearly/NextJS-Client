@@ -8,7 +8,6 @@ import Title from "@components/Title";
 import shuffle from "@util/shuffleArray";
 
 export default function Mentorship({ data }) {
-  console.log(data);
   let index = 0;
   const cards = data
     .filter((user) => user.mentorInfo && user.mentorInfo.approved)

@@ -12,7 +12,6 @@ class MyEditor extends React.Component {
   handleScale = (e) => {
     const scale = parseFloat(e.target.value);
     this.setState({ scale });
-    console.log(this.state);
   };
   handlePositionChange = (position) => {
     this.setState({ position });

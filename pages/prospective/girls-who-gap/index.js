@@ -7,7 +7,6 @@ import Head from "next/head";
 import Title from "@components/Title";
 import Link from "next/link";
 export default function GirlsWhoGap({ data }) {
-  console.log(data);
   const list = data.map((gwgData) => {
     const { title, description, slug, author, profile, submittedBy } = data;
 

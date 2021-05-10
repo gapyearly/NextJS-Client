@@ -16,7 +16,6 @@ export default function MentorCard({
   profilePicture,
   selfFunded,
 }) {
-  console.log(selfFunded);
   return (
     <div className={styles.mentorCardOverlay}>
       <div className={`${styles.mentorCard} ${styles[`${bgColor}Bg`]}`}>

@@ -18,7 +18,6 @@ export default function Profile() {
     const fetchUser = async () => {
       try {
         const { user } = router.query;
-        console.log(user);
         if (!user) throw Error;
         const { data: profile } = await strapi.get(`users`, {
           params: {
@@ -31,7 +30,6 @@ export default function Profile() {
     };
     if (router.isReady) fetchUser();
   }, [router]);
-  console.log(loading, profile);
   return (
     <DashboardLayout>
       <h1 className={styles.title}>Member Profile</h1>

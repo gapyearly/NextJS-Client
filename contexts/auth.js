@@ -15,7 +15,6 @@ const AuthContext = createContext({});
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  // console.log(user);
   async function revalidateUserFromStorage() {
     // Gets token from browser cookie
     const token = Cookies.get("token");

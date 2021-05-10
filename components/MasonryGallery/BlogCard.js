@@ -29,7 +29,6 @@ export default function BlogCard({ data, align }) {
     name.name = submittedBy;
     name.user = false;
   }
-  console.log(author);
   // TODO Fix up structure and styling
   const BlogCardInfo = ({ className }) => {
     return (

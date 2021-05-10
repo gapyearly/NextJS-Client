@@ -10,7 +10,6 @@ import TeamCard from "@components/MasonryGallery/TeamCard";
 import { NextSeo } from "next-seo";
 
 export default function OurTeam({ data }) {
-  console.log(data);
   const cards = data.TeamMemberBio.map(({ fullName, image, bio, location }) => {
     return (
       <TeamCard
