@@ -6,11 +6,11 @@ module.exports = {
   target: "serverless",
   async redirects() {
     return [
-      {
-        source: "/dashboard",
-        destination: "/dashboard/messaging",
-        permanent: true,
-      },
+      // {
+      //   source: "/dashboard",
+      //   destination: "/dashboard/messaging",
+      //   permanent: true,
+      // },
     ];
   },
 };
