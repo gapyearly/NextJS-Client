@@ -6,6 +6,8 @@ import Button from "@components/Buttons/Button";
 import { useRouter } from "next/router";
 import { BsPeopleFill } from "react-icons/bs";
 import strapi from "@api/strapi";
+import Interests from "@components/Dashboard/ProfileComponents";
+
 // Uses user as a query parameter
 
 export default function Profile() {
@@ -102,7 +104,9 @@ const StaticProfile = ({ user }) => {
             <>
               <hr />
               <h2>Interests:</h2>
-              <p>{user.interests}</p>
+              <p>
+                <Interests interests={user.interests} />
+              </p>
             </>
           )}
           {user.language && (
