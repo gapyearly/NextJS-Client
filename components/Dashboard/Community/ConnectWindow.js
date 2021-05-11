@@ -41,7 +41,7 @@ export default function Connect() {
       <h3>Match me in future monthly rounds!</h3>
       <p>
         When the switch is on, you'll be included in the upcoming rounds of
-        massages.
+        matches.
       </p>
       <p>
         Gapyearly will use your profile info to match you with another gapper.
