@@ -6,15 +6,16 @@ import styles from "@styles/Dashboard/UserDashboard.module.css";
 import { useAuth } from "@contexts/auth";
 import EasyEdit, { Types } from "react-easy-edit";
 import strapi from "@api/strapi";
-import React, { useRef } from "react";
+import React, { useState } from "react";
 
 import { useAlert } from "react-alert";
 import NProgress from "nprogress";
 
-import Modal from "@components/Modal";
+import PictureModal from "@components/Dashboard/ProfileComponents/EditpictureModal";
 
 export default function Profile() {
   const { user, updateUser, isAuthenticated } = useAuth();
+  const [modalVisible, setModalVisible] = useState(false);
   const alert = useAlert();
 
   const saveProfile = async (value, field) => {
@@ -32,6 +33,12 @@ export default function Profile() {
   if (!isAuthenticated) return <DashboardLayout />;
   return (
     <DashboardLayout className="userDash">
+      <PictureModal
+        show={modalVisible}
+        onClose={() => {
+          setModalVisible(false);
+        }}
+      />
       <>
         <h1 className={styles.title}>Profile Overview</h1>
         <h2 className={styles.userDashH2}>Click any field to edit/add info!</h2>
@@ -40,6 +47,9 @@ export default function Profile() {
             src={user.profilePicture.url}
             alt="Profile Avatar"
             className={styles.avatar}
+            onClick={() => {
+              setModalVisible(true);
+            }}
           />
           <div className={styles.profileContainer}>
             <h3>Name:</h3>
