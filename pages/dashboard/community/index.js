@@ -15,6 +15,7 @@ function DashCommunity() {
       <div className={styles.communityContainer}>
         <div className={styles.buttonSigns}>
           <Button
+            className={styles.connectBtn}
             onClick={() => {
               setWindow(communityPages.connect);
             }}
@@ -24,6 +25,7 @@ function DashCommunity() {
             Gapyearly Connect
           </Button>
           <Button
+            className={styles.askBtn}
             onClick={() => {
               setWindow(communityPages.ask);
             }}
@@ -33,6 +35,7 @@ function DashCommunity() {
             Ask the community
           </Button>
           <Button
+            className={styles.allMembersBtn}
             color="greenBg"
             onClick={() => {
               setWindow(communityPages.allmembers);
@@ -41,9 +44,10 @@ function DashCommunity() {
             <BsPeopleFill style={{ marginRight: 6 }} />
             View all members
           </Button>
+          <span className={styles.signPost} />
         </div>
         <div className={styles.window}>
-          <div className={styles.windowHeader}>
+          <div className={`${styles.windowHeader} ${styles[window.color]}`}>
             <h2>{window.title}</h2>
           </div>
           <div className={styles.windowContent}>

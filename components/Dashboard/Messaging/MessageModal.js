@@ -6,6 +6,7 @@ import { useAlert } from "react-alert";
 import strapi from "@api/strapi";
 import { useAuth } from "@contexts/auth";
 import NProgress from "nprogress";
+import styles from "@components/Modal.module.css";
 
 export default function MessageModal({ show, recipient, onClose }) {
   const [message, setMessage] = useState("");
@@ -33,12 +34,19 @@ export default function MessageModal({ show, recipient, onClose }) {
   };
   if (!show) return <></>;
   return (
-    <Modal show={show} title="Start a conversation" onClose={onClose}>
+    <Modal
+      className="shortModal"
+      show={show}
+      title="Start a conversation"
+      onClose={onClose}
+    >
       <div className=""></div>
       <p>Send your first message to {fullName(recipient)}</p>
       <br />
       <textarea
+        className={styles.messageTextArea}
         value={message}
+        placeholder="Type here..."
         onChange={(e) => {
           setMessage(e.target.value);
         }}

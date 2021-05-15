@@ -41,7 +41,10 @@ export default function Profile() {
       />
       <>
         <h1 className={styles.title}>Profile Overview</h1>
-        <h2 className={styles.userDashH2}>Click any field to edit/add info!</h2>
+        <h2 className={styles.userDashH2}>
+          Click any field to edit/add info!
+          <br /> Your info is visible to other signed-in users.
+        </h2>
         <div className={styles.profile}>
           <img
             src={user.profilePicture.url}
@@ -82,24 +85,31 @@ export default function Profile() {
             <p>{user.role.name}</p>
             <hr />
             <h3>Gap Year:</h3>
-            <EasyEdit
-              type={Types.NUMBER}
-              onSave={(value) => {
-                saveProfile(value, "gapYearStart");
-              }}
-              value={user.gapYearStart}
-              placeholder="+ Add start of gap year (e.g. 2020)"
-              // instructions="Gap Year Start"
-            />
-            <EasyEdit
-              type={Types.NUMBER}
-              onSave={(value) => {
-                saveProfile(value, "gapYearEnd");
-              }}
-              value={user.gapYearEnd}
-              placeholder="+ Add end of gap year (e.g. 2021)"
-              // instructions="Gap Year End"
-            />
+            <div className={styles.profileSection}>
+              <EasyEdit
+                type={Types.NUMBER}
+                onSave={(value) => {
+                  saveProfile(value, "gapYearStart");
+                }}
+                value={user.gapYearStart}
+                placeholder="+ Add start of gap year (e.g. 2020)"
+                className={styles.inline}
+                name="inline"
+                // instructions="Gap Year Start"
+              />
+              <p>&nbsp;-&nbsp;</p>
+              <EasyEdit
+                type={Types.NUMBER}
+                onSave={(value) => {
+                  saveProfile(value, "gapYearEnd");
+                }}
+                value={user.gapYearEnd}
+                placeholder="+ Add end of gap year (e.g. 2021)"
+                className={styles.inline}
+                name="inline"
+                // instructions="Gap Year End"
+              />
+            </div>
             <hr />
             <h3>University:</h3>
             <EasyEdit

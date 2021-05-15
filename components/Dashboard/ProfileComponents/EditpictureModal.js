@@ -35,7 +35,7 @@ export default function PictureModal({ show, onClose }) {
           const res = await uploadProfilePicture(file);
           await strapi.put(`users/${user.id}`, { profilePicture: res[0].id });
           await updateUser();
-          alert.success("Profile Picture uploaded.");
+          alert.success("Profile picture saved");
           NProgress.done();
         }, "image/png");
         onClose();
@@ -47,8 +47,13 @@ export default function PictureModal({ show, onClose }) {
     }
   };
   return (
-    <Modal show={show} title="Upload a new profile picture" onClose={onClose}>
-      <label htmlFor="profilePicture">Upload a profile picture!</label>
+    <Modal
+      className="shortModal"
+      show={show}
+      title="Upload a new profile picture"
+      onClose={onClose}
+    >
+      <label htmlFor="profilePicture"></label>
       <input type="file" ref={fileRef} onChange={setRender} />
       <div
         style={{ display: "flex", flexDirection: "column", marginTop: "1rem" }}

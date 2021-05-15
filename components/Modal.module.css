@@ -11,7 +11,8 @@
   z-index: 2000;
   backdrop-filter: blur(3px);
 }
-.modal {
+.modalOverlay > div {
+  /* .modalOverlay > div: to give inner modal some default styles (works well for main site modals, height overwritten via className for modals like messaging, profile picture editing) */
   background: seashell;
   width: fit-content;
   max-width: 65vw;
@@ -23,6 +24,12 @@
 }
 .modal h2 {
   margin-top: 0;
+}
+.modalOverlay > .shortModal {
+  height: fit-content;
+}
+.messageTextArea {
+  width: 100%;
 }
 .nameCitation {
   /* for parent reflections */
@@ -43,4 +50,10 @@
 .header {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 600px) {
+  .modalOverlay > div {
+    width: 88vw;
+    max-width: unset;
+  }
 }
