@@ -5,6 +5,7 @@ import DashboardLayout from "@components/Layouts/DashboardLayout/index.js";
 import Chatbox from "@components/Dashboard/Messaging/Chatbox";
 import MessageModal from "@components/Dashboard/Messaging/MessageModal";
 import Interests from "@components/Dashboard/ProfileComponents/interests";
+import PictureModal from "@components/Dashboard/ProfileComponents/EditpictureModal";
 
 import redirect from "nextjs-redirect";
 export default function Test() {
@@ -22,6 +23,6 @@ export default function Test() {
     //   }}
     // />
     // <Interests interests={["wewe"]} />
-    <SignupForm />
+    <PictureModal show="true" />
   );
 }

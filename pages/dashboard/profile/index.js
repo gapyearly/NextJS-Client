@@ -6,15 +6,16 @@ import styles from "@styles/Dashboard/UserDashboard.module.css";
 import { useAuth } from "@contexts/auth";
 import EasyEdit, { Types } from "react-easy-edit";
 import strapi from "@api/strapi";
-import React, { useRef } from "react";
+import React, { useState } from "react";
 
 import { useAlert } from "react-alert";
 import NProgress from "nprogress";
 
-import Modal from "@components/Modal";
+import PictureModal from "@components/Dashboard/ProfileComponents/EditpictureModal";
 
 export default function Profile() {
   const { user, updateUser, isAuthenticated } = useAuth();
+  const [modalVisible, setModalVisible] = useState(false);
   const alert = useAlert();
 
   const saveProfile = async (value, field) => {
@@ -32,15 +33,30 @@ export default function Profile() {
   if (!isAuthenticated) return <DashboardLayout />;
   return (
     <DashboardLayout className="userDash">
+      <PictureModal
+        show={modalVisible}
+        onClose={() => {
+          setModalVisible(false);
+        }}
+      />
       <>
         <h1 className={styles.title}>Profile Overview</h1>
-        <h2 className={styles.userDashH2}>Click any field to edit/add info!</h2>
+        <h2 className={styles.userDashH2}>
+          Click any field to edit/add info!
+          <br /> Your profile is visible to other signed-in users.
+        </h2>
         <div className={styles.profile}>
-          <img
-            src={user.profilePicture.url}
-            alt="Profile Avatar"
-            className={styles.avatar}
-          />
+          <div className={styles.avatarContainer}>
+            <p className={styles.editAvatarText}>Upload new profile picture</p>
+            <img
+              src={user.profilePicture.url}
+              alt="Profile Avatar"
+              className={styles.avatar}
+              onClick={() => {
+                setModalVisible(true);
+              }}
+            />
+          </div>
           <div className={styles.profileContainer}>
             <h3>Name:</h3>
             <div className={styles.profileSection}>
@@ -72,24 +88,31 @@ export default function Profile() {
             <p>{user.role.name}</p>
             <hr />
             <h3>Gap Year:</h3>
-            <EasyEdit
-              type={Types.NUMBER}
-              onSave={(value) => {
-                saveProfile(value, "gapYearStart");
-              }}
-              value={user.gapYearStart}
-              placeholder="+ Add start of gap year (e.g. 2020)"
-              // instructions="Gap Year Start"
-            />
-            <EasyEdit
-              type={Types.NUMBER}
-              onSave={(value) => {
-                saveProfile(value, "gapYearEnd");
-              }}
-              value={user.gapYearEnd}
-              placeholder="+ Add end of gap year (e.g. 2021)"
-              // instructions="Gap Year End"
-            />
+            <div className={styles.profileSection}>
+              <EasyEdit
+                type={Types.NUMBER}
+                onSave={(value) => {
+                  saveProfile(value, "gapYearStart");
+                }}
+                value={user.gapYearStart}
+                placeholder="+ Add start of gap year (e.g. 2020)"
+                className={styles.inline}
+                name="inline"
+                // instructions="Gap Year Start"
+              />
+              <p>&nbsp;-&nbsp;</p>
+              <EasyEdit
+                type={Types.NUMBER}
+                onSave={(value) => {
+                  saveProfile(value, "gapYearEnd");
+                }}
+                value={user.gapYearEnd}
+                placeholder="+ Add end of gap year (e.g. 2021)"
+                className={styles.inline}
+                name="inline"
+                // instructions="Gap Year End"
+              />
+            </div>
             <hr />
             <h3>University:</h3>
             <EasyEdit

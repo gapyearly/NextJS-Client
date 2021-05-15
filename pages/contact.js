@@ -37,10 +37,15 @@ export default function Contact() {
         <p className={styles.contactDescription}>
           Please fill out this form and we'll get back to you ASAP!
         </p>
+        <br />
+        <p>
+          For all press inquiries, please contact{" "}
+          <a href="mailto:admin@gapyearly.com">admin@gapyearly.com</a> .
+        </p>
         {/* TODO: alex fill in action pls */}
         <form onSubmit={onSubmit} className={styles.contact}>
           <label htmlFor="fullName">
-            Full name
+            Full name*
             <input
               id="contactFullName"
               type="text"
@@ -51,7 +56,7 @@ export default function Contact() {
           </label>
 
           <label htmlFor="email">
-            Email
+            Email*
             <input
               id="contactEmail"
               type="email"
@@ -63,7 +68,7 @@ export default function Contact() {
           </label>
 
           <label htmlFor="instagram">
-            Instagram
+            Instagram (optional)
             <input
               id="contactInstagram"
               type="text"
@@ -74,7 +79,7 @@ export default function Contact() {
           </label>
 
           <label htmlFor="">
-            Message
+            Message*
             <textarea
               id="contactMessage"
               type="textarea"
