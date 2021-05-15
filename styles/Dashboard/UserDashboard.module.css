@@ -17,7 +17,7 @@
   padding: 2rem 0;
   text-align: left;
   width: 100%;
-
+  padding-left: 40px;
   /* 100vw - nav width, 
   FIXME: to include mobile menu/max-width px value */
   display: flex;
@@ -40,17 +40,17 @@
 }
 .buttonSigns > Button {
   display: block;
-  margin-bottom: 0.8rem;
+  margin: 1.2rem auto 0.8rem;
   z-index: 2;
   position: relative;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
 }
 .connectBtn {
-  left: 30px;
+  left: 20px;
   margin-top: 1.2rem;
 }
 .askBtn {
-  right: 30px;
+  right: 35px;
 }
 .allMembersBtn {
   left: 50px;
@@ -61,6 +61,7 @@
   position: relative;
   right: 0;
   overflow-y: auto;
+  margin-left: 40px;
 }
 .windowHeader {
   background-color: var(--clay);
@@ -113,7 +114,7 @@
 }
 @media (max-width: 800px) {
   .communityContainer {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding-left: 10%;
   }
   .window {
@@ -122,6 +123,13 @@
     position: relative;
     right: 0;
     overflow-y: auto;
+    margin-left: 0;
+  }
+  .buttonSigns {
+    margin-top: 1rem;
+  }
+  .signPost {
+    height: 260px;
   }
 }
 
