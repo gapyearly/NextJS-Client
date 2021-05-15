@@ -43,17 +43,20 @@ export default function Profile() {
         <h1 className={styles.title}>Profile Overview</h1>
         <h2 className={styles.userDashH2}>
           Click any field to edit/add info!
-          <br /> Your info is visible to other signed-in users.
+          <br /> Your profile is visible to other signed-in users.
         </h2>
         <div className={styles.profile}>
-          <img
-            src={user.profilePicture.url}
-            alt="Profile Avatar"
-            className={styles.avatar}
-            onClick={() => {
-              setModalVisible(true);
-            }}
-          />
+          <div className={styles.avatarContainer}>
+            <p className={styles.editAvatarText}>Upload new profile picture</p>
+            <img
+              src={user.profilePicture.url}
+              alt="Profile Avatar"
+              className={styles.avatar}
+              onClick={() => {
+                setModalVisible(true);
+              }}
+            />
+          </div>
           <div className={styles.profileContainer}>
             <h3>Name:</h3>
             <div className={styles.profileSection}>

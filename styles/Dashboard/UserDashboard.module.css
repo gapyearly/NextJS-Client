@@ -263,22 +263,49 @@
 /* PROFILE OVERVIEW */
 .profile {
   padding: 2rem 0;
-  width: 80%;
+  width: 85%;
   margin: auto;
   display: flex;
   flex-direction: row;
 }
-
-.avatar {
-  border-radius: 100%;
-  object-fit: cover;
+.avatarContainer {
+  position: relative;
   width: 10rem;
   height: 10rem;
   margin-right: 4rem;
 }
-
-.profileContainer {
+.avatar {
+  border-radius: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.editAvatarText {
+  display: none;
   width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-weight: 600;
+  color: var(--seashell);
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+
+  transform: translate(-50%, -50%);
+}
+.editAvatarText:hover {
+  cursor: pointer;
+}
+.avatar:hover {
+  cursor: pointer;
+}
+.avatarContainer:hover > .editAvatarText {
+  display: inline-block;
+}
+.profileContainer {
+  width: 60%;
 }
 .profile hr {
   border-top: 1px solid var(--berry);
@@ -286,12 +313,15 @@
 .profile > h3 {
   display: block;
 }
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .profile {
     flex-direction: column;
     align-items: center;
   }
-  .avatar {
+  .profileContainer {
+    width: 80%;
+  }
+  .avatarContainer {
     margin-right: 0;
   }
 }
