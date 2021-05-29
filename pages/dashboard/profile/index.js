@@ -47,7 +47,14 @@ export default function Profile() {
         </h2>
         <div className={styles.profile}>
           <div className={styles.avatarContainer}>
-            <p className={styles.editAvatarText}>Upload new profile picture</p>
+            <p
+              className={styles.editAvatarText}
+              onClick={() => {
+                setModalVisible(true);
+              }}
+            >
+              Upload new profile picture
+            </p>
             <img
               src={user.profilePicture.url}
               alt="Profile Avatar"
