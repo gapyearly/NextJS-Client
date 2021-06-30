@@ -54,11 +54,13 @@ const StaticProfile = ({ user }) => {
   return (
     <>
       <div className={styles.profile}>
-        <img
-          src={user.profilePicture.url}
-          alt="Profile Avatar"
-          className={styles.avatar}
-        />
+        <div className={styles.avatarContainer}>
+          <img
+            src={user.profilePicture.url}
+            alt="Profile Avatar"
+            className={styles.avatar}
+          />
+        </div>
         <div className={styles.profileContainer}>
           <h2>Name:</h2>
           <p>{fullName(user)}</p>
