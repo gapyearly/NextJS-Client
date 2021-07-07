@@ -152,10 +152,6 @@ const DropdownMenu = () => {
       </HeaderItem>
       <HeaderItem label="Opportunities">
         <ChildItem
-          href="/opportunities/covid-experiences"
-          label="COVID-19 Experiences"
-        />
-        <ChildItem
           href="/opportunities/past-experiences"
           label="Past Experiences"
         />
@@ -194,9 +190,6 @@ const DesktopNav = () => {
         <NavLink href="/contact">Contact</NavLink>
       </Navfolder>
       <Navfolder title="Opportunities" href="">
-        <NavLink href="/opportunities/covid-experiences">
-          COVID-19 Experiences
-        </NavLink>
         <NavLink href="/opportunities/past-experiences">
           Past Experiences
         </NavLink>

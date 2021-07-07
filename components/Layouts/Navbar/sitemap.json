@@ -25,10 +25,6 @@
       "label": "Opportunities",
       "items": [
         {
-          "linkLabel": "COVID-19 Experiences",
-          "href": "/opportunities/covid-experiences"
-        },
-        {
           "linkLabel": "Past Experiences",
           "href": "/opportunities/past-experiences"
         }
