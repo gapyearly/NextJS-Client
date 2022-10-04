@@ -63,7 +63,7 @@ export default function Footer() {
           and{" "}
           <a
             className="blueUnderline"
-            href="https://www.arlenewang.me"
+            href="https://github.com/wangarlene"
             target="_blank"
           >
             Arlene
